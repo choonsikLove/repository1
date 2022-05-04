@@ -9,22 +9,83 @@
 }
 
 /*팝업 박스*/
-.popup_box{
+.login_popup_box{
 	position: relative;
-	top:50%;left:50%; 
-	height: 365px; width:40em;
+	top: 35%;left:50%; 
+	height: 54%; width:380px; /*height %로 하면 안됨!*/
 	transform:translate(-50%, -50%);
-	z-index:10000;
+	z-index:2000;
 	background: white;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
+	border-radius: 5px;
 }
 
+img#closeImage{
+	position: absolute;
+	top: 20px; right: 20px;
+	z-index:3000;
+}
 
-.popup_cont{
+div.popup_cont{
+	height: 100%;
+	width: 80%;
+}
+
+div#popup_cont1{
 	background: red;
 }
 
+div#popup_cont2{
+	display: none;
+	background: orange;
+}
 
+div#popup_cont1>form{
+	background: CYAN;
+}
+
+div#popup_cont1>form>ul{
+	text-align: center;
+	background: yellow;
+	width: 100%;
+	margin: auto 0;
+	padding-top: 30px;
+}
+
+div#popup_cont1>form>ul>li:first-of-type{
+	font-size:20pt;
+}
+
+div#popup_cont1 input[type='text'], button[type='submit']{
+}
+
+div#popup_cont1 input[type='text']{
+	width: 282px;
+	height: 24px;
+	padding: 6px 10px;
+	border: 1px black solid; /*위에 껍질 씌운 느낌 */
+}
+
+div#popup_cont1>form>ul>li:nth-of-type(2)>input[type='text']{
+	border-bottom: none;
+}
+
+div#popup_cont1>form>ul>li:not(:nth-of-type(2)){
+	margin-bottom: 14px;
+}
+
+div#popup_cont1>form>ul>li:last-of-type>button{
+	width: 306px;
+	height: 38px;
+	border:none;
+	background: rgb(11,47,127);
+	color: #fff;
+	cursor: pointer;
+}
+
+div#popup_cont1>form>ul>li:last-of-type>button:hover{
+	background: rgb(33,104,177);
+}
