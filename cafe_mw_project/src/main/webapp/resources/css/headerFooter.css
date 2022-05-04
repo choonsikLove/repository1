@@ -120,6 +120,7 @@ footer li:last-of-type {
 	color: #0042A9;
 	padding: 12px 0 12px 12px;
 	font-size: 9.5pt;
+	/* font-weight: bold; 안 먹히나?*/
 }
 
 .dropdown-content a:hover{
