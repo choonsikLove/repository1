@@ -6,6 +6,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="http://localhost:9000/manwol/resources/css/headerFooter.css">
+<script src="http://localhost:9000/manwol/resources/js/jquery-3.6.0.js"></script>
+<script src="http://localhost:9000/manwol/resources/js/header.js"></script>
 </head>
 <body>
 <header>
@@ -56,7 +58,7 @@
 		<div>
 			<nav>
 				<ul class="menu">
-					<li><a href="#">LOGIN</a></li>
+					<li id="login">LOGIN</li>
 					<li><a href="#">JOIN</a></li>
 					<li>
 						<a href="#">
