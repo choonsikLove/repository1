@@ -67,6 +67,8 @@
 			</nav>
 		</div>
 	</div>
+	
+	<jsp:include page="kim_login_test.jsp"></jsp:include>
 </header>
 
 
