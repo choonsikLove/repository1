@@ -5,14 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="http://localhost:9000/manwol/resources/css/kim_login_test.css">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100" rel="stylesheet" />
 <title>Insert title here</title>
 </head>
 <body>
 
 <div id="popup" style="display:none;">
 	<div class="login_popup_box">
-	  	<img id="closeImage" 
-	  	src="http://localhost:9000/manwol/resources/images/default_profile.png" width="50px" height="50px">
+     	<span class="material-symbols-outlined" id="closeX">close</span>
      
 
 
