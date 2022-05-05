@@ -5,8 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../../../resources/css/mw.css">
-<script src="../../resources/css/mw.js"></script>
+<link rel="stylesheet" href="http://localhost:9000/manwol/resources/css/mw.css">
+<script src="http://localhost:9000/manwol/resources/js/mw.js"></script>
 <style type="text/css">
 	*{padding: 0; margin: 0;}
 	li{list-style: none;}
