@@ -30,6 +30,24 @@ public class ProductController {
    public String product_base() {
          
       return "/product/product_base";
-   }  
+   } 
+   
+   @RequestMapping(value="/product_detail", method=RequestMethod.GET)
+   public String product_detail() {
+         
+      return "/product/product_detail";
+   } 
+  
+   @RequestMapping(value="/product_group_order", method=RequestMethod.GET)
+   public String product_group_order() {
+         
+      return "/product/product_group_order";
+   } 
+   
+   @RequestMapping(value="/product_group_order2", method=RequestMethod.GET)
+   public String product_group_order2() {
+         
+      return "/product/product_group_order2";
+   } 
 }
    

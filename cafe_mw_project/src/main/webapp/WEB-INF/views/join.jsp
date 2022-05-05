@@ -61,7 +61,7 @@
 		
 		<button type="submit">가입하기</button>
 	</form>
-	
+	<jsp:include page="footer.jsp"></jsp:include>
 
 </body>
 </html>

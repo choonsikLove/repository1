@@ -3,22 +3,20 @@
 *{margin: 0 ; padding: 0;}
 	li{list-style-type:none}
 	
-	body {
-	  width: 120em; 
-	  margin:auto;
-	}
-
+body,html{
+    width: 100%;
+}	
+	
 	.category {
       display: flex;
 	  justify-content: center;
-	  padding: 30px 0;
-	  
+	  padding: 30px 0;	  
       }   
       
 	.category span {
       padding:15px;
       color: gray;
-      font-size: 12px;    
+      font-size: 14px;    
       }
 	
 /* 	<%--카테고리 클릭시 밑줄 들어가게 --%> */
@@ -43,7 +41,7 @@
 		height: 1px;
 		font-size: 0px;
 		line-height: 0px;
-		margin: 0px 25%;
+		margin: 0px 13%;
 	}
 	.contents {
 	  display: flex;
@@ -51,8 +49,9 @@
       flex-wrap: wrap;
 	  justify-content: center;
 	  align-items: center;
-	  padding: 0px 25% 50px 25%;  
+	  padding: 0px 10% 50px 10%;  
 	}
+	strong{font-size: 15px; color: black; }
 	.contents1{
 		margin: 20px 10px 20px 10px;
 	}
@@ -79,7 +78,7 @@
 	 color: #FF0000;
 	}		
 	
-	h5{font-size: 13px; margin: 10px 0;}
+	h4{font-size: 15px; margin: 15px 0;}
 	.contents1 p {font-size: 12px; margin: 7px 0;}
 	.contents2 p {font-size: 12px; margin: 7px 0;}
 	.contents3 p {font-size: 12px; margin: 7px 0;}
