@@ -7,7 +7,7 @@ $('#login').click(function(){
 
 
 /*		끄기1		*/
-$('#closeImage').click(function(){
+$('#closeX').click(function(){
 	$('#popup').css("display","none");
 	
 	$('.popup_cont').css("display","none");
