@@ -11,8 +11,8 @@
 /*팝업 박스*/
 .login_popup_box{
 	position: relative;
-	top: 35%;left:50%; 
-	height: 54%; width:380px; /*height %로 하면 안됨!*/
+	top: 50%;left:50%; 
+	height: 600px; width:380px; /*height %로 하면 안됨!*/
 	transform:translate(-50%, -50%);
 	z-index:2000;
 	background: white;
@@ -23,11 +23,6 @@
 	border-radius: 5px;
 }
 
-img#closeImage{
-	position: absolute;
-	top: 20px; right: 20px;
-	z-index:3000;
-}
 
 div.popup_cont{
 	height: 100%;
@@ -56,7 +51,8 @@ div#popup_cont1>form>ul{
 }
 
 div#popup_cont1>form>ul>li:first-of-type{
-	font-size:20pt;
+	font-size:18pt;
+	font-weight: bold;
 }
 
 div#popup_cont1 input[type='text'], button[type='submit']{
@@ -88,4 +84,18 @@ div#popup_cont1>form>ul>li:last-of-type>button{
 
 div#popup_cont1>form>ul>li:last-of-type>button:hover{
 	background: rgb(33,104,177);
+}
+
+
+div.login_popup_box>span.material-symbols-outlined{
+	color: #d1d1d1;
+	font-size: 25pt;
+	position: absolute;
+	top: 20px; right: 20px;
+	z-index:3000;
+	cursor: pointer;
+}
+
+div.login_popup_box>span.material-symbols-outlined:hover{
+	color: #000;
 }
