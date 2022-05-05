@@ -11,8 +11,8 @@
 /*팝업 박스*/
 .login_popup_box{
 	position: relative;
-	top: 50%;left:50%; 
-	height: 600px; width:380px; /*height %로 하면 안됨!*/
+	top: 53%;left:51%; 
+	height: 620px; width:370px; /*height %로 하면 안됨!*/
 	transform:translate(-50%, -50%);
 	z-index:2000;
 	background: white;
@@ -26,67 +26,153 @@
 
 div.popup_cont{
 	height: 100%;
-	width: 80%;
+	width: 85%;
+	display:none;
 }
 
 div#popup_cont1{
-	background: red;
+ 	/* background: red; */
+ 	display: block;
 }
 
 div#popup_cont2{
-	display: none;
-	background: orange;
+/* 	background: orange; */
 }
 
 div#popup_cont1>form{
-	background: CYAN;
+	/* background: CYAN; */
 }
 
-div#popup_cont1>form>ul{
+div#popup_cont1>form>ul,
+div#popup_cont99>form>ul{
 	text-align: center;
-	background: yellow;
 	width: 100%;
 	margin: auto 0;
 	padding-top: 30px;
 }
 
-div#popup_cont1>form>ul>li:first-of-type{
-	font-size:18pt;
+div#popup_cont1>form>ul>li:not(:nth-of-type(2)){
+	margin-bottom: 12px;
+}
+
+div#popup_cont1>form>ul>li:first-of-type,
+div#popup_cont99>form>ul>li:first-of-type{
+	font-size:17pt;
 	font-weight: bold;
+	margin-bottom: 40px;
+	margin-top: 10px;
 }
 
-div#popup_cont1 input[type='text'], button[type='submit']{
-}
 
-div#popup_cont1 input[type='text']{
-	width: 282px;
-	height: 24px;
+div.popup_cont input[type='text']{
+	width: 290px;
+	height: 26px;
 	padding: 6px 10px;
-	border: 1px black solid; /*위에 껍질 씌운 느낌 */
+	border: 1px #d9d9d9 solid;
 }
 
 div#popup_cont1>form>ul>li:nth-of-type(2)>input[type='text']{
 	border-bottom: none;
 }
 
-div#popup_cont1>form>ul>li:not(:nth-of-type(2)){
-	margin-bottom: 14px;
+div#popup_cont1>form>ul>li:nth-of-type(4){
+	position: relative;
+	top: 0px; left: -95px;
 }
 
-div#popup_cont1>form>ul>li:last-of-type>button{
-	width: 306px;
-	height: 38px;
-	border:none;
-	background: rgb(11,47,127);
-	color: #fff;
+div#popup_cont1>form>ul>li:nth-of-type(4)>label, input[type="checkbox"]{
 	cursor: pointer;
 }
 
-div#popup_cont1>form>ul>li:last-of-type>button:hover{
+div#popup_cont1>form>ul>li:nth-of-type(4)>label{
+	position: relative;
+	top: -3px;
+	left: 5px;
+}
+
+div.popup_cont button{
+	width: 312px;
+	height: 38px;
+	border:none;
+	color: #fff;
+	cursor: pointer;
+	background: red;
+}
+
+div#popup_cont1>form>ul>li:last-of-type>button,
+div#popup_cont99>form>ul>li:last-of-type>button{
+	background: rgb(11,47,127);
+}
+
+div#popup_cont1>form>ul>li:last-of-type>button:hover,
+div#popup_cont99>form>ul>li:last-of-type>button:hover{
 	background: rgb(33,104,177);
 }
 
+div#popup_cont99>form>ul>li:last-of-type{
+	margin-top: 10px;
+}
 
+div.popup_cont>div{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 40px;
+	background: yellow;
+}
+
+div.popup_cont>div:first-of-type{
+	margin-top: 10px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+div.popup_cont>div:first-of-type>span{
+	font-size: 10pt;
+	color: #000;
+	cursor: pointer;
+}
+
+div.popup_cont>div:not(:first-of-type){
+	margin-top: 40px;
+	background: lightgreen;
+}
+
+div.popup_cont hr{
+	border: 0;
+	height: 0.3px;
+	background: #dedede;
+}
+
+div.popup_cont hr+span{
+	display: inline-block;
+	width: 74px;
+	font-size: 10pt;
+	position: absolute;
+	text-align: center;
+	background: #fff;
+}
+
+div.popup_cont hr+span:first-of-type{
+	top: 324px; left: 145px;
+}
+
+div.popup_cont hr+span:not(:first-of-type){
+	top: 478px; left: 145px;
+}
+
+div.popup_cont>div:last-of-type>button{
+	background: #8692A5;
+}
+
+div.popup_cont>div:last-of-type>button:hover{
+	border: 0.7px black solid;
+}
+
+/* X */
 div.login_popup_box>span.material-symbols-outlined{
 	color: #d1d1d1;
 	font-size: 25pt;

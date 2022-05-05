@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="http://localhost:9000/manwol/resources/css/headerFooter.css">
+<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
 <script src="http://localhost:9000/manwol/resources/js/jquery-3.6.0.js"></script>
 <script src="http://localhost:9000/manwol/resources/js/header.js"></script>
 </head>
@@ -21,10 +22,10 @@
 					<li class="dropdown">
 						<a href="#">Shop</a>
 						<div class="dropdown-content">
-							<a href="#">ALL</a>
-							<a href="#">만월 원액</a>
-							<a href="#">만월 굿즈</a>
-							<a href="#">선물하기</a>
+							<a href="http://localhost:9000/manwol/product_all">ALL</a>
+							<a href="http://localhost:9000/manwol/product_base">만월 원액</a>
+							<a href="http://localhost:9000/manwol/product_goods">만월 굿즈</a>
+							<a href="http://localhost:9000/manwol/product_gift">선물하기</a>
 							<a href="#">단체주문</a>
 						</div>
 					</li>
