@@ -64,7 +64,8 @@ div#popup_cont99>form>ul>li:first-of-type{
 }
 
 
-div.popup_cont input[type='text']{
+div.popup_cont input[type='text'],
+div.popup_cont input[type='password']{
 	width: 290px;
 	height: 26px;
 	padding: 6px 10px;
@@ -119,7 +120,6 @@ div.popup_cont>div{
 	align-items: center;
 	justify-content: center;
 	margin-bottom: 40px;
-	background: yellow;
 }
 
 div.popup_cont>div:first-of-type{
@@ -136,7 +136,8 @@ div.popup_cont>div:first-of-type>span{
 	cursor: pointer;
 }
 
-div.popup_cont>div:not(:first-of-type){
+/*얘 때문이었구만*/
+div#popup_cont1>div:not(:first-of-type){
 	margin-top: 40px;
 	background: lightgreen;
 }
@@ -161,7 +162,7 @@ div.popup_cont hr+span:first-of-type{
 }
 
 div.popup_cont hr+span:not(:first-of-type){
-	top: 478px; left: 145px;
+	top: 486px; left: 145px;
 }
 
 div.popup_cont>div:last-of-type>button{
@@ -170,6 +171,10 @@ div.popup_cont>div:last-of-type>button{
 
 div.popup_cont>div:last-of-type>button:hover{
 	border: 0.7px black solid;
+}
+
+div.popup_cont>div:nth-of-type(2)>button:first-of-type{
+	margin-bottom: 10px;
 }
 
 /* X */
@@ -184,4 +189,187 @@ div.login_popup_box>span.material-symbols-outlined{
 
 div.login_popup_box>span.material-symbols-outlined:hover{
 	color: #000;
+}
+
+div#popup_cont2,
+div#popup_cont3{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	display: none;
+}
+
+div#popup_cont2>div:first-of-type,
+div#popup_cont3>div:first-of-type{
+	margin-bottom: 30px;
+}
+
+div.popup_cont>div>h4{
+	position:relative;
+	top: 16px; left: 120px;
+}
+
+div#popup_cont2>div table,
+div#popup_cont3>div table{
+	margin-top: 20px;
+	border-collapse: collapse;
+	border: none;
+}
+
+div#popup_cont2>div td,
+div#popup_cont3>div td{
+	width: 200px;
+	text-align: center;
+	padding: 12px 0;
+	background: white;
+	font-size: 11pt;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+div#popup_cont2>div td:first-of-type{
+	border: 0.7px #0A2155 solid;
+	border-bottom: none;
+	color: #0A2155;
+}
+
+div#popup_cont2>div td:last-of-type{
+	border:none;
+	border-bottom: 0.7px #0A2155 solid;
+	background: #F2F2F2;
+	color: #8c8c8c;
+}
+
+div#popup_cont3>div td:first-of-type{
+	border: 0.7px #0A2155 solid;
+	border-bottom: none;
+	color: #0A2155;
+	border:none;
+	border-bottom: 0.7px #0A2155 solid;
+	background: #F2F2F2;
+	color: #8c8c8c;
+}
+
+div#popup_cont3>div td:last-of-type{
+	border: 0.7px #0A2155 solid;
+	border-bottom: none;
+	color: #0A2155;
+}
+
+div#popup_cont2>div,
+div#popup_cont3>div{
+	margin-bottom: 15px;
+}
+
+div#popup_cont2>div>p{
+	font-size: 10pt;
+	color: #a9a9a9;
+}
+
+div#popup_cont2 ul>li{
+	margin-bottom: 15px;
+}
+div#popup_cont2 form li>input:first-of-type,
+div#popup_cont2 form label,
+div#popup_cont3 form input{
+	margin-bottom: 15px;
+}
+div#popup_cont2 form li:first-of-type>input:last-of-type,
+div#popup_cont2 form li:nth-of-type(2)>input:last-of-type{
+	margin-bottom: 10px;
+}
+
+div#popup_cont2 form label{
+	position: relative;
+	top: -3px;
+}
+
+div#popup_cont2 form button#findIDButton,
+div#popup_cont3 form button#findPWButton,
+div#popup_cont4 table p.backToLogin,
+div#popup_cont5 form button,
+div#popup_cont6 table p.backToLogin{
+	background: #fff;
+	border: 1px rgb(11,47,127) solid;
+	color: rgb(11,47,127);
+}
+
+div#popup_cont2 form button#findIDButton:hover,
+div#popup_cont3 form button#findPWButton:hover,
+div#popup_cont4 table p.backToLogin:hover,
+div#popup_cont5 form button:hover,
+div#popup_cont6 table p.backToLogin:hover{
+	background: rgb(11,47,127);
+	border: 1px rgb(11,47,127) solid;
+	color: #fff;
+}
+
+div#popup_cont4 div:nth-of-type(2),
+div#popup_cont6 div:nth-of-type(2){
+	margin-top: 20px;
+}
+div#popup_cont4 div:nth-of-type(2),
+div#popup_cont4 div:last-of-type,
+div#popup_cont6 div:nth-of-type(2){
+	align-items: baseline;
+	font-size: 11pt;
+	color: #333;
+}
+
+div#popup_cont4 div:nth-of-type(2)>p:last-of-type,
+div#popup_cont6 div:nth-of-type(2)>p:last-of-type{
+	font-weight: bold;
+}
+
+div#popup_cont4 div:last-of-type{
+	color: rgb(17,142,255);
+	cursor: pointer;
+}
+
+div#popup_cont4 div:nth-of-type(3){
+	margin: 5px 0;
+	position: relative;
+	top: -5px;
+}
+
+div#popup_cont4 table,
+div#popup_cont6 table{
+	text-align: center;
+}
+
+div#popup_cont4 table p,
+div#popup_cont6 table p{
+	width: 135px; 
+	margin: 0 4px;
+	padding: 10px ;
+	cursor: pointer;
+	font-size: 11pt;
+	font-weight: bold;
+}
+
+div#popup_cont4 table td:first-of-type p,
+div#popup_cont6 table td:first-of-type p {
+	background: #f2f2f2;
+	color: #878787;
+}
+
+div#popup_cont5 form,
+div#popup_cont5 form button{
+	margin-top: 20px;
+}
+
+div#popup_cont5 div:last-of-type {
+	font-size: 10pt;
+	position: relative;
+	top: -30px;
+}
+
+div#popup_cont5 div:last-of-type>p>span{
+	color: rgb(17,142,255);
+}
+	
+div#popup_cont5 form input[type='password']{
+	border: none;
+	border-bottom: 1px #d9d9d9 solid;
 }
