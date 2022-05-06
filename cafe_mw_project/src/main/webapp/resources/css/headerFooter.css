@@ -2,7 +2,8 @@
 
 *{
 	margin: 0; padding: 0;
-	font-family: 'NanumSquare';
+	/* font-family: 'NanumSquare'; */
+	font-family: 궁서;
 	}
 li{list-style-type: none;}
 a[href] {text-decoration: none;}
