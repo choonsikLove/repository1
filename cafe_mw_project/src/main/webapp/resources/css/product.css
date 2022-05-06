@@ -10,7 +10,8 @@ body,html{
 	.category {
       display: flex;
 	  justify-content: center;
-	  padding: 30px 0;	  
+	  margin-bottom:10px;
+	  padding: 45px 0 10px 0;	  
       }   
       
 	.category span {
@@ -38,18 +39,17 @@ body,html{
 		content: "";
 		flex-grow: 1;
 		background: #F2F2F2;
-		height: 1px;
+		height: 1.2px;
 		font-size: 0px;
 		line-height: 0px;
-		margin: 0px 13%;
 	}
+	
 	.contents {
 	  display: flex;
-	  flex-direction: row;
-      flex-wrap: wrap;
-	  justify-content: center;
+	  justify-content: center; 
 	  align-items: center;
-	  padding: 0px 10% 50px 10%;  
+	  margin: 20px 0px;
+	 
 	}
 	strong{font-size: 15px; color: black; }
 	.contents1{
@@ -59,8 +59,12 @@ body,html{
 		margin: 50px 10px 30px 10px;
 	}
 	.contents3{
-		margin: 0px 10px 30px 10px;
+		margin: 0px 10px 31px 10px;
 	}
+	.contents4{
+		margin: 0px 10px 13px 10px;
+	}
+
 
 /* 	<%--이미지 눌렀을때 불투명하게 --%> */
 	.re {
@@ -82,6 +86,7 @@ body,html{
 	.contents1 p {font-size: 12px; margin: 7px 0;}
 	.contents2 p {font-size: 12px; margin: 7px 0;}
 	.contents3 p {font-size: 12px; margin: 7px 0;}
+	.contents4 p {font-size: 12px; margin: 7px 0;}
 	
 	.material-symbols-outlined {
 	  font-variation-settings:
@@ -89,5 +94,4 @@ body,html{
 	  'wght' 300,
 	  'GRAD' 0,
 	  'opsz' 30
-		}	
-	
+		}

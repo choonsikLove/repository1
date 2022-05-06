@@ -10,7 +10,16 @@
 
 <style type="text/css">
 
-	.var{margin:60px 0 20px 15.5%; font-size: 12px; color: gray;}
+body,html{
+    width: 100%;
+}	
+
+.content{	display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 }
+	 
+	.var{margin:60px 12.5% 20px 12.5%; font-size: 12px; color: gray;}
 	.h{color: gray;}
 	.a{color: black;}
 	.jm{
@@ -19,6 +28,7 @@
 		 margin-bottom: 60px;
 		}
 	.img{padding: 0 100px;}
+	.jmhk{margin-bottom: 170px;}
 	.k{padding: 0 0 20px 0; border-bottom: 1px solid lightgray;}
 	.k p{font-size: 22px; margin-bottom: 5px;}
 	.k_price{color: #0042A9;}
@@ -55,15 +65,23 @@
 	<jsp:include page="../header.jsp"></jsp:include>
 	
 	<!-- content -->
-	<div class="var">
-		<a href="#" class="h">Home</a>  >   <a href="http://localhost:9000/manwol/product_all.do" class="h">ALL</a>   
-	</div>
+	<table class="content">
+	<tr>
+		<td>
+			<div class="var">
+				<a href="#" class="h">Home</a>  >   <a href="http://localhost:9000/manwol/product_all.do" class="a">ALL</a>   
+			</div>
+		</td>
+	</tr>	
 	
-	<section class="jm">
-  		<div class="img">
-  			<img alt="만월회 단체주문" src="http://localhost:9000/manwol/resources/images/만월회 단체주문.jpg" height="600px" width="600px">
-  		</div>
+	<tr>
+		<td class="jm">
+	  		<div class="img">
+	  			<img alt="만월회 단체주문" src="http://localhost:9000/manwol/resources/images/만월회 단체주문.jpg" height="600px" width="600px">
+	  		</div>
+  		</td>
   	
+  		<td>
   		<div class="jmhk">
   			<div class="k">
   				<p>만월회 단체주문</p>
@@ -100,22 +118,9 @@
   			<button class="btn" type="button"><span class="material-symbols-outlined" style="font-size: 15px">favorite</span>1</button>
   			</div>
   		</div> 
-	</section>
-	
-  <!--  
-   <aside class="aside">
-  	 	<h4>배송안내</h4><br>
-   
- 		<li>우체국택배로 전국 어디든 배송해드립니다(익일 배송이 어려운 제주도 및 산간지역 제외)<br></li>
-	    <li>꽃은 묶음배송이 불가하여, 1개당 배송비가 각각 추가됩니다<br></li>
-	    <li>택배는 지역마다 도착시간이 다르므로, 시간을 지정할 수 없습니다<br></li>
-	    <li>꽃 발송 당일에 운송장번호와 꽃 안내를 문자로 보내드립니다<br></li>
- 		<img src="img/배송.jpg" width="1100px" height="700"> <br><br>
-   		<br><br><br>
-   		<img src="img/정기배송1.jpg" width="900px" height="600"> <br><br>
-   		<img src="img/정기배송2.jpg" width="900px" height="600">
-   </aside>
-   -->
+	</td>
+	<tr>
+	</table>
 
 	
 	<!--  footer -->
