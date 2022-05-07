@@ -12,7 +12,6 @@ public class ProductController {
       
       return "/product/product_all";
    }
-   
 
    @RequestMapping(value="/product_goods", method=RequestMethod.GET)
    public String product_goods() {
