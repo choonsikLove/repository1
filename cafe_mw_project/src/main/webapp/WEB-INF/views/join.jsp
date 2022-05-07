@@ -130,6 +130,7 @@
 		padding: 20px;
 		border-radius: 5px;
 		box-shadow: rgba(0,0,0,0.6);
+		display: none;
 	}
 	.tos_box{
 		padding: 5px 0px 0px 5px;
@@ -175,12 +176,6 @@
 	
 	
 	/* 화면3 */
-	.join_circle{color: red; font-size: 22px;}
-	#recCodeBox{
-		background: lightgray; border-left: 3px blue solid;
-		padding: 15px; margin-bottom: 10px;
-		
-		}
 	#join_inner_3{
 		background: white;
 		position:relative;
@@ -190,7 +185,13 @@
 		padding: 20px;
 		border-radius: 5px;
 		box-shadow: rgba(0,0,0,0.6);
+		display: none;
 	}
+	.join_circle{color: red; font-size: 22px;}
+	#recCodeBox{
+		background: lightgray; border-left: 3px blue solid;
+		padding: 15px; margin-bottom: 10px;
+		}
 	#profile_img{
 		border-radius: 50px;
 		margin: 10px;

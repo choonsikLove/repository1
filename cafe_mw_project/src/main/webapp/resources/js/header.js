@@ -5,9 +5,24 @@ $('#login').click(function(){
 	$('#popup').css("display","block");
 });
 
+/*		JOIN 클릭시		*/
 $('#join').click(function(){
 	$('#join_outer').css("display","block");
 	$('#join_inner_1').css("display","block");
+});
+
+/*		다른 메일로 가입하기 클릭시		*/
+$('#mail_join').click(function(){
+	$('#join_outer').css("display","block");
+	$('#join_inner_1').css("display","none");
+	$('#join_inner_2').css("display","block");
+});
+
+/*		약관동의-가입하기 클릭시		*/
+$('#join_agree').click(function(){
+	$('#join_outer').css("display","block");
+	$('#join_inner_2').css("display","none");
+	$('#join_inner_3').css("display","block");
 });
 
 /*		끄기1		*/
@@ -20,6 +35,13 @@ $('#closeX').click(function(){
 	$('#popup_cont1').css("display","block");
 });
 
+/*		끄기2		*/
+$('.modal_exit').click(function(){
+	$('#join_outer').css("display","none");
+	$('#join_inner_1').css("display","none");
+	$('#join_inner_2').css("display","none");
+	$('#join_inner_3').css("display","none");
+});
 
 /* 다음페이지로 넘어가는 기능*/
 /* 비회원 주문 배송 */
