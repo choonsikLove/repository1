@@ -5,6 +5,10 @@ $('#login').click(function(){
 	$('#popup').css("display","block");
 });
 
+$('#join').click(function(){
+	$('#join_outer').css("display","block");
+	$('#join_inner_1').css("display","block");
+});
 
 /*		끄기1		*/
 $('#closeX').click(function(){
