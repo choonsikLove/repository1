@@ -8,6 +8,13 @@ hr.adminHr{
 	border: 1px #e7e7e7 solid;
 }
 
+hr.adminHr+div{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #F2F2F2;
+}
+
 div.adminWrap{ /*css 합칠 때 곤란할 것 같아서 div로 나눴음 */
 	background: #F2F2F2;
 	display: flex;
@@ -17,7 +24,7 @@ div.adminWrap{ /*css 합칠 때 곤란할 것 같아서 div로 나눴음 */
 }
 
 div.adminWrap>div{
-	width: 63em; height: 240px;
+	width: 62em; height: 240px;
 	margin-top: 50px;
 	margin-left: 200px;
 	display: flex;
@@ -30,7 +37,8 @@ div.adminWrap>div:first-of-type {
 	background: #fff;
 }
 
-div.adminWrap>div.welcome>div>img{
+div.adminWrap>div.welcome>div>img,
+div.adminWrap>div:nth-of-type(2)>div>img{
 	border-radius: 50%;
 	/* border:1px black solid; */
 	width: 90px; height: 90px;
@@ -67,4 +75,147 @@ div.adminWrap>div:not(:first-of-type)>ul>li:hover{
 div.adminWrap>div:not(:first-of-type)>ul>li>a{
 	display: block;
 	color:#fff;
+}
+
+div.adminWrap>div.member_table{
+	height: 500px;
+}
+
+div.member_table table{
+	border-collapse: collapse;
+	text-align: center;
+	width: 63em;
+	border: none;
+	border-top: 1px black solid;
+}
+
+div.member_table table tr{
+	height: 40px;
+}
+
+div.member_table table tr td{
+	border: none;
+	border-bottom: 1px black solid;
+}
+
+div.member_table table tr:last-of-type td,
+div.member_table table tr:nth-of-type(12) td{
+	border:none;
+}
+
+div.member_table table tr:nth-of-type(12) td{
+	padding-top: 20px;
+}
+
+div.member_table table input[type='text'],
+div.memberInfo+div table input[type='text']{
+	width: 180px; height: 30px;
+	border: none;
+	border-bottom: 1px black solid;
+	background: transparent;
+	padding-right: 20px;
+}
+
+div.member_table table span,
+div.memberInfo+div table span{
+	position: relative;
+	top: 11px; left: -25px;
+}
+
+div.member_table table tr td:nth-of-type(2),
+div.member_table table tr td:nth-of-type(3) {
+	cursor: pointer;
+}
+
+hr.adminHr+div>div:first-of-type{
+	width: 150px; height: 300px;
+	position: absolute;
+	top: 236px; left:43px;
+}
+
+hr.adminHr+div>div:first-of-type ul li{
+	margin-bottom: 12px;
+}
+hr.adminHr+div>div:first-of-type ul li a{
+	color: black;
+	font-size: 10pt;
+}
+
+
+div.memberInfo>div:nth-of-type(2) {
+	width: 53em; height: 100%;
+}
+
+div.memberInfo>div:nth-of-type(2) table{
+	width: 100%; height: 100%;
+	text-align: center;
+	border-collapse: collapse;
+	border:none;
+}
+div.memberInfo{
+	background: #fff;
+}
+
+div.memberInfo>div:nth-of-type(2) table tr{
+	border: none;
+}
+div.memberInfo>div:nth-of-type(2) table tr td{
+	border: none;
+	border-bottom: #e4e4e4 1px solid;
+	border-right: #e4e4e4 1px solid;
+}
+
+div.memberInfo>div:nth-of-type(2) table tr td:last-of-type{
+	border-right: none;
+}
+div.memberInfo>div:nth-of-type(2) table tr:nth-of-type(5) td:first-of-type,
+div.memberInfo>div:nth-of-type(2) table tr:last-of-type td{
+	border-bottom: none;	
+}
+
+div.memberInfo>div:nth-of-type(2) table tr td:first-of-type,
+div.memberInfo>div:nth-of-type(2) table tr td:nth-of-type(3) {
+	background: #e4e4e4;
+}	
+
+div.memberInfo>div:nth-of-type(2) table tr:last-of-type td,
+div.memberInfo>div:nth-of-type(2) table tr:nth-of-type(5) td:last-of-type{
+	background: #fff;
+}
+
+div.memberInfo+div p{
+	position: absolute;
+	top: 835px;
+}
+
+div.memberInfo+div table{
+	background: white;
+	width: 68em;
+	font-size: 11pt;
+	border-collapse: collapse;
+	border: none;
+}
+
+div.memberInfo+div table tr td{
+	padding: 5px 3px;
+	border: none;
+}
+
+div.memberInfo+div table tr{
+	border: none;
+}
+
+div.memberInfo+div table tr td:first-of-type {
+	text-align: left;
+}
+
+div.memberInfo+div table tr td:last-of-type,
+div.memberInfo+div table tr td:nth-of-type(2) {
+	text-align: right;
+}
+
+div.memberInfo+div table tr:last-of-type td,
+div.memberInfo+div table tr:nth-of-type(6) td{
+	text-align: center;
+	background: #F2F2F2;
 }

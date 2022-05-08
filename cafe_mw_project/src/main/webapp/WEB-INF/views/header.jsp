@@ -72,6 +72,7 @@
 	</div>
 	
 	<jsp:include page="kim_login_test.jsp"></jsp:include>
+	
 	<jsp:include page="join.jsp"></jsp:include>
 </header>
 
