@@ -235,12 +235,12 @@
 			</div>
 			<br> 
 			<label>
-				<input type='checkbox' class='tos_check'> SMS 수신 동의 
+				<input type='checkbox' name='smsReceive' class='tos_check'> SMS 수신 동의 
 				<font color='gray'>(선택)</font>
 			</label>
 			<br> 
 			<label>
-				<input type='checkbox' class='tos_check'> E-Mail 수신 동의 
+				<input type='checkbox' name='emaolReceive' class='tos_check'> E-Mail 수신 동의 
 				<font color='gray'>(선택)</font>
 			</label>
 			<br> 
