@@ -997,7 +997,7 @@ margin-right: 10px;
 									< &emsp;1&emsp;2&emsp;3&emsp;4&emsp;5&emsp;6&emsp;7&emsp;8&emsp; >
 								</div>
 								 
-								<div class="bt_write" style="margin-left: 1138px;">
+								<div class="bt_write" style="margin-left: 1138px; margin-top: -2%;">
 									<a href="write.html" class="on">구매평 작성</a>
 								</div>						
 							</td>
