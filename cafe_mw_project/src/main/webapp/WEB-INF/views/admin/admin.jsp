@@ -10,6 +10,18 @@
 <body>
 	<jsp:include page="../header.jsp"></jsp:include>
 	<hr class="adminHr">
+
+<div>
+	<div>
+		<nav>
+		 	<ul>
+				<li><a href="http://localhost:9000/manwol/admin/member_list">회원 관리</a></li>
+				<li><a href="http://localhost:9000/manwol/admin/product_list">상품 관리</a></li>
+				<li><a href="#">주문 관리</a></li>
+				<li><a href="#">Review 관리</a></li>
+		 	</ul>
+		</nav>
+	</div>
 	
 	<div class="adminWrap">
 		
@@ -32,7 +44,7 @@
 			</ul>
 		</div>
 	</div>
-	
+</div>	
 	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>
