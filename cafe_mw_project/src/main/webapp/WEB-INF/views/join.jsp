@@ -17,7 +17,7 @@
 		}
 
 </script>
-<link rel="stylesheet" href="http://localhost:9000/manwol/resources/css/kim_login_test.css">
+<link rel="stylesheet" href="http://localhost:9000/manwol/resources/css/join.css">
 </head>
 <body>
 	<div id='join_outer'>
