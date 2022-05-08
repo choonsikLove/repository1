@@ -1,34 +1,49 @@
 $(document).ready(function(){
+	/*		JOIN 클릭시		*/
+	$('#join').click(function(){
+		$('#join_outer').css("display","block");
+		$('#join_inner_1').css("display","block");
+	});
+	
+	/*		다른 메일로 가입하기 클릭시		*/
+	$('#mail_join').click(function(){
+		$('#join_outer').css("display","block");
+		$('#join_inner_1').css("display","none");
+		$('#join_inner_2').css("display","block");
+	});
+	
+	/*		약관동의-가입하기 클릭시		*/
+	$('#join_agree').click(function(){
+		$('#join_outer').css("display","block");
+		$('#join_inner_2').css("display","none");
+		$('#join_inner_3').css("display","block");
+	});
+	
+	
+	/*		끄기2		*/
+	$('.modal_exit').click(function(){
+		$('#join_outer').css("display","none");
+		$('#join_inner_1').css("display","none");
+		$('#join_inner_2').css("display","none");
+		$('#join_inner_3').css("display","none");
+	});
+	
+	/*		끄기3	*	/
+	$('#join_cancel').click(function(){
+		$('#join_outer').css("display","none");
+		$('#join_inner_2').css("display","none");
+	});
+	
+	/*		X에 마우스 올라갈 때		*/
+	$('.modal_exit').mouseenter(function(){
+		$('.modal_exit_ex').css("display","block");
+	});
 
-/*		JOIN 클릭시		*/
-$('#join').click(function(){
-	$('#join_outer').css("display","block");
-	$('#join_inner_1').css("display","block");
+	/*		X에서 마우스 벗어날 때		*/
+	$('.modal_exit').mouseleave(function(){
+		$('.modal_exit_ex').css("display","none");
+	});
 });
-
-/*		다른 메일로 가입하기 클릭시		*/
-$('#mail_join').click(function(){
-	$('#join_outer').css("display","block");
-	$('#join_inner_1').css("display","none");
-	$('#join_inner_2').css("display","block");
-});
-
-/*		약관동의-가입하기 클릭시		*/
-$('#join_agree').click(function(){
-	$('#join_outer').css("display","block");
-	$('#join_inner_2').css("display","none");
-	$('#join_inner_3').css("display","block");
-});
-
-
-/*		끄기2		*/
-$('.modal_exit').click(function(){
-	$('#join_outer').css("display","none");
-	$('#join_inner_1').css("display","none");
-	$('#join_inner_2').css("display","none");
-	$('#join_inner_3').css("display","none");
-});
-})
 
 
 $(document).ready(function(){

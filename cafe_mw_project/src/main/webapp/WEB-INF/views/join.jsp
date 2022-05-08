@@ -15,7 +15,7 @@
 		    checkbox.checked = selectAll.checked
 		  })
 		}
-
+	
 </script>
 <link rel="stylesheet" href="http://localhost:9000/manwol/resources/css/join.css">
 </head>
@@ -216,7 +216,7 @@ ID, 성명, 비밀번호, 주소, 휴대폰 번호, 이메일, 14세 미만 가�
 			<div class='modal_exit'>&#215;</div>
 			<div class='modal_exit_ex'>닫기</div>
 			<h2 class='join_title'>회원가입</h2>
-			<div><img id='profile_img'alt='프로필 이미지' name='profile_img_upload' src='http://localhost:9000/manwol/resources/images/default_profile.png' height='100' width='100'></div>
+			<div><img id='profile_img'alt='프로필 이미지' name='profile_img_upload' src='http://localhost:9000/manwol/resources/images/default_profile.png'></div>
 			<div id='recCodeBox'>&#x025FC;추천인코드 입력하면 1,000원 즉시 적립!</div>
 			<h3>본인인증</h3>
 			<span class='join_Id_Check'>휴대폰 인증</span>

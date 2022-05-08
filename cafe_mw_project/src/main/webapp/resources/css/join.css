@@ -15,7 +15,7 @@
 		color: lightgray;
 		font-size: 40px;
 		position: absolute;
-		left: 340px;
+		left: 350px;
 		top: -5px;
 	}
 	.modal_exit:hover{
@@ -34,11 +34,11 @@
 		text-align: center;
 		width: 40px;
 		height: 15px;
-		left: 335px;
+		left: 345px;
 		top: 40px;
 		border-radius: 5px;
 		font-size: 12px;
-		padding-bottom: 5px;
+		display: none;
 	}
 	
 	/* È­¸é1 */
@@ -113,7 +113,7 @@
 		background: white;
 		position:relative;
 		width: 350px;
-		height: 910px;
+		height: 880px;
 		margin: 50px auto;
 		padding: 20px;
 		border-radius: 5px;
@@ -140,7 +140,7 @@
 		height: 40px;
 		border: 1px solid black;
 		text-align: center;
-		padding: 10px 0 0 0;
+		padding: 13px 0 0 0;
 	}
 	#join_agree{
 		float: right;
@@ -168,7 +168,7 @@
 		background: white;
 		position:relative;
 		width: 350px;
-		height: 840px;
+		height: 880px;
 		margin: 50px auto;
 		padding: 20px;
 		border-radius: 5px;
@@ -181,6 +181,8 @@
 		padding: 15px; margin-bottom: 10px;
 		}
 	#profile_img{
+		width: 100px;
+		height: 100px;
 		border-radius: 50px;
 		margin: 10px;
 		margin-left: 125px;
