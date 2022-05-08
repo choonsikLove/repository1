@@ -43,7 +43,7 @@
 			<label><input type='checkbox' class='tos_check' id='join_select-all' onclick='selectAll(this)'> 이용약관, 개인정보 수집 및 이용에 모두 동의합니다.</label>
 			<br>
 			<br>
-			<label><input type='checkbox' class='tos_check'> 이용약관 동의 <font color='red'>(필수)</font></label>
+			<label><input type='checkbox' id='agree1' class='tos_check'> 이용약관 동의 <font color='red'>(필수)</font></label>
 			<br>
 			<div class='tos_box'><pre>
 제1조 목적
@@ -175,7 +175,7 @@
 이 약관은 &lt;사이트 개설일&gt; 부터 시행합니다.
 			</pre></div>
 			<br>
-			<label><input type='checkbox' class='tos_check'> 개인정보 수집 및 이용 동의 <font color='red'>(필수)</font></label>
+			<label><input type='checkbox' id='agree2' class='tos_check'> 개인정보 수집 및 이용 동의 <font color='red'>(필수)</font></label>
 			<br>
 			<div class='tos_box'><pre>
 1. 개인정보 수집목적 및 이용목적
@@ -202,9 +202,9 @@ ID, 성명, 비밀번호, 주소, 휴대폰 번호, 이메일, 14세 미만 가�
 서비스와 관련된 신상품 소식, 이벤트 안내, 고객 혜택 등 다양한 정보를 제공합니다.			
 			</pre></div>
 			<br>
-			<label><input type='checkbox' class='tos_check'> SMS 수신 동의 <font color='gray'>(선택)</font></label>
+			<label><input type='checkbox' name='smsReceive' class='tos_check'> SMS 수신 동의 <font color='gray'>(선택)</font></label>
 			<br>
-			<label><input type='checkbox' class='tos_check'> E-Mail 수신 동의 <font color='gray'>(선택)</font></label>
+			<label><input type='checkbox' name='emailReceive' class='tos_check'> E-Mail 수신 동의 <font color='gray'>(선택)</font></label>
 			<br>
 			<br>
 			<span class='join_inner_2_btn' id='join_cancel'>취소</span>
@@ -219,6 +219,7 @@ ID, 성명, 비밀번호, 주소, 휴대폰 번호, 이메일, 14세 미만 가�
 			<div><img id='profile_img'alt='프로필 이미지' name='profile_img_upload' src='http://localhost:9000/manwol/resources/images/default_profile.png'></div>
 			<div id='recCodeBox'>&#x025FC;추천인코드 입력하면 1,000원 즉시 적립!</div>
 			<h3>본인인증</h3>
+			<br>
 			<span class='join_Id_Check'>휴대폰 인증</span>
 			<span class='join_Id_Check'>간편 인증</span>
 			<form>

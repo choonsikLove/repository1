@@ -14,9 +14,33 @@ $(document).ready(function(){
 	
 	/*		약관동의-가입하기 클릭시		*/
 	$('#join_agree').click(function(){
-		$('#join_outer').css("display","block");
-		$('#join_inner_2').css("display","none");
-		$('#join_inner_3').css("display","block");
+		if($('#agree1').is(':checked')){
+			if($('#agree2').is(':checked')){
+				$('#join_outer').css("display","block");
+				$('#join_inner_2').css("display","none");
+				$('#join_inner_3').css("display","block");
+			}
+		}else{
+			alert("이용약관 및 개인정보 처리방침에 동의하셔야 가입이 가능합니다.");
+		}
+	});
+	
+	
+	/*		외부클릭 끄기		*/
+	$('#join_inner_1').off().mouseout(function(){
+		$('#join_outer').off().click(function(){
+			alert("마우스가 나가있는 상태로 아우터를 클릭");
+		});
+	});
+	$('#join_inner_1').mouseenter(function(){
+		$('#join_outer').click(function(){
+		
+		});
+		$('#join_inner_1').click(function(){
+		
+		});
+		
+		
 	});
 	
 	
@@ -28,10 +52,12 @@ $(document).ready(function(){
 		$('#join_inner_3').css("display","none");
 	});
 	
-	/*		끄기3	*	/
+	/*		끄기3		*/
 	$('#join_cancel').click(function(){
 		$('#join_outer').css("display","none");
+		$('#join_inner_1').css("display","none");
 		$('#join_inner_2').css("display","none");
+		$('#join_inner_3').css("display","none");
 	});
 	
 	/*		X에 마우스 올라갈 때		*/

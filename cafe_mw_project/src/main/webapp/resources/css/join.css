@@ -3,11 +3,11 @@
 		background: rgba(0,0,0,0.4);
 		top: 0;
 		left: 0;
-		position: absolute;
+		position: fixed;
 		width: 100%;
 		height: 100%;
 		padding-top: 10px;
-		z-index: 1000;
+		z-index: 5;
 		display: none;
 	}
 	.join_title{text-align: center; margin-bottom: 10px;}
@@ -52,6 +52,7 @@
 		border-radius: 5px;
 		box-shadow: rgba(0,0,0,0.6);
 		display: none;
+		z-index: 10;
 	}
 	#mail_join{
 		width: 350px;
@@ -119,6 +120,7 @@
 		border-radius: 5px;
 		box-shadow: rgba(0,0,0,0.6);
 		display: none;
+		z-index: 10;
 	}
 	.tos_box{
 		padding: 5px 0px 0px 5px;
@@ -168,12 +170,13 @@
 		background: white;
 		position:relative;
 		width: 350px;
-		height: 880px;
+		height: 920px;
 		margin: 50px auto;
 		padding: 20px;
 		border-radius: 5px;
 		box-shadow: rgba(0,0,0,0.6);
 		display: none;
+		z-index: 10;
 	}
 	.join_circle{color: red; font-size: 22px;}
 	#recCodeBox{
@@ -188,12 +191,12 @@
 		margin-left: 125px;
 	}
 	.join_table{
-		margin-bottom: 10px;
+		margin: 10px 0 20px 0;
 	}
 	#join_submit{
 		width: 355px;
 		height: 40px;
-		background: blue;
+		background: rgb(11,47,127);
 		color: white;
 		font-size: 15px;
 		border: none;
