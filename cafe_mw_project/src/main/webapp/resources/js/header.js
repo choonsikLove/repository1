@@ -29,7 +29,6 @@ $(document).ready(function(){
 	/*		외부클릭 끄기		*/
 	$('#join_inner_1').off().mouseout(function(){
 		$('#join_outer').off().click(function(){
-			alert("마우스가 나가있는 상태로 아우터를 클릭");
 		});
 	});
 	$('#join_inner_1').mouseenter(function(){
