@@ -32,7 +32,7 @@ public class ProductController {
    } 
    
    @RequestMapping(value="/product_detail", method=RequestMethod.GET)
-   public String product_detail() {
+   public String product_detail2() {
          
       return "/product/product_detail";
    } 

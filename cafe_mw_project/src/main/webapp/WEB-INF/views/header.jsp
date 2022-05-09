@@ -20,13 +20,13 @@
 					<li class="mainpage"><a href="http://localhost:9000/manwol/index">카페 만월회</a></li>
 					<li><a href="#">첫 구매라면?</a></li>
 					<li class="dropdown">
-						<a href="#">Shop</a>
+						<a href="http://localhost:9000/manwol/product_all">Shop</a>
 						<div class="dropdown-content">
 							<a href="http://localhost:9000/manwol/product_all">ALL</a>
 							<a href="http://localhost:9000/manwol/product_base">만월 원액</a>
 							<a href="http://localhost:9000/manwol/product_goods">만월 굿즈</a>
 							<a href="http://localhost:9000/manwol/product_gift">선물하기</a>
-							<a href="#">단체주문</a>
+							<a href="http://localhost:9000/manwol/product_group_order2">단체주문</a>
 						</div>
 					</li>
 					<li class="dropdown">
@@ -41,7 +41,7 @@
 						<a href="#">Review</a>
 						<div class="dropdown-content">
 							<a href="#">레시피북</a>
-							<a href="#">Review</a>
+							<a href="http://localhost:9000/manwol/review">Review</a>
 						</div>
 					</li>
 					<li class="dropdown">

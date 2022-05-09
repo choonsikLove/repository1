@@ -5,6 +5,7 @@
 	
 body,html{
     width: 100%;
+    
 }	
 	
 	.category {
@@ -39,7 +40,7 @@ body,html{
 		content: "";
 		flex-grow: 1;
 		background: #F2F2F2;
-		height: 1.2px;
+		height: 1.5px;
 		font-size: 0px;
 		line-height: 0px;
 	}
@@ -88,10 +89,11 @@ body,html{
 	.contents3 p {font-size: 12px; margin: 7px 0;}
 	.contents4 p {font-size: 12px; margin: 7px 0;}
 	
-	.material-symbols-outlined {
+	.material-symbols-outlined{
 	  font-variation-settings:
 	  'FILL' 0,
 	  'wght' 300,
 	  'GRAD' 0,
 	  'opsz' 30
 		}
+		
