@@ -110,6 +110,19 @@ div#popup_cont99>form>ul>li:last-of-type>button:hover{
 	background: rgb(33,104,177);
 }
 
+div#popup_cont1 button{
+	font-weight: bold;
+}
+
+div#popup_cont1>div:nth-of-type(2) button:first-of-type{
+	background: #66D05D;
+}
+
+div#popup_cont1>div:nth-of-type(2) button:last-of-type{
+	background: #FCEC4F;
+	color: #3A1D1D;
+}
+
 div#popup_cont99>form>ul>li:last-of-type{
 	margin-top: 10px;
 }
@@ -139,7 +152,6 @@ div.popup_cont>div:first-of-type>span{
 /*얘 때문이었구만*/
 div#popup_cont1>div:not(:first-of-type){
 	margin-top: 40px;
-	background: lightgreen;
 }
 
 div.popup_cont hr{

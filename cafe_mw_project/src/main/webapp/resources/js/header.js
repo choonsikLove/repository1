@@ -175,3 +175,11 @@ $(document).on("click", "#findPWButton", function(){
 	$('.login_popup_box').css({"height":"250px",'top':'28%'});
 	$('#popup_cont6').css("display","block");
 });
+
+$(document).on("click", "#toJoin", function(){
+	$('.popup_cont').css("display","none");
+	$('#popup').css("display","none");
+	$('#join_outer').css("display","block");
+	$('#join_inner_1').css("display","block");
+});
+

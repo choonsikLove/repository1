@@ -29,14 +29,14 @@
 				</ul>
 			</form>
 			<div>
-				<span>회원가입</span>
+				<span id="toJoin">회원가입</span>
 				<span id="findIDPW">아이디·비밀번호 찾기</span>
 			</div>
 			<hr>
 			<span>또는</span>
 			<div>
-				<button>넹이버</button>
-				<button>카카오톡</button>
+				<button>네이버로 시작하기</button>
+				<button>카카오로 시작하기</button>
 			</div>
 			<hr>
 			<span>또는</span>
