@@ -40,7 +40,7 @@
 				<tr>
 				   <td>
 					 <div class="contents2">
-						  <a href="#"><img class="re" alt="리겔: 눈금 계량컵" src="http://localhost:9000/manwol/resources/images/리겔 눈금 계량컵.png" height="400px" width="400px"></a> 
+						  <a href="#"><img class="re" alt="리겔: 눈금 계량컵" src="http://localhost:9000/manwol/resources/images/product/리겔 눈금 계량컵.png" height="400px" width="400px"></a> 
 		                  <p><a href="#"><strong>리겔: 눈금 계량컵</strong></a></p>                 
 		                  <p>19,900원</p>
 		                  <p>
@@ -52,7 +52,7 @@
                
           	   		<td>
 					  <div class="contents2">
-						  <a href="#"><img class="re" alt="카프: 우유곽 글라스" src="http://localhost:9000/manwol/resources/images/카프 우유곽 글라스.png" height="400px" width="400px"></a> 
+						  <a href="#"><img class="re" alt="카프: 우유곽 글라스" src="http://localhost:9000/manwol/resources/images/product/카프 우유곽 글라스.png" height="400px" width="400px"></a> 
 		                  <p><a href="#"><strong>카프: 우유곽 글라스</strong></a></p>                
 		                  <p>8,000원</p>
 		                  <p>
@@ -64,7 +64,7 @@
 					
 					<td>
 					  <div class="contents2">
-						  <a href="#"><img  class="re" alt="베가: 미니계량컵" src="http://localhost:9000/manwol/resources/images/베가 미니계량컵.png" height="400px" width="400px"></a> 
+						  <a href="#"><img  class="re" alt="베가: 미니계량컵" src="http://localhost:9000/manwol/resources/images/product/베가 미니계량컵.png" height="400px" width="400px"></a> 
 		                  <p><a href="#"><strong>베가: 미니계량컵</strong></a></p>               
 		                  <p>2,500원</p>
 		                  <p>

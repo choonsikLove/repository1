@@ -27,8 +27,9 @@ table {
 }    
     
 /* 카테고리 */ 
-.var{margin:60px 0 20px 0; font-size: 12px;}   
+.var{margin:60px 0 20px 0; font-size: 12px; cursor:pointer;}   
 .home{color: gray;}
+.home:hover{color: black;}
 .all{color: black;}
 
 
@@ -72,8 +73,9 @@ table {
 }
 .product_detail_option{
 	margin-bottom: 20px; 
-	width: 550px; 
+	width: 566.5px; 
 	height: 30px;
+	cursor: pointer;
 }
 h4{font-size: 14px; margin-bottom: 5px;}
 
@@ -88,8 +90,8 @@ h4{font-size: 14px; margin-bottom: 5px;}
 	font-size: 15px;
 	color: #FFFFFF;
 	cursor: pointer;
-	width: 178px;
-	margin: 15px 10px 10px 0px; 
+	width: 180px;
+	margin: 15px 12.7px 10px 0px; 
 }   
 .btn2{
 	display: block;
@@ -99,14 +101,28 @@ h4{font-size: 14px; margin-bottom: 5px;}
 	font-size: 15px;
 	color: #000000;
 	cursor: pointer;
-	width: 178px;
-	margin: 15px 10px 10px 0px; 
+	width: 180px;
+	margin: 15px 12.7px 10px 0px; 
+}
+.btn3{
+	display: block;
+	padding: 13px 40px;
+	background: #FFFFFF;
+	border: 0.03px solid #BDBDBD;
+	font-size: 15px;
+	color: #000000;
+	cursor: pointer;
+	width: 180px;
+	margin: 15px 0 10px 0px; 
 }
 .btn1:hover{
 	opacity: 0.7;
 	filter:alpha(opacity=75);
 }
 .btn2:hover{
+	border-color: #000;
+}
+.btn3:hover{
 	border-color: #000;
 }
 
@@ -186,6 +202,7 @@ margin-right: 10px;
 }
 .table th, .table td{
 	padding: 10px 10px;
+	border-bottom: 1px solid #BDBDBD;
 }
 .table th{
 	text-align: left; 
@@ -206,7 +223,7 @@ margin-right: 10px;
 
 /*별점*/
 .star{text-align: center; margin: 50px 40px 30px 0;}
-.star_img{color: red; margin-bottom:10px; font-size: 18px;}
+.star_img{color: red; margin-bottom:10px; font-size: 18px; cursor: context-menu;}
 .star strong{font-size: 35px;}
 .star_t{font-size: 13px; margin: 10px 0;}
 
@@ -247,19 +264,22 @@ margin-right: 10px;
 /*포토 구매평 모아보기*/   
 .review{margin: 25px 0px 25px 50px;}
 .review_t{text-align: center;margin-bottom: 5px;}
-.review img{margin: 0 3px;}
+.review img{margin: 0 3px; cursor:pointer;}
 .bt1{
 	position: absolute; 
 	margin: 52px 0px 0 -20px; 
 	font-size: 25px;
+	cursor:pointer;
 	border: none;
 }
 .bt2{
 	position: absolute;  
 	margin: 52px 0px 0 5px; 
 	font-size: 25px; 
+	cursor:pointer;
 	border: none;
 }
+
 
 /*구매평*/
 .Purchasing_review{text-align: left; width:1270px; margin-left:15px; border-spacing:0;}
@@ -285,11 +305,18 @@ margin-right: 10px;
 	padding: 10px 20px 10px 28px;
 	width: 85px;
 }
+.bt_write:hover{ 
+		opacity: 0.7;
+		filter:alpha(opacity=75);
+}
 .bt_write a{ color: white;}
 .Purchasing_review_miniphoto p{margin: 10px 0;}
 .Purchasing_review_miniphoto img{margin: 40px 10px 20px 0;}
 .Purchasing_review_miniphoto span{font-size: 15px;}
-
+.page{cursor:pointer; font-style: normal;}
+.page:hover {
+	color: Black; 
+}
 
 
 
@@ -307,8 +334,8 @@ margin-right: 10px;
 					<tr>
 						<td>
 							<div class="var">
-								<a href="#" class="home">Home</a>&ensp;>&ensp; 
-								<a href="http://localhost:9000/manwol/product_all.do" class="all">ALL</a>
+								<a href="http://localhost:9000/manwol/index" class="home">Home&ensp;>&ensp; </a>
+								<a href="http://localhost:9000/manwol/product_all" class="all">ALL</a>
 							</div>
 						</td>
 					</tr>
@@ -317,7 +344,7 @@ margin-right: 10px;
 						<td class="img">
 							<div class="img_detail">
 								<img alt="만월회 5종 선물세트"
-									src="http://localhost:9000/manwol/resources/images/만월회 5종 선물세트.jpg"
+									src="http://localhost:9000/manwol/resources/images/product/만월회 5종 선물세트.jpg"
 									height="600px" width="600px">
 							</div>
 						</td>
@@ -327,9 +354,9 @@ margin-right: 10px;
 								<div class="product_detail">
 									<p>
 										만월회 5종 선물세트 <img alt="NEW"
-											src="http://localhost:9000/manwol/resources/images/NEW.jpg"
+											src="http://localhost:9000/manwol/resources/images/product/NEW.jpg"
 											width="48px"> <img alt="주문폭주"
-											src="http://localhost:9000/manwol/resources/images/주문폭주.jpg"
+											src="http://localhost:9000/manwol/resources/images/product/주문폭주.jpg"
 											width="48px">
 									</p>
 									<p class="product_detail_price">21,000원</p>
@@ -411,7 +438,7 @@ margin-right: 10px;
 								<div class="button">
 									<button class="btn1" type="button">구매하기</button>
 									<button class="btn2" type="button">장바구니</button>
-									<button class="btn2" type="button">
+									<button class="btn3" type="button">
 										<span class="material-symbols-outlined" style="font-size: 15px">favorite</span> 15
 									</button>
 								</div>
@@ -447,16 +474,17 @@ margin-right: 10px;
 					<tr>
 					   <td>					   	 
 							<div class="miniphoto">
-									<p class="star_img">★★★★★</p>
+								<p class="star_img">★★★★★</p>
 								<div style="display: flex;">
-								<div>
-								<p>선물용으로 딱이에요 구성도 좋고 예쁨.. 근데 기스가 좀 심하게 난채로 와서 아  </p>
-		               			<p>쉬웠어요ㅜ</p>
-								</div>	
-								<div class="miniphoto_img">
-									<img alt="포토구매평1"src="http://localhost:9000/manwol/resources/images/포토구매평1.png" width="100px" height="100px">
+									<div>
+										<p>선물용으로 딱이에요 구성도 좋고 예쁨.. 근데 기스가 좀 심하게 난채로 와서 아  </p>
+				               			<p>쉬웠어요ㅜ</p>
+									</div>	
+									<div class="miniphoto_img">
+										<img alt="포토구매평1"src="http://localhost:9000/manwol/resources/images/product/포토구매평1.png" width="100px" height="100px">
+									</div>
 								</div>
-							</div>								
+							</div>									
 
 						</td>
 							<td>
@@ -469,7 +497,7 @@ margin-right: 10px;
 											<p style="display: flex;">습니다. 친구가 원래도 좋아하는 가게라고..</p>
 									 	</div>	
 									 	<div class="miniphoto_img">
-									 		<img alt="포토구매평2" src="http://localhost:9000/manwol/resources/images/포토구매평2.png" width="100px" height="100px">
+									 		<img alt="포토구매평2" src="http://localhost:9000/manwol/resources/images/product/포토구매평2.png" width="100px" height="100px">
 										</div>
 									</div>
 								</div>	
@@ -487,7 +515,7 @@ margin-right: 10px;
 		               						<p>먹는데 말모...너무 맛있어요 집에서 만들어 ..</p>   
 									 	</div>
 									 	<div class="miniphoto_img">
-									 		<img alt="포토구매평3" src="http://localhost:9000/manwol/resources/images/포토구매평3.png" width="100px" height="100px">
+									 		<img alt="포토구매평3" src="http://localhost:9000/manwol/resources/images/product/포토구매평3.png" width="100px" height="100px">
 										</div>
 									</div>
 								</div>	
@@ -500,7 +528,7 @@ margin-right: 10px;
 											<p>생일선물로 줬는데 만족했대요 감사합니다</p>
 									 	</div>
 									 	<div class="miniphoto_img1">
-									 		<img alt="포토구매평4" src="http://localhost:9000/manwol/resources/images/포토구매평4.png" width="100px" height="100px">
+									 		<img alt="포토구매평4" src="http://localhost:9000/manwol/resources/images/product/포토구매평4.png" width="100px" height="100px">
 										</div>
 									</div>
 								</div>	
@@ -530,36 +558,36 @@ margin-right: 10px;
 							<div>
 								<div style="border-bottom: 1px solid #BDBDBD; padding: 20px 0;">
 									<img 
-										alt="#" src="http://localhost:9000/manwol/resources/images/img1.jpg">
+										alt="#" src="http://localhost:9000/manwol/resources/images/product/img1.jpg">
 								</div>
 								<div>
 									<img style=" padding-top:20px;" alt="#" 
-										src="http://localhost:9000/manwol/resources/images/img2.jpg">
+										src="http://localhost:9000/manwol/resources/images/product/img2.jpg">
 								</div>
 								<div>
 									<img alt="#"
-										src="http://localhost:9000/manwol/resources/images/img3.gif">
+										src="http://localhost:9000/manwol/resources/images/product/img3.gif">
 								</div>
 								<div>
 									<img alt="#"
-										src="http://localhost:9000/manwol/resources/images/img4.jpg">
+										src="http://localhost:9000/manwol/resources/images/product/img4.jpg">
 								</div>
 								<div>
 									<img alt="#"
-										src="http://localhost:9000/manwol/resources/images/img5.jpg">
+										src="http://localhost:9000/manwol/resources/images/product/img5.jpg">
 								</div>
 								<div>
 									<img alt="#"
-										src="http://localhost:9000/manwol/resources/images/img6.jpg">
+										src="http://localhost:9000/manwol/resources/images/product/img6.jpg">
 								</div>
 								<div>
 									<img alt="#"
-										src="http://localhost:9000/manwol/resources/images/img7.gif"
+										src="http://localhost:9000/manwol/resources/images/product/img7.gif"
 										width="640px">
 								</div>
 								<div>
 									<img alt="#"
-										src="http://localhost:9000/manwol/resources/images/img8.jpg">
+										src="http://localhost:9000/manwol/resources/images/product/img8.jpg">
 								</div>
 							</div>
 						</td>
@@ -570,60 +598,60 @@ margin-right: 10px;
 							<table>
 								<tr>
 									<th><a
-										href="http://localhost:9000/manwol/resources/images/밀크티.jpg"
+										href="http://localhost:9000/manwol/resources/images/product/밀크티.jpg"
 										target="_blank"> <img alt="밀크티"
-											src="http://localhost:9000/manwol/resources/images/img9.png">
+											src="http://localhost:9000/manwol/resources/images/product/img9.png">
 									</a></th>
 									<th><a
-										href="http://localhost:9000/manwol/resources/images/말차.jpg"
+										href="http://localhost:9000/manwol/resources/images/product/말차.jpg"
 										target="_blank"> <img alt="말차"
-											src="http://localhost:9000/manwol/resources/images/img10.png">
+											src="http://localhost:9000/manwol/resources/images/product/img10.png">
 									</a></th>
 									<th><a
-										href="http://localhost:9000/manwol/resources/images/자몽샤워.jpg"
+										href="http://localhost:9000/manwol/resources/images/product/자몽샤워.jpg"
 										target="_blank"> <img alt="자몽샤워"
-											src="http://localhost:9000/manwol/resources/images/img11.png">
+											src="http://localhost:9000/manwol/resources/images/product/img11.png">
 									</a></th>
 								</tr>
 								<tr>
 									<th><a
-										href="http://localhost:9000/manwol/resources/images/민트초코.jpg"
+										href="http://localhost:9000/manwol/resources/images/product/민트초코.jpg"
 										target="_blank"> <img alt="민트초코"
-											src="http://localhost:9000/manwol/resources/images/img12.png">
+											src="http://localhost:9000/manwol/resources/images/product/img12.png">
 									</a></th>
 									<th><a
-										href="http://localhost:9000/manwol/resources/images/악마초코.jpg"
+										href="http://localhost:9000/manwol/resources/images/product/악마초코.jpg"
 										target="_blank"> <img alt="악마초코"
-											src="http://localhost:9000/manwol/resources/images/img13.png">
+											src="http://localhost:9000/manwol/resources/images/product/img13.png">
 									</a></th>
 									<th><a
-										href="http://localhost:9000/manwol/resources/images/그린티초코.jpg"
+										href="http://localhost:9000/manwol/resources/images/product/그린티초코.jpg"
 										target="_blank"> <img alt="그린티초코"
-											src="http://localhost:9000/manwol/resources/images/img14.png">
+											src="http://localhost:9000/manwol/resources/images/product/img14.png">
 									</a></th>
 								</tr>
 								<tr>
 									<th><a
-										href="http://localhost:9000/manwol/resources/images/콜드브루.jpg"
+										href="http://localhost:9000/manwol/resources/images/product/콜드브루.jpg"
 										target="_blank"> <img alt="콜드브루"
-											src="http://localhost:9000/manwol/resources/images/img15.png">
+											src="http://localhost:9000/manwol/resources/images/product/img15.png">
 									</a></th>
 									<th><a
-										href="http://localhost:9000/manwol/resources/images/쑥.jpg"
+										href="http://localhost:9000/manwol/resources/images/product/쑥.jpg"
 										target="_blank"> <img alt="쑥"
-											src="http://localhost:9000/manwol/resources/images/img16.png">
+											src="http://localhost:9000/manwol/resources/images/product/img16.png">
 									</a></th>
 									<th><a
-										href="http://localhost:9000/manwol/resources/images/단호박.jpg"
+										href="http://localhost:9000/manwol/resources/images/product/단호박.jpg"
 										target="_blank"> <img alt="단호박"
-											src="http://localhost:9000/manwol/resources/images/img17.png">
+											src="http://localhost:9000/manwol/resources/images/product/img17.png">
 									</a></th>
 								</tr>
 								<tr>
 									<th colspan="3"><a
-										href="http://localhost:9000/manwol/resources/images/리얼딸기.jpg"
+										href="http://localhost:9000/manwol/resources/images/product/리얼딸기.jpg"
 										target="_blank"> <img alt="리얼딸기"
-											src="http://localhost:9000/manwol/resources/images/img18.png">
+											src="http://localhost:9000/manwol/resources/images/product/img18.png">
 									</a></th>
 								</tr>
 							</table>
@@ -634,55 +662,55 @@ margin-right: 10px;
 						<td>
 							<div>
 								<img alt="#"
-									src="http://localhost:9000/manwol/resources/images/img19.gif">
+									src="http://localhost:9000/manwol/resources/images/product/img19.gif">
 							</div>
 							<div>
 								<img alt="#"
-									src="http://localhost:9000/manwol/resources/images/img20.jpg">
+									src="http://localhost:9000/manwol/resources/images/product/img20.jpg">
 							</div>
 							<div>
 								<img alt="#"
-									src="http://localhost:9000/manwol/resources/images/img21.jpg">
+									src="http://localhost:9000/manwol/resources/images/product/img21.jpg">
 							</div>
 							<div>
 								<img alt="#"
-									src="http://localhost:9000/manwol/resources/images/img22.jpg">
+									src="http://localhost:9000/manwol/resources/images/product/img22.jpg">
 							</div>
 							<div>
 								<img alt="#"
-									src="http://localhost:9000/manwol/resources/images/img23.gif">
+									src="http://localhost:9000/manwol/resources/images/product/img23.gif">
 							</div>
 							<div>
 								<img alt="#"
-									src="http://localhost:9000/manwol/resources/images/img24.jpg">
+									src="http://localhost:9000/manwol/resources/images/product/img24.jpg">
 							</div>
 							<div>
 								<img alt="#"
-									src="http://localhost:9000/manwol/resources/images/img25.gif">
+									src="http://localhost:9000/manwol/resources/images/product/img25.gif">
 							</div>
 							<div>
 								<img alt="#"
-									src="http://localhost:9000/manwol/resources/images/img26.jpg">
+									src="http://localhost:9000/manwol/resources/images/product/img26.jpg">
 							</div>
 							<div>
 								<img alt="#"
-									src="http://localhost:9000/manwol/resources/images/img27.gif">
+									src="http://localhost:9000/manwol/resources/images/product/img27.gif">
 							</div>
 							<div>
 								<img alt="#"
-									src="http://localhost:9000/manwol/resources/images/img28.jpg">
+									src="http://localhost:9000/manwol/resources/images/product/img28.jpg">
 							</div>
 							<div>
 								<img alt="#"
-									src="http://localhost:9000/manwol/resources/images/img29.jpg">
+									src="http://localhost:9000/manwol/resources/images/product/img29.jpg">
 							</div>
 							<div>
 								<img alt="#"
-									src="http://localhost:9000/manwol/resources/images/img30.jpg">
+									src="http://localhost:9000/manwol/resources/images/product/img30.jpg">
 							</div>
 							<div >
 								<img  alt="#"
-									src="http://localhost:9000/manwol/resources/images/img31.jpg">
+									src="http://localhost:9000/manwol/resources/images/product/img31.jpg">
 							</div>
 						</td>
 					</tr>
@@ -742,11 +770,11 @@ margin-right: 10px;
 			<td>
 				<table class="table" >
 					<tr>
-						<td style="border-top: none;  font-size: 15px;"><p style="margin-left:-10px">상품정보 제공고시</p></td>
+						<td style="border: none;  font-size: 15px;"><p style="margin-left:-10px">상품정보 제공고시</p></td>
 					</tr>
 					<tr>
-						<th>제품명</th>
-						<td>만월회 음료 원액 베이스 9종</td>
+						<th style="border-top: 1px solid #BDBDBD;">제품명</th>
+						<td style="border-top: 1px solid #BDBDBD;">만월회 음료 원액 베이스 9종</td>
 					</tr>
 
 					<tr>
@@ -879,10 +907,10 @@ margin-right: 10px;
 									<p class="review_t">포토 구매평 모아보기</p>
 									<div>
 										<button class="bt1"><</button>
-										<img alt="#" src="http://localhost:9000/manwol/resources/images/포토구매평1.png" width="120px" height="120px;"> 
-										<img alt="#" src="http://localhost:9000/manwol/resources/images/포토구매평2.png" width="120px" height="120px;"> 
-										<img alt="#" src="http://localhost:9000/manwol/resources/images/포토구매평3.png" width="120px" height="120px;">
-										<img alt="#" src="http://localhost:9000/manwol/resources/images/포토구매평4.png" width="120px" height="120px;">
+										<img alt="#" src="http://localhost:9000/manwol/resources/images/product/포토구매평1.png" width="120px" height="120px;"> 
+										<img alt="#" src="http://localhost:9000/manwol/resources/images/product/포토구매평2.png" width="120px" height="120px;"> 
+										<img alt="#" src="http://localhost:9000/manwol/resources/images/product/포토구매평3.png" width="120px" height="120px;">
+										<img alt="#" src="http://localhost:9000/manwol/resources/images/product/포토구매평4.png" width="120px" height="120px;">
 										<button class="bt2">></button>
 									</div>
 								</div>
@@ -898,50 +926,50 @@ margin-right: 10px;
 			<div class="Purchasing_review" >
 				<table  class="Purchasing_review">
 					<tr>
-						<td colspan="2">
+						<td colspan="2" style="border: none;">
 							<div class="Purchasing_review_list">
 								<p>
-									<strong>구매평</strong><span>75</span>
+									<strong>구매평</strong><span style="font-size: 13px;">75</span>
 								</p>
 								<p style="margin: 30px 0 20px 0;" class="Purchasing_review_t">상품을 구매하신 분들이 작성한 리뷰입니다.</p>
 								<div class="bt_write">
 									<a href="write.html" class="on">구매평 작성</a>
 								</div>
 								<br>
-								<p style="border-bottom: 1.5px solid black;"><small class="material-symbols-outlined" style="font-size: 18px; color: #949494">image</small>  포토 구매평만 보기</p>
+								<p style="border-bottom: 1.4px solid black; color: #949494; padding-bottom: 10px;"><small class="material-symbols-outlined" style="font-size: 18px; color: #949494">image</small>  포토 구매평만 보기</p>
 								</div>
 						</td>
 					</tr>
 					
-					<tr class="Purchasing_review_miniphoto">
-						<td class="miniphoto1">
+					<tr class="Purchasing_review_miniphoto" >
+						<td class="miniphoto1" style="border-top: none;">
 							<div>
-								<p class="star_img">★★★★★</p>
+								<p class="star_img" style="cursor:pointer;">★★★★★</p>
 								<p>[옵션]5종 선물세트: 베스트 5종세트</p>
 								<p>선물용으로 딱이에요 구성도 좋고 예쁨.. 근데 기스가 좀 심하게 난채로 와서 아쉬웠어요ㅜ</p> 
-								<img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/포토구매평1.png" width="100px" height="100px">
-								<img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/포토구매평1.png" width="100px" height="100px">
+								<img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/product/포토구매평1.png" width="100px" height="100px">
+								<img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/product/포토구매평1.png" width="100px" height="100px">
 							</div>
 						</td>
 						<td>
 							<div>
-							<p>juli*****</p>
+							<p style="cursor:pointer;">juli*****</p>
 							</div>
 						</td>
 					</tr>
 					<tr class="Purchasing_review_miniphoto">
 						<td class="miniphoto1">
 							<div>
-								<p class="star_img">★★★★★</p>
+								<p class="star_img" style="cursor:pointer;">★★★★★</p>
 								<p>[옵션]5종 선물세트: 베스트 5종세트</p>
 								<p>선물용으로 딱이에요 구성도 좋고 예쁨.. 근데 기스가 좀 심하게 난채로 와서 아쉬웠어요ㅜ</p> 
-								<img alt="포토구매평2" src="http://localhost:9000/manwol/resources/images/포토구매평2.png" width="100px" height="100px">
-								<img alt="포토구매평2" src="http://localhost:9000/manwol/resources/images/포토구매평2.png" width="100px" height="100px">
+								<img alt="포토구매평2" src="http://localhost:9000/manwol/resources/images/product/포토구매평2.png" width="100px" height="100px">
+								<img alt="포토구매평2" src="http://localhost:9000/manwol/resources/images/product/포토구매평2.png" width="100px" height="100px">
 							</div>
 						</td>
 						<td>
 							<div>
-							<p>juli*****</p>
+							<p style="cursor:pointer;">juli*****</p>
 							</div>
 						</td>
 					</tr>
@@ -949,32 +977,32 @@ margin-right: 10px;
 					<tr class="Purchasing_review_miniphoto">
 						<td class="miniphoto1">
 							<div>
-								<p class="star_img">★★★★★</p>
+								<p class="star_img" style="cursor:pointer;">★★★★★</p>
 								<p>[옵션]5종 선물세트: 베스트 5종세트</p>
 								<p>선물용으로 딱이에요 구성도 좋고 예쁨.. 근데 기스가 좀 심하게 난채로 와서 아쉬웠어요ㅜ</p> 
-								<img alt="포토구매평3" src="http://localhost:9000/manwol/resources/images/포토구매평3.png" width="100px" height="100px">
-								<img alt="포토구매평3" src="http://localhost:9000/manwol/resources/images/포토구매평3.png" width="100px" height="100px">
+								<img alt="포토구매평3" src="http://localhost:9000/manwol/resources/images/product/포토구매평3.png" width="100px" height="100px">
+								<img alt="포토구매평3" src="http://localhost:9000/manwol/resources/images/product/포토구매평3.png" width="100px" height="100px">
 							</div>
 						</td>
 						<td>
 							<div>
-							<p>juli*****</p>
+							<p style="cursor:pointer;">juli*****</p>
 							</div>
 						</td>
 					</tr>
 										<tr class="Purchasing_review_miniphoto">
 						<td class="miniphoto1">
 							<div>
-								<p class="star_img">★★★★★</p>
+								<p class="star_img"style="cursor:pointer;">★★★★★</p>
 								<p>[옵션]5종 선물세트: 베스트 5종세트</p>
 								<p>선물용으로 딱이에요 구성도 좋고 예쁨.. 근데 기스가 좀 심하게 난채로 와서 아쉬웠어요ㅜ</p> 
-								<img alt="포토구매평4" src="http://localhost:9000/manwol/resources/images/포토구매평4.png" width="100px" height="100px">
-								<img alt="포토구매평4" src="http://localhost:9000/manwol/resources/images/포토구매평4.png" width="100px" height="100px">
+								<img alt="포토구매평4" src="http://localhost:9000/manwol/resources/images/product/포토구매평4.png" width="100px" height="100px">
+								<img alt="포토구매평4" src="http://localhost:9000/manwol/resources/images/product/포토구매평4.png" width="100px" height="100px">
 							</div>
 						</td>
 						<td>
 							<div>
-							<p>juli*****</p>
+							<p style="cursor:pointer;">juli*****</p>
 							</div>
 						</td>
 					</tr>
@@ -987,14 +1015,25 @@ margin-right: 10px;
 		
 		<tr>
 			<td>
-					<table style="width: 1270px;">
+					<table style="margin-top: 25px;">
 					
 						<tr>
 					
-							<td colspan="2" style="text-align: center;" >
+							<td colspan="2">
 								
-								<div style="margin-top: 10px; text-align: center; color: #949494;">
-									< &emsp;1&emsp;2&emsp;3&emsp;4&emsp;5&emsp;6&emsp;7&emsp;8&emsp; >
+								<div style=" margin-top: 10px; text-align: center; color: #949494;">
+									<p>
+										<span style="cursor: no-drop;"><</span> 
+										<span class="page">&emsp;1&emsp;</span>
+										<span class="page">2&emsp;</span>
+										<span class="page">3&emsp;</span>
+										<span class="page">4&emsp;</span>
+										<span class="page">5&emsp;</span>
+										<span class="page">6&emsp;</span>
+										<span class="page">7&emsp;</span>
+										<span class="page">8&emsp;</span>
+										<span style="cursor: no-drop;">></span>
+									</p>
 								</div>
 								 
 								<div class="bt_write" style="margin-left: 1138px; margin-top: -2%;">
