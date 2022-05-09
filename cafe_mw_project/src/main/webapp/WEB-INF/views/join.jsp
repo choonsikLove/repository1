@@ -32,7 +32,6 @@
 			<div id='naver_start'>네이버로 시작하기</div>
 			<div id='kakao_start'>카카오로 시작하기</div>
 		</div>
-		-->
 
 		<!-- 약관동의 화면 -->
 		<div id='join_inner_2'>
