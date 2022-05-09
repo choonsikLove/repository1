@@ -9,32 +9,60 @@
 <style type="text/css">
 
 	#show_review{
-		background: lightgray;
+		background: #E2E2E2;
+		padding-top: 20px 
 	}
 	#review_img{
-		border:1px solid black;
+		background-image: url("http://localhost:9000/manwol/resources/images/index/Review.png");
+		background-repeat: no-repeat;
+		background-size: 250px auto;
+		width: 250px;
+		height: 35px;
+		margin: 0 auto;
 	}
 	#review_img+div{
-		border:1px solid black;
+		text-align: center;
+		font-weight: bold;
+		font-size: 20px;
+		color: #0042A9;
+		margin: 10px 0;
 	}
 	#review_content{
-		border: 1px solid black;
+		background-image: url("http://localhost:9000/manwol/resources/images/index/index_review.png");
+		background-repeat: no-repeat;
+		background-size: 1200px auto;
+		width: 1150px;
+		height: 1000px;
+		margin: 0 auto;
 	}
 	#review_content+div{
-		font-size: 25px;
-		border: 1px solid black;
+		font-size: 18px;
+		font-weight: bold;
+		text-align: center;
 	}
 	#moreBox{
-		display: inline-block;
-		width: 300px;
-		height: 200px;
-		color: black;
-		border: 1px solid black;
+		width: 250px;
+		height: 34px;
+		color: #0B2F7F;
+		border: 1px solid #011E41;
+		margin: 0 auto;
+		font-size: 17px;
+		font-weight: bold;
+		text-align: center;
+		padding-top: 15px;
+		margin-top: 20px;
+	}
+	#moreBox:hover{
+		animation-name: boxColorAnimation;
+		animation-duration: 0.5s;
+		color: white;
+		background: #0B2F7F;
 	}
 	
-</style>
-
-<style type="text/css">
+	@keyframes boxColorAnimation{
+		0% {color: #0B2F7F; background: #E2E2E2;}
+		100% {color: white; background: #0B2F7F;}
+	}
 
 	#instagram_prom{
 		background: #011E41;
@@ -85,8 +113,6 @@
 		transform: scale(1.1,1.1);
 	}
 	
-	
-	
 	@keyframes imgScaleAnimation{
 		0% {transform: scale(1,1)}
 		100% {transform: scale(1.1,1.1)}
@@ -95,9 +121,7 @@
 </style>
 <script type="text/javascript">
 	$(document).ready(function(){
-		alert("변경3");
-		
-		
+		alert("변경1");
 	});
 
 </script>
@@ -107,11 +131,13 @@
 	
 	
 	<article id='show_review'>
-		<div id='review_img'><img src='http://localhost:9000/manwol/resources/images/index/Review.png'></div>
-		<div>누적 후기 1.3만개  [평균 별점 &#10030;&#10030;&#10030;&#10030;&#10030;&#10030;4.8]</div>
-		<div id='review_content'><img src='http://localhost:9000/manwol/resources/images/index/index_review.png'></div>
+		<br><br><br>
+		<div id='review_img'></div>
+		<div>누적 후기 1.3만개 &nbsp; &nbsp; [평균 별점 &#10030; &#10030; &#10030; &#10030; &#10030; 4.8]</div>
+		<div id='review_content'></div>
 		<div>더 많은 리뷰를 확인해보세요!</div>
-		<div id='moreBox'>상품평 더보기</div>
+		<a href='#'><div id='moreBox'>상품평 더보기</div></a>
+		<br><br><br><br>
 	</article>
 	
 	<article id='instagram_prom'>
