@@ -39,18 +39,16 @@
 	#instagram_prom{
 		background: #011E41;
 		width: 100%;
-		height: 510px;		
+		height: 460px;		
 	}
-	
 	#instagram_img{
 		background-image: url("http://localhost:9000/manwol/resources/images/index/instagram_promotion.png");
 		background-size: 250px auto;
-		border: 1px solid red;
+		width: 250px;
 		height: 40px;
 		background-repeat: no-repeat;
-	}
-	#instagram_img>img{
-		margin: 0px auto;
+		margin: 0 auto;
+		top: 40px;
 	}
 	#instagram_link{
 		display: block;
@@ -97,7 +95,7 @@
 </style>
 <script type="text/javascript">
 	$(document).ready(function(){
-		alert("변경1");
+		alert("변경3");
 		
 		
 	});
@@ -117,8 +115,11 @@
 	</article>
 	
 	<article id='instagram_prom'>
-		<div id='instagram_img'></div>
-		<a href='https://www.instagram.com/_manwol/' id='instagram_link'>@_manwol</a>
+		<br><br><br><br>
+		<div id='instagram_img'>
+			<br><br>
+			<a href='https://www.instagram.com/_manwol/' id='instagram_link'>@_manwol</a>
+		</div>
 		<table>
 			<tr>
 				<td><div><a href='#'><img class='insta_table1' src='http://localhost:9000/manwol/resources/images/index/instagram_1.jpg'><img class='insta_table2' src='http://localhost:9000/manwol/resources/images/index/instagram_1on.jpg'></a></div></td>
