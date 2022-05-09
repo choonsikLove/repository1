@@ -205,7 +205,7 @@ margin-right: 10px;
 }
 
 /*별점*/
-.star{text-align: center; margin: 60px 40px 30px 0;}
+.star{text-align: center; margin: 50px 40px 30px 0;}
 .star_img{color: red; margin-bottom:10px; font-size: 18px;}
 .star strong{font-size: 35px;}
 .star_t{font-size: 13px; margin: 10px 0;}
@@ -879,10 +879,10 @@ margin-right: 10px;
 									<p class="review_t">포토 구매평 모아보기</p>
 									<div>
 										<button class="bt1"><</button>
-										<img alt="#" src="http://localhost:9000/manwol/resources/images/review1.jpeg" width="120px" height="120px;"> 
-										<img alt="#" src="http://localhost:9000/manwol/resources/images/review2.jpeg" width="120px" height="120px;"> 
-										<img alt="#" src="http://localhost:9000/manwol/resources/images/review3.jpeg" width="120px" height="120px;">
-										<img alt="#" src="http://localhost:9000/manwol/resources/images/review4.jpeg" width="120px" height="120px;">
+										<img alt="#" src="http://localhost:9000/manwol/resources/images/포토구매평1.png" width="120px" height="120px;"> 
+										<img alt="#" src="http://localhost:9000/manwol/resources/images/포토구매평2.png" width="120px" height="120px;"> 
+										<img alt="#" src="http://localhost:9000/manwol/resources/images/포토구매평3.png" width="120px" height="120px;">
+										<img alt="#" src="http://localhost:9000/manwol/resources/images/포토구매평4.png" width="120px" height="120px;">
 										<button class="bt2">></button>
 									</div>
 								</div>
@@ -935,8 +935,8 @@ margin-right: 10px;
 								<p class="star_img">★★★★★</p>
 								<p>[옵션]5종 선물세트: 베스트 5종세트</p>
 								<p>선물용으로 딱이에요 구성도 좋고 예쁨.. 근데 기스가 좀 심하게 난채로 와서 아쉬웠어요ㅜ</p> 
-								<img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/포토구매평1.png" width="100px" height="100px">
-								<img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/포토구매평1.png" width="100px" height="100px">
+								<img alt="포토구매평2" src="http://localhost:9000/manwol/resources/images/포토구매평2.png" width="100px" height="100px">
+								<img alt="포토구매평2" src="http://localhost:9000/manwol/resources/images/포토구매평2.png" width="100px" height="100px">
 							</div>
 						</td>
 						<td>
@@ -952,8 +952,8 @@ margin-right: 10px;
 								<p class="star_img">★★★★★</p>
 								<p>[옵션]5종 선물세트: 베스트 5종세트</p>
 								<p>선물용으로 딱이에요 구성도 좋고 예쁨.. 근데 기스가 좀 심하게 난채로 와서 아쉬웠어요ㅜ</p> 
-								<img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/포토구매평1.png" width="100px" height="100px">
-								<img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/포토구매평1.png" width="100px" height="100px">
+								<img alt="포토구매평3" src="http://localhost:9000/manwol/resources/images/포토구매평3.png" width="100px" height="100px">
+								<img alt="포토구매평3" src="http://localhost:9000/manwol/resources/images/포토구매평3.png" width="100px" height="100px">
 							</div>
 						</td>
 						<td>
@@ -968,8 +968,8 @@ margin-right: 10px;
 								<p class="star_img">★★★★★</p>
 								<p>[옵션]5종 선물세트: 베스트 5종세트</p>
 								<p>선물용으로 딱이에요 구성도 좋고 예쁨.. 근데 기스가 좀 심하게 난채로 와서 아쉬웠어요ㅜ</p> 
-								<img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/포토구매평1.png" width="100px" height="100px">
-								<img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/포토구매평1.png" width="100px" height="100px">
+								<img alt="포토구매평4" src="http://localhost:9000/manwol/resources/images/포토구매평4.png" width="100px" height="100px">
+								<img alt="포토구매평4" src="http://localhost:9000/manwol/resources/images/포토구매평4.png" width="100px" height="100px">
 							</div>
 						</td>
 						<td>
