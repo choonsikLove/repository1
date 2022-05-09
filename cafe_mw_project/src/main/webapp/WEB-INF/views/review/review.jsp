@@ -13,7 +13,6 @@ body, html {
 }
 
 table {
-
    margin-right: auto;
    margin-left: auto;
 }
@@ -33,7 +32,8 @@ table {
 .mini1 td>div{display: flex;}
 .mini1 div{margin-right:10px; margin-top: 10px;}
 .mini1 a {color:#0042A9;}
-.mini1 .id{margin-top: 10px;}
+.mini1 .id{margin-top: 10px; margin-bottom: 10px;}
+.mini1 img{margin-top: 10px;}
 
 .review td{ border-bottom: 1px solid #BDBDBD;}
 .strong{font-size: 18px; font-weight: bold;}
@@ -81,7 +81,7 @@ table {
                <tr class="review_mini">
                   <td class="mini1" style="display: flex;">
                      <div>                                        
-                        <img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/review/포토구매평1.png" width="100px" height="100px">
+                        <img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/review/포토구매평1.png" width="75px" height="75px">
                      </div>
                      <div>   
                         <a href="#"><small>[첫 구매고객 500원] 만월회 음료 원액 베이스 10종</small></a>
@@ -95,7 +95,7 @@ table {
               <tr class="review_mini">
                   <td class="mini1" style="display: flex;">
                      <div>                                        
-                        <img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/review/포토구매평1.png" width="100px" height="100px">
+                        <img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/review/포토구매평1.png" width="75px" height="75px">
                      </div>
                      <div>   
                         <a href="#"><small>[첫 구매고객 500원] 만월회 음료 원액 베이스 10종</small></a>
@@ -107,10 +107,10 @@ table {
                </tr>
               
               
-              <tr class="review_mini">
+             <tr class="review_mini">
                   <td class="mini1" style="display: flex;">
                      <div>                                        
-                        <img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/review/포토구매평1.png" width="100px" height="100px">
+                        <img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/review/포토구매평1.png" width="75px" height="75px">
                      </div>
                      <div>   
                         <a href="#"><small>[첫 구매고객 500원] 만월회 음료 원액 베이스 10종</small></a>
@@ -124,7 +124,36 @@ table {
                  <tr class="review_mini">
                   <td class="mini1" style="display: flex;">
                      <div>                                        
-                        <img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/review/포토구매평1.png" width="100px" height="100px">
+                        <img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/review/포토구매평1.png" width="75px" height="75px">
+                     </div>
+                     <div>   
+                        <a href="#"><small>[첫 구매고객 500원] 만월회 음료 원액 베이스 10종</small></a>
+                        <p>밀크티는 아직 먹어보기 전인데 기대됩니다<img alt="n" src="http://localhost:9000/manwol/resources/images/review/N.png"></p>
+                        <p><small>밀크티는 아직 먹어보기 전인데 기대됩니다</small></p> 
+                        <p class="id">goun****</p>
+                     </div>
+                  </td>
+               </tr>
+               
+               
+               <tr class="review_mini">
+                  <td class="mini1" style="display: flex;">
+                     <div>                                        
+                        <img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/review/포토구매평1.png" width="75px" height="75px">
+                     </div>
+                     <div>   
+                        <a href="#"><small>[첫 구매고객 500원] 만월회 음료 원액 베이스 10종</small></a>
+                        <p>밀크티는 아직 먹어보기 전인데 기대됩니다<img alt="n" src="http://localhost:9000/manwol/resources/images/review/N.png"></p>
+                        <p><small>밀크티는 아직 먹어보기 전인데 기대됩니다</small></p> 
+                        <p class="id">goun****</p>
+                     </div>
+                  </td>
+               </tr>
+               
+                 <tr class="review_mini">
+                  <td class="mini1" style="display: flex;">
+                     <div>                                        
+                        <img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/review/포토구매평1.png" width="75px" height="75px">
                      </div>
                      <div>   
                         <a href="#"><small>[첫 구매고객 500원] 만월회 음료 원액 베이스 10종</small></a>
@@ -139,7 +168,22 @@ table {
                   <tr class="review_mini">
                   <td class="mini1" style="display: flex;">
                      <div>                                        
-                        <img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/review/포토구매평1.png" width="100px" height="100px">
+                        <img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/review/포토구매평1.png" width="75px" height="75px">
+                     </div>
+                     <div>   
+                        <a href="#"><small>[첫 구매고객 500원] 만월회 음료 원액 베이스 10종</small></a>
+                        <p>밀크티는 아직 먹어보기 전인데 기대됩니다<img alt="n" src="http://localhost:9000/manwol/resources/images/review/N.png"></p>
+                        <p><small>밀크티는 아직 먹어보기 전인데 기대됩니다</small></p> 
+                        <p class="id">goun****</p>
+                     </div>
+                  </td>
+               </tr>
+               
+               
+                <tr class="review_mini">
+                  <td class="mini1" style="display: flex;">
+                     <div>                                        
+                        <img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/review/포토구매평1.png" width="75px" height="75px">
                      </div>
                      <div>   
                         <a href="#"><small>[첫 구매고객 500원] 만월회 음료 원액 베이스 10종</small></a>
@@ -153,37 +197,7 @@ table {
                   <tr class="review_mini">
                   <td class="mini1" style="display: flex;">
                      <div>                                        
-                        <img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/review/포토구매평1.png" width="100px" height="100px">
-                     </div>
-                     <div>   
-                        <a href="#"><small>[첫 구매고객 500원] 만월회 음료 원액 베이스 10종</small></a>
-                        <p>밀크티는 아직 먹어보기 전인데 기대됩니다<img alt="n" src="http://localhost:9000/manwol/resources/images/review/N.png"></p>
-                        <p><small>밀크티는 아직 먹어보기 전인데 기대됩니다</small></p> 
-                        <p class="id">goun****</p>
-                     </div>
-                  </td>
-               </tr>
-               
-               
-                  <tr class="review_mini">
-                  <td class="mini1" style="display: flex;">
-                     <div>                                        
-                        <img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/review/포토구매평1.png" width="100px" height="100px">
-                     </div>
-                     <div>   
-                        <a href="#"><small>[첫 구매고객 500원] 만월회 음료 원액 베이스 10종</small></a>
-                        <p>밀크티는 아직 먹어보기 전인데 기대됩니다<img alt="n" src="http://localhost:9000/manwol/resources/images/review/N.png"></p>
-                        <p><small>밀크티는 아직 먹어보기 전인데 기대됩니다</small></p> 
-                        <p class="id">goun****</p>
-                     </div>
-                  </td>
-               </tr>
-               
-               
-                  <tr class="review_mini">
-                  <td class="mini1" style="display: flex;">
-                     <div>                                        
-                        <img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/review/포토구매평1.png" width="100px" height="100px">
+                        <img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/review/포토구매평1.png" width="75px" height="75px">
                      </div>
                      <div>   
                         <a href="#"><small>[첫 구매고객 500원] 만월회 음료 원액 베이스 10종</small></a>
@@ -197,21 +211,7 @@ table {
                   <tr class="review_mini">
                   <td class="mini1" style="display: flex;">
                      <div>                                        
-                        <img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/review/포토구매평1.png" width="100px" height="100px">
-                     </div>
-                     <div>   
-                        <a href="#"><small>[첫 구매고객 500원] 만월회 음료 원액 베이스 10종</small></a>
-                        <p>밀크티는 아직 먹어보기 전인데 기대됩니다<img alt="n" src="http://localhost:9000/manwol/resources/images/review/N.png"></p>
-                        <p><small>밀크티는 아직 먹어보기 전인데 기대됩니다</small></p> 
-                        <p class="id">goun****</p>
-                     </div>
-                  </td>
-               </tr>
-               
-                  <tr class="review_mini">
-                  <td class="mini1" style="display: flex;">
-                     <div>                                        
-                        <img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/review/포토구매평1.png" width="100px" height="100px">
+                        <img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/review/포토구매평1.png" width="75px" height="75px">
                      </div>
                      <div>   
                         <a href="#"><small>[첫 구매고객 500원] 만월회 음료 원액 베이스 10종</small></a>
