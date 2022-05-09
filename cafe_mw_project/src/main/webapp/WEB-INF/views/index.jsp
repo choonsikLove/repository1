@@ -121,7 +121,7 @@
 </style>
 <script type="text/javascript">
 	$(document).ready(function(){
-		alert("변경1");
+		alert("변경3");
 	});
 
 </script>

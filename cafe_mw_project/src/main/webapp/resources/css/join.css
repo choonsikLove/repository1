@@ -94,6 +94,13 @@ div#mail_join {
 
 #mail_join:hover {
 	border: 1px solid black;
+	animation-name: borderColorAnimation;
+	animation-duration: 0.2s;
+}
+
+@keyframes borderColorAnimation{
+	0% {background: #a9a9a9;}
+	100% {background: black;}
 }
 
 #join_inner_1>hr {
@@ -201,11 +208,25 @@ div#join_inner_2 label{
 }
 
 #join_agree:hover {
+	animation-name: agreeBoxColorAnimation;
+	animation-duration: 0.3s;
 	background: rgb(33,104,177);
 }
 
+@keyframes agreeBoxColorAnimation{
+	0% {background: #0B2F7F;}
+	100% {background: #2168B1;}
+}
+
 #join_cancel:hover {
+	animation-name: cancelBoxColorAnimation;
+	animation-duration: 0.3s;
 	background: rgb(250,250,250);
+}
+
+@keyframes cancelBoxColorAnimation{
+	0% {background: #FFFFFF;}
+	100% {background: #FAFAFA;}
 }
 
 #join_cancel:after {
