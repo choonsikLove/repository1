@@ -11,13 +11,10 @@
 body, html {
 	width: 100%;
 }
-
 table {
 	margin-right: auto;
 	margin-left: auto;
 }
-
-
 /* 이미지,가격,설명 */ 
 .product{ 
 	width:1270px;
@@ -31,16 +28,12 @@ table {
 .home{color: gray;}
 .home:hover{color: black;}
 .all{color: black;}
-
-
 /* 상품 이미지 */
 .img{
    display: flex;
     justify-content: center;
    }
 .img_detail{padding-right: 100px;}
-
-
 /* 상품 상세*/
 .product_detail{
 	padding: 0 0 20px 0; 
@@ -78,7 +71,6 @@ table {
 	cursor: pointer;
 }
 h4{font-size: 14px; margin-bottom: 5px;}
-
 .button{
 	display: flex;
 }      
@@ -125,7 +117,6 @@ h4{font-size: 14px; margin-bottom: 5px;}
 .btn3:hover{
 	border-color: #000;
 }
-
 /* 상단 포토구매평 */
 .photopyong{
 	display: flex; 
@@ -164,7 +155,6 @@ margin-right: 10px;
 	margin-top: -25px; 
 	padding-left:190px; 
 }
-
 /*3개의 카테고리 이미지들..*/
 .detail{width: 1270px; padding-left: 2px;}
 .category{
@@ -183,7 +173,6 @@ margin-right: 10px;
 .category_a:hover{color: black;}
 .category_b:hover{color: black;}
 .category_c:hover{color: black;}
-
 /*FRESH/DELIVERY/A/S*/
 .delivery{border-top: border: 1px solid #BDBDBD; margin: 30px 30px 50px 30px;}    
 .delivery{
@@ -193,7 +182,6 @@ margin-right: 10px;
 .delivery th{color: rgb(23, 50, 114); font-size: 20px;} 
  .delivery td{font-size: 14px;
 }    
-
 /*상품정보 제공고시*/
 .table{
 	width:1270px;
@@ -210,7 +198,6 @@ margin-right: 10px;
 	font-style: normal;
 	font-weight: normal;
 	}
-
 /*구매평*/
 .container{ 
 	width:1270px;  
@@ -220,13 +207,11 @@ margin-right: 10px;
     padding: 30px 0 0 5px;
     margin-left: 5px;
 }
-
 /*별점*/
 .star{text-align: center; margin: 50px 40px 30px 0;}
 .star_img{color: red; margin-bottom:10px; font-size: 18px; cursor: context-menu;}
 .star strong{font-size: 35px;}
 .star_t{font-size: 13px; margin: 10px 0;}
-
 /*그래프*/    
 .graph{font-size: 14px; padding:50px 50px 50px 25px;} 
 .graph p{margin: 0 10px;}
@@ -260,7 +245,6 @@ margin-right: 10px;
    display: block; width: 0%; height: 10px; line-height: 10px; 
    text-align: right; background: red; border-radius:40px; 
 }
-
 /*포토 구매평 모아보기*/   
 .review{margin: 25px 0px 25px 50px;}
 .review_t{text-align: center;margin-bottom: 5px;}
@@ -279,8 +263,6 @@ margin-right: 10px;
 	cursor:pointer;
 	border: none;
 }
-
-
 /*구매평*/
 .Purchasing_review{text-align: left; width:1270px; margin-left:15px; border-spacing:0;}
 .Purchasing_review td{ border-bottom: 1px solid #BDBDBD;}
@@ -317,9 +299,6 @@ margin-right: 10px;
 .page:hover {
 	color: Black; 
 }
-
-
-
 </style>
 </head>
 <body>
@@ -720,7 +699,7 @@ margin-right: 10px;
 
 		<tr>
 			<td>
-				<table class="delivery">
+				<table class="delivery" style="border-bottom: 1px solid #BDBDBD; margin-top: 18px">
 					<tr>
 						<th>FRESH</th>
 					</tr>
