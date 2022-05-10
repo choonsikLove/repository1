@@ -20,11 +20,11 @@ table {
 
 
 
-/*구매평*/
+
 .review{text-align: left; width:1270px; border-spacing:0;}
 .review_title{margin: 50px 0;}
 .rcategory{width: 100%; padding-bottom: 20px;}
-.rcategory a:link{color: black;}
+.rcategory a{color: black;}
 .rcategory a:hover {cursor: pointer; color:#0042A9;} 
 .rcategory a:active{color:#0042A9;}
 
@@ -49,7 +49,10 @@ table {
 
 
 
-
+.page{cursor:pointer; font-style: normal;}
+.page:hover {
+	color: Black; 
+}
 
 
 </style>
@@ -244,7 +247,19 @@ table {
                      <td style="text-align: center;" >
                         
                         <div style="margin-top: 10px; margin-bottom:80px; text-align: center; color: #949494;">
-                           < &emsp;1&emsp;2&emsp;3&emsp;4&emsp;5&emsp;6&emsp;7&emsp;8&emsp;9&emsp; >
+             						<p>
+										<span style="cursor: no-drop;"><</span> 
+										<span class="page">&emsp;1&emsp;</span>
+										<span class="page">2&emsp;</span>
+										<span class="page">3&emsp;</span>
+										<span class="page">4&emsp;</span>
+										<span class="page">5&emsp;</span>
+										<span class="page">6&emsp;</span>
+										<span class="page">7&emsp;</span>
+										<span class="page">8&emsp;</span>
+										<span class="page">9&emsp;</span>
+										<span style="cursor: no-drop;">></span>
+									</p>
                         </div>
                                     
                      </td>

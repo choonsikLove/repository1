@@ -40,7 +40,7 @@
 					<li class="dropdown">
 						<a href="#">Review</a>
 						<div class="dropdown-content">
-							<a href="#">레시피북</a>
+							<a href="http://localhost:9000/manwol/recipe">레시피북</a>
 							<a href="http://localhost:9000/manwol/review">Review</a>
 						</div>
 					</li>
