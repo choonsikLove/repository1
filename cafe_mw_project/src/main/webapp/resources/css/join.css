@@ -93,14 +93,14 @@ div#mail_join {
 }
 
 #mail_join:hover {
-	border: 1px solid black;
 	animation-name: borderColorAnimation;
 	animation-duration: 0.2s;
+	border: 1px solid black;
 }
 
 @keyframes borderColorAnimation{
-	0% {background: #a9a9a9;}
-	100% {background: black;}
+	0% {border: 1px solid #a9a9a9;}
+	100% {border: 1px solid black;}
 }
 
 #join_inner_1>hr {
