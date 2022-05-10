@@ -5,7 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="http://localhost:9000/manwol/resources/js/jquery-3.6.0.js"></script>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/slick.css"/>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/slick-theme.css"/>
+<script type="text/javascript" src="<%=request.getContextPath()%>/resources/jquery-3.6.0.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/resources/slick.js"></script>
+<style type="text/css">
+
+</style>
 <style type="text/css">
 
 	#show_review{
@@ -117,17 +123,34 @@
 		0% {transform: scale(1,1)}
 		100% {transform: scale(1.1,1.1)}
 	}
-
 </style>
-<script type="text/javascript">
-	$(document).ready(function(){
-		alert("변경3");
-	});
 
+<script>
+	$(document).ready(function(){
+		alert("test2");
+		
+		
+	})
+  		
 </script>
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
+	
+	<div style="padding:300px 100px; background-color: skyblue;">
+	  	<div id="slider-div"  >
+		    <div>1</div>
+		    <div>2</div>
+		    <div>3</div>
+		    <div>4</div>
+		    <div>5</div>
+		    <div>6</div>
+		    <div>7</div>
+		    <div>8</div>
+		    <div>9</div>
+		    <div>10</div>
+	  	</div>
+	</div>
 	
 	
 	<article id='show_review'>
