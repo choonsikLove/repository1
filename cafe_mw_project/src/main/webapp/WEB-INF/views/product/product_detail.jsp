@@ -542,7 +542,7 @@ margin-right: 10px;
 
 		<tr>
 			<td>
-				<table style="text-align: center;" class="detail" >
+				<table style="text-align: center; border-bottom: 1px solid #BDBDBD;" class="detail">
 					<tr>
 						<td>
 							<div class="category">
@@ -708,7 +708,7 @@ margin-right: 10px;
 								<img alt="#"
 									src="http://localhost:9000/manwol/resources/images/product/img30.jpg">
 							</div>
-							<div >
+							<div style="margin: 0 0 25px 0;">
 								<img  alt="#"
 									src="http://localhost:9000/manwol/resources/images/product/img31.jpg">
 							</div>
@@ -722,7 +722,7 @@ margin-right: 10px;
 			<td>
 				<table class="delivery">
 					<tr>
-						<th style="border-bottom: 1px solid #BDBDBD;">FRESH</th>
+						<th>FRESH</th>
 					</tr>
 					
 					<tr>
