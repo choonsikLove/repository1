@@ -91,10 +91,6 @@
 			] */
 
 		});	
-  			
-  			
-  			
-  		alert("test3");
   	});
 </script>
 <style type="text/css">
