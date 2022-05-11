@@ -24,10 +24,10 @@ table {
 .review{text-align: left; width:1270px; border-spacing:0;}
 .review_title{margin: 50px 0;}
 .rcategory{width: 100%; padding-bottom: 20px;}
-.rcategory .a1{color:#0042A9; cursor: pointer;}
-.rcategory .a2{color: black;  cursor: pointer;}
-.a1:hover{color:#0042A9; cursor: pointer;}
-.a2:hover{color: black;  cursor: pointer;}
+.rcategory .a1{color: black; cursor: pointer;}
+.rcategory .a2{color: #0042A9;  cursor: pointer;}
+.a1:hover{color: black; cursor: pointer;}
+.a2:hover{color:#0042A9;  cursor: pointer;}
 
 .mini1 td>div{display: flex;}
 .mini1 div{margin-right:10px; margin-top: 10px;}
@@ -84,13 +84,13 @@ table {
                <tr class="review_mini">
                   <td class="mini1" style="display: flex;">
                      <div>                                        
-                        <img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/review/포토구매평1.png" width="75px" height="75px">
+                        <img alt="포토구매평2" src="http://localhost:9000/manwol/resources/images/review/포토구매평2.png" width="75px" height="75px">
                      </div>
                      <div>   
-                        <a href="#"><small>[첫 구매고객 500원] 만월회 음료 원액 베이스 10종</small></a>
-                        <p>밀크티는 아직 먹어보기 전인데 기대됩니다<img alt="n" src="http://localhost:9000/manwol/resources/images/review/N.png"></p>
-                        <p><small>밀크티는 아직 먹어보기 전인데 기대됩니다</small></p> 
-                        <p class="id">goun****</p>
+                        <a href="#"><small>만월회 음료 원액 베이스 10종 (2개입, 12개입)</small></a>
+                        <p>친구가 선물로 줬는데 너무 맛있대요~<img alt="n" src="http://localhost:9000/manwol/resources/images/review/N.png"></p>
+                        <p><small>친구가 선물로 줬는데 너무 맛있대요~</small></p> 
+                        <p class="id">rewq****</p>
                      </div>
                   </td>
                </tr>
@@ -98,13 +98,13 @@ table {
               <tr class="review_mini">
                   <td class="mini1" style="display: flex;">
                      <div>                                        
-                        <img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/review/포토구매평1.png" width="75px" height="75px">
+                        <img alt="포토구매평2" src="http://localhost:9000/manwol/resources/images/review/포토구매평2.png" width="75px" height="75px">
                      </div>
                      <div>   
-                        <a href="#"><small>[첫 구매고객 500원] 만월회 음료 원액 베이스 10종</small></a>
-                        <p>밀크티는 아직 먹어보기 전인데 기대됩니다<img alt="n" src="http://localhost:9000/manwol/resources/images/review/N.png"></p>
-                        <p><small>밀크티는 아직 먹어보기 전인데 기대됩니다</small></p> 
-                        <p class="id">goun****</p>
+                        <a href="#"><small>만월회 음료 원액 베이스 10종 (2개입, 12개입)</small></a>
+                        <p>친구가 선물로 줬는데 너무 맛있대요~<img alt="n" src="http://localhost:9000/manwol/resources/images/review/N.png"></p>
+                        <p><small>친구가 선물로 줬는데 너무 맛있대요~</small></p> 
+                        <p class="id">rewq****</p>
                      </div>
                   </td>
                </tr>
@@ -113,13 +113,13 @@ table {
              <tr class="review_mini">
                   <td class="mini1" style="display: flex;">
                      <div>                                        
-                        <img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/review/포토구매평1.png" width="75px" height="75px">
+                        <img alt="포토구매평2" src="http://localhost:9000/manwol/resources/images/review/포토구매평2.png" width="75px" height="75px">
                      </div>
                      <div>   
-                        <a href="#"><small>[첫 구매고객 500원] 만월회 음료 원액 베이스 10종</small></a>
-                        <p>밀크티는 아직 먹어보기 전인데 기대됩니다<img alt="n" src="http://localhost:9000/manwol/resources/images/review/N.png"></p>
-                        <p><small>밀크티는 아직 먹어보기 전인데 기대됩니다</small></p> 
-                        <p class="id">goun****</p>
+                        <a href="#"><small>만월회 음료 원액 베이스 10종 (2개입, 12개입)</small></a>
+                        <p>친구가 선물로 줬는데 너무 맛있대요~<img alt="n" src="http://localhost:9000/manwol/resources/images/review/N.png"></p>
+                        <p><small>친구가 선물로 줬는데 너무 맛있대요~</small></p> 
+                        <p class="id">rewq****</p>
                      </div>
                   </td>
                </tr>
@@ -127,13 +127,13 @@ table {
                  <tr class="review_mini">
                   <td class="mini1" style="display: flex;">
                      <div>                                        
-                        <img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/review/포토구매평1.png" width="75px" height="75px">
+                        <img alt="포토구매평2" src="http://localhost:9000/manwol/resources/images/review/포토구매평2.png" width="75px" height="75px">
                      </div>
                      <div>   
-                        <a href="#"><small>[첫 구매고객 500원] 만월회 음료 원액 베이스 10종</small></a>
-                        <p>밀크티는 아직 먹어보기 전인데 기대됩니다<img alt="n" src="http://localhost:9000/manwol/resources/images/review/N.png"></p>
-                        <p><small>밀크티는 아직 먹어보기 전인데 기대됩니다</small></p> 
-                        <p class="id">goun****</p>
+                        <a href="#"><small>만월회 음료 원액 베이스 10종 (2개입, 12개입)</small></a>
+                        <p>친구가 선물로 줬는데 너무 맛있대요~<img alt="n" src="http://localhost:9000/manwol/resources/images/review/N.png"></p>
+                        <p><small>친구가 선물로 줬는데 너무 맛있대요~</small></p> 
+                        <p class="id">rewq****</p>
                      </div>
                   </td>
                </tr>
@@ -142,13 +142,13 @@ table {
                <tr class="review_mini">
                   <td class="mini1" style="display: flex;">
                      <div>                                        
-                        <img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/review/포토구매평1.png" width="75px" height="75px">
+                        <img alt="포토구매평2" src="http://localhost:9000/manwol/resources/images/review/포토구매평2.png" width="75px" height="75px">
                      </div>
                      <div>   
-                        <a href="#"><small>[첫 구매고객 500원] 만월회 음료 원액 베이스 10종</small></a>
-                        <p>밀크티는 아직 먹어보기 전인데 기대됩니다<img alt="n" src="http://localhost:9000/manwol/resources/images/review/N.png"></p>
-                        <p><small>밀크티는 아직 먹어보기 전인데 기대됩니다</small></p> 
-                        <p class="id">goun****</p>
+                        <a href="#"><small>만월회 음료 원액 베이스 10종 (2개입, 12개입)</small></a>
+                        <p>친구가 선물로 줬는데 너무 맛있대요~<img alt="n" src="http://localhost:9000/manwol/resources/images/review/N.png"></p>
+                        <p><small>친구가 선물로 줬는데 너무 맛있대요~</small></p> 
+                        <p class="id">rewq****</p>
                      </div>
                   </td>
                </tr>
@@ -156,13 +156,13 @@ table {
                  <tr class="review_mini">
                   <td class="mini1" style="display: flex;">
                      <div>                                        
-                        <img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/review/포토구매평1.png" width="75px" height="75px">
+                        <img alt="포토구매평2" src="http://localhost:9000/manwol/resources/images/review/포토구매평2.png" width="75px" height="75px">
                      </div>
                      <div>   
-                        <a href="#"><small>[첫 구매고객 500원] 만월회 음료 원액 베이스 10종</small></a>
-                        <p>밀크티는 아직 먹어보기 전인데 기대됩니다<img alt="n" src="http://localhost:9000/manwol/resources/images/review/N.png"></p>
-                        <p><small>밀크티는 아직 먹어보기 전인데 기대됩니다</small></p> 
-                        <p class="id">goun****</p>
+                        <a href="#"><small>만월회 음료 원액 베이스 10종 (2개입, 12개입)</small></a>
+                        <p>친구가 선물로 줬는데 너무 맛있대요~<img alt="n" src="http://localhost:9000/manwol/resources/images/review/N.png"></p>
+                        <p><small>친구가 선물로 줬는데 너무 맛있대요~</small></p> 
+                        <p class="id">rewq****</p>
                      </div>
                   </td>
                </tr>
@@ -171,13 +171,13 @@ table {
                   <tr class="review_mini">
                   <td class="mini1" style="display: flex;">
                      <div>                                        
-                        <img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/review/포토구매평1.png" width="75px" height="75px">
+                        <img alt="포토구매평2" src="http://localhost:9000/manwol/resources/images/review/포토구매평2.png" width="75px" height="75px">
                      </div>
                      <div>   
-                        <a href="#"><small>[첫 구매고객 500원] 만월회 음료 원액 베이스 10종</small></a>
-                        <p>밀크티는 아직 먹어보기 전인데 기대됩니다<img alt="n" src="http://localhost:9000/manwol/resources/images/review/N.png"></p>
-                        <p><small>밀크티는 아직 먹어보기 전인데 기대됩니다</small></p> 
-                        <p class="id">goun****</p>
+                        <a href="#"><small>만월회 음료 원액 베이스 10종 (2개입, 12개입)</small></a>
+                        <p>친구가 선물로 줬는데 너무 맛있대요~<img alt="n" src="http://localhost:9000/manwol/resources/images/review/N.png"></p>
+                        <p><small>친구가 선물로 줬는데 너무 맛있대요~</small></p> 
+                        <p class="id">rewq****</p>
                      </div>
                   </td>
                </tr>
@@ -186,13 +186,13 @@ table {
                 <tr class="review_mini">
                   <td class="mini1" style="display: flex;">
                      <div>                                        
-                        <img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/review/포토구매평1.png" width="75px" height="75px">
+                        <img alt="포토구매평2" src="http://localhost:9000/manwol/resources/images/review/포토구매평2.png" width="75px" height="75px">
                      </div>
                      <div>   
-                        <a href="#"><small>[첫 구매고객 500원] 만월회 음료 원액 베이스 10종</small></a>
-                        <p>밀크티는 아직 먹어보기 전인데 기대됩니다<img alt="n" src="http://localhost:9000/manwol/resources/images/review/N.png"></p>
-                        <p><small>밀크티는 아직 먹어보기 전인데 기대됩니다</small></p> 
-                        <p class="id">goun****</p>
+                        <a href="#"><small>만월회 음료 원액 베이스 10종 (2개입, 12개입)</small></a>
+                        <p>친구가 선물로 줬는데 너무 맛있대요~<img alt="n" src="http://localhost:9000/manwol/resources/images/review/N.png"></p>
+                        <p><small>친구가 선물로 줬는데 너무 맛있대요~</small></p> 
+                        <p class="id">rewq****</p>
                      </div>
                   </td>
                </tr>
@@ -200,13 +200,13 @@ table {
                   <tr class="review_mini">
                   <td class="mini1" style="display: flex;">
                      <div>                                        
-                        <img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/review/포토구매평1.png" width="75px" height="75px">
+                        <img alt="포토구매평2" src="http://localhost:9000/manwol/resources/images/review/포토구매평2.png" width="75px" height="75px">
                      </div>
                      <div>   
-                        <a href="#"><small>[첫 구매고객 500원] 만월회 음료 원액 베이스 10종</small></a>
-                        <p>밀크티는 아직 먹어보기 전인데 기대됩니다<img alt="n" src="http://localhost:9000/manwol/resources/images/review/N.png"></p>
-                        <p><small>밀크티는 아직 먹어보기 전인데 기대됩니다</small></p> 
-                        <p class="id">goun****</p>
+                        <a href="#"><small>만월회 음료 원액 베이스 10종 (2개입, 12개입)</small></a>
+                        <p>친구가 선물로 줬는데 너무 맛있대요~<img alt="n" src="http://localhost:9000/manwol/resources/images/review/N.png"></p>
+                        <p><small>친구가 선물로 줬는데 너무 맛있대요~</small></p> 
+                        <p class="id">rewq****</p>
                      </div>
                   </td>
                </tr>
@@ -214,13 +214,13 @@ table {
                   <tr class="review_mini">
                   <td class="mini1" style="display: flex;">
                      <div>                                        
-                        <img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/review/포토구매평1.png" width="75px" height="75px">
+                        <img alt="포토구매평2" src="http://localhost:9000/manwol/resources/images/review/포토구매평2.png" width="75px" height="75px">
                      </div>
                      <div>   
-                        <a href="#"><small>[첫 구매고객 500원] 만월회 음료 원액 베이스 10종</small></a>
-                        <p>밀크티는 아직 먹어보기 전인데 기대됩니다<img alt="n" src="http://localhost:9000/manwol/resources/images/review/N.png"></p>
-                        <p><small>밀크티는 아직 먹어보기 전인데 기대됩니다</small></p> 
-                        <p class="id">goun****</p>
+                        <a href="#"><small>만월회 음료 원액 베이스 10종 (2개입, 12개입)</small></a>
+                        <p>친구가 선물로 줬는데 너무 맛있대요~<img alt="n" src="http://localhost:9000/manwol/resources/images/review/N.png"></p>
+                        <p><small>친구가 선물로 줬는데 너무 맛있대요~</small></p> 
+                        <p class="id">rewq****</p>
                      </div>
                   </td>
                </tr>
