@@ -14,6 +14,12 @@ public class ReviewController {
 	  return "/review/review";
 	}
 	
+	@RequestMapping(value="/review2", method=RequestMethod.GET)
+	public String review2() {
+	      
+	  return "/review/review2";
+	}
+	
 	@RequestMapping(value="/recipe", method=RequestMethod.GET)
 	public String recipe() {
 	      
