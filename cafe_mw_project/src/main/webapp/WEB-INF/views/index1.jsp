@@ -26,6 +26,7 @@
 			autoplaySpeed : 10000, 		// 자동 스크롤 시 다음으로 넘어가는데 걸리는 시간 (ms)
 			pauseOnHover : true,		// 슬라이드 이동	시 마우스 호버하면 슬라이더 멈추게 설정
 			vertical : false,		// 세로 방향 슬라이드 옵션
+			fade: true,
 			prevArrow : "<button type='button' class='slick-prev'>Previous</button>",		// 이전 화살표 모양 설정
 			nextArrow : "<button type='button' class='slick-next'>Next</button>",		// 다음 화살표 모양 설정
 			dotsClass : "slick-dots", 	//아래 나오는 페이지네이션(점) css class 지정
@@ -57,7 +58,7 @@
   		$('#slider2').slick({
 			slide: 'div',		//슬라이드 되어야 할 태그 ex) div, li 
 			infinite : true, 	//무한 반복 옵션	 
-			slidesToShow : 3,		// 한 화면에 보여질 컨텐츠 개수
+			slidesToShow : 1,		// 한 화면에 보여질 컨텐츠 개수
 			slidesToScroll : 1,		//스크롤 한번에 움직일 컨텐츠 개수
 			speed : 1000,	 // 다음 버튼 누르고 다음 화면 뜨는데까지 걸리는 시간(ms)
 			arrows : true, 		// 옆으로 이동하는 화살표 표시 여부
@@ -66,6 +67,7 @@
 			autoplaySpeed : 5000, 		// 자동 스크롤 시 다음으로 넘어가는데 걸리는 시간 (ms)
 			pauseOnHover : true,		// 슬라이드 이동	시 마우스 호버하면 슬라이더 멈추게 설정
 			vertical : false,		// 세로 방향 슬라이드 옵션
+			fade: true,
 			prevArrow : "<button type='button' class='slick-prev'>Previous</button>",		// 이전 화살표 모양 설정
 			nextArrow : "<button type='button' class='slick-next'>Next</button>",		// 다음 화살표 모양 설정
 			dotsClass : "slick-dots", 	//아래 나오는 페이지네이션(점) css class 지정
@@ -92,10 +94,13 @@
   			
   			
   			
-  		alert("test12");
+  		alert("test3");
   	});
 </script>
 <style type="text/css">
+	body{
+	background: #DDDDDD;
+	}
 	.slick_box1{
 		background-position: 20%;
 		background-size: 100% auto;
@@ -163,6 +168,32 @@
 		padding-left: 25%;
 		margin-top: 290px;
 	}
+	
+	.slide2_title{
+		font-size: 25px;
+		height: 700px;
+		margin: 0px auto;
+		display: inline-block;
+	}
+	.slide2_title>table{
+		margin: 0px auto;
+		margin-top: 4%;
+		border-spacing: 80px 20px;
+	}
+	slide2_title tr td{
+		padding-left: 5%;
+	}
+	.slide2_title td div{
+		font-size: 18px;
+		margin-left: -50px;
+	}
+	table>caption{
+		text-align: left;
+	}
+	#slick_box2 img{
+		width: 400px;
+		height: 480px;
+	}
 </style>
 </head>
 <body>
@@ -186,22 +217,66 @@
 		    </a>
 	  	</div>
 	</div>
-<div id='slick_box2'>
+	<div id='slick_box2'>
 	  	<div id="slider2"  >
-		    <div>
-		    	나를 위한
+		    <div class='slide2_title'>
 		    	<table>
+				    <caption>
+				    	&nbsp;나를 위한 
+				    </caption>
 		    		<tr>
-		    			<td><img src='<%=request.getContextPath()%>/resources/images/index/slide2_1.jpg'></td>
-		    			<td><img src='<%=request.getContextPath()%>/resources/images/index/slide2_2.jpg'></td>
-		    			<td><img src='<%=request.getContextPath()%>/resources/images/index/slide2_3.jpg'></td>
+		    			<td>
+		    				<div>첫 구매라면?</div>
+		    				<br>
+		    				<a href='#'>
+		    					<img src='<%=request.getContextPath()%>/resources/images/index/slide2_1.jpg'>
+		    				</a>
+		    			</td>
+		    			<td>
+		    				<div>두 번째 구매라면,</div>
+		    				<br>
+		    				<a href='#'>
+		    					<img src='<%=request.getContextPath()%>/resources/images/index/slide2_2.jpg'>
+		    				</a>
+		    			</td>
+		    			<td>
+		    				<div>세 번째 구매라면,</div>
+		    				<br>
+		    				<a href='#'>
+		    					<img src='<%=request.getContextPath()%>/resources/images/index/slide2_3.jpg'>
+		    				</a>
+		    			</td>
 		    		</tr>
-		    	</table>
+			    </table>
 		    </div>
-		    <div>
-		    	너를 위한
+ 		    <div class='slide2_title'>
 		    	<table>
-		    	
+				    <caption>
+				    	&nbsp;너를 위한 
+				    </caption>
+		    		<tr>
+		    			<td>
+		    				<div>깜짝 비밀 선물</div>
+		    				<br>
+		    				<a href='#'>
+		    					<img src='<%=request.getContextPath()%>/resources/images/index/slide2_4.jpg'>
+		    				</a>
+		    			</td>
+		    			<td>
+		    				<div>고급스러운 선물</div>
+		    				<br>
+		    				<a href='#'>
+		    					<img src='<%=request.getContextPath()%>/resources/images/index/slide2_5.jpg'>
+		    				</a>
+		    			</td>
+		    			<td>
+		    				<div>다같이 함께</div>
+		    				<br>
+		    				<a href='#'>
+		    					<img src='<%=request.getContextPath()%>/resources/images/index/slide2_6.jpg'>
+		    				</a>
+		    			</td>
+		    		</tr>
 		    	</table>
 		    </div>
 	  	</div>
@@ -241,7 +316,7 @@
 		    			전국에 700여 개의 조각달이 있다는데..
 		    			<br><br>
 		    			<span class='slideBox_link'>어딘지 구경하기&#8594;</span>
-		    			<br>
+		    			<br><br>
 		    			(사진속 카페: 카토)
 		    			
 		    		</div>
