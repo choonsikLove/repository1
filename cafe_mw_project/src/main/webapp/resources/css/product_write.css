@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+*{
+	margin: 0; padding: 0;
+	font-family: 'NanumSquare';
+	}
+li{list-style-type: none;}
+a[href] {text-decoration: none;}
+
+
+header>div{
+	height: 65px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+header>div>div:first-of-type{
+	margin-left: 25px;
+}
+
+header>div>div:last-of-type{
+	margin-right: 25px;
+}
+
+header>div button{
+	width: 50px; height: 30px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+header>div button:first-of-type{
+	margin-right: 5px;
+	background: #fff;
+	border: 0.7px #d3d3d3 solid;	
+}
+
+header>div button:last-of-type{
+	background: rgb(11,47,127);
+	border: none;	
+	color: #fff;
+}
+
+header>div button:last-of-type:hover{
+	background: rgb(33,104,177);
+}
+	
+hr+div{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background: pink;
+	height: 90vh; width: 80em;
+	margin: 0 auto;
+}
+
+hr+div>div{
+	width: 75%; height: 80vh;
+	background: white;
+}
+
+select#hing1{
+	background: cyan;
+	width: 200px;
+}
+
+div.selectDiv{
+	width: 200px; height: 120px;	
+	background: cyan;
+}
+
+div#selectDiv1{
+	background: lime;
+}
+
+
+div#newSelect{
+	width: 800px; height: 120px;
+	background: red;
+	display: flex;
+	justify-content: space-between;
+}
+
+button.deleteSelect{
+	width: 50px;
+	background: yellow;
+}
+
+select.newSelectBox{
+	width: 120px;
+	height: 40px;
+	
+}
+

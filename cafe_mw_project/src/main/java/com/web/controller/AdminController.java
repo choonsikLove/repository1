@@ -25,4 +25,9 @@ public class AdminController {
 	public String product_list() {
 		return "/admin/product/product_list";
 	}
+	
+	@RequestMapping(value="/admin/product_write", method=RequestMethod.GET)
+	public String product_write() {
+		return "/admin/product/product_write";
+	}
 }
