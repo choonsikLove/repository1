@@ -162,13 +162,13 @@ table{
 									<tr>
 										<td>
 											<div class="contents1">
-												<a href="http://localhost:9000/manwol/product_detail"> 
+												<a href="http://localhost:9000/manwol/recipe_detail"> 
 													<img alt="리얼딸기"
 													src="http://localhost:9000/manwol/resources/images/review/리얼딸기1.jpg"
 													height="400px" width="400px">
 												</a>
 												<p class="contents_name">
-													<a href="http://localhost:9000/manwol/product_detail"><strong>리얼딸기</strong><span>리얼딸기 4가지 응용버전(베리말차, 베리밀크티, 딸기 샐러</span> <span><br>드, 딸기빵)</span></a>
+													<a href="http://localhost:9000/manwol/recipe_detail"> <strong>리얼딸기</strong><span>리얼딸기 4가지 응용버전(베리말차, 베리밀크티, 딸기 샐러</span> <span><br>드, 딸기빵)</span></a>
 												</p>
 												<div class="wish_list">
 													<a href="#"> 
@@ -176,21 +176,23 @@ table{
 														<span style="font-size: 15px; color: #004a98;">2</span>
 													</a>
 												</div>
-												<img alt="moon"
-													src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
-													width="38px" class="moon">
+												<a href="http://localhost:9000/manwol/recipe_detail">
+													<img alt="moon"
+														src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
+														width="38px" class="moon">
+												</a>	
 											</div>
 										</td>
 
 										<td>
 											<div class="contents2">
-												<a href="#"> 
+												<a href="http://localhost:9000/manwol/recipe_detail"> 
 													<img alt="슈렉라떼"
-													src="http://localhost:9000/manwol/resources/images/review/슈렉라떼2.jpg"
-													height="400px" width="400px">
+														src="http://localhost:9000/manwol/resources/images/review/슈렉라떼2.jpg"
+														height="400px" width="400px">
 												</a>
 												<p class="contents_name">
-													<a href="http://localhost:9000/manwol/product_detail"> <strong>말차</strong> <span>슈렉라떼(말차에 밀크티 추가)</span></a>
+													<a href="http://localhost:9000/manwol/recipe_detail"> <strong>말차</strong> <span>슈렉라떼(말차에 밀크티 추가)</span></a>
 												</p>
 												<div class="wish_list">
 													<a href="#"> 
@@ -198,19 +200,21 @@ table{
 														<span style="font-size: 15px; color: #004a98;">5</span>
 													</a>
 												</div>
-												<img class="moon" alt="moon"
-													src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
-													width="38px" class="moon">
+												<a href="http://localhost:9000/manwol/recipe_detail">
+													<img class="moon" alt="moon"
+														src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
+														width="38px" class="moon">
+												</a>	
 											</div>
 										</td>
 										<td>
 											<div class="contents2">
-												<a href="#">
+												<a href="http://localhost:9000/manwol/recipe_detail">
 													<img class="re" alt="트리플초코스콘"
 													src="http://localhost:9000/manwol/resources/images/review/트리플초코스콘1.jpg"
 													height="400px" width="400px"></a>
 												<p class="contents_name">
-													<a href="http://localhost:9000/manwol/product_detail"><strong>악마초코</strong> <span>트리플초코스콘</span></a>
+													<a href="http://localhost:9000/manwol/recipe_detail"> <strong>악마초코</strong> <span>트리플초코스콘</span></a>
 												</p>
 												<div class="wish_list">
 													<a href="#"> 
@@ -218,9 +222,11 @@ table{
 														<span style="font-size: 15px; color: #004a98;">27</span>
 													</a>
 												</div>
-												<img alt="moon"
-													src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
-													width="38px" class="moon">
+												<a href="http://localhost:9000/manwol/recipe_detail">
+													<img alt="moon"
+														src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
+														width="38px" class="moon">
+												</a>		
 											</div>
 										</td>
 									</tr>
@@ -228,12 +234,12 @@ table{
 									<tr>
 										<td>
 											<div class="contents1">
-												<a href="#">
+												<a href="http://localhost:9000/manwol/recipe_detail">
 													<img alt="밀콜추"
 													src="http://localhost:9000/manwol/resources/images/review/밀콜추1.jpg"
 													height="400px" width="400px"></a>
 												<p>
-													<a href="#"> <strong>밀크티</strong> <span>밀콜추(밀크티에 콜드블루 추가)</span></a>
+													<a href="http://localhost:9000/manwol/recipe_detail"> <strong>밀크티</strong> <span>밀콜추(밀크티에 콜드블루 추가)</span></a>
 												</p>
 												<div class="wish_list">
 													<a href="#"> 
@@ -241,19 +247,21 @@ table{
 														<span style="font-size: 15px; color: #004a98;">3</span>
 													</a>
 												</div>
-												<img alt="moon"
-													src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
-													width="38px" class="moon">
+												<a href="http://localhost:9000/manwol/recipe_detail">
+													<img alt="moon"
+														src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
+														width="38px" class="moon">
+												</a>	
 											</div>
 										</td>
 										<td>
 											<div class="contents1">
-												<a href="">
+												<a href="http://localhost:9000/manwol/recipe_detail">
 													<img  alt="스콘"
 													src="http://localhost:9000/manwol/resources/images/review/스콘1.jpg"
 													height="400px" width="400px"></a>
 												<p>
-													<a href="#"> <strong>그린티초코</strong> <span>스콘</span></a>
+													<a href="http://localhost:9000/manwol/recipe_detail"> <strong>그린티초코</strong> <span>스콘</span></a>
 												</p>
 												<div class="wish_list">
 													<a href="#"> 
@@ -265,20 +273,22 @@ table{
 														<span style="font-size: 15px; color: #004a98;">1</span>
 													</a>
 												</div>
-												<img alt="moon"
-													src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
-													width="38px" class="moon">
+												<a href="http://localhost:9000/manwol/recipe_detail">
+													<img alt="moon"
+														src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
+														width="38px" class="moon">
+												</a>	
 											</div>
 										</td>
 
 										<td>
 											<div class="contents1">
-												<a href="#">
+												<a href="http://localhost:9000/manwol/recipe_detail">
 													<img alt="마들렌"
 													src="http://localhost:9000/manwol/resources/images/review/마들렌1.jpg"
 													height="400px" width="400px"></a>
 												<p>
-													<a href="#"> <strong>쑥</strong> <span>마들렌</span></a>
+													<a href="http://localhost:9000/manwol/recipe_detail"> <strong>쑥</strong> <span>마들렌</span></a>
 												</p>
 												<div class="wish_list">
 													<a href="#"> 
@@ -286,21 +296,23 @@ table{
 														<span style="font-size: 15px; color: #004a98;">3</span>
 													</a>
 												</div>
-												<img alt="moon"
-													src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
-													width="38px" class="moon">
+												<a href="http://localhost:9000/manwol/recipe_detail">
+													<img alt="moon"
+														src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
+														width="38px" class="moon">
+												</a>
 											</div>
 										</td>
 									</tr>
 									<tr>
 										<td>
 											<div class="contents1">
-												<a href="#">
+												<a href="http://localhost:9000/manwol/recipe_detail">
 													<img alt="초코결스콘"
 													src="http://localhost:9000/manwol/resources/images/review/초코결스콘2.jpg"
 													height="400px" width="400px"></a>
 												<p>
-													<a href="#"> <strong>악마초코</strong> <span>초코결스콘</span></a> 
+													<a href="http://localhost:9000/manwol/recipe_detail"> <strong>악마초코</strong> <span>초코결스콘</span></a> 
 												</p>
 												<div class="wish_list">
 													<a href="#"> 
@@ -308,20 +320,22 @@ table{
 														<span style="font-size: 15px; color: #004a98;">9</span>
 													</a>
 												</div>
-												<img alt="moon"
-													src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
-													width="38px" class="moon">
+												<a href="http://localhost:9000/manwol/recipe_detail">
+													<img alt="moon"
+														src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
+														width="38px" class="moon">
+												</a>	
 											</div>
 										</td>
 
 										<td>
 											<div class="contents1">
-												<a href="#">
+												<a href="http://localhost:9000/manwol/recipe_detail">
 													<img alt="구겔호프"
 													src="http://localhost:9000/manwol/resources/images/review/구겔호프1.jpg"
 													height="400px" width="400px"></a>
 												<p>
-													<a href="#"> <strong>밀크티</strong> <span>구겔호프</span></a>
+													<a href="http://localhost:9000/manwol/recipe_detail"> <strong>밀크티</strong> <span>구겔호프</span></a>
 												</p>
 												<div class="wish_list">
 													<a href="#"> 
@@ -329,19 +343,21 @@ table{
 														<span style="font-size: 15px; color: #004a98;">4</span>
 													</a>
 												</div>
-												<img alt="moon"
-													src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
-													width="38px" class="moon">
+												<a href="http://localhost:9000/manwol/recipe_detail">
+													<img alt="moon"
+														src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
+														width="38px" class="moon">
+												</a>	
 											</div>
 										</td>
 										<td>
 											<div class="contents1">
-												<a href="#">
+												<a href="http://localhost:9000/manwol/recipe_detail">
 													<img alt="크림 파스타"
 													src="http://localhost:9000/manwol/resources/images/review/크림 파스타1.jpg"
 													height="400px" width="400px"></a>
 												<p>
-													<a href="#"> <strong>단호박</strong> <span>크림 파스타</span></a>
+													<a href="http://localhost:9000/manwol/recipe_detail"> <strong>단호박</strong> <span>크림 파스타</span></a>
 												</p>
 												<div class="wish_list">
 													<a href="#"> 
@@ -349,21 +365,23 @@ table{
 														<span style="font-size: 15px; color: #004a98;">21</span>
 													</a>
 												</div>
-												<img alt="moon"
-													src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
-													width="38px" class="moon">
+												<a href="http://localhost:9000/manwol/recipe_detail">
+													<img alt="moon"
+														src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
+														width="38px" class="moon">
+												</a>	
 											</div>
 										</td>
 									</tr>
 									<tr>
 										<td>
 											<div class="contents1">
-												<a href="http://localhost:9000/manwol/product_group_order">
+												<a href="http://localhost:9000/manwol/recipe_detail">
 													<img alt="팥빙수"
 													src="http://localhost:9000/manwol/resources/images/review/팥빙수1.jpg"
 													height="400px" width="400px"></a>
 												<p>
-													<a href="#"> <strong>말차</strong> <span>팥빙수</span></a>
+													<a href="http://localhost:9000/manwol/recipe_detail"> <strong>말차</strong> <span>팥빙수</span></a>
 												</p>
 												<div class="wish_list">
 													<a href="#"> 
@@ -371,20 +389,22 @@ table{
 														<span style="font-size: 15px; color: #004a98;">16</span>
 													</a>
 												</div>
-												<img alt="moon"
-													src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
-													width="38px" class="moon">
+												<a href="http://localhost:9000/manwol/recipe_detail">
+													<img alt="moon"
+														src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
+														width="38px" class="moon">
+												</a>	
 											</div>
 										</td>
 										<td>
 											<div class="contents1">
-												<a href="http://localhost:9000/manwol/product_group_order">
+												<a href="http://localhost:9000/manwol/recipe_detail">
 													<img alt="바스크 치즈케이크"
 													src="http://localhost:9000/manwol/resources/images/review/바스크 치즈케이크1.jpg"
 													height="400px" width="400px">
 												</a>
 												<p>
-													<a href="#"> <strong>단호박</strong> <span>바스크 치즈케이크</span></a>
+													<a href="http://localhost:9000/manwol/recipe_detail"> <strong>단호박</strong> <span>바스크 치즈케이크</span></a>
 												</p>
 												<div class="wish_list">
 													<a href="#"> 
@@ -392,19 +412,21 @@ table{
 														<span style="font-size: 15px; color: #004a98;">54</span>
 													</a>
 												</div>
-												<img alt="moon"
-													src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
-													width="38px" class="moon">
+												<a href="http://localhost:9000/manwol/recipe_detail">
+													<img alt="moon"
+														src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
+														width="38px" class="moon">
+												</a>	
 											</div>
 										</td>
 										<td>
 											<div class="contents1">
-												<a href="http://localhost:9000/manwol/product_group_order">
+												<a href="http://localhost:9000/manwol/recipe_detail">
 													<img alt="프라푸치노"
 													src="http://localhost:9000/manwol/resources/images/review/프라푸치노1.jpg"
 													height="400px" width="400px"></a>
 												<p>
-													<a href="#"> <strong>민크초코</strong> <span>프라푸치노</span></a>
+													<a href="http://localhost:9000/manwol/recipe_detail"> <strong>민크초코</strong> <span>프라푸치노</span></a>
 												</p>
 												<div class="wish_list">
 													<a href="#"> 
@@ -412,9 +434,11 @@ table{
 														<span style="font-size: 15px; color: #004a98;">4</span>
 													</a>
 												</div>
-												<img alt="moon"
-													src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
-													width="38px" class="moon">
+												<a href="http://localhost:9000/manwol/recipe_detail">
+													<img alt="moon"
+														src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
+														width="38px" class="moon">
+												</a>	
 											</div>
 										</td>
 									</tr>
