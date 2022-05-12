@@ -21,6 +21,11 @@ table{
 	margin-right: auto;
 	margin-left: auto;
 }	
+	
+.c2{width: 100%;}
+.c3{width: 100%;}
+.c4{width: 100%;}
+.c5{width: 100%;}
 
 /*리뷰 문구*/
 .recipe_text{
@@ -130,28 +135,19 @@ label span input {
 	margin-right: -20%;
 	}
 		
+.w_btn:hover{
+	opacity: 0.7;
+	filter:alpha(opacity=75);
+}	
 	
-	
-	
-	
-	
-	
-.c2{width: 100%;}
-.c3{width: 100%;}
-.c4{width: 100%;}
-.c5{width: 100%;}
 
 
-/*이전 목록 다음목록*/
+/*이전목록 다음목록*/
 .contents3 {cursor: pointer; border-top: 1.3px solid lightgray;}
 .contents4 {cursor: pointer;}
 
 .c3:hover{background-color: #F6F6F6;}
 .c4:hover{background-color: #F6F6F6;}
-
-
-
-.contents5 {width: 100%;}
 
 
 /*목록 버튼*/
@@ -190,6 +186,8 @@ label span input {
 	opacity: 0.7;
 	filter:alpha(opacity=75);
 }
+
+
 </style>
 </head>
 <body>
