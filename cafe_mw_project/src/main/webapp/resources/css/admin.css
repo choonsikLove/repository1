@@ -313,7 +313,7 @@ div.memberInfo+div table tr:nth-of-type(6) td{
 	  'opsz' 30
 		}
 		
-button#addProduct{
+button.productButton{
 	width: 100px; height: 30px;
 	background: rgb(11,47,127);
 	cursor: pointer;
@@ -326,6 +326,20 @@ button#addProduct{
 	margin-left: 1150px;
 }
 
-button#addProduct:hover{
+button.productButton:hover{
 	background: rgb(33,104,177);
+}
+
+
+div.deleteRecipe,
+div.hideRecipe{
+	background: pink;
+	cursor: pointer;
+	width: 40px; height: 30px;
+	margin-bottom: 10px;
+}
+
+div.deleteRecipe:hover,
+div.hideRecipe:hover{
+	background: red;
 }

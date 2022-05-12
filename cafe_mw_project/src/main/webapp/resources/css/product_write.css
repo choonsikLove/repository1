@@ -23,10 +23,15 @@ header>div>div:last-of-type{
 	margin-right: 25px;
 }
 
-header>div button{
+header>div button,
+hr+div>form>div>div:nth-of-type(8)>button{
 	width: 50px; height: 30px;
 	cursor: pointer;
 	border-radius: 5px;
+}
+hr+div>form>div>div:nth-of-type(8)>button{
+	height: 24px;
+	margin-left: 15px;
 }
 
 header>div button:first-of-type{
@@ -35,13 +40,16 @@ header>div button:first-of-type{
 	border: 0.7px #d3d3d3 solid;	
 }
 
-header>div button:last-of-type{
+
+header>div button:last-of-type,
+hr+div>form>div>div:nth-of-type(8)>button{
 	background: rgb(11,47,127);
 	border: none;	
 	color: #fff;
 }
 
-header>div button:last-of-type:hover{
+header>div button:last-of-type:hover,
+hr+div>form>div>div:nth-of-type(8)>button:hover{
 	background: rgb(33,104,177);
 }
 	
@@ -50,46 +58,224 @@ hr+div{
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	background: pink;
-	height: 90vh; width: 80em;
+	width: 80em;
 	margin: 0 auto;
 }
 
-hr+div>div{
-	width: 75%; height: 80vh;
-	background: white;
+hr+div>form>div{
+	width: 60em;
+	background: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: column;
+	margin: 20px 0;
 }
 
-select#hing1{
-	background: cyan;
-	width: 200px;
+hr+div>form>div>div{
+	margin: 8px 0;
+	width: 100%;
 }
+
+hr+div>form>div>div p,
+hr+div>form>div>div span{
+	font-size: 10pt;
+	display: inline-block;
+	margin-left: 40px;
+}
+
+hr+div>form>div>div:first-of-type span{
+	margin-left: 5px;
+}
+
+hr+div>form>div>div input[type='text']{
+	height: 25px;
+	padding: 5px 8px;
+	border: none;
+	border-bottom: 0.7px #dedede solid;
+}
+
+hr+div>form>div>div:first-of-type input[type='text']{
+	width: 800px;
+}
+
+hr+div>form>div>div:first-of-type>img{
+	border-radius: 50%;
+	width: 30px;
+	position: relative;
+	top: 10px;
+}
+
+hr+div>form>div>div:nth-of-type(2) input[type='text'],
+hr+div>form>div>div:nth-of-type(7) input[type='text']{
+	width: 322px;
+	margin: 0 28px;
+}
+
+hr+div>form>div>div select:first-of-type{
+	height: 40px;
+}
+
+
+hr+div>form>div>div:nth-of-type(3) span{
+	margin-bottom: 8px;
+}
+
+hr+div>form>div>div:nth-of-type(3) table{
+	border-collapse: collapse;
+	margin: 10px auto;
+	border: none;
+	background: #f6f6f6;
+}
+
+hr+div>form>div>div:nth-of-type(3) table td{
+	width: 150px;
+	text-align: center;
+	padding: 20px 0;
+	border: none;
+}
+
+hr+div>form>div>div:nth-of-type(3) table td p{
+	margin-left: 0;
+	margin-bottom: 6px;
+}
+
+hr+div>form>div>div:nth-of-type(3) table tr{
+	border: none;
+}
+
+hr+div>form>div>div:nth-of-type(4) select{
+	margin-left: 14px;
+	border: none;
+	border-bottom: 0.7px #dedede solid;
+	width: 320px;
+}
+
+hr+div>form>div>div:nth-of-type(5) span,
+hr+div>form>div>div:nth-of-type(6) span{
+	margin-left: 30px;
+}
+
+hr+div>form>div>div:nth-of-type(5),
+hr+div>form>div>div:nth-of-type(6){
+	height: 120px;
+}
+
+hr+div>form>div>div:nth-of-type(5)>label>div,
+hr+div>form>div>div:nth-of-type(6)>label>div{
+	cursor: pointer;
+	background: rgb(11,47,127);
+	color: #fff;
+	width: 20px; height: 15px;
+	padding: 5px ;
+	font-size: 10pt;
+	font-weight: bold;
+	border-radius: 5px;
+	position: relative;
+	top: 7px; left:45px;
+	text-align: center;
+}
+
+hr+div>form>div>div:nth-of-type(5)>label>div:hover,
+hr+div>form>div>div:nth-of-type(6)>label>div:hover{
+	background: rgb(33,104,177);
+}
+
+hr+div>form>div>div:nth-of-type(5)>div,
+hr+div>form>div>div:nth-of-type(6)>div{
+	width: 100px; height: 100px;
+	position: relative;
+	padding: 7px;
+	border: 0.7px #dedede solid;
+	border-radius: 5px;
+	top: -50px; left: 107px;
+}
+
+hr+div>form>div>div:nth-of-type(6)>div{
+	width: 780px;
+}
+
+hr+div>form>div>div:nth-of-type(8)>span{
+	margin-left: 10px;
+}
+
+hr+div>form>div>div:nth-of-type(8)>input[type='text']{
+	margin-left: 3px;
+	width: 322px;
+}
+hr+div>form>div>div:nth-of-type(8)>input[type='checkbox']{
+	position: relative;
+	top: 2px;
+}
+
 
 div.selectDiv{
-	width: 200px; height: 120px;	
-	background: cyan;
-}
-
-div#selectDiv1{
-	background: lime;
-}
-
-
-div#newSelect{
-	width: 800px; height: 120px;
-	background: red;
+	width: 240px; height: 90%;	
+	background: rgb(11,47,127);
+	color: white;
+	border-radius: 5px;
+	border: none;
 	display: flex;
-	justify-content: space-between;
-}
-
-button.deleteSelect{
-	width: 50px;
-	background: yellow;
-}
-
-select.newSelectBox{
-	width: 120px;
-	height: 40px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	
 }
 
+div.selectDiv p,
+div.selectDiv span{
+	margin-left: 0;
+	display: inline-block;
+	margin: 5px 0;
+}
+
+div.selectDiv p{
+	font-weight: bold;
+}
+
+div#newSelect{
+	width: 800px; height: 250px;
+	background: #f6f6f6;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-left: 50px;
+}
+
+div.selectDiv button.deleteSelect{
+	width: 20px; height: 20px;
+	background: transparent;
+	cursor: pointer;
+	border: none;
+	border-radius: 50%;
+	color: white;
+	font-size: 13pt;
+	position: relative;
+	top: -70px; left: 105px;
+}
+
+div.selectDiv select.newSelectBox{
+	width: 180px;
+	height: 28px;
+	position: relative;
+	top: -20px;
+}
+
+div.selectDiv>input[type='text']{
+	width: 150px; height: 20px;
+	padding: 3px;
+	display: inline-block;
+	border: none;
+	margin-right: 35px;
+}
+
+div.selectDiv>button.selectAddButton{
+	position: relative;
+	top: -27px; left: 87px;
+	width: 40px; height: 27px;
+	background: #fff;
+	border: none;
+	border-radius: 5px;
+	color: #000;
+	cursor: pointer;
+}

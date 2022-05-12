@@ -6,9 +6,11 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="http://localhost:9000/manwol/resources/css/admin.css">
+<script src="http://localhost:9000/manwol/resources/js/jquery-3.6.0.js"></script>
+<script src="http://localhost:9000/manwol/resources/js/admin.js"></script>
 </head>
 <body>
-	<jsp:include page="../header.jsp"></jsp:include>
+	<jsp:include page="../../header.jsp"></jsp:include>
 	<hr class="adminHr">
 
 <div>
@@ -36,15 +38,42 @@
 		</div>
 		
 		<div>
-			<ul>
-				<li><a href="http://localhost:9000/manwol/admin/member_list">회원 관리</a></li>
-				<li><a href="http://localhost:9000/manwol/admin/product_list">상품 관리</a></li>
-				<li><a href="#">주문 관리</a></li>
-				<li><a href="http://localhost:9000/manwol/admin/review_main">Review 관리</a></li>
-			</ul>
+			<div>
+				<table border='1'>
+					<tr>
+						<td>hi
+							<div class='deleteRecipe'>삭제</div>
+							<div class='hideRecipe'>숨김</div>
+						</td>
+						<td>hi2
+							<div class='deleteRecipe'>삭제</div>
+							<div class='hideRecipe'>숨김</div>
+						</td>
+						<td>hi3
+							<div class='deleteRecipe'>삭제</div>
+							<div class='hideRecipe'>숨김</div>
+						</td>
+					</tr>
+					<tr>
+						<td>hi</td>
+						<td>hi2</td>
+						<td>hi3</td>
+					</tr>
+					<tr>
+						<td>hi</td>
+						<td>hi2</td>
+						<td>hi3</td>
+					</tr>
+					<tr>
+						<td>hi</td>
+						<td>hi2</td>
+						<td>hi3</td>
+					</tr>
+				</table>
+			</div>
 		</div>
 	</div>
 </div>	
-	<jsp:include page="../footer.jsp"></jsp:include>
+	<jsp:include page="../../footer.jsp"></jsp:include>
 </body>
 </html>

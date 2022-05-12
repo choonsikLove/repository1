@@ -11,6 +11,7 @@ public class AdminController {
 		return "/admin/admin";
 	}
 	
+	//회원!
 	@RequestMapping(value="/admin/member_list", method=RequestMethod.GET)
 	public String member_list() {
 		return "/admin/member/member_list";
@@ -21,13 +22,62 @@ public class AdminController {
 		return "/admin/member/member_page";
 	}
 
+	
+	//상품!
 	@RequestMapping(value="/admin/product_list", method=RequestMethod.GET)
 	public String product_list() {
 		return "/admin/product/product_list";
 	}
 	
+	@RequestMapping(value="/admin/product_list_base", method=RequestMethod.GET)
+	public String product_list_base() {
+		return "/admin/product/product_list_base";
+	}
+	
+	@RequestMapping(value="/admin/product_list_goods", method=RequestMethod.GET)
+	public String product_list_goods() {
+		return "/admin/product/product_list_goods";
+	}
+	
+	@RequestMapping(value="/admin/product_list_gift", method=RequestMethod.GET)
+	public String product_list_gift() {
+		return "/admin/product/product_list_gift";
+	}
+	
+	@RequestMapping(value="/admin/product_list_group_order", method=RequestMethod.GET)
+	public String product_list_group_order() {
+		return "/admin/product/product_list_group_order";
+	}
+	
+	@RequestMapping(value="/admin/product_detail", method=RequestMethod.GET)
+	public String product_detail() {
+		return "/admin/product/product_detail";
+	}
+
+	@RequestMapping(value="/admin/product_group_order", method=RequestMethod.GET)
+	public String product_group_order() {
+		return "/admin/product/product_group_order";
+	}
+	
 	@RequestMapping(value="/admin/product_write", method=RequestMethod.GET)
 	public String product_write() {
 		return "/admin/product/product_write";
+	}
+	
+	
+	//리뷰
+	@RequestMapping(value="/admin/review_main", method=RequestMethod.GET)
+	public String product_review_main() {
+		return "/admin/review/review_main";
+	}
+	
+	@RequestMapping(value="/admin/review", method=RequestMethod.GET)
+	public String product_review() {
+		return "/admin/review/review";
+	}
+	
+	@RequestMapping(value="/admin/recipe", method=RequestMethod.GET)
+	public String product_recipe() {
+		return "/admin/review/recipe";
 	}
 }

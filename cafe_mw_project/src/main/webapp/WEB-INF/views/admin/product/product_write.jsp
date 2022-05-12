@@ -27,8 +27,8 @@
 <hr>
 
 <div><%--헤더 아래 전체 --%>
+	<form>
 	<div><%--중앙 --%>
-		<form>
 			<div>
 				<img alt="프로필 사진"
 					src="http://localhost:9000/manwol/resources/images/default_profile.png">
@@ -36,12 +36,12 @@
 				<input type="text" placeholder="상품 이름">
 			</div>
 			<div>
-				가격 <input type="text" placeholder="상품 이름">
-				할인가 <input type="text" placeholder="상품 이름">
+				<span>가격</span> <input type="text" placeholder="가격">
+				<span>할인가</span> <input type="text" placeholder="할인가">
 			</div>
 			<div>
 				<span>태그 이미지 선택</span>
-				<table>
+				<table border='1'>
 					<tr>
 						<td>
 							<img alt="새 상품" src="http://localhost:9000/manwol/resources/images/product/NEW.jpg">
@@ -58,20 +58,20 @@
 					</tr>
 					<tr>
 						<td>
-							<p>새 상품</p>
-							<input type="checkbox" name="tagImage" value="newProduct">
+							<p>새 상품</p><br>
+							<input type="checkbox" name="tagImage" value="새상품">
 						</td>
 						<td>
-							<p>주문 폭주 상품</p>
-							<input type="checkbox" name="tagImage" value="popularProduct">
+							<p>주문 폭주 상품</p><br>
+							<input type="checkbox" name="tagImage" value="주문폭주상품">
 						</td>
 						<td>
-							<p>세일 상품</p>
-							<input type="checkbox" name="tagImage" value="saleProduct">
+							<p>세일 상품</p><br>
+							<input type="checkbox" name="tagImage" value="세일상품">
 						</td>
 						<td>
-							<p>선물 추천 상품</p>
-							<input type="checkbox" name="tagImage" value="giftProduct">
+							<p>선물 추천 상품</p><br>
+							<input type="checkbox" name="tagImage" value="선물추천상품">
 						</td>
 					</tr>
 				</table>
@@ -87,36 +87,67 @@
 			</div>
 			<div>
 				<span>대표 이미지</span>
-				<input type="file">
+				<input type="file" id="mainProductImage" name="mainProductImage" style="visibility: hidden;">
+				<label for="mainProductImage"><div>+</div></label>
+				<div>
+					여기에 이미지 넣기 이미지 이미지
+				</div>
 			</div>
 			<div>
-				작성 창(아직 안 만들었음)<br>
-				여기는 이미지 위주니까 다양한 이미지를 넣을 수 있는 방법을 찾아보기.
+				<span>기타 이미지</span>
+				<input type="file" id="productImages" name="productImages" style="visibility: hidden;">
+				<label for="productImages"><div>+</div></label>
+				<div>
+					기타 이미지들
+				</div>
 			</div>
 			<div>
 				<span>재고</span>
 				<input type="text" placeholder="정수만 입력 가능하게 만들기">
 			</div>
 			<div>
-				셀렉트 박스 만들기
-			
-				<span>큰 이름</span>
+			선택 박스 만들기 코너임 이 문구는 나중에 지웁시다<br>
+				<span>선택 박스 이름</span>
 				<input type="text" id="selectBoxName">
 			
 				<span>필수항목 여부</span>
 				<input type="checkbox" id="selectBoxCheck">
-			
 				<button type="button" id="select1">추가</button>
-			
-				<br>
-			
-				<button type="button" id="select3">완료</button>
 			</div>
 			<div id="newSelect">
-			
+			<%--나중에 만약에 여기에 select의 이름이 있다면, 수정할 때 상자를 보여주는 c:if하면 되지않을까?힝--%>
+			<%--
+				<div class="selectDiv">
+					<p>셀렉트박스 이름</p>
+					<span>필수선택</span>
+					<button type='button' class='deleteSelect'>x</button>
+					<select class='newSelectBox'></select>
+					<p>항목 입력</p>
+					<input type='text' class= 'selectBoxOption'></input>
+					<button type='button' class='selectAddButton'>추가</button>
+				</div>
+				<div class="selectDiv">
+					<p>셀렉트박스 이름</p>
+					<span>필수선택</span>
+					<button type='button' class='deleteSelect'>x</button>
+					<select class='newSelectBox'></select>
+					<p>항목 입력</p>
+					<input type='text' class= 'selectBoxOption'></input>
+					<button type='button' class='selectAddButton'>추가</button>
+				</div>
+			<div class="selectDiv">
+					<p>셀렉트박스 이름</p>
+					<span>필수선택</span>
+					<button type='button' class='deleteSelect'>x</button>
+					<select class='newSelectBox'></select>
+					<p>항목 입력</p>
+					<input type='text' class= 'selectBoxOption'></input>
+					<button type='button' class='selectAddButton'>추가</button>
+				</div>
+			 --%>
 			</div>
-		</form>
 	</div>
+	</form>
 </div>
 
 

@@ -23,7 +23,6 @@ $('document').ready(function(){
 				var selectDiv= document.createElement('div');
 				selectArray[i] = selectDiv;
 				selectDiv.setAttribute('class','selectDiv');	
-				selectDiv.setAttribute('id','selectDiv'+i);	
 				
 				string +="<p>" + selectBoxName.val() + "</p>";
 				
@@ -33,11 +32,11 @@ $('document').ready(function(){
 					string += "<span>(선택)</span>";
 				}
 				
-				string +="<button type='button' class='deleteSelect' id='deleteSelect"+i+"'>삭제</button>";
-				string +="<select class='newSelectBox' id='newSelectBox"+i+"'></select>";
-				string +="<span>항목 입력</span>";
-				string +="<input type='text' class= 'selectBoxOption' id='selectBoxOption'"+i+"' disabled></input>";
-				string +="<button type='button' class='selectAddButton' id='selectAddButton"+i+"' disabled>추가</button>";
+				string +="<button type='button' class='deleteSelect'>x</button>";
+				string +="<select class='newSelectBox'></select>";
+				string +="<p>항목 입력</p>";
+				string +="<input type='text' class= 'selectBoxOption'></input>";
+				string +="<button type='button' class='selectAddButton'>추가</button>";
 				
 				selectDiv.innerHTML = string;
 			
@@ -64,13 +63,9 @@ $(document).on("click", ".selectDiv", function(){
 		var selectBoxOption = $(this).children('input');
 		var selectAddButton = $(this).children('button').eq(1);
 		
-		
-		selectBoxOption.prop('disabled', false);
-		selectAddButton.prop('disabled', false);
 		var j = 0;
 		
 		$('.selectDiv').css('border','none');
-		$(this).css('border','3px black solid');
 		
 		selectAddButton.click(function(){
 			if(selectBoxOption.val() == ""){
@@ -83,13 +78,22 @@ $(document).on("click", ".selectDiv", function(){
 		});
 });
 
-
-
-$(document).on("click", "#select3", function(){
-	$("input.selectBoxOption").prop('disabled', true);
-	$("button.selectAddButton").prop('disabled', true);
-	$('.selectDiv').css('border','none');
+$(document).on("focus", ".selectBoxOption", function(){
+	$(this).parent().css('border','3px black solid');
 });
 
+$(document).on("click",".deleteSelect",function(){
+	$(this).parent().remove();
+	i--;
+});
+
+
+$("input[name=tagImage]:checkbox").change(function() { // 체크박스들이 변경됬을때
+	if($("input[name=tagImage]:checkbox:checked").length == 2) {
+		$("input[name=tagImage]:checkbox:not(:checked)").attr("disabled", "disabled");
+	} else {
+		$("input[name=tagImage]:checkbox").removeAttr("disabled");
+	}
+});
 
 });
