@@ -323,7 +323,7 @@
 			<div class="photo">
 				<img alt="포토구매평1" src="http://localhost:9000/manwol/resources/images/review/포토구매평3.jpeg" width="330px" height="100%;">
 			</div>
-			<div class="desc">
+			<div class="desc_1">
 				<div class="desc_header">
 					<div id="user">
 						<img alt="사용자" src="http://localhost:9000/manwol/resources/images/review/사용자.png">

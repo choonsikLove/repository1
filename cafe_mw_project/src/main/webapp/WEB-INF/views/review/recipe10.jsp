@@ -161,13 +161,13 @@ table{
 									<tr>
 										<td>
 											<div class="contents1">
-												<a href="http://localhost:9000/manwol/product_detail"> 
+												<a href="http://localhost:9000/manwol/recipe_detail"> 
 													<img alt="리얼딸기"
 													src="http://localhost:9000/manwol/resources/images/review/리얼딸기1.jpg"
 													height="400px" width="400px">
 												</a>
 												<p class="contents_name">
-													<a href="http://localhost:9000/manwol/product_detail"><strong>리얼딸기</strong><span>리얼딸기 4가지 응용버전(베리말차, 베리밀크티, 딸기 샐러</span> <span><br>드, 딸기빵)</span></a>
+													<a href="http://localhost:9000/manwol/recipe_detail"><strong>리얼딸기</strong><span>리얼딸기 4가지 응용버전(베리말차, 베리밀크티, 딸기 샐러</span> <span><br>드, 딸기빵)</span></a>
 												</p>
 												<div class="wish_list">
 													<a href="#"> 
@@ -175,9 +175,11 @@ table{
 														<span style="font-size: 15px; color: #004a98;">2</span>
 													</a>
 												</div>
-												<img alt="moon"
-													src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
-													width="38px" class="moon">
+												<a href="http://localhost:9000/manwol/recipe_detail">
+													<img alt="moon"
+														src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
+														width="38px" class="moon">
+												</a>
 											</div>
 										</td>
 									</tr>

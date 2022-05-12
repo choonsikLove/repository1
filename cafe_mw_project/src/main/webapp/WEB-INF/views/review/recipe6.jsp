@@ -162,12 +162,12 @@ table{
 									<!--아이콘-->
 										<td>
 											<div class="contents1">
-												<a href="">
+												<a href="http://localhost:9000/manwol/recipe_detail">
 													<img  alt="갸또 쇼콜라"
 													src="http://localhost:9000/manwol/resources/images/review/갸또 쇼콜라.jpg"
 													height="400px" width="400px"></a>
 												<p>
-													<a href="#"> <strong>흑임자</strong> <span>갸또 쇼콜라</span></a>
+													<a href="http://localhost:9000/manwol/recipe_detail"> <strong>흑임자</strong> <span>갸또 쇼콜라</span></a>
 												</p>
 												<div class="wish_list">
 													<a href="#"> 
@@ -175,9 +175,11 @@ table{
 														<span style="font-size: 15px; color: #004a98;">14</span>
 													</a>
 												</div>
-												<img alt="moon"
-													src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
-													width="38px" class="moon">
+												<a href="http://localhost:9000/manwol/recipe_detail">
+													<img alt="moon"
+														src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
+														width="38px" class="moon">
+												</a>
 											</div>
 										</td>
 									</tr>
