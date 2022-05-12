@@ -12,6 +12,11 @@ public class JoinController {
 		return "/join";
 	}
 	
+	@RequestMapping(value="/withdraw", method= RequestMethod.GET)
+	public String withdraw() {
+		return "/withdraw";
+	}
+	
 	
 	
 	
