@@ -67,17 +67,23 @@ public class AdminController {
 	
 	//∏Æ∫‰
 	@RequestMapping(value="/admin/review_main", method=RequestMethod.GET)
-	public String product_review_main() {
+	public String review_main() {
 		return "/admin/review/review_main";
 	}
 	
 	@RequestMapping(value="/admin/review", method=RequestMethod.GET)
-	public String product_review() {
+	public String review() {
 		return "/admin/review/review";
 	}
 	
 	@RequestMapping(value="/admin/recipe", method=RequestMethod.GET)
-	public String product_recipe() {
+	public String recipe() {
 		return "/admin/review/recipe";
+	}
+	
+	//¡÷πÆ
+	@RequestMapping(value="/admin/order_main", method=RequestMethod.GET)
+	public String order_main() {
+		return "/admin/order/order_main";
 	}
 }

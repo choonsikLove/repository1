@@ -19,7 +19,7 @@
 		 	<ul>
 				<li><a href="http://localhost:9000/manwol/admin/member_list">회원 관리</a></li>
 				<li><a href="http://localhost:9000/manwol/admin/product_list">상품 관리</a></li>
-				<li><a href="#">주문 관리</a></li>
+				<li><a href="http://localhost:9000/manwol/admin/order_main">주문 관리</a></li>
 				<li><a href="http://localhost:9000/manwol/admin/review_main">Review 관리</a></li>
 		 	</ul>
 		</nav>
@@ -38,10 +38,9 @@
 		</div>
 		
 		<div>
-			<div>
 				<table border='1'>
 					<tr>
-						<td>hi
+						<td>css가 분리된 다음에 하자!
 							<div class='deleteRecipe'>삭제</div>
 							<div class='hideRecipe'>숨김</div>
 						</td>
@@ -54,23 +53,7 @@
 							<div class='hideRecipe'>숨김</div>
 						</td>
 					</tr>
-					<tr>
-						<td>hi</td>
-						<td>hi2</td>
-						<td>hi3</td>
-					</tr>
-					<tr>
-						<td>hi</td>
-						<td>hi2</td>
-						<td>hi3</td>
-					</tr>
-					<tr>
-						<td>hi</td>
-						<td>hi2</td>
-						<td>hi3</td>
-					</tr>
 				</table>
-			</div>
 		</div>
 	</div>
 </div>	

@@ -25,7 +25,10 @@ div.adminWrap{ /*css 합칠 때 곤란할 것 같아서 div로 나눴음 */
 	flex-direction: column;
 }
 
-div.adminWrap>div{
+div.adminWrap>div.welcome,
+div.adminWrap>div.adminBox,
+div.adminWrap>div.memberInfo,
+div.adminWrap>div.member_table{
 	width: 62em; height: 240px;
 	margin-top: 50px;
 	margin-left: 200px;
@@ -33,7 +36,6 @@ div.adminWrap>div{
 	align-items: center;
 	justify-content: flex-start;
 }
-
 
 div.adminWrap>div:first-of-type {
 	background: #fff;
@@ -63,14 +65,14 @@ div.adminWrap>div:not(:first-of-type){
 	margin-bottom: 50px;
 }
 
-div.adminWrap>div:not(:first-of-type)>ul>li{
+div.adminWrap>div.adminBox>ul>li{
 	background: rgb(10,33,85);
 	margin-bottom: 10px;
 	padding: 15px;
 	width: 61.2em;/*임시*/
 }
 
-div.adminWrap>div:not(:first-of-type)>ul>li:hover{
+div.adminWrap>div.adminBox>ul>li:hover{
 	background: rgba(10,33,85,0.5);
 }
 
@@ -343,3 +345,78 @@ div.deleteRecipe:hover,
 div.hideRecipe:hover{
 	background: red;
 }
+
+div.reviewDiv>ul>li>button{
+	position:relative;
+	width: 40px;
+	border-radius: 5px;
+	left: 78em; 
+	cursor: pointer;
+	margin: 0;
+	border: none;
+	background: transparent;
+	color: #989898;
+}
+
+td.mini1>button:hover{
+	color: #000;
+	text-decoration: underline;
+}
+
+div.open_modal{
+	position: relative;
+	top: -8px;
+}
+
+div.reviewDiv ul:first-of-type{
+	margin-bottom: 25px;
+	margin-left: 5px;
+	visibility: hidden;
+}
+
+div.reviewDiv ul:first-of-type li{
+	display: inline-block;
+	font-size: 11pt;
+	color: #888;
+	cursor: pointer;
+}
+
+div.reviewDiv ul:last-of-type li{
+	padding: 10px;
+	width: 70em;
+	border-bottom: 0.7px #dedede solid;
+}
+
+div.reviewDiv ul:last-of-type li:first-of-type {
+	border-top: 0.7px #dedede solid;
+}
+
+div.reviewDiv ul:last-of-type li:last-of-type{
+	border-bottom:none;
+	text-align: center;
+}
+
+div.reviewDiv>h2 {
+	text-align: center;
+	margin: 20px 0 ;
+}
+
+div.reviewDiv>table{
+	position: relative;
+	left: -440px;
+	border-collapse: collapse;
+	text-align: center;
+	border: none;
+}
+
+div.reviewDiv>table tr{
+	border: none;
+}
+
+div.reviewDiv>table tr td{
+	padding-bottom: 5px;
+	border: none;
+	color: #888;
+	cursor: pointer;
+}
+

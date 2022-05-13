@@ -17,7 +17,7 @@
 		 	<ul>
 				<li><a href="http://localhost:9000/manwol/admin/member_list">회원 관리</a></li>
 				<li><a href="http://localhost:9000/manwol/admin/product_list">상품 관리</a></li>
-				<li><a href="#">주문 관리</a></li>
+				<li><a href="http://localhost:9000/manwol/admin/order_main">주문 관리</a></li>
 				<li><a href="http://localhost:9000/manwol/admin/review_main">Review 관리</a></li>
 		 	</ul>
 		</nav>
@@ -35,7 +35,7 @@
 			</div>
 		</div>
 		
-		<div>
+		<div class="adminBox">
 			<ul>
 				<li><a href="http://localhost:9000/manwol/admin/review">리뷰 관리</a></li>
 				<li><a href="http://localhost:9000/manwol/admin/recipe">레시피북 관리</a></li>

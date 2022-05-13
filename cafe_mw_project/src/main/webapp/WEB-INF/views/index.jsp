@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery-3.6.0.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/index.js"></script>
 <style type="text/css">
 
 	#show_review{

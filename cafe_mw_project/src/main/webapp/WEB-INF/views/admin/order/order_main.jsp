@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="http://localhost:9000/manwol/resources/css/admin.css">
 </head>
 <body>
-	<jsp:include page="../header.jsp"></jsp:include>
+	<jsp:include page="../../header.jsp"></jsp:include>
 	<hr class="adminHr">
 
 <div>
@@ -37,14 +37,13 @@
 		
 		<div class="adminBox">
 			<ul>
-				<li><a href="http://localhost:9000/manwol/admin/member_list">회원 관리</a></li>
-				<li><a href="http://localhost:9000/manwol/admin/product_list">상품 관리</a></li>
-				<li><a href="http://localhost:9000/manwol/admin/order_main">주문 관리</a></li>
-				<li><a href="http://localhost:9000/manwol/admin/review_main">Review 관리</a></li>
+				<li><a href="#">주문 관리</a></li>
+				<li><a href="#">정기구독 관리</a></li>
+				<li><a href="#">주문 취소 관리</a></li>
 			</ul>
 		</div>
 	</div>
 </div>	
-	<jsp:include page="../footer.jsp"></jsp:include>
+	<jsp:include page="../../footer.jsp"></jsp:include>
 </body>
 </html>
