@@ -6,6 +6,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="http://localhost:9000/manwol/resources/css/admin.css">
+<script src="http://localhost:9000/manwol/resources/js/jquery-3.6.0.js"></script>
+<script src="http://localhost:9000/manwol/resources/js/admin.js"></script>
 </head>
 <body>
 	<jsp:include page="../../header.jsp"></jsp:include>
@@ -34,14 +36,27 @@
 				<p>관리자 메인 페이지입니다.</p>
 			</div>
 		</div>
-		
-		<div class="adminBox">
-			<ul>
-				<li><a href="http://localhost:9000/manwol/admin/order">주문 관리</a></li>
-				<li><a href="#">정기구독 관리</a></li>
-				<li><a href="#">주문 취소 관리</a></li>
+		<div class="recipeDiv">
+			<h2>레시피북 관리</h2>
+			<ul id="recipeTypes">
+				<li>ALL</li>
+				<li>밀크티</li>
+				<li>말차</li>
+				<li>악마초코</li>
+				<li>단호박</li>
+				<li>민트초코</li>
+				<li>흑임자</li>
+				<li>쑥</li>
+				<li>그린티초코</li>
+				<li>자몽샤워</li>
+				<li>리얼딸기</li>
 			</ul>
-		</div>
+			
+			<div>
+				야호!
+			</div>
+		
+		</div>	
 	</div>
 </div>	
 	<jsp:include page="../../footer.jsp"></jsp:include>

@@ -35,12 +35,35 @@
 			</div>
 		</div>
 		
-		<div class="adminBox">
-			<ul>
-				<li><a href="http://localhost:9000/manwol/admin/order">주문 관리</a></li>
-				<li><a href="#">정기구독 관리</a></li>
-				<li><a href="#">주문 취소 관리</a></li>
+		<div class="orderDiv">
+			<ul id="orderStatus">
+				<li>입금 대기 중</li>
+				<li>배송 준비</li>
+				<li>배송 중</li>
+				<li>배송 완료</li>
 			</ul>
+			<div>
+				<ul>
+					<li>
+						<div>
+							<img alt="만월회 음료 원액 베이스 10종(2개입,12개입)" src="http://localhost:9000/manwol/resources/images/product/만월회 음료 원액 베이스 10종(2개입,12개입).jpg">
+							<div>
+								주문 상품 정보
+							</div>
+							<p id="orderStatus_update">주문 상태</p>
+						</div>
+					</li>
+					<li>
+						<form>
+							<input type="text" placeholder="Search">
+							<span class="material-symbols-outlined">search</span>
+						</form>
+					</li>
+					<li>
+						&lt; 1 2 3 &gt;
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 </div>	

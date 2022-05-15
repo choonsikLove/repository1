@@ -119,8 +119,10 @@
 				</tr>
 				<tr>
 					<td colspan="5">
-						<input type="text" placeholder="Search">
-						<span class="material-symbols-outlined">search</span>
+						<form>
+							<input type="text" placeholder="Search">
+							<span class="material-symbols-outlined">search</span>
+						</form>
 					</td>
 				</tr>	
 				<tr>

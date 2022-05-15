@@ -43,8 +43,12 @@ $(document).ready(function(){
  		} 
  	});
  	
- 	$('#baseBox').click(function(){
+ 	$('#baseBox').mouseenter(function(){
  		$('#baseTypes').css('visibility','visible');
+ 	});
+ 	
+ 	$('#baseTypes').mouseleave(function(){
+ 		$('#baseTypes').css('visibility','hidden');
  	});
  	
 });

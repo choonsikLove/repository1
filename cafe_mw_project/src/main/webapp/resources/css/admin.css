@@ -112,7 +112,8 @@ div.member_table table tr:nth-of-type(12) td{
 }
 
 div.member_table table input[type='text'],
-div.memberInfo+div table input[type='text']{
+div.memberInfo+div table input[type='text'],
+div.recipeDiv>div table input[type='text']{
 	width: 180px; height: 30px;
 	border: none;
 	border-bottom: 1px black solid;
@@ -121,7 +122,8 @@ div.memberInfo+div table input[type='text']{
 }
 
 div.member_table table span,
-div.memberInfo+div table span{
+div.memberInfo+div table span,
+div.recipeDiv>div table tr:nth-of-type(5) span{
 	position: relative;
 	top: 11px; left: -25px;
 }
@@ -332,24 +334,9 @@ button.productButton:hover{
 	background: rgb(33,104,177);
 }
 
-
-div.deleteRecipe,
-div.hideRecipe{
-	background: pink;
-	cursor: pointer;
-	width: 40px; height: 30px;
-	margin-bottom: 10px;
-}
-
-div.deleteRecipe:hover,
-div.hideRecipe:hover{
-	background: red;
-}
-
 div.reviewDiv>ul>li>button{
 	position:relative;
 	width: 40px;
-	border-radius: 5px;
 	left: 78em; 
 	cursor: pointer;
 	margin: 0;
@@ -366,19 +353,26 @@ td.mini1>button:hover{
 div.open_modal{
 	position: relative;
 	top: -8px;
+	cursor: pointer;
 }
 
 div.reviewDiv ul:first-of-type{
-	margin-bottom: 25px;
+	padding-top: 5px;
+	padding-bottom: 25px;
 	margin-left: 5px;
 	visibility: hidden;
 }
 
-div.reviewDiv ul:first-of-type li{
+div.reviewDiv ul:first-of-type li,
+div.recipeDiv ul:first-of-type li{
 	display: inline-block;
 	font-size: 11pt;
 	color: #888;
 	cursor: pointer;
+	padding-right: 5px;
+}
+div.recipeDiv ul:first-of-type li:hover{
+	color: #000;
 }
 
 div.reviewDiv ul:last-of-type li{
@@ -396,9 +390,10 @@ div.reviewDiv ul:last-of-type li:last-of-type{
 	text-align: center;
 }
 
-div.reviewDiv>h2 {
+div.reviewDiv>h2,
+div.recipeDiv>h2 {
 	text-align: center;
-	margin: 20px 0 ;
+	margin: 50px 0 ;
 }
 
 div.reviewDiv>table{
@@ -420,3 +415,97 @@ div.reviewDiv>table tr td{
 	cursor: pointer;
 }
 
+div.adminWrap>div.recipeDiv{
+	margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: #fff;
+}
+
+div.recipeDiv>ul#recipeTypes{
+	margin-bottom: 20px;
+}
+div.recipeDiv>ul#recipeTypes li{
+	font-size: 10pt;
+	padding: 5px 10px;
+}
+
+div.recipeDiv>div:first-of-type>table tr td{
+	width: 400px;
+	padding: 10px;
+}
+
+
+div.recipeContents>a:first-of-type>img{
+	margin-bottom: 10pt;
+}
+
+div.recipeContents strong,
+div.recipeContents span{
+	font-size: 10.5pt;
+	color: #000;
+}
+
+div.recipeContents strong{
+	color:rgb(11,47,127);
+}
+
+div.recipeContents span.material-symbols-outlined{
+	position: relative;
+	top:5px;
+}
+
+div.recipeContents>a:last-of-type>img{
+	position: relative;
+	top: 7px;
+}
+
+button.deleteRecipe,
+button.hideRecipe{
+	position:relative;
+	width: 40px;
+	cursor: pointer;
+	margin: 0;
+	border: none;
+	background: transparent;
+	color: #989898;
+	left: 315px;
+	top: -27px;
+}
+
+button.deleteRecipe:hover,
+button.hideRecipe:hover{
+	color: #000;
+	text-decoration: underline;
+}
+
+div.recipeDiv>div table tr:nth-of-type(5),
+div.recipeDiv>div table tr:last-of-type {
+	text-align: center;	
+}
+
+div.reviewDiv{
+	background: #fff;
+	margin: 50px 0;
+	padding: 0 30px;
+}
+
+div.orderDiv{
+	background: cyan;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 50px auto;
+}
+
+div.orderDiv>ul li{
+	display: inline-block;
+	font-size: 11pt;
+	background: yellow;
+	color: #888;
+}
+
+div.orderDiv>ul+div>ul li div

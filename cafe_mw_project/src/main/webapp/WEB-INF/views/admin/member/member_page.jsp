@@ -99,8 +99,10 @@
 				</tr>
 				<tr>
 					<td colspan="3">
-						<input type="text" placeholder="Search">
-						<span class="material-symbols-outlined">search</span>
+						<form>
+							<input type="text" placeholder="Search">
+							<span class="material-symbols-outlined">search</span>
+						</form>
 					</td>
 				</tr>	
 				<tr>

@@ -81,9 +81,19 @@ public class AdminController {
 		return "/admin/review/recipe";
 	}
 	
+	@RequestMapping(value="/admin/recipe_detail", method=RequestMethod.GET)
+	public String recipe_detail() {
+		return "/admin/review/recipe_detail";
+	}
+	
 	//¡÷πÆ
 	@RequestMapping(value="/admin/order_main", method=RequestMethod.GET)
 	public String order_main() {
 		return "/admin/order/order_main";
+	}
+	
+	@RequestMapping(value="/admin/order", method=RequestMethod.GET)
+	public String order() {
+		return "/admin/order/order";
 	}
 }
