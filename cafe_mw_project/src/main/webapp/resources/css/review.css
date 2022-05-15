@@ -72,7 +72,7 @@ label.filebutton {
     position:relative;
     background-color:white;
     padding-top:5px;
-    margin-left: 2%;
+    margin-left: 1%;
 }
 
 label span input {
@@ -227,8 +227,7 @@ label span input {
 
 /*´ñ±ÛÃ¢,¹öÆ°*/
 .comment1{margin: 20px 0;}
-.comment2_1{border: 0.03px solid #BDBDBD; height: 130px;}
-#comment2_t{height:80px; width: 523px; border: none; padding:15px 0 0 10px;}
+.comment3{border: 0.03px solid #BDBDBD; height: 130px;}
 #comment2_1_t{height: 75px; width: 335px; border: none; padding: 15px 0 0 10px;}
 
 .co_btn{
@@ -245,5 +244,7 @@ label span input {
 	position: absolute; 
 	width: 50px;
  	padding: 2.3px 10px 2.3px 10px; 
- 	margin: 0px 0 0 259px;
+ 	margin: 0px 0 0 256px;
  }
+
+.filebutton2{margin-left:5px;}

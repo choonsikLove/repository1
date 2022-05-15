@@ -358,15 +358,17 @@
 							<button class="co_btn">댓글쓰기</button>
 						</p>
 					</div>
-					<div class="comment2_1">
-						<textarea id="comment2_1_t" placeholder="댓글" rows="30" cols="1000"></textarea>
-						<p>
-							<label class="filebutton"> <img
-								src="http://localhost:9000/manwol/resources/images/review/image.png" />
-								<span><input type="file" id="myfile" name="myfile"></span>
-							</label>
-							<button type="button" class="w_btn2">작성</button>
-						</p>
+					<div class="comment3">
+						<form action="" name="comment3">
+							<textarea  name="v" id="comment2_1_t" placeholder="댓글" rows="30" cols="1000"></textarea>
+							<p>
+								<label class="filebutton2"> 
+									<img src="http://localhost:9000/manwol/resources/images/review/image.png"/>
+									<span><input type="file" id="myfile" name="myfile"></span>
+								</label>
+								<button type="button" class="w_btn2"  onclick=" fn_submit1();">작성</button>
+							</p>
+						</form>
 					</div>
 				</div>
 			</div>
