@@ -71,6 +71,11 @@ $(document).ready(function(){
 });
 
 
+
+
+
+
+
 $(document).ready(function(){
 
 /*		로그인 클릭시		*/
@@ -120,7 +125,7 @@ $('#findIDPW').click(function(){
 
 $(document).on("click", "#findID", function(){
     $('.popup_cont').css("display","none");
-	$('.login_popup_box').css({"height":"510px",'top':'45%'});
+	$('.login_popup_box').css({"height":"515px",'top':'45%'});
 	$('#popup_cont2').css("display","block");
 });
 
@@ -133,11 +138,11 @@ $(document).on("click", "#findPW", function(){
 $(document).on("click", "#findIDButton", function(){
 	if($('input:radio[value=byEmail]').is(":checked")){
 		$('.popup_cont').css("display","none");
-		$('.login_popup_box').css({"height":"250px",'top':'28%'});
+		$('.login_popup_box').css({"height":"260px",'top':'28%'});
 		$('#popup_cont4').css("display","block");
 	} else if($('input:radio[value=byHp]').is(":checked")) {
 		$('.popup_cont').css("display","none");
-		$('.login_popup_box').css({"height":"250px",'top':'28%'});
+		$('.login_popup_box').css({"height":"260px",'top':'28%'});
 		$('#popup_cont4').css("display","block");
 		/*둘이 내용은 같은데 넣는 정보가 달라서 둘로 나눴음*/
 	} else {

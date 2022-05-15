@@ -6,6 +6,7 @@
 	z-index: 1000; 
 	width: 100%; height: 100%; 
 	background-color: rgba(0, 0, 0, 0.4); 
+	overflow-y: initial;
 }
 
 /*팝업 박스*/
@@ -337,12 +338,14 @@ div#popup_cont6 div:nth-of-type(2)>p:last-of-type{
 div#popup_cont4 div:last-of-type{
 	color: rgb(17,142,255);
 	cursor: pointer;
+	position: relative;
+	top: -15px;
 }
 
 div#popup_cont4 div:nth-of-type(3){
 	margin: 5px 0;
 	position: relative;
-	top: -5px;
+	top: -20px;
 }
 
 div#popup_cont4 table,

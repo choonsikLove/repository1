@@ -113,7 +113,8 @@ div.member_table table tr:nth-of-type(12) td{
 
 div.member_table table input[type='text'],
 div.memberInfo+div table input[type='text'],
-div.recipeDiv>div table input[type='text']{
+div.recipeDiv>div table input[type='text'],
+div.orderDiv>div table input[type='text']{
 	width: 180px; height: 30px;
 	border: none;
 	border-bottom: 1px black solid;
@@ -452,7 +453,8 @@ div.recipeContents strong{
 	color:rgb(11,47,127);
 }
 
-div.recipeContents span.material-symbols-outlined{
+div.recipeContents span.material-symbols-outlined,
+div.orderDiv span.material-symbols-outlined{
 	position: relative;
 	top:5px;
 }
@@ -493,19 +495,92 @@ div.reviewDiv{
 }
 
 div.orderDiv{
-	background: cyan;
+	background: #fff;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	margin: 50px auto;
+	padding: 20px 0;
+}
+
+div.orderDiv>ul#orderStatus{
+	margin-left: 20px;
+	margin-top: 5px;
+}
+
+div.orderDiv>ul#orderStatus li{
+	display: inline-block;
+	font-size: 11pt;
+	color: #888;
+	margin-right: 10px;
+}
+
+div.orderDiv>div{
+	width: 80em;
+	margin-top: 20px;
+}
+
+div.orderDiv>div>table{
+	font-size: 11pt;
+	width: 100%;
+	table-layout: fixed;
+	text-align: center;
+	border-collapse: collapse;
+	border: none;
+}
+
+div.orderDiv>div>table tr{
+	border: none;
+}
+
+div.orderDiv>div>table tr td{
+	padding: 15px 3px;
+	border: none;
+}
+
+div.orderDiv>div>table tr:first-of-type{
+	color: #999;
+}
+
+div.orderDiv>div>table td:nth-of-type(4){
+	width: 350px;
+}
+
+span.orderStatus_update{
+	color: rgb(11,47,127);
+	cursor: pointer;
+}
+
+div#order_popup{
+	position:fixed;
+	top:0;left:0;
+	z-index: 1000; 
+	width: 100%; height: 100%; 
+	background-color: rgba(0, 0, 0, 0.4); 
+}
+
+div.order_popup_box{
+	position: relative;
+	top: 53%;left:51%; 
+	height: 340px; width: 450px; /*height %로 하면 안됨!*/
+	transform:translate(-50%, -50%);
+	z-index:2000;
+	background: white;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	margin: 50px auto;
+	border-radius: 5px;
 }
 
-div.orderDiv>ul li{
-	display: inline-block;
-	font-size: 11pt;
-	background: yellow;
-	color: #888;
+span#closeX2{
+	cursor: pointer;
 }
 
-div.orderDiv>ul+div>ul li div
+div#popup_cont_order{
+	height: 100%;
+	width: 85%;
+	display:block;
+}
+

@@ -96,4 +96,5 @@ public class AdminController {
 	public String order() {
 		return "/admin/order/order";
 	}
+	
 }

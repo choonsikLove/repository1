@@ -50,5 +50,19 @@ $(document).ready(function(){
  	$('#baseTypes').mouseleave(function(){
  		$('#baseTypes').css('visibility','hidden');
  	});
+		
+ 	$('#closeX2').click(function(){
+		$('#order_popup').css("display","none");
+	});
  	
 });
+  	
+  	jQuery(document).on('click', '.orderStatus_update', function () {
+  		var a = $(this);
+ 		$('#order_popup').css("display","block");
+		
+		jQuery(document).off('click', '.orderStatus_change').on('click', '.orderStatus_change', function () {
+			a.text($(this).text());
+  		});
+  	});
+  	

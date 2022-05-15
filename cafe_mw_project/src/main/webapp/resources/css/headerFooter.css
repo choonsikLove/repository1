@@ -6,6 +6,7 @@
 	}
 li{list-style-type: none;}
 a[href] {text-decoration: none;}
+input{outline: none;}
 
 header a{
 	color: #081D3F;

@@ -6,6 +6,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="http://localhost:9000/manwol/resources/css/admin.css">
+<script src="http://localhost:9000/manwol/resources/js/jquery-3.6.0.js"></script>
+<script src="http://localhost:9000/manwol/resources/js/admin.js"></script>
 </head>
 <body>
 	<jsp:include page="../../header.jsp"></jsp:include>
@@ -38,35 +40,135 @@
 		<div class="orderDiv">
 			<ul id="orderStatus">
 				<li>입금 대기 중</li>
+				<li>|</li>
 				<li>배송 준비</li>
+				<li>|</li>
 				<li>배송 중</li>
+				<li>|</li>
 				<li>배송 완료</li>
 			</ul>
 			<div>
-				<ul>
-					<li>
-						<div>
-							<img alt="만월회 음료 원액 베이스 10종(2개입,12개입)" src="http://localhost:9000/manwol/resources/images/product/만월회 음료 원액 베이스 10종(2개입,12개입).jpg">
-							<div>
-								주문 상품 정보
-							</div>
-							<p id="orderStatus_update">주문 상태</p>
-						</div>
-					</li>
-					<li>
-						<form>
-							<input type="text" placeholder="Search">
-							<span class="material-symbols-outlined">search</span>
-						</form>
-					</li>
-					<li>
-						&lt; 1 2 3 &gt;
-					</li>
-				</ul>
+				<table border='1'>
+					<tr>
+						<td>주문번호</td>
+						<td>주문인</td>
+						<td>주문일자</td>
+						<td><span>주문상품</span></td>
+						<td>주문금액</td>
+						<td>주문 상태</td>
+						<td>비고</td>
+					</tr>
+					<tr>
+						<td>202205150001</td>
+						<td>김주문</td>
+						<td>2022-05-15</td>
+						<td>만월회 음료 원액 베이스 10종(1kg) 외 2건</td>
+						<td>100,000</td>
+						<td><span class="orderStatus_update">배송 완료</span></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>202205150001</td>
+						<td>김주문</td>
+						<td>2022-05-15</td>
+						<td>만월회 음료 원액 베이스 10종(1kg) 외 2건</td>
+						<td>100,000</td>
+						<td><span class="orderStatus_update">배송 완료</span></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>202205150001</td>
+						<td>김주문</td>
+						<td>2022-05-15</td>
+						<td>만월회 음료 원액 베이스 10종(1kg) 외 2건</td>
+						<td>100,000</td>
+						<td><span class="orderStatus_update">배송 완료</span></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>202205150001</td>
+						<td>김주문</td>
+						<td>2022-05-15</td>
+						<td>만월회 음료 원액 베이스 10종(1kg) 외 2건</td>
+						<td>100,000</td>
+						<td><span class="orderStatus_update">배송 완료</span></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>202205150001</td>
+						<td>김주문</td>
+						<td>2022-05-15</td>
+						<td>만월회 음료 원액 베이스 10종(1kg) 외 2건</td>
+						<td>100,000</td>
+						<td><span class="orderStatus_update">배송 완료</span></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>202205150001</td>
+						<td>김주문</td>
+						<td>2022-05-15</td>
+						<td>만월회 음료 원액 베이스 10종(1kg) 외 2건</td>
+						<td>100,000</td>
+						<td><span class="orderStatus_update">배송 완료</span></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>202205150001</td>
+						<td>김주문</td>
+						<td>2022-05-15</td>
+						<td>만월회 음료 원액 베이스 10종(1kg) 외 2건</td>
+						<td>100,000</td>
+						<td><span class="orderStatus_update">배송 완료</span></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>202205150001</td>
+						<td>김주문</td>
+						<td>2022-05-15</td>
+						<td>만월회 음료 원액 베이스 10종(1kg) 외 2건</td>
+						<td>100,000</td>
+						<td><span class="orderStatus_update">배송 완료</span></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>202205150001</td>
+						<td>김주문</td>
+						<td>2022-05-15</td>
+						<td>만월회 음료 원액 베이스 10종(1kg) 외 2건</td>
+						<td>100,000</td>
+						<td><span class="orderStatus_update">배송 완료</span></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>202205150001</td>
+						<td>김주문</td>
+						<td>2022-05-15</td>
+						<td>만월회 음료 원액 베이스 10종(1kg) 외 2건</td>
+						<td>100,000</td>
+						<td><span class="orderStatus_update">배송 완료</span></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td colspan='7'>
+							<form>
+								<input type="text" placeholder="Search">
+								<span class="material-symbols-outlined">search</span>
+							</form>
+						</td>
+					</tr>
+					<tr>
+						<td colspan='7'>&lt; 1 2 3 &gt;</td>
+					</tr>
+					
+				</table>
 			</div>
 		</div>
+		
+		
+		
 	</div>
-</div>	
+</div>
+	<jsp:include page="orderStatus_update.jsp"></jsp:include>
 	<jsp:include page="../../footer.jsp"></jsp:include>
 </body>
 </html>
