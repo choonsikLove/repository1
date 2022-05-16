@@ -239,7 +239,7 @@
 			</label>
 			<br> 
 			<label>
-				<input type='checkbox' name='emaolReceive' class='tos_check'> E-Mail 수신 동의 
+				<input type='checkbox' name='emailReceive' class='tos_check'> E-Mail 수신 동의 
 				<font color='gray'>(선택)</font>
 			</label>
 			<br> 
@@ -271,14 +271,14 @@
 							placeholder='비밀번호 확인'>
 				</div>
 				<h4>
-					이름&nbsp;<span class='join_circle'>&#x02022;</span>
+					이름&nbsp;<span class='circle_point'>&#x02022;</span>
 				</h4>
 				<div>
 					<input type='text' name='name' class='input_box'
 							placeholder='이름을(를) 입력하세요.'>
 				</div>
 				<h4>
-					연락처&nbsp;<span class='join_circle'>&#x02022;</span>
+					연락처&nbsp;<span class='circle_point'>&#x02022;</span>
 				</h4>
 				<div>
 				

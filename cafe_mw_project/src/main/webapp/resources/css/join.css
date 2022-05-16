@@ -45,14 +45,6 @@ div.modal_exit:hover {
 	color: black;
 }
 
-div.modal_exit:link {
-	color: lightgray;
-}
-
-div.modal_exit:visited {
-	color: lightgray;
-}
-
 div.modal_exit_ex {
 	position: absolute;
 	background: black;
@@ -247,7 +239,7 @@ div#join_inner_2 label{
 	display: none;
 }
 
-.join_circle {
+.circle_point {
 	color: red;
 	font-size: 22px;
 }
