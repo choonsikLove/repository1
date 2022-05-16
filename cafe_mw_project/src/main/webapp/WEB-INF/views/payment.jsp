@@ -82,7 +82,7 @@
                                     </div>
                                     <div class="payment_guide1">
                                        <div class="payment_guide1_1">
-                                          <p class="payment_guide1_name">홍길동</p>
+                                          <p class="payment_guide1_name" style="color: black;">홍길동</p>
                                           <p>01012345678</p>
                                           <p>qwer1234@gmail.com</p>
                                        </div>

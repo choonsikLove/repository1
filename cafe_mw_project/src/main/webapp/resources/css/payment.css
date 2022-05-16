@@ -106,7 +106,7 @@ table{
    margin-bottom: 5px;   
 } 
 .payment_guide1_name{
-	margin-bottom: 5px; color: black;	
+	margin-bottom: 5px;	
 }  
 .payment_btn{
    margin-left: 340px;
@@ -310,6 +310,7 @@ table{
 .coupon input{
    width: 412px; height: 30px;
    margin-bottom: 10px;
+   padding-left: 10px;
 }
 .coupon button{
    background-color: white; 
