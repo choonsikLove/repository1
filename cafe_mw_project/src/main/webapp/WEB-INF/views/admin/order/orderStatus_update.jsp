@@ -11,12 +11,13 @@
 <body>
 
 <div id="order_popup" style="display:none;">
+
 	<div class="order_popup_box">
      	<span class="material-symbols-outlined" id="closeX2">close</span>
-
 	    <div class="popup_cont" id="popup_cont_order">
+	    
 			<div>
-				상태 업데이트
+				<p>주문 상태 업데이트</p>
 				<table border='1'>
 					<tr>
 						<td><p class="orderStatus_change">입금 대기 중</p></td>
@@ -29,14 +30,16 @@
 			</div>
 			<div>
 				<p>운송장번호 입력</p>
-				<input type="text" id="invoice">
-				<button type="button">확인</button>
+				<div>
+					<input type="text" id="invoice">
+					<button type="button" id="addInvoice">추가</button>
+				</div>
 			</div>
+			
 	    </div>
-	    
 	</div>
+	
 </div>
-
 
 </body>
 </html>

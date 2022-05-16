@@ -514,6 +514,11 @@ div.orderDiv>ul#orderStatus li{
 	font-size: 11pt;
 	color: #888;
 	margin-right: 10px;
+	cursor: pointer;
+}
+
+div.orderDiv>ul#orderStatus li:nth-of-type(odd):hover{
+	color: #000;
 }
 
 div.orderDiv>div{
@@ -547,12 +552,215 @@ div.orderDiv>div>table td:nth-of-type(4){
 	width: 350px;
 }
 
+div.orderDiv>div>table td a{
+	color: #000;
+}
+
+div.order_detailDiv{
+	width: 62em; 
+	margin-top: 50px;
+	margin-left: 200px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+div.order_detailDiv>div{
+	background: #fff;
+	width: 100%;
+	border: 0.6px #ddd solid;
+}
+
+div.order_detailDiv>h3{
+	margin-bottom: 20px;
+}
+
+div.order_detailDiv>div:first-of-type{
+	width: 93.7%;
+	padding: 10px 31px;
+	margin-bottom: 10px;
+	font-size: 10pt;
+}
+
+div.order_detailDiv>div:first-of-type span{
+	padding: 10px 0;
+	display: inline-block;
+}
+
+div.order_detailDiv>div:first-of-type span:nth-of-type(odd){
+	margin-right: 10px;
+	color: #aaa;
+}
+
+div.order_detailDiv>div:first-of-type span:nth-of-type(even){
+	margin-right: 20px;
+}
+
+div.order_detailDiv>div:nth-of-type(2){
+	margin-bottom: 30px;
+}
+
+div.order_detailDiv>div:nth-of-type(2)>table{
+	width: 100%;
+	border-collapse: collapse;
+	border: none;
+	font-size: 10pt;
+}
+
+div.order_detailDiv>div:nth-of-type(2)>table tr td{
+	border: 0.6px #ddd solid;
+	border-right: none;
+}
+
+div.order_detailDiv>div:nth-of-type(2)>table tr td img{
+	width: 80px; height: 80px;
+	padding: 10px 0;
+	margin: 0 20px;
+}
+
+div.order_items{
+	padding: 15px 0;
+	width: 300px;
+}
+
+div.order_items>ul li:first-of-type p{
+	font-size: 11pt;
+}
+
+div.order_items>ul li:nth-of-type(2) p{
+	color: #999;
+}
+
+div.order_detailDiv>div:nth-of-type(2)>table tr:first-of-type td p{
+	margin-left: 30px;
+	padding: 10px 0;
+	color: #999;
+}
+div.order_detailDiv>div:nth-of-type(2)>table tr:first-of-type td:nth-of-type(2) p{
+	margin-left: 0px;
+}
+
+div.order_detailDiv>div:nth-of-type(2)>table tr td:nth-of-type(2){
+	text-align: center;
+}
+
+div.order_detailDiv>div:nth-of-type(2)>table tr td:first-of-type{
+	width: 550px;
+}
+
+div.order_detailDiv>div:nth-of-type(2)>table tr td:last-of-type{
+	width: 300px;
+}
+
+div.order_detailDiv>div:nth-of-type(2)>table tr td:last-of-type p{
+	margin-left:40px;
+}
+
+div.order_detailDiv>div:nth-of-type(2)>table tr td div{
+	display: flex;
+	justify-content: flex-start;
+}
+
+div.order_detailDiv>h4:first-of-type+div,
+div.order_detailDiv>h4:nth-of-type(2)+div{
+	margin-bottom: 20px;
+}
+
+div.order_detailDiv>h4:first-of-type+div table,
+div.order_detailDiv>h4:nth-of-type(2)+div table{
+	width: 100%;
+	border-collapse: collapse;
+	border:none;
+}
+
+div.order_detailDiv>h4:first-of-type+div table tr td,
+div.order_detailDiv>h4:nth-of-type(2)+div table tr td{
+	padding: 10px 20px;
+	font-size: 10pt;
+	border:none;
+}
+
+div.order_detailDiv>h4:first-of-type+div table tr:first-of-type td,
+div.order_detailDiv>h4:nth-of-type(2)+div table tr:first-of-type td{
+	padding-top: 20px;
+}
+
+div.order_detailDiv>h4:first-of-type+div table tr:last-of-type td,
+div.order_detailDiv>h4:nth-of-type(2)+div table tr:last-of-type td{
+	padding-bottom: 20px;
+}
+
+div.order_detailDiv>h4:first-of-type+div table tr td:first-of-type,
+div.order_detailDiv>h4:nth-of-type(2)+div table tr td:first-of-type{
+	width: 60px;
+	color: #999;
+}
+
+div.order_detailDiv>h4:last-of-type+div table{
+	width: 100%;
+	table-layout: fixed;
+	border-collapse: collapse;
+	border:none;
+	font-size: 10pt;
+}
+div.order_detailDiv>h4:last-of-type+div table tr td{
+	border: 0.6px #ddd solid;
+	border-right: none;
+}
+
+div.order_detailDiv>h4:last-of-type+div div.money{
+	display: flex;
+	justify-content: flex-start;
+}
+
+div.order_detailDiv>h4:last-of-type+div div.money>div{
+	width: 320px;
+	display:flex;
+	justify-content: space-between;
+}
+
+div.order_detailDiv>h4:last-of-type+div div.money span,
+div.order_detailDiv>h4:last-of-type+div div.money>div span{
+	display: inline-block;
+	padding: 25px 15px;
+}
+
+div.order_detailDiv>h4:last-of-type+div div.money>div span:nth-of-type(even){
+	font-size: 15pt;
+	font-weight: bold;
+	position: relative;
+	top: -3px;
+}
+
+div.order_detailDiv>h4:last-of-type+div div.money>div:last-of-type span:last-of-type{
+	color: rgb(11,47,127);
+}
+
+
+div.order_detailDiv>h4:last-of-type+div table tr:last-of-type td{
+	padding: 10px;
+	height: 200px;
+	vertical-align: top;
+}
+
+div.order_detailDiv>h4:last-of-type+div table tr:last-of-type span:first-of-type{
+	color: #999;
+}
+
+div.order_detailDiv>h4:last-of-type+div table tr:last-of-type td:first-of-type>div>div,
+div.order_detailDiv>h4:last-of-type+div table tr:last-of-type td:nth-of-type(2)>div{
+	display: flex;
+	justify-content: space-between;
+}
+
 span.orderStatus_update{
 	color: rgb(11,47,127);
 	cursor: pointer;
 }
 
-div#order_popup{
+div#order_popup,
+div#orderDetail_popup{
 	position:fixed;
 	top:0;left:0;
 	z-index: 1000; 
@@ -574,13 +782,86 @@ div.order_popup_box{
 	border-radius: 5px;
 }
 
-span#closeX2{
-	cursor: pointer;
+div.orderDetail_popup_box{
+	position: relative;
+	top: 53%;left:51%; 
+	height: 500px; width: 800px; /*height %로 하면 안됨!*/
+	transform:translate(-50%, -50%);
+	z-index:2000;
+	background: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-radius: 5px;
 }
 
-div#popup_cont_order{
+
+span#closeX2{
+	cursor: pointer;
+	position: absolute;
+	top: 10px; left: 410px;
+	color: #dedede;
+}
+
+span#closeX2:hover{
+	color: #000;
+}
+
+div.popup_cont{
 	height: 100%;
 	width: 85%;
 	display:block;
 }
 
+div.popup_cont>div:first-of-type{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+div.popup_cont>div>p{
+	font-weight: bold;
+	font-size:13pt;
+	margin: 10px 0;
+}
+
+div.popup_cont>div:last-of-type>p{
+	margin-top:0px;
+	margin-bottom: 20px;
+}
+
+div.popup_cont>div:last-of-type>div>input[type='text']{
+	width: 260px;
+	margin-right: 5px;
+}
+
+div.popup_cont>div:first-of-type>p+table{
+	border-collapse: collapse;
+	border: none;
+	margin-top: 10px;
+}
+
+div.popup_cont>div:first-of-type>p+table td{
+	border: none;
+	padding: 10px 50px;
+	cursor: pointer;
+}
+div.popup_cont>div:first-of-type>p+table td:hover{
+	background: #eee;
+}
+
+div.popup_cont>div:first-of-type>p+table td p.orderStatus_change:hover{
+	color: rgb(11,47,127);
+	font-weight: bold;
+}
+
+#addInvoice{
+	width: 50px;
+	background: rgb(11,47,127);
+	cursor: pointer;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+}

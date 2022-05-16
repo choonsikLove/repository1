@@ -97,4 +97,9 @@ public class AdminController {
 		return "/admin/order/order";
 	}
 	
+	@RequestMapping(value="/admin/order_detail", method=RequestMethod.GET)
+	public String order_detail() {
+		return "/admin/order/order_detail";
+	}
+	
 }
