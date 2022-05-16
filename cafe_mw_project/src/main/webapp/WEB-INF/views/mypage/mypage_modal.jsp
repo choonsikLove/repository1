@@ -25,7 +25,7 @@ div#mypage_modal_outer {
 	overflow: hidden;
 	padding-top: 10px;
 	z-index: 1000;
-	display: block;
+	display: none;
 	overflow-y: initial;
 }
 
@@ -71,7 +71,7 @@ div.modal_exit_ex {
 	margin: 80px auto;
 	padding: 20px;
 	border-radius: 5px;
-	display: block;
+	display: none;
 }
 
 #member_grade{
