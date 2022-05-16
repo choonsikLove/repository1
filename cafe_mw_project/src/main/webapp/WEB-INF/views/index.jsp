@@ -142,10 +142,10 @@
 		</div>
 		<table>
 			<tr>
-				<td><div><a href='#'><img class='insta_table1' src='http://localhost:9000/manwol/resources/images/index/instagram_1.jpg'><img class='insta_table2' src='http://localhost:9000/manwol/resources/images/index/instagram_1on.jpg'></a></div></td>
-				<td><div><a href='#'><img class='insta_table1' src='http://localhost:9000/manwol/resources/images/index/instagram_2.jpg'><img class='insta_table2' src='http://localhost:9000/manwol/resources/images/index/instagram_2on.jpg'></a></div></td>
-				<td><div><a href='#'><img class='insta_table1' src='http://localhost:9000/manwol/resources/images/index/instagram_3.jpg'><img class='insta_table2' src='http://localhost:9000/manwol/resources/images/index/instagram_3on.jpg'></a></div></td>
-				<td><div><a href='#'><img class='insta_table1' src='http://localhost:9000/manwol/resources/images/index/instagram_4.jpg'><img class='insta_table2' src='http://localhost:9000/manwol/resources/images/index/instagram_4on.jpg'></a></div></td>
+				<td><div><a href='https://www.instagram.com/p/CYDCwElhTMK/?utm_source=ig_web_copy_link'><img class='insta_table1' src='http://localhost:9000/manwol/resources/images/index/instagram_1.jpg'><img class='insta_table2' src='http://localhost:9000/manwol/resources/images/index/instagram_1on.jpg'></a></div></td>
+				<td><div><a href='https://www.instagram.com/p/CZq2Lknv4y4/?utm_source=ig_web_copy_link'><img class='insta_table1' src='http://localhost:9000/manwol/resources/images/index/instagram_2.jpg'><img class='insta_table2' src='http://localhost:9000/manwol/resources/images/index/instagram_2on.jpg'></a></div></td>
+				<td><div><a href='https://www.instagram.com/p/CZ8BdViP2J-/?utm_source=ig_web_copy_link'><img class='insta_table1' src='http://localhost:9000/manwol/resources/images/index/instagram_3.jpg'><img class='insta_table2' src='http://localhost:9000/manwol/resources/images/index/instagram_3on.jpg'></a></div></td>
+				<td><div><a href='https://www.instagram.com/p/CaWmOGKvJIh/?utm_source=ig_web_copy_link'><img class='insta_table1' src='http://localhost:9000/manwol/resources/images/index/instagram_4.jpg'><img class='insta_table2' src='http://localhost:9000/manwol/resources/images/index/instagram_4on.jpg'></a></div></td>
 			</tr>
 		</table>
 	
