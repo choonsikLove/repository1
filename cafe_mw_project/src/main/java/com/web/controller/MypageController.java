@@ -5,17 +5,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class JoinController {
+public class MypageController {
 	
-	@RequestMapping(value="/join", method= RequestMethod.GET)
-	public String join() {
-		return "/join";
+	@RequestMapping(value="/shop_mypage", method= RequestMethod.GET)
+	public String mypage() {
+		return "/mypage/mypage";
 	}
 	
-	@RequestMapping(value="/mypage", method= RequestMethod.GET)
-	public String withdraw() {
-		return "/mypage_modal";
-	}
 	
 	
 	
