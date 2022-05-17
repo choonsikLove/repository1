@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="mapper.member">
+	<insert id="insert" parameterType="com.web.vo.MwMemberVO">
+		insert into mw_member
+		<choose>
+			<when test="reccode != null" >
+				<choose>
+					<when test="mprofile != null">
+						values (#{memail}, #{mpass}, #{mname}, #{mhp}, #{reccode}, #{maddr1},#{maddr2}, #{msg_sms}, #{msg_email}, #{mprofile}, #{msprofile})
+					</when>
+					<otherwise>
+						values (#{memail}, #{mpass}, #{mname}, #{mhp}, #{reccode}, #{maddr1},#{maddr2}, #{msg_sms}, #{msg_email}, null, null)
+					</otherwise>
+				</choose>
+			</when>
+			<otherwise>
+				<choose>
+					<when test="mprofile != null">
+						values (#{memail}, #{mpass}, #{mname}, #{mhp}, null, #{maddr1},#{maddr2}, #{msg_sms}, #{msg_email}, #{mprofile}, #{msprofile})
+					</when>
+					<otherwise>
+						values (#{memail}, #{mpass}, #{mname}, #{mhp}, null, #{maddr1},#{maddr2}, #{msg_sms}, #{msg_email}, null, null)
+					</otherwise>
+				</choose>
+			</otherwise>
+		</choose>
+	</insert>
+	
+	<select id="idCheck" parameterType="java.lang.String" resultType="int">
+		select count(*) from mw_member where memail = #{memail}
+	</select>
+
+
+</mapper>

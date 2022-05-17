@@ -12,14 +12,31 @@ $(document).ready(function(){
 		$('#join_inner_2').css("display","block");
 	});
 	
+	
+	var msg_sms = 0;
+	var msg_email = 0;
+	
 	/*		약관동의-가입하기 클릭시		*/
 	$('#join_agree').click(function(){
 		if($('#agree1').is(':checked')){
+		
 			if($('#agree2').is(':checked')){
+				if($('input[name=smsReceive]').is(':checked')){
+					msg_sms = 1;
+				}
+				
+				if($('input[name=emailReceive]').is(':checked')){
+					msg_email = 1;
+				}
+				
+				$('input[name=msg_sms]').val(msg_sms);
+				$('input[name=msg_email]').val(msg_email);
+				
 				$('#join_outer').css("display","block");
 				$('#join_inner_2').css("display","none");
 				$('#join_inner_3').css("display","block");
 			}
+			
 		}else{
 			alert("이용약관 및 개인정보 처리방침에 동의하셔야 가입이 가능합니다.");
 		}
@@ -68,19 +85,25 @@ $(document).ready(function(){
 	$('.modal_exit').mouseleave(function(){
 		$('.modal_exit_ex').css("display","none");
 	});
+	
+	
 });
 
-	function selectAll(selectAll)  {
-		  const checkboxes 
-		     = document.querySelectorAll('input[type="checkbox"]');
-		  
-		  checkboxes.forEach((checkbox) => {
-		    checkbox.checked = selectAll.checked
-		  })
-		}
+function selectAll(selectAll)  {
+	const checkboxes 
+	= document.querySelectorAll('input[type="checkbox"]');
+  
+	checkboxes.forEach((checkbox) => {
+		checkbox.checked = selectAll.checked
+	})
+}
 
-
-
+function loadFile(input) {
+		var file = input.files[0];
+		var join_profile_img = $('#profile_img');
+		var url = URL.createObjectURL(file);
+		join_profile_img.attr("src", url);
+}
 
 
 $(document).ready(function(){
@@ -128,7 +151,65 @@ $('#findIDPW').click(function(){
 });
 
 
-})
+$('#join_submit').click(function(){
+		if($("#memail").val() == ""){
+			alert("아이디를 입력해주세요");
+			$("#memail").focus();
+			return false;
+		}else if($("#mpass").val() == ""){
+			alert("패스워드를 입력해주세요");
+			$("#mpass").focus();
+			return false;
+		}else if($("#mname").val() ==""){
+			alert("이름을 입력해주세요");
+			$("#mname").focus();
+			return false;
+		}else if($("#mhp").val() == ""){
+			alert("연락처를 입력해주세요");
+			$("#mhp").focus();
+			return false;
+		}else if($("#maddr1").val() == ""){
+			alert("주소를 입력해주세요");
+			$("#maddr1").focus();
+			return false;
+		}else if($("#maddr2").val() == ""){
+			alert("상세주소를 입력해주세요");
+			$("#maddr2").focus();
+			return false;
+		}else{
+			join_form.submit();
+		}			
+});
+
+$('#memail').blur(function(){
+	var memail = $('#memail').val();
+	
+	if(memail == ""){
+		alert("아이디를 입력해 주세요 주세요");
+	} else {
+		$.ajax({
+			type:'POST',
+			async: true,
+			data: {email : memail},
+			url:"idCheck",
+			dataType: "text",
+			success : function(result) {
+				if(result == 1){
+					alert("사용 불가능한 이메일");
+				} else {
+					alert("사용 가능한 이메일");
+				}
+			},
+			error: function(result) {
+				alert("에러");
+			}
+		});
+	}
+
+});
+
+
+}) //document.ready
 
 $(document).on("click", "#findID", function(){
     $('.popup_cont').css("display","none");

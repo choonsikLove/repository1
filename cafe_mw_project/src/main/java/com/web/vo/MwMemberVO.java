@@ -1,10 +1,18 @@
 package com.web.vo;
 
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
+
 public class MwMemberVO {
-	
 	String memail, mpass, mname, mhp, reccode, maddr1, maddr2, mprofile, msprofile;
 	int msg_sms, msg_email;
+	CommonsMultipartFile file;
 	
+	public CommonsMultipartFile getFile() {
+		return file;
+	}
+	public void setFile(CommonsMultipartFile file) {
+		this.file = file;
+	}
 	public String getMemail() {
 		return memail;
 	}
@@ -71,4 +79,5 @@ public class MwMemberVO {
 	public void setMsg_email(int msg_email) {
 		this.msg_email = msg_email;
 	}
+	
 }
