@@ -252,9 +252,9 @@
 			<span class='join_Id_Check'>간편 	인증</span>
 			<form>
 				<div>
-						<input type='text' name='email' class='input_box'
+						<input type='text' name='memail' class='input_box'
 							placeholder='이메일'>
-						<input type='password' name='pass' class='input_box'
+						<input type='password' name='mpass' class='input_box'
 							placeholder='비밀번호'>
 						<input type='password' class='input_box'
 							placeholder='비밀번호 확인'>
@@ -263,7 +263,7 @@
 					이름&nbsp;<span class='circle_point'>&#x02022;</span>
 				</h4>
 				<div>
-					<input type='text' name='name' class='input_box'
+					<input type='text' name='mname' class='input_box'
 							placeholder='이름을(를) 입력하세요.'>
 				</div>
 				<h4>
@@ -271,16 +271,18 @@
 				</h4>
 				<div>
 				
-						<input type='text' name='hp' class='input_box'
+						<input type='text' name='mhp' class='input_box'
 							placeholder='연락처'>
 				</div>
 				<h4>주소</h4>
 				<div>
-						<input type='text' name='addr1' class='input_box'
+						<input type='text' name='maddr1' class='input_box'
 							placeholder='주소'>
-						<input type='text' name='addr2' class='input_box'
+						<input type='text' name='maddr2' class='input_box'
 							placeholder='상세주소'>
 				</div>
+						<input type="hidden" name='msg_sms' value='1'>
+						<input type="hidden" name='msg_email' value='1'>
 				<h4>추천인</h4>
 				<div>
 						<input type='text' class='input_box'
