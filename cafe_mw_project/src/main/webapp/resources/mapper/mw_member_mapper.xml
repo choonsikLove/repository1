@@ -1,1 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.member">
+	
+	<select id="login" 
+		parameterType="com.mycgv.vo.CgvMemberVO" 
+		resultMap="loginResult"> 
+		select count(*) count, id,name,grade from cgv_member 
+				 where id=#{id} and pass=#{pass} 
+				 group by id,name,grade
+	</select>
+	
+	<resultMap id="loginResult" 
+				type="com.mycgv.vo.SessionVO" > 
+		<result property="result" column="count" /> 
+	 	<result property="id" column="id" />
+	 	<result property="name" column="name" />
+	 	<result property="grade" column="grade" />
+	</resultMap>
+
+	
+	
+	<insert id="join" 
+			parameterType="com.mycgv.vo.CgvMemberVO" >
+		insert into cgv_member
+			(id,name,gender,pass,email,address, p_comp,p_number
+					,hobby,intro,grade,mdate) 
+		values
+			(#{id},#{name},#{gender},#{pass},#{email},
+			 	#{address},#{p_comp},#{p_number},#{hobbyList},
+			 	#{intro},'vip',sysdate)
+	</insert> 
+</mapper>
