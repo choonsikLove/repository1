@@ -44,29 +44,29 @@ li {
 	
 	
 	#slick_box1_1{
-		background-image: url("<%=request.getContextPath()%>/resources/images/index/slide1_1.jpg");
+		background-image: url("http://localhost:9000/manwol/resources/images/index/slide1_1.jpg");
 	}
 	#slick_box1_2{
-		background-image: url("<%=request.getContextPath()%>/resources/images/index/slide1_2.jpg");
+		background-image: url("http://localhost:9000/manwol/resources/images/index/slide1_2.jpg");
 	}
 	#slick_box1_3{
-		background-image: url("<%=request.getContextPath()%>/resources/images/index/slide1_3.jpg");
+		background-image: url("http://localhost:9000/manwol/resources/images/index/slide1_3.jpg");
 	}
 	#slick_box1_4{
-		background-image: url("<%=request.getContextPath()%>/resources/images/index/slide1_4.jpg");
+		background-image: url("http://localhost:9000/manwol/resources/images/index/slide1_4.jpg");
 	}
 	
 	#slick_box3_1{
-		background-image: url("<%=request.getContextPath()%>/resources/images/index/slide3_1.png");
+		background-image: url("http://localhost:9000/manwol/resources/images/index/slide3_1.png");
 	}
 	#slick_box3_2{
-		background-image: url("<%=request.getContextPath()%>/resources/images/index/slide3_2.png");
+		background-image: url("http://localhost:9000/manwol/resources/images/index/slide3_2.png");
 	}
 	#slick_box3_3{
-		background-image: url("<%=request.getContextPath()%>/resources/images/index/slide3_3.png");
+		background-image: url("http://localhost:9000/manwol/resources/images/index/slide3_3.png");
 	}
 	#slick_box3_4{
-		background-image: url("<%=request.getContextPath()%>/resources/images/index/slide3_4.png");
+		background-image: url("http://localhost:9000/manwol/resources/images/index/slide3_4.png");
 	}
 	.slideBox_title{
 		font-weight: bold;
@@ -105,7 +105,7 @@ li {
 		width: 400px;
 		height: 480px;
 	}
-
+	
 	#show_review{
 		background: #E2E2E2;
 		padding-top: 20px 
@@ -215,4 +215,3 @@ li {
 		0% {transform: scale(1,1)}
 		100% {transform: scale(1.1,1.1)}
 	}
-	

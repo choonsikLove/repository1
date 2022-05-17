@@ -5,119 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/index.css"/>
 <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery-3.6.0.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/index.js"></script>
 <style type="text/css">
 
-	#show_review{
-		background: #E2E2E2;
-		padding-top: 20px 
-	}
-	#review_img{
-		background-image: url("http://localhost:9000/manwol/resources/images/index/Review.png");
-		background-repeat: no-repeat;
-		background-size: 250px auto;
-		width: 250px;
-		height: 35px;
-		margin: 0 auto;
-	}
-	#review_img+div{
-		text-align: center;
-		font-weight: bold;
-		font-size: 20px;
-		color: #0042A9;
-		margin: 10px 0;
-	}
-	#review_content{
-		background-image: url("http://localhost:9000/manwol/resources/images/index/index_review.png");
-		background-repeat: no-repeat;
-		background-size: 1200px auto;
-		width: 1150px;
-		height: 1000px;
-		margin: 0 auto;
-	}
-	#review_content+div{
-		font-size: 18px;
-		font-weight: bold;
-		text-align: center;
-	}
-	#moreBox{
-		width: 250px;
-		height: 34px;
-		color: #0B2F7F;
-		border: 1px solid #011E41;
-		margin: 0 auto;
-		font-size: 17px;
-		font-weight: bold;
-		text-align: center;
-		padding-top: 15px;
-		margin-top: 20px;
-	}
-	#moreBox:hover{
-		animation-name: boxColorAnimation;
-		animation-duration: 0.5s;
-		color: white;
-		background: #0B2F7F;
-	}
-	
-	@keyframes boxColorAnimation{
-		0% {color: #0B2F7F; background: #E2E2E2;}
-		100% {color: white; background: #0B2F7F;}
-	}
 
-	#instagram_prom{
-		background: #011E41;
-		width: 100%;
-		height: 460px;		
-	}
-	#instagram_img{
-		background-image: url("http://localhost:9000/manwol/resources/images/index/instagram_promotion.png");
-		background-size: 250px auto;
-		width: 250px;
-		height: 40px;
-		background-repeat: no-repeat;
-		margin: 0 auto;
-		top: 40px;
-	}
-	#instagram_link{
-		display: block;
-		text-align: center;
-		text-decoration: underline;
-		color: white;
-	}
-	article table{
-		table-layout: fixed;
-		margin: 10px auto;
-		border-spacing: 30px;	
-	}
-	.insta_table1{
-		width: 300px;
-		height: 300px;
-	}
-	td>div{
-		position: relative;
-		margin: 0px auto;
-		overflow: hidden;
-	}
-	.insta_table2{
-		width: 300px;
-		height: 300px;
-		display: none;
-		top: 0px;
-		left: 0px;
-		position: absolute;
-	}
-	td div:hover .insta_table2{
-		animation-name: imgScaleAnimation;
-		animation-duration: 0.7s;
-		display: block;
-		transform: scale(1.1,1.1);
-	}
-	
-	@keyframes imgScaleAnimation{
-		0% {transform: scale(1,1)}
-		100% {transform: scale(1.1,1.1)}
-	}
 </style>
 </head>
 <body>

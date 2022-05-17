@@ -1,0 +1,473 @@
+	* {
+		padding: 0;
+		margin: 0;
+	}
+	
+	li {
+		cursor: pointer;
+		margin: 25px 0;
+	}
+	
+	#mypage_content {
+		width: 92%;
+		height: 1100px;
+		padding: 2% 4%;
+	}
+	
+	#content_border{
+		border-top: 1px solid lightgray;
+		border-bottom: 1px solid lightgray;
+		width: 100%;
+		height: 100%;
+	}
+
+	#notice {
+		text-align: center;
+		font-size: 19px;
+		margin-top: 100px;
+	}
+	
+	.boldspan {
+		font-weight: bold;
+	}
+	
+	.bgcspan {
+		background: #CAD7E3;
+	}
+	
+	.colorspan1 {
+		color: gray;
+	}
+	
+	.linespan {
+		text-decoration: underline;
+	}
+	
+	div+section {
+		background: lightgray;
+	}
+	
+	#mypage_nav {
+		display: inline-block;
+		width: 10%;
+		height: 500px;
+		float: left;
+		padding: 1.5%;
+		color: black;
+		font-size: 13px;
+	}
+	
+	#mypage_section {
+		width: 82%;
+		float: right;
+		display: inline-block;
+		padding: 3% 1.5%;
+	}
+	
+	#mypage_section:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+	
+	#border {
+		padding: 30px 3%;
+		background: white;
+		height: 140px;
+	}
+	
+	#mypage_profile{
+		display: inline-block;
+		width: 80px;
+		height: 80px;
+		float: left;
+		border-radius: 100%;
+		background-size: auto 100%;
+		background-repeat: no-repeat;
+		overflow: hidden;
+		margin-right: 30px;
+		margin-top: 30px;
+	}
+	
+	.my_grade {
+		width: 48.5%;
+		height: 140px;
+		float: left;
+		display: inline-block;
+	}
+	
+	.my_grade:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+	
+	.my_grade>span {
+		font-size: 23px;
+	}
+	
+	.colorspan2 {
+		color: #004A98;
+	}
+	
+	#grade_benefit {
+		border: black solid 1px;
+		display: inline-block;
+		font-weight: bold;
+		font-size: 14px;
+		padding: 5px;
+		margin-left: 5px;
+		margin-top: 10px;
+		padding: 5px;
+	}
+	
+	.my_point {
+		width: 19%;
+		height: 105px;
+		border-left: 1px solid lightgray;
+		display: inline-block;
+		float: right;
+		text-align: center;
+		font-size: 13px;
+		padding-top: 35px;;
+	}
+	
+	.my_point>span {
+		font-size: 30px;
+		font-weight: bold;
+	}
+	
+	.nav_content {
+		clear: both;
+		margin-top: 50px;
+	}
+	
+	#notice, #mypage_content {
+		background: #f2f2f2;
+	}
+	
+	
+	
+	.order_title{
+		font-size: 18px;
+	}
+	.order_id{
+		float: left;
+		display: inline-block;
+		font-size: 13px;
+	}
+	.order_id a { 
+		color: #004A98;
+	}
+	.order_id a span{
+		border: 1px solid #004A98;
+		border-radius: 100%;
+		font-size: 6px;
+		padding: 1px 3px;
+		display: inline-block;
+		
+	}
+	.order_date{
+		float: right;
+		display: inline-block;
+		font-size: 13px
+	}
+	.order_date:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+	.order_list{
+		margin: 10px 0px;
+	}
+	.order_table{
+		border: 1px #DADADA solid;
+		background: white;
+		height: 100px;
+		padding: 20px;
+		font-size: 13px;
+		margin-top: 10px;
+	}
+	.order_img{
+		border: 1px #DADADA solid;
+		display: inline-block;
+		float: left;
+		background-size: 100% auto;
+		width: 100px;
+		height: 100px;
+	}
+	.order_product{
+		display: inline-block;
+		float: left;
+		margin-left: 20px;
+		line-height: 20px;
+		width: 40%;
+	
+	}
+	.order_status{
+		display: inline-block;
+		float: left;
+		margin-top: 45px;
+		width: 10%;
+		margin-left: 10%;
+		color: #004A98;
+	}
+	.order_btn{
+		border: 1px #DADADA solid;
+		display: inline-block;
+		float: right;
+		width: 80px;
+		height: 25px;
+		margin-top: 40px;
+		text-align: center;
+		padding-top: 8px;
+	}
+	.order_cancle:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+	
+	.order_list_product{
+		font-weight: bold;
+		
+	}
+	.order_list_option{
+		color: gray;
+		font-size: 12px;
+	}
+	.order_list_price{
+		font-size: 12px;
+	}
+	
+	
+	
+	div#mypage_modal_outer {
+		background: rgba(0, 0, 0, 0.4);
+		top: 0;
+		left: 0;
+		position: fixed;
+		width: 100%; height : 100%;
+		overflow: hidden;
+		padding-top: 10px;
+		z-index: 1000;
+		display: none;
+		overflow-y: initial;
+	}
+	
+	h2#mypage_modal_title {
+		text-align: center;
+		margin-top: 10px;
+		margin-bottom: 15px;
+		font-size: 17pt;
+	}
+	
+	div.modal_exit {
+		color: lightgray;
+		font-size: 40px;
+		position: absolute;
+		left: 350px;
+		top: 0px;
+		cursor:pointer;
+	}
+	
+	div.modal_exit:hover {
+		color: black;
+	}
+	
+	div.modal_exit_ex {
+		position: absolute;
+		background: black;
+		color: white;
+		text-align: center;
+		width: 40px;
+		height: 15px;
+		left: 345px;
+		top: 40px;
+		border-radius: 5px;
+		font-size: 12px;
+		display: none;
+	}
+	
+	#modify_inner {
+		background: #fff;
+		position: relative;
+		width: 350px;
+		height: 1100px;
+		margin: 80px auto;
+		padding: 20px;
+		border-radius: 5px;
+		display: none;
+	}
+	
+	#member_grade{
+		font-size: 13px;
+		text-align: center;
+	}
+	
+	#member_grade span{
+		border-radius: 10px;
+		background: gray;
+		color: white;
+		text-align: center;
+	}
+	
+	#member_grade div{
+		color: gray;
+	}
+	#member_grade div span{
+		background: none;
+		color: #004A98;
+	}
+	
+	.sub_title>span {
+		color: red;
+		font-size: 22px;
+	}
+	
+	#profile_img {
+		border-radius: 50%;
+		margin: 10px;
+		margin-left: 135px;
+		width: 80px; height: 80px;
+		cursor: pointer;
+	}
+	
+	input.input_box {
+		width: 320px;
+		height: 30px;
+		font-size: 14px;
+		padding: 4px 12px;
+		border: 1px #a9a9a9 solid;
+	}
+	
+	#id_check{
+		font-size: 16px;
+		margin: 20px 0px;
+		line-height: 30px;
+	}
+	
+	#id_check_result{
+		font-size: 13px;
+	}
+	#id_check_mark{
+		color: #3EC731;
+		border-radius: 10px;
+		border: #3EC731 solid 1px;
+		font-weight: bold;
+	}
+	
+	.sub_title{
+		font-size: 11pt;
+		margin-top: 12px;
+		margin-bottom: 8px;
+	}
+	
+	.tos_check {
+		zoom: 1.5;
+		vertical-align: middle;
+		cursor: pointer;
+		margin: 3px 0px;
+	}
+	
+	label{
+		font-size: 15px;
+	}
+	
+	button#modify_submit {
+		width: 350px;
+		height: 40px;
+		background: rgb(11,47,127);
+		color: white;
+		font-size: 15px;
+		border: none;
+		font-weight: bold;
+		padding: 5px;
+		cursor: pointer;
+		margin-top: 20px;
+	}
+	
+	#naver_start {
+		width: 350px;
+		height: 30px;
+		background: #66D05D;
+		color: #fff;
+		font-size: 13px;
+		font-weight: bold;
+		text-align: center;
+		padding-top: 15px;
+		cursor: pointer;
+	}
+	
+	#kakao_start {
+		width: 350px;
+		height: 30px;
+		background: #FCEC4F;
+		color: #000;
+		font-size: 13px;
+		font-weight: bold;
+		text-align: center;
+		padding-top: 15px;
+		margin-top: 10px;
+		cursor: pointer;
+	}
+	
+	#withdraw_inner {
+		background: white;
+		position: relative;
+		width: 600px;
+		height: 220px;
+		margin: 50px auto;
+		padding: 20px;
+		border-radius: 5px;
+		display: none;
+	}
+	#withdraw_inner h2+div{
+		font-size: 13px;
+		line-height: 20px;
+	}
+	#withdraw_inner div+div{
+		width: 176px;
+		margin: 0px auto;
+	}
+	
+	h2.withdraw_title {
+		text-align: center;
+		margin: 20px 0px;
+		font-size: 18pt;
+	}
+	
+	.withdraw_inner_btn {
+		display: inline-block;
+		height: 40px;
+		padding: 10px 0;
+		cursor: pointer;
+	}
+	
+	#withdraw_agree {
+		float: right;
+		background: #004A98;
+		color: white;
+		border: none;
+		width: 100px;
+		margin-left: 3px;
+	}
+	
+	#withdraw_cancel {
+		border: 1px solid #CCCCCC;
+		float: left;
+		background: #fff;
+		width: 70px;
+		margin-right: 3px;
+	}
+	
+	#withdraw_cancel:hover {
+		background: rgb(250,250,250);
+		border: 1px black solid;
+	}
+	
+	#withdraw_cancel:after {
+		content: "";
+		display: block;
+		clear: both;
+	}	
