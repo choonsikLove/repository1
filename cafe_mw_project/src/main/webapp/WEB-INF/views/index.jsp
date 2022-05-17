@@ -130,7 +130,7 @@
 		<div>누적 후기 1.3만개 &nbsp; &nbsp; [평균 별점 &#10030; &#10030; &#10030; &#10030; &#10030; 4.8]</div>
 		<div id='review_content'></div>
 		<div>더 많은 리뷰를 확인해보세요!</div>
-		<a href='#'><div id='moreBox'>상품평 더보기</div></a>
+		<a href='recipe'><div id='moreBox'>상품평 더보기</div></a>
 		<br><br><br><br>
 	</article>
 	

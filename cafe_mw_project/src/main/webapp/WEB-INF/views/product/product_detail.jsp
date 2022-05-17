@@ -121,7 +121,7 @@
 								</select>
 
 								<div class="button">
-									<button class="btn1" type="button">구매하기</button>
+									<a href="http://localhost:9000/manwol/payment"><button class="btn1" type="button">구매하기</button></a>
 									<button class="btn2" type="button">장바구니</button>
 									<button class="btn3" type="button">
 										<span class="material-symbols-outlined"
