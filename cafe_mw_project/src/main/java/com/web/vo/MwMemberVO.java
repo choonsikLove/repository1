@@ -1,6 +1,6 @@
 package com.web.vo;
 
-public class mwMemberVO {
+public class MwMemberVO {
 	
 	String memail, mpass, mname, mhp, reccode, maddr1, maddr2, mprofile, msprofile;
 	int msg_sms, msg_email;
