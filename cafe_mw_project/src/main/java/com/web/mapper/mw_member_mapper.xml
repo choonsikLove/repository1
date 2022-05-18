@@ -11,20 +11,24 @@
 			<when test="reccode != null" >
 				<choose>
 					<when test="mprofile != null">
-						values (#{memail}, #{mpass}, #{mname}, #{mhp}, #{reccode}, #{maddr1},#{maddr2}, #{msg_sms}, #{msg_email}, #{mprofile}, #{msprofile})
+						values (#{memail}, #{mpass}, #{mname}, #{mhp}, #{reccode}, #{maddr1},#{maddr2}, 
+						 #{msg_sms}, #{msg_email}, #{mprofile}, #{msprofile}, sysdate)
 					</when>
 					<otherwise>
-						values (#{memail}, #{mpass}, #{mname}, #{mhp}, #{reccode}, #{maddr1},#{maddr2}, #{msg_sms}, #{msg_email}, null, null)
+						values (#{memail}, #{mpass}, #{mname}, #{mhp}, #{reccode}, #{maddr1},#{maddr2},
+						 #{msg_sms}, #{msg_email}, null, null, sysdate)
 					</otherwise>
 				</choose>
 			</when>
 			<otherwise>
 				<choose>
 					<when test="mprofile != null">
-						values (#{memail}, #{mpass}, #{mname}, #{mhp}, null, #{maddr1},#{maddr2}, #{msg_sms}, #{msg_email}, #{mprofile}, #{msprofile})
+						values (#{memail}, #{mpass}, #{mname}, #{mhp}, null, #{maddr1},#{maddr2},
+						 #{msg_sms}, #{msg_email}, #{mprofile}, #{msprofile}, sysdate)
 					</when>
 					<otherwise>
-						values (#{memail}, #{mpass}, #{mname}, #{mhp}, null, #{maddr1},#{maddr2}, #{msg_sms}, #{msg_email}, null, null)
+						values (#{memail}, #{mpass}, #{mname}, #{mhp}, null, #{maddr1},#{maddr2},
+						 #{msg_sms}, #{msg_email}, null, null, sysdate)
 					</otherwise>
 				</choose>
 			</otherwise>
@@ -33,6 +37,11 @@
 	
 	<select id="idCheck" parameterType="java.lang.String" resultType="int">
 		select count(*) from mw_member where memail = #{memail}
+	</select>
+	
+	<select id="login" parameterType="com.web.vo.MwMemberVO" resultType="int">
+		select count(*) from mw_member
+		where memail = #{memail} and mpass = #{mpass}
 	</select>
 
 
