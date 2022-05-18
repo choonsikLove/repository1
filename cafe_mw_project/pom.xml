@@ -117,7 +117,7 @@
 			<scope>test</scope>
 		</dependency>
 		
-		<!-- FileUpload - MultipartHttpServletRequset -->
+		<!-- FileUpload - MultipartHttpServletRequest -->
 		<dependency>
     		<groupId>commons-io</groupId>
     		<artifactId>commons-io</artifactId>

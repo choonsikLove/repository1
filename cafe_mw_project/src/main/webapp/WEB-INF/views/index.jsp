@@ -8,12 +8,21 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/index.css"/>
 <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery-3.6.0.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/index.js"></script>
-<style type="text/css">
-
-
-</style>
+<script>
+	var login_result = "${login_result}";
+	
+	if(login_result == "succ"){
+		alert("로그인 성공");
+	} else if (login_result == "fail"){
+		alert("로그인 실패");
+	}
+	
+</script>
 </head>
 <body>
+<div>
+	${vo.memail }
+</div>
 	<jsp:include page="header.jsp"></jsp:include>
 	<jsp:include page="index1.jsp"></jsp:include>
 	

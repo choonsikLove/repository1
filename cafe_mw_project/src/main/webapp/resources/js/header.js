@@ -224,10 +224,32 @@ $(document).on("click", "#findPW", function(){
 });
 
 $(document).on("click", "#findIDButton", function(){
+	var idEmail = $('#idEmail').val();
+	
 	if($('input:radio[value=byEmail]').is(":checked")){
-		$('.popup_cont').css("display","none");
-		$('.login_popup_box').css({"height":"260px",'top':'28%'});
-		$('#popup_cont4').css("display","block");
+		
+		if(idEmail == ""){
+			alert("이메일을 입력해 주세요");
+		} else {
+			alert(idEmail);
+			$.ajax({
+				type: 'POST',
+				async: true,
+				data: {email: idEmail},
+				url: "emailCheck",
+				success : function(result){
+					alert("성공");
+				},
+				error: function(result){
+					alert("실패");
+				}
+				
+			});
+		
+			$('.popup_cont').css("display","none");
+			$('.login_popup_box').css({"height":"260px",'top':'28%'});
+			$('#popup_cont4').css("display","block");
+		}
 	} else if($('input:radio[value=byHp]').is(":checked")) {
 		$('.popup_cont').css("display","none");
 		$('.login_popup_box').css({"height":"260px",'top':'28%'});

@@ -53,4 +53,8 @@ public class MwMemberDAO implements MwObjectDAO{
 	public int selectIdCheck(String memail) {
 		return sqlSession.selectOne(namespace + ".idCheck", memail);
 	}
+	
+	public int select(MwMemberVO vo) {
+		return sqlSession.selectOne(namespace+".login",vo);
+	}
 }

@@ -3,9 +3,16 @@ package com.web.vo;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 public class MwMemberVO {
-	String memail, mpass, mname, mhp, reccode, maddr1, maddr2, mprofile, msprofile;
+	String memail, mpass, mname, mhp, reccode, maddr1, maddr2, mprofile, msprofile, mdate;
 	int msg_sms, msg_email;
 	CommonsMultipartFile file;
+	
+	public String getMdate() {
+		return mdate;
+	}
+	public void setMdate(String mdate) {
+		this.mdate = mdate;
+	}
 	
 	public CommonsMultipartFile getFile() {
 		return file;

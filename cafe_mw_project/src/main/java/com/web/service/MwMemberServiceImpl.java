@@ -56,13 +56,13 @@ public class MwMemberServiceImpl implements MwMemberService{
 
 	@Override
 	public int getLoginResult(MwMemberVO vo) {
-		// TODO Auto-generated method stub
-		return 0;
+		return memberDao.select(vo);
 	}
 
 	@Override
 	public int getIdCheckResult(String memail) {
 		return memberDao.selectIdCheck(memail);
 	}
+	
 
 }

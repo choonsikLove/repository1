@@ -18,7 +18,7 @@
 
 
 	    <div class="popup_cont" id="popup_cont1">
-			<form>
+			<form name="login_form" action="login" method="post">
 				<ul>
 					<li>로그인</li>
 					<li><input type="text" name="memail" placeholder="이메일"></li>
