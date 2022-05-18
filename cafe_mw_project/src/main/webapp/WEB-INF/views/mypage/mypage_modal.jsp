@@ -81,7 +81,7 @@
 			</div>
 			<div>
 				<button class='withdraw_inner_btn' id='withdraw_cancel'>취소</button>
-				<button class='withdraw_inner_btn' id='withdraw_agree'>탈퇴하기</button>
+				<button class='withdraw_inner_btn' id='withdraw_agree' onclick="location.href='shop_mypage/withdraw'">탈퇴하기</button>
 			</div>
 		</div>
 	</div>

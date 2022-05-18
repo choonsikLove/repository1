@@ -1,6 +1,8 @@
 package com.web.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +25,10 @@ public class MwMemberDAO implements MwObjectDAO{
 	@Override
 	public List<Object> select(int startCount, int endCount) {
 		// TODO Auto-generated method stub
-		return null;
+		Map param = new HashMap<String, String>();
+		param.put("start", startCount);
+		param.put("end", endCount);
+		return sqlSession.selectList(namespace+".List", param);
 	}
 
 	@Override
@@ -41,7 +46,7 @@ public class MwMemberDAO implements MwObjectDAO{
 	@Override
 	public int delete(String id) {
 		// TODO Auto-generated method stub
-		return 0;
+		return sqlSession.delete(namespace+".delete", id);
 	}
 
 	@Override

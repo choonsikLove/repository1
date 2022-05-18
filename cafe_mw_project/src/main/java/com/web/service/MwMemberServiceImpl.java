@@ -51,7 +51,7 @@ public class MwMemberServiceImpl implements MwMemberService{
 	@Override
 	public int getDeleteResult(String id) {
 		// TODO Auto-generated method stub
-		return 0;
+		return memberDao.delete(id);
 	}
 
 	@Override

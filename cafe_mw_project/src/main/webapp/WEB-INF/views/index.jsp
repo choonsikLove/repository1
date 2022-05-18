@@ -16,6 +16,20 @@
 	} else if (login_result == "fail"){
 		alert("로그인 실패");
 	}
+
+	var withdraw_result = "${withdraw_result}";
+	
+	if(withdraw_result == "succ"){
+		alert("성공적으로 회원탈퇴되었습니다.");
+	} else if (withdraw_result == "fail"){
+		alert("회원탈퇴에 실패했습니다.");
+	}
+	
+	var logout_result = "${logout_result}";
+	
+	if(logout_result == "succ"){
+		alert("로그아웃 되었습니다.");
+	}
 	
 </script>
 </head>

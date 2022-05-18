@@ -61,6 +61,8 @@
 				<ul class="menu">
 					<li id="login">LOGIN</li>
 					<li id="join">JOIN</li>
+					<li id="mypage">MY</li>
+					<li id="logout">LOGOUT</li>
 					<li>
 						<a href="#">
 							<img src="http://localhost:9000/manwol/resources/images/카트일러스트2.png" alt="쇼핑카트">

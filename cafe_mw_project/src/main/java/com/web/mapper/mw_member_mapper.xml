@@ -44,5 +44,8 @@
 		where memail = #{memail} and mpass = #{mpass}
 	</select>
 
+	<delete id="delete" parameterType="java.lang.String">
+		delete from mw_member where memail = #{memail}
+	</delete>
 
 </mapper>

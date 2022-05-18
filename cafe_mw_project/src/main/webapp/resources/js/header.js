@@ -113,6 +113,16 @@ $('#login').click(function(){
 	$('#popup').css("display","block");
 });
 
+/*		마이페이지 클릭시		*/
+$('#mypage').click(function(){
+	$(location).attr("href", "shop_mypage");
+});
+
+/*		로그아웃 클릭시		*/
+$('#logout').click(function(){
+	$(location).attr("href", "logout");
+});
+
 $('.backToLogin').click(function(){
 	$('.popup_cont').css("display","none");
 	$('.login_popup_box').css({"height":"620px","width":"370px",
