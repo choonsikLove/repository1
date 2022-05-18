@@ -250,7 +250,7 @@
 				<img id='profile_img' alt='프로필 이미지' name='profile_img_upload'
 					src='http://localhost:9000/manwol/resources/images/default_profile.png'>
 				<label for="join_profile">
-					<div>파일 업로드</div>
+					<div>사진</div>
 				</label>
 			</div>
 			<div id='recCodeBox'>&#x025FC;추천인코드 입력하면 1,000원 즉시 적립!</div>
@@ -258,7 +258,7 @@
 			<span class='join_Id_Check'>휴대폰 인증</span> 
 			<span class='join_Id_Check'>간편 	인증</span>
 			<form name="join_form" action="join" method="post" enctype="multipart/form-data">
-				<input type="file" name="file" id="join_profile" onchange="loadFile(this)">
+				<input type="file" name="file" id="join_profile" onchange="loadFile(this)" style="visibility: hidden;">
 				<div>
 						<input type='text' name='memail' class='input_box'
 							placeholder='이메일' id="memail">

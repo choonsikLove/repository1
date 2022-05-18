@@ -313,3 +313,10 @@ div#join_inner_3 h4{
 	margin-bottom: 5px;
 	font-weight: normal;
 }
+
+img#profile_img+label>div{
+	background: pink;
+	position: absolute;
+	top: 130px; left: 220px;
+	cursor: pointer;
+}
