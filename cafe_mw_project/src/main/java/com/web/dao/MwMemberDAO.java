@@ -25,10 +25,10 @@ public class MwMemberDAO implements MwObjectDAO{
 	@Override
 	public List<Object> select(int startCount, int endCount) {
 		// TODO Auto-generated method stub
-		Map param = new HashMap<String, String>();
+		Map param = new HashMap<Integer, Integer>();
 		param.put("start", startCount);
 		param.put("end", endCount);
-		return sqlSession.selectList(namespace+".List", param);
+		return sqlSession.selectList(namespace+".list", param);
 	}
 
 	@Override
@@ -52,7 +52,7 @@ public class MwMemberDAO implements MwObjectDAO{
 	@Override
 	public int selectTotal() {
 		// TODO Auto-generated method stub
-		return 0;
+		return sqlSession.selectOne(namespace+".count");
 	}
 	
 	public int selectIdCheck(String memail) {

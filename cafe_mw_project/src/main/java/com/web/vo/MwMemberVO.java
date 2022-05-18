@@ -4,11 +4,17 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 public class MwMemberVO {
 	String memail, mpass, mname, mhp, reccode, maddr1, maddr2, mprofile, msprofile, mdate;
-	int msg_sms, msg_email;
+	int msg_sms, msg_email, mno;
 	CommonsMultipartFile file;
 	
 	public String getMdate() {
 		return mdate;
+	}
+	public int getMno() {
+		return mno;
+	}
+	public void setMno(int mno) {
+		this.mno = mno;
 	}
 	public void setMdate(String mdate) {
 		this.mdate = mdate;

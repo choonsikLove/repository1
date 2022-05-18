@@ -21,7 +21,7 @@ public class MwMemberServiceImpl implements MwMemberService{
 	@Override
 	public List<Object> getListResult(int startCount, int endCount) {
 		// TODO Auto-generated method stub
-		return null;
+		return memberDao.select(startCount, endCount);
 	}
 
 	@Override
@@ -33,7 +33,7 @@ public class MwMemberServiceImpl implements MwMemberService{
 	@Override
 	public int getListCount() {
 		// TODO Auto-generated method stub
-		return 0;
+		return memberDao.selectTotal();
 	}
 
 	@Override

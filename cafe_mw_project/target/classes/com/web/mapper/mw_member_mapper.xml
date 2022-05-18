@@ -47,5 +47,16 @@
 	<delete id="delete" parameterType="java.lang.String">
 		delete from mw_member where memail = #{memail}
 	</delete>
-
+	
+	<select id="list" parameterType="map" resultType="com.web.vo.MwMemberVO">
+		select mno, mname, memail, mhp, mdate
+			from (select rownum mno, mname, memail, mhp, to_char(mdate, 'yyyy-mm-dd') mdate
+				from (select mname, memail, mhp, mdate from mw_member order by mdate desc)
+			) where mno between #{start} and #{end}
+	</select>
+	
+	<select id="count" resultType="int">
+		select count(*) from mw_member
+	</select>
+	
 </mapper>

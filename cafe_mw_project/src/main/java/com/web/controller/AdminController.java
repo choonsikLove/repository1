@@ -1,11 +1,29 @@
 package com.web.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.web.service.MwMemberServiceImpl;
+import com.web.service.MwPageServiceImpl;
+import com.web.vo.MwMemberVO;
 
 @Controller
 public class AdminController {
+	
+	@Autowired
+	private MwMemberServiceImpl memberService;
+	
+	@Autowired
+	private MwPageServiceImpl pageService;
+	
+	
 	@RequestMapping(value="/admin", method=RequestMethod.GET)
 	public String admin() {
 		return "/admin/admin";
@@ -13,8 +31,28 @@ public class AdminController {
 	
 	//È¸¿ø!
 	@RequestMapping(value="/admin/member_list", method=RequestMethod.GET)
-	public String member_list() {
-		return "/admin/member/member_list";
+	public ModelAndView member_list(String rpage) {
+		ModelAndView mv = new ModelAndView();
+		
+		Map<String,String> param = pageService.getPageResult(rpage, "member", memberService);
+		int startCount = Integer.parseInt(param.get("start"));
+		int endCount = Integer.parseInt(param.get("end"));
+		
+		
+		ArrayList<MwMemberVO> list = new ArrayList();
+		List<Object> olist = memberService.getListResult(startCount, endCount);
+		for(Object obj : olist) {
+			list.add((MwMemberVO)obj);
+		}
+				
+		mv.addObject("list",list);
+		mv.addObject("dbCount", Integer.parseInt(param.get("dbCount")));
+		mv.addObject("pageSize", Integer.parseInt(param.get("pageSize")));
+		mv.addObject("reqPage", Integer.parseInt(param.get("reqPage")));	
+		
+		mv.setViewName("/admin/member/member_list");	
+		
+		return mv;
 	}
 	
 	@RequestMapping(value="/admin/member_page", method=RequestMethod.GET)

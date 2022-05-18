@@ -6,10 +6,39 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="http://localhost:9000/manwol/resources/css/admin.css">
+<link rel="stylesheet" href="http://localhost:9000/manwol/resources/css/am-pagination.css">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100" rel="stylesheet" />
 <script src="http://localhost:9000/manwol/resources/js/jquery-3.6.0.js"></script>
 <script src="http://localhost:9000/manwol/resources/js/admin.js"></script>
+<script src="http://localhost:9000/manwol/resources/js/am-pagination.js"></script>
 </head>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	var pager = jQuery('#ampaginationsm').pagination({
+	
+	    maxSize: 7,	    		// max page size
+	    totals: '${dbCount}',	// total pages	
+	    page: '${reqPage}',		// initial page		
+	    pageSize: '${pageSize}',			// max number items per page
+	
+	    // custom labels		
+	    lastText: '&raquo;&raquo;', 		
+	    firstText: '&laquo;&laquo;',		
+	    prevText: '&laquo;',		
+	    nextText: '&raquo;',
+			     
+	    btnSize:'sm'	// 'sm'  or 'lg'		
+	});
+	
+	jQuery('#ampaginationsm').on('am.pagination.change',function(e){
+		   jQuery('.showlabelsm').text('The selected page no: '+e.page);
+           $(location).attr('href', "http://localhost:9000/mycgv/admin/member_list.do?rpage="+e.page);         
+    });
+	
+	});
+</script>
+
 <body>
 
 <jsp:include page="../../header.jsp"></jsp:include>
@@ -47,76 +76,15 @@
 					<td>연락처</td>
 					<td>가입일</td>
 				</tr>
-				<tr>
-					<td>1</td>
-					<td class="toMemberPage">이름</td>
-					<td class="toMemberPage">아이디</td>
-					<td>연락처</td>
-					<td>가입일</td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td class="toMemberPage">이름</td>
-					<td class="toMemberPage">아이디</td>
-					<td>연락처</td>
-					<td>가입일</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td class="toMemberPage">이름</td>
-					<td class="toMemberPage">아이디</td>
-					<td>연락처</td>
-					<td>가입일</td>
-				</tr>
-				<tr>
-					<td>4</td>
-					<td class="toMemberPage">이름</td>
-					<td class="toMemberPage">아이디</td>
-					<td>연락처</td>
-					<td>가입일</td>
-				</tr>
-				<tr>
-					<td>5</td>
-					<td class="toMemberPage">이름</td>
-					<td class="toMemberPage">아이디</td>
-					<td>연락처</td>
-					<td>가입일</td>
-				</tr>
-				<tr>
-					<td>6</td>
-					<td class="toMemberPage">이름</td>
-					<td class="toMemberPage">아이디</td>
-					<td>연락처</td>
-					<td>가입일</td>
-				</tr>
-				<tr>
-					<td>7</td>
-					<td class="toMemberPage">이름</td>
-					<td class="toMemberPage">아이디</td>
-					<td>연락처</td>
-					<td>가입일</td>
-				</tr>
-				<tr>
-					<td>8</td>
-					<td class="toMemberPage">이름</td>
-					<td class="toMemberPage">아이디</td>
-					<td>연락처</td>
-					<td>가입일</td>
-				</tr>
-				<tr>
-					<td>9</td>
-					<td class="toMemberPage">이름</td>
-					<td class="toMemberPage">아이디</td>
-					<td>연락처</td>
-					<td>가입일</td>
-				</tr>
-				<tr>
-					<td>10</td>
-					<td class="toMemberPage">이름</td>
-					<td class="toMemberPage">아이디</td>
-					<td>연락처</td>
-					<td>가입일</td>
-				</tr>
+				<c:forEach var="vo" items="${list}">
+					<tr>
+						<td>${vo.mno }</td>
+						<td class="toMemberPage">${vo.mname }</td>
+						<td class="toMemberPage">${vo.memail }</td>
+						<td>${vo.mhp }</td>
+						<td>${vo.mdate }</td>
+					</tr>
+				</c:forEach>
 				<tr>
 					<td colspan="5">
 						<form>
@@ -126,8 +94,8 @@
 					</td>
 				</tr>	
 				<tr>
-					<td colspan="5">&lt; 1 2 3 &gt;</td>
-				</tr>	
+					<td colspan="5"><div id="ampaginationsm"></div></td>					
+				</tr>
 			</table>
 		</div>
 	</div>
