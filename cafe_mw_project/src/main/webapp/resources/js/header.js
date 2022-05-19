@@ -115,12 +115,12 @@ $('#login').click(function(){
 
 /*		마이페이지 클릭시		*/
 $('#mypage').click(function(){
-	$(location).attr("href", "shop_mypage");
+	$(location).attr("href", "/manwol/shop_mypage");
 });
 
 /*		로그아웃 클릭시		*/
 $('#logout').click(function(){
-	$(location).attr("href", "logout");
+	$(location).attr("href", "/manwol/logout");
 });
 
 $('.backToLogin').click(function(){
