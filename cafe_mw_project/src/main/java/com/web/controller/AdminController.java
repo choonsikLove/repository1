@@ -27,6 +27,9 @@ public class AdminController {
 	@Autowired
 	private MwPageServiceImpl pageService;
 	
+	@Autowired
+	private MwProductServiceImpl productService;
+	
 	
 	@RequestMapping(value="/admin", method=RequestMethod.GET)
 	public String admin() {
@@ -108,6 +111,38 @@ public class AdminController {
 	 
 	 @RequestMapping(value="/admin/product_write", method=RequestMethod.GET)
 	 public String product_write() { return "/admin/product/product_write"; }
+	 
+	 
+		
+	   /**
+	    * 惑前包府 - 惑前殿废 贸府
+	    */
+	    @RequestMapping(value="/admin/product_insert", method=RequestMethod.POST)
+	    public ModelAndView product_insert(MwProductVO vo, MultipartHttpServletRequest request) throws Exception {
+	       ModelAndView mv = new ModelAndView();
+	    
+	       /* fileService.multiFileCheck(vo);*/
+	       int result = productService.getInsertResult(vo);
+	       System.out.println("result : " + result);
+	       mv.setViewName("/admin/product/product_insert");
+	       
+	       return mv;
+	    }
+		 
+		   
+		   
+		  /**
+		      * 惑前包府 - 惑前殿废
+		  */
+		      @RequestMapping(value="/admin/product_insert", method=RequestMethod.GET)
+		      public ModelAndView product_insert() {
+		         ModelAndView mv = new ModelAndView();
+		      
+		         mv.setViewName("/admin/product/product_insert");
+		         
+		         return mv;
+		      }
+		
 	 
 	 
 	 //府轰
