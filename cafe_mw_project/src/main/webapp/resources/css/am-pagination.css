@@ -28,9 +28,9 @@
   padding: 6px 12px;
   line-height: 1.42857143;
   text-decoration: none;
-  color: #337ab7;
+  color: #0A2155;
   background-color: #fff;
-  border: 1px solid #ddd;
+  border: 1px solid #black;
   margin-left: -1px;
 }
 .am-pagination-default > li:first-child > a,
@@ -51,7 +51,7 @@
   z-index: 2;
   color: #23527c;
   background-color: #eeeeee;
-  border-color: #ddd;
+  border-color: black;
 }
 .am-pagination-default > .active > a,
 .am-pagination-default > .active > span,
@@ -61,8 +61,8 @@
 .am-pagination-default > .active > span:focus {
   z-index: 3;
   color: #fff;
-  background-color: #5eb95e;
-  border-color: #5eb95e;
+  background-color: #0A2155;
+  border-color: black;
   cursor: default;
 }
 .am-pagination-default > .disabled > span,
@@ -73,7 +73,7 @@
 .am-pagination-default > .disabled > a:focus {
   color: #777777;
   background-color: #fff;
-  border-color: #ddd;
+  border-color: black;
   cursor: not-allowed;
 }
 .am-pagination-default-lg > li > a,

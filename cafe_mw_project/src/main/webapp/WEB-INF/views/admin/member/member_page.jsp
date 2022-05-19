@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,30 +41,67 @@
 		
 		<div class="memberInfo">
 			<div>
-				<img alt="프사" src="http://localhost:9000/manwol/resources/images/default_profile.png">
+				<img alt="프사" src="
+					<c:choose>
+						<c:when test="${empty vo.mprofile}">
+							http://localhost:9000/manwol/resources/images/default_profile.png
+						</c:when>
+						<c:otherwise>
+							${vo.mprofile }
+						</c:otherwise>
+					</c:choose>
+				">
 			</div>
 			<div>
 				<table border='1'>
 					<tr>
-						<td>이름</td><td>김회원</td>
-						<td>연락처</td><td>01023232323</td>
+						<td>이름</td><td>${vo.mname }</td>
+						<td>연락처</td><td>${vo.mhp }</td>
 					</tr>
 					<tr>
-						<td>아이디</td><td>member@google.com</td>
-						<td>추천인코드</td><td>미생성</td>
+						<td>아이디</td><td>${vo.memail }</td>
+						<td>추천인코드</td>
+						<td>
+							<c:choose>
+								<c:when test="${empty vo.reccode }">
+									미생성
+								</c:when>
+								<c:otherwise>
+									${vo.reccode }
+								</c:otherwise>
+							</c:choose>
+						</td>
 					</tr>
 					<tr>
-						<td>주소</td><td colspan="3">주소</td>
+						<td>주소</td><td colspan="3">${vo.maddr1 }</td>
 					</tr>
 					<tr>
-						<td>상세 주소</td><td colspan="3">000동 2234호</td>
+						<td>상세 주소</td><td colspan="3">${vo.maddr2 }</td>
 					</tr>
 					<tr>
 						<td rowspan="2">이벤트/혜택 소식<br> 수신 여부</td>
-						<td>sns</td><td colspan="2">1</td>
+						<td>sns</td><td colspan="2">
+							<c:choose>
+								<c:when test="${vo.msg_sms eq 1}">
+									동의
+								</c:when>
+								<c:otherwise>
+									미동의
+								</c:otherwise>
+							</c:choose>
+						</td>
 					</tr>
 					<tr>
-						<td>email</td><td colspan="2">2</td>
+						<td>email</td><td colspan="2">
+							<c:choose>
+								<c:when test="${vo.msg_email eq 1}">
+									동의
+								</c:when>
+								<c:otherwise>
+									미동의
+								</c:otherwise>
+							</c:choose>
+						</td>
 					</tr>
 				</table>
 			</div>
@@ -73,9 +111,9 @@
 			<p>주문 내역</p>
 			<table border='1'>
 				<tr>
-					<td>202204220286(주문번호)</td>
-					<td>배송 완료(주문 상태)</td>
-					<td>2022-04-22(주문일자)</td>
+					<th>주문번호</th>
+					<th>주문 상태</th>
+					<th>주문일자</th>
 				</tr>
 				<tr>
 					<td>202204220286(주문번호)</td>
@@ -97,6 +135,7 @@
 					<td>배송 완료(주문 상태)</td>
 					<td>2022-04-22(주문일자)</td>
 				</tr>
+					<jsp:include page="member_page2.jsp"></jsp:include>
 				<tr>
 					<td colspan="3">
 						<form>
@@ -105,9 +144,6 @@
 						</form>
 					</td>
 				</tr>	
-				<tr>
-					<td colspan="3">&lt; 1 2 3 &gt;</td>
-				</tr>
 			</table>
 		</div>
 </div>		

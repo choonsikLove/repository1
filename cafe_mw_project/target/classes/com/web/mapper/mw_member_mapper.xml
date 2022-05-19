@@ -59,4 +59,8 @@
 		select count(*) from mw_member
 	</select>
 	
+	<select id="content" parameterType="java.lang.String" resultType="com.web.vo.MwMemberVO">
+		select memail, mname, mhp, reccode, maddr1, maddr2, msg_sms, msg_email, msprofile from mw_member where memail=#{memail}
+	</select>
+	
 </mapper>

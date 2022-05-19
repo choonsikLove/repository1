@@ -27,7 +27,7 @@ public class MwMemberServiceImpl implements MwMemberService{
 	@Override
 	public Object getContentResult(String id) {
 		// TODO Auto-generated method stub
-		return null;
+		return memberDao.select(id);
 	}
 
 	@Override
