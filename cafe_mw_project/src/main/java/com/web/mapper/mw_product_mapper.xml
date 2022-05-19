@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.product">
+<!-- 
+	<select id="content" parameterType="java.lang.String" resultType="com.web.vo.MwProductVO">
+		select cp.pnum,pcategory,pname,price,psaleprice,pstock,ptagimage,pfile1,pfile2,pfile3,pfile4,pfile5
+		      ,psfile1,psfile2,psfile3,psfile4,psfile5
+		from mw_product cp, mw_product_file cpf
+		where cp.pnum = cpf.fid and cp.pnum=#{pnum}
+	</select>
+
+
+	<insert id="insert" parameterType="com.web.vo.MwProductVO">
+		insert into Mw_product		
+				values('p_'||sequ_mw_product_pnum.nextval
+					,#{pcategory},#{pname},#{price},#{psaleprice},#{ptagimage},#{pstock}		
+	</insert>
+
+	
+	<insert id="insert_file" parameterType="com.web.vo.MwProductVO">
+		insert into mw_product_file		
+				values(#{pnum},			
+			<foreach collection="pfiles" item="pfile" separator="," index="i">
+				<if test="i &lt; 5">  i<5
+	           		#{pfile}
+	           	</if>
+           </foreach>
+           ,
+           <foreach collection="psfiles" item="psfile"  separator="," close=")">
+	           <if test="i &lt; 5"> 
+	           	#{psfile}
+	           	</if>
+           </foreach>
+	</insert> -->
+
+	
+</mapper>    
+
+
+
+
+
+
+
