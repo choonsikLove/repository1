@@ -7,9 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.web.service.FileServiceImpl;
 import com.web.service.MwMemberServiceImpl;
+import com.web.vo.MwMemberVO;
 
 @Controller
 public class MypageController {
@@ -17,9 +21,19 @@ public class MypageController {
 	@Autowired
 	private MwMemberServiceImpl memberService;
 	
+	@Autowired
+	private FileServiceImpl fileService;
+	
 	@RequestMapping(value="/shop_mypage", method= RequestMethod.GET)
-	public String mypage() {
-		return "/mypage/mypage";
+	public ModelAndView mypage(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView();
+		HttpSession session = request.getSession();
+		String memail = (String)session.getAttribute("memail");
+		MwMemberVO vo = (MwMemberVO)memberService.getContentResult(memail);
+		
+		mv.addObject("vo", vo);
+		mv.setViewName("/mypage/mypage");
+		return mv;
 	}
 
 	@RequestMapping(value="/shop_mypage/withdraw", method= RequestMethod.GET)
@@ -42,7 +56,53 @@ public class MypageController {
 		return mv;
 	}
 	
+	@ResponseBody
+	@RequestMapping(value="mypage_member_info", method=RequestMethod.POST, produces = "application/json; charset=utf8")
+	public String mypage_member_info(String email) throws Exception{
+		MwMemberVO vo = (MwMemberVO)memberService.getContentResult(email);
+		ObjectMapper mapper = new ObjectMapper();
+		String jsonifiedVO = mapper.writeValueAsString(vo);
+		
+		//vo 객체를 json으로 만들기.
+		
+		return jsonifiedVO;
+	}
 	
+	@ResponseBody
+	@RequestMapping(value="before_pass_check", method=RequestMethod.POST)
+	public String before_pass_check(MwMemberVO vo) {
+		int result = memberService.getLoginResult(vo);
+		
+		return String.valueOf(result);
+	}
+	
+	
+	@ResponseBody
+	@RequestMapping(value="mypage_update_info", method=RequestMethod.POST)
+	public String mypage_update_info(MwMemberVO vo) {
+
+		int result = memberService.getUpdateResult(vo);
+		
+		return String.valueOf(result);
+	}
+	
+	@RequestMapping(value="update_profile_img", method=RequestMethod.POST)
+	public ModelAndView join(MwMemberVO vo, HttpServletRequest request) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		
+		String oldFile = vo.getMsprofile();
+		vo = fileService.fileCheck(vo);
+			
+		int result = memberService.getFileUpdateResult(vo);
+		
+		if(result==1) {
+			fileService.fileSave(vo, request, oldFile);
+			mv.addObject("vo", vo);
+			mv.setViewName("/mypage/mypage");
+		}
+		
+		return mv;
+	}
 	
 	
 	

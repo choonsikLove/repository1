@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,17 +59,30 @@
 		
 		<div>
 			<nav>
-				<ul class="menu">
-					<li id="login">LOGIN</li>
-					<li id="join">JOIN</li>
-					<li id="mypage">MY</li>
-					<li id="logout">LOGOUT</li>
-					<li>
-						<a href="#">
-							<img src="http://localhost:9000/manwol/resources/images/카트일러스트2.png" alt="쇼핑카트">
-						</a>
-					</li>
-				</ul>
+				<c:choose>
+					<c:when test="${sessionScope.memail != null }">
+						<ul class="menu">
+							<li>
+								<a href="#">
+									<img src="http://localhost:9000/manwol/resources/images/카트일러스트2.png" alt="쇼핑카트">
+								</a>
+							</li>
+							<li id="mypage">MY</li>
+							<li id="logout">LOGOUT</li>
+						</ul>
+					</c:when>
+					<c:otherwise>
+						<ul class="menu">
+							<li id="login">LOGIN</li>
+							<li id="join">JOIN</li>
+							<li>
+								<a href="#">
+									<img src="http://localhost:9000/manwol/resources/images/카트일러스트2.png" alt="쇼핑카트">
+								</a>
+							</li>
+						</ul>
+					</c:otherwise>
+				</c:choose>
 			</nav>
 		</div>
 	</div>

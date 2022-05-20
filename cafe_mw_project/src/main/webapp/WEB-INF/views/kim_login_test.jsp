@@ -21,12 +21,12 @@
 			<form name="login_form" action="login" method="post">
 				<ul>
 					<li>로그인</li>
-					<li><input type="text" name="memail" placeholder="이메일"></li>
-					<li><input type="password" name="mpass" placeholder="비밀번호"></li>
+					<li><input type="text" name="memail" placeholder="이메일" id="mwEmail"></li>
+					<li><input type="password" name="mpass" placeholder="비밀번호" id="mwPass"></li>
 					<li><input type="checkbox" checked="checked" id="loginCheck">
 						<label for="loginCheck">로그인상태유지</label>
-					</li> <%--나중에 이거 관련 내용도 추가해야! --%>
-					<li><button type="submit">로그인</button></li>
+					</li> <%--나중에 이거 관련 내용도 추가해야! 세션할 때 할 수 있지 않을까? --%>
+					<li><button type="button" id="mwLogin">로그인</button></li>
 				</ul>
 			</form>
 			<div>
@@ -77,8 +77,8 @@
 	    				<li>
 	    					<input type="radio" name="findIDMethod" value="byHp" id="findIDMethod2">
 	    					<label for="findIDMethod2">가입한 휴대폰으로 찾기</label>
-	    					<input type="text" name="mname" placeholder="이름 또는 닉네임" style="display:none;">
-	    					<input type="text" name="mhp" placeholder="휴대폰 번호" style="display:none;">
+	    					<input type="text" name="mname" placeholder="이름 또는 닉네임" style="display:none;" id="idName">
+	    					<input type="text" name="mhp" placeholder="휴대폰 번호" style="display:none;" id="idHp">
 	    					<hr>
 	    				</li>
 	    				<li>
@@ -117,7 +117,7 @@
 	    	
 	    	<div>
 	    		<form>
-	    			<input type="text" name="memail" placeholder="가입한 아이디">
+	    			<input type="text" name="memail" placeholder="가입한 아이디" id="passEmail">
 	    			<button type="button" id="findPWButton">비밀번호 찾기</button>
 	    		</form>
 	    	</div>
@@ -132,7 +132,7 @@
 	    	
 	    	<div>
 	    		<p>입력하신 정보와 일치하는 계정을 발견했습니다</p>
-	    		<p>메일 주소!</p>
+	    		<p id="foundEmail">메일 주소!</p>
 	    	</div>
 	    	
 	    	<div>
@@ -157,10 +157,10 @@
 	    	<hr>
 	    	
 	    	<div>
-	    		<form>
-	    			<input type="password" placeholder="새 비밀번호">
-	    			<input type="password" placeholder="새 비밀번호 확인">
-	    			<button type="button"> 변경하기</button>
+	    		<form name="new_pw_form" action="newPass" method="POST">
+	    			<input type="password" placeholder="새 비밀번호" id="setNewPw" name="mpass">
+	    			<input type="password" placeholder="새 비밀번호 확인" id="setNewPwCheck">
+	    			<button type="button" id="setNewPwButton"> 변경하기</button>
 	    		</form>
 	    	</div>
 	    	
@@ -181,7 +181,7 @@
 	    	
 	    	<div>
 	    		<p>입력하신 정보와 일치하는 계정을 발견했습니다</p>
-	    		<p>메일 주소!</p>
+	    		<p id="foundEmail2">메일 주소!</p>
 	    	</div>
 	    	
 	    	<div>

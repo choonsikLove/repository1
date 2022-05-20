@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +9,8 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/mypage.css"/>
 </head>
 <body>
+<input type="text" value="${vo.memail}" id="member_email"><%--절대로 지우면 안됩니다! --%>
+<input type="text" value="${vo.msprofile}"><%--절대로 지우면 안됩니다! --%>
 	<jsp:include page="../header.jsp"></jsp:include>
 	<div id='mypage_content'>
 		<div id='content_border'>
@@ -35,9 +38,20 @@
 			
 			<section id='mypage_section'>
 				<div id='border'>
-					<img class='my_inform' id='mypage_profile' src='http://localhost:9000/manwol/resources/images/default_profile.png'>
+					<c:choose>
+						<c:when test="${vo.msprofile != null}">
+							<img class='my_inform' id='mypage_profile' src='http://localhost:9000/manwol/resources/upload/${vo.msprofile}'>
+						</c:when>
+						<c:otherwise>
+							<img class='my_inform' id='mypage_profile' src='http://localhost:9000/manwol/resources/images/default_profile.png'>
+						</c:otherwise>
+					</c:choose>
 					<div class='my_grade'>
-						<span><span class='colorspan2'>일반</span> 유덕현님 안녕하세요.</span><br><br>
+						<span>
+							<span class='colorspan2'>일반</span> 
+							<span id="mypage_mname">${vo.mname }</span>님 안녕하세요.
+						</span>
+						<br><br>
 						구매금액 15,000원 달성 시<br>
 						달까지 100km로 승급됩니다.<br>
 						<div id='grade_benefit'>

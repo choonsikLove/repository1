@@ -44,13 +44,12 @@ public class MwMemberServiceImpl implements MwMemberService{
 
 	@Override
 	public int getUpdateResult(Object obj) {
-		// TODO Auto-generated method stub
-		return 0;
+		MwMemberVO vo = (MwMemberVO)obj;
+		return memberDao.update(vo);
 	}
 
 	@Override
 	public int getDeleteResult(String id) {
-		// TODO Auto-generated method stub
 		return memberDao.delete(id);
 	}
 
@@ -62,6 +61,26 @@ public class MwMemberServiceImpl implements MwMemberService{
 	@Override
 	public int getIdCheckResult(String memail) {
 		return memberDao.selectIdCheck(memail);
+	}
+
+	@Override
+	public String getEmailCheckResult(String memail) {
+		return memberDao.selectEmailCheck(memail);
+	}
+
+	@Override
+	public String getHpCheckResult(MwMemberVO vo) {
+		return memberDao.selectHpCheck(vo);
+	}
+
+	@Override
+	public int getPassUpdateResult(MwMemberVO vo) {
+		return memberDao.updatePass(vo);
+	}
+
+	@Override
+	public int getFileUpdateResult(MwMemberVO vo) {
+		return memberDao.updateFile(vo);
 	}
 	
 

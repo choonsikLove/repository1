@@ -293,7 +293,7 @@
 		background: #fff;
 		position: relative;
 		width: 350px;
-		height: 1100px;
+		height: 1150px;
 		margin: 80px auto;
 		padding: 20px;
 		border-radius: 5px;
@@ -325,7 +325,7 @@
 		font-size: 22px;
 	}
 	
-	#profile_img {
+	#mypage_profile_img {
 		border-radius: 50%;
 		margin: 10px;
 		margin-left: 135px;
@@ -471,3 +471,15 @@
 		display: block;
 		clear: both;
 	}	
+
+img#mypage_profile_img+label>div{
+	background: pink;
+	color: red;
+	position: absolute;
+	width: 30px; height: 20px;
+	top: 145px; left: 200px;
+}
+
+input#update_profile{
+	width: 10px; height: 10px;
+}

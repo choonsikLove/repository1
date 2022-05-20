@@ -34,4 +34,23 @@ public class FileServiceImpl {
 		}
 		
 	}
+	
+	public void fileSave(MwMemberVO vo, HttpServletRequest request, String old_file) throws Exception {
+		
+		if(!vo.getFile().getOriginalFilename().equals("")) {
+			String path = request.getSession().getServletContext().getRealPath("/");
+			path += "resources\\upload\\";
+			
+			File file = new File(path + vo.getMsprofile());
+			vo.getFile().transferTo(file);
+			
+			File oldFile = new File(path + old_file);
+			if(oldFile.exists()) {
+				oldFile.delete();
+			}
+			
+			
+		}
+		
+	}
 }

@@ -115,12 +115,12 @@ $('#login').click(function(){
 
 /*		마이페이지 클릭시		*/
 $('#mypage').click(function(){
-	$(location).attr("href", "/manwol/shop_mypage");
+	$(location).attr("href", "shop_mypage");
 });
 
 /*		로그아웃 클릭시		*/
 $('#logout').click(function(){
-	$(location).attr("href", "/manwol/logout");
+	$(location).attr("href", "logout");
 });
 
 $('.backToLogin').click(function(){
@@ -233,38 +233,77 @@ $(document).on("click", "#findPW", function(){
 	$('#popup_cont3').css("display","block");
 });
 
+var carriedEmail = "";
+
 $(document).on("click", "#findIDButton", function(){
 	var idEmail = $('#idEmail').val();
+	var idName = $('#idName').val();
+	var idHp = $('#idHp').val();
 	
 	if($('input:radio[value=byEmail]').is(":checked")){
 		
 		if(idEmail == ""){
 			alert("이메일을 입력해 주세요");
 		} else {
-			alert(idEmail);
 			$.ajax({
 				type: 'POST',
 				async: true,
 				data: {email: idEmail},
 				url: "emailCheck",
-				success : function(result){
-					alert("성공");
+				success : function(data){
+					if(data != ""){
+						alert(data);
+						carriedEmail = data;
+						$('#foundEmail').html(data);
+						$('#idEmail').val("");
+						$('.popup_cont').css("display","none");
+						$('.login_popup_box').css({"height":"260px",'top':'28%'});
+						$('#popup_cont4').css("display","block");
+					} else {
+						alert("입력하신 정보와 일치하는 계정을 찾지 못했습니다.");
+						$('#idEmail').val("");
+					}
 				},
-				error: function(result){
+				error: function(){
 					alert("실패");
 				}
-				
 			});
 		
-			$('.popup_cont').css("display","none");
-			$('.login_popup_box').css({"height":"260px",'top':'28%'});
-			$('#popup_cont4').css("display","block");
 		}
+		
 	} else if($('input:radio[value=byHp]').is(":checked")) {
-		$('.popup_cont').css("display","none");
-		$('.login_popup_box').css({"height":"260px",'top':'28%'});
-		$('#popup_cont4').css("display","block");
-		/*둘이 내용은 같은데 넣는 정보가 달라서 둘로 나눴음*/
+	
+		if(idName == ""){
+			alert("이름 또는 아이디를 입력해 주세요");
+		} else if (idHp == ""){
+			alert("휴대폰 번호을 입력해 주세요");
+		}else {
+			$.ajax({
+				type: 'POST',
+				async: true,
+				data: {"mname" : idName, "mhp" : idHp},
+				url: "hpCheck",
+				success : function(data){
+					if(data != ""){
+						carriedEmail = data;
+						alert(data);
+						$('#foundEmail').html(data);
+						$('#idName').val("");
+						$('#idHp').val("");
+						$('.popup_cont').css("display","none");
+						$('.login_popup_box').css({"height":"260px",'top':'28%'});
+						$('#popup_cont4').css("display","block");
+					} else {
+						alert("입력하신 정보와 일치하는 계정을 찾지 못했습니다.");
+						$('#idName').val("");
+						$('#idHp').val("");
+					}
+				},
+				error: function(){
+					alert("실패");
+				}
+			});
+		}
 	} else {
 		alert("여긴 안 씁니다");
 	}
@@ -296,9 +335,73 @@ $(document).on("click", ".newPW", function(){
 });
 
 $(document).on("click", "#findPWButton", function(){
-	$('.popup_cont').css("display","none");
-	$('.login_popup_box').css({"height":"250px",'top':'28%'});
-	$('#popup_cont6').css("display","block");
+	var passEmail = $('#passEmail').val();
+	
+	if(passEmail != ""){
+		$.ajax({
+				type: 'POST',
+				async: true,
+				data: {"email": passEmail},
+				url: "emailCheck",
+				success : function(data){
+					if(data != ""){
+						alert(data);
+						carriedEmail = data;
+						$('#foundEmail2').html(data);
+						$('#passEmail').val("");
+						$('.popup_cont').css("display","none");
+						$('.login_popup_box').css({"height":"250px",'top':'28%'});
+						$('#popup_cont6').css("display","block");
+					} else {
+						alert("입력하신 정보와 일치하는 계정을 찾지 못했습니다.");
+						$('#passEmail').val("");
+					}
+				},
+				error: function(){
+					alert("실패");
+				}
+			});
+
+	} else {
+		alert("이메일을 입력해주세요");
+	}
+});
+
+
+$(document).on("click", "#setNewPwButton", function(){
+	var newPass = $('#setNewPw').val();
+	var newPassCheck = $('#setNewPwCheck').val();
+	
+	if(newPass != newPassCheck){
+		alert(carriedEmail);
+		alert("입력하신 새 비밀번호가 일치하지 않습니다.");
+		$('#setNewPw').val("");
+		$('#setNewPwCheck').val("");
+	} else {
+		alert(carriedEmail);
+		alert("같아용");
+		$.ajax({
+				type: 'POST',
+				async: true,
+				data: {"memail" : carriedEmail, "mpass" : newPass},
+				url: "updatePass",
+				success : function(result){
+					alert("비밀번호가 변경되었습니다.");
+					$('#setNewPw').val("");
+					$('#setNewPwCheck').val("");
+					$('#popup').css("display","none");
+					$('.popup_cont').css("display","none");
+					$('.login_popup_box').css({"height":"620px","width":"370px",
+						"top":"53%"});
+					$('#popup_cont1').css("display","block");
+					location.href = "http://localhost:9000/manwol/index";
+				},
+				error: function(){
+					alert("실패");
+				}
+			});
+	}
+	
 });
 
 $(document).on("click", "#toJoin", function(){
@@ -306,5 +409,16 @@ $(document).on("click", "#toJoin", function(){
 	$('#popup').css("display","none");
 	$('#join_outer').css("display","block");
 	$('#join_inner_1').css("display","block");
+});
+
+
+$(document).on("click", "#mwLogin", function(){
+	if($('#mwEmail').val() == ""){
+		alert("이메일을 입력해주세요!");
+	} else if($('#mwPass').val() == ""){
+		alert("비밀번호를 입력해주세요!");
+	} else{
+		login_form.submit();
+	}
 });
 

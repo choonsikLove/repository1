@@ -33,25 +33,22 @@ public class MwMemberDAO implements MwObjectDAO{
 
 	@Override
 	public Object select(String id) {
-		// TODO Auto-generated method stub
 		return sqlSession.selectOne(namespace+".content", id);
 	}
 
 	@Override
 	public int update(Object obj) {
-		// TODO Auto-generated method stub
-		return 0;
+		MwMemberVO vo = (MwMemberVO)obj;
+		return sqlSession.update(namespace+".update", vo);
 	}
 
 	@Override
 	public int delete(String id) {
-		// TODO Auto-generated method stub
 		return sqlSession.delete(namespace+".delete", id);
 	}
 
 	@Override
 	public int selectTotal() {
-		// TODO Auto-generated method stub
 		return sqlSession.selectOne(namespace+".count");
 	}
 	
@@ -61,5 +58,20 @@ public class MwMemberDAO implements MwObjectDAO{
 	
 	public int select(MwMemberVO vo) {
 		return sqlSession.selectOne(namespace+".login",vo);
+	}
+	public String selectEmailCheck(String memail) {
+		return sqlSession.selectOne(namespace + ".emailCheck", memail);
+	}
+	
+	public String selectHpCheck(MwMemberVO vo) {
+		return sqlSession.selectOne(namespace + ".hpCheck", vo);
+	}
+	
+	public int updatePass(MwMemberVO vo) {
+		return sqlSession.update(namespace + ".updatePass", vo);
+	}
+	
+	public int updateFile(MwMemberVO vo) {
+		return sqlSession.update(namespace + ".updateFile", vo);
 	}
 }

@@ -10,13 +10,18 @@
 <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/index.js"></script>
 <script>
 	var login_result = "${login_result}";
+	var join_result = "${join_result}";
 	
-	if(login_result == "succ"){
-		alert("로그인 성공");
-	} else if (login_result == "fail"){
+	if(join_result == "succ"){
+		alert("회원 가입 되었습니다.");
+	} else if (join_result == "fail"){
+		alert("회원 가입에 실패했습니다. 다시 시도해주세요.");
+	}
+	
+	if (login_result == "fail"){
 		alert("로그인 실패");
 	}
-
+	
 	var withdraw_result = "${withdraw_result}";
 	
 	if(withdraw_result == "succ"){
@@ -34,9 +39,6 @@
 </script>
 </head>
 <body>
-<div>
-	${vo.memail }
-</div>
 	<jsp:include page="header.jsp"></jsp:include>
 	<jsp:include page="index1.jsp"></jsp:include>
 	
