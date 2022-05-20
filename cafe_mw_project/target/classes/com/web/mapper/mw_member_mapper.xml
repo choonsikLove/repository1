@@ -59,8 +59,93 @@
 		select count(*) from mw_member
 	</select>
 	
-	<select id="content" parameterType="java.lang.String" resultType="com.web.vo.MwMemberVO">
-		select memail, mname, mhp, reccode, maddr1, maddr2, msg_sms, msg_email, msprofile from mw_member where memail=#{memail}
+		<select id="search" parameterType="map" resultType="com.web.vo.MwMemberVO">
+		select mno, mname, memail, mhp, mdate from (select mno, mname, memail, mhp, mdate
+		from (select rownum mno, mname, memail, mhp, to_char(mdate, 'yyyy-mm-dd') mdate
+				from (select mname, memail, mhp, mdate from mw_member order by mdate desc)
+				) where mno between #{start} and #{end}) true
+		where
+		<choose>
+			<when test= 'option == "M"'>
+				memail like ('%'|| #{keyword}|| '%')
+			</when>
+			<when test= 'option == "N"'>
+				mname like ('%'|| #{keyword}|| '%')
+			</when>
+			<when test= 'option == "H"'>
+				mhp like ('%'|| #{keyword}|| '%')
+			</when>
+			<otherwise>
+				memail like ('%'||#{keyword}||'%')
+				or mname like ('%'||#{keyword}||'%')
+				or mhp like ('%'||#{keyword}||'%')
+			</otherwise>		
+		</choose>
 	</select>
+	
+	<select id="searchCount" parameterType="map" resultType="int">
+		select count(*)
+		from mw_member true
+		where
+ 		<choose>
+			<when test= 'option == "M"'>
+				memail like ('%'|| #{keyword}|| '%')
+			</when>
+			<when test= 'option == "N"'>
+				mname like ('%'|| #{keyword}|| '%')
+			</when>
+			<when test= 'option == "H"'>
+				mhp like ('%'|| #{keyword}|| '%')
+			</when>
+			<otherwise>
+				memail like ('%'||#{keyword}||'%')
+				or mname like ('%'||#{keyword}||'%')
+				or mhp like ('%'||#{keyword}||'%')
+			</otherwise>	 	
+		</choose>
+	</select>
+	
+	<select id="emailCheck" parameterType="java.lang.String" resultType="java.lang.String">
+		select memail from mw_member
+		where memail = #{memail}
+	</select>
+	
+	<select id="hpCheck" parameterType="com.web.vo.MwMemberVO" resultType="java.lang.String">
+		select memail from mw_member
+		where mhp = #{mhp} and mname = #{mname}
+	</select>
+	
+	<update id="updatePass" parameterType="com.web.vo.MwMemberVO">
+		update mw_member
+		set mpass = #{mpass}
+		where memail = #{memail}
+	</update>
+	
+	<select id="content" parameterType="java.lang.String" resultType="com.web.vo.MwMemberVO">
+		select memail, mname, mhp, reccode, maddr1, maddr2, msg_sms, msg_email, mprofile, msprofile
+		from mw_member
+		where memail = #{memail}
+	</select>
+	
+	<update id="update" parameterType="com.web.vo.MwMemberVO">
+		update mw_member 
+		<choose>
+			<when test="mpass != null">
+				set mname = #{mname}, mhp=#{mhp}, maddr1=#{maddr1}, maddr2=#{maddr2},
+				msg_sms = #{msg_sms}, msg_email = #{msg_email}, mpass = #{mpass}
+			</when>
+			<otherwise>
+				set mname = #{mname}, mhp=#{mhp}, maddr1=#{maddr1}, maddr2=#{maddr2},
+				msg_sms = #{msg_sms}, msg_email = #{msg_email}
+			</otherwise>
+		</choose>
+		where memail = #{memail}
+	</update>
+	
+	<update id="updateFile" parameterType="com.web.vo.MwMemberVO">
+		update mw_member 
+		set mprofile= #{mprofile}, msprofile=#{msprofile}
+		where memail = #{memail}
+	</update>
 	
 </mapper>

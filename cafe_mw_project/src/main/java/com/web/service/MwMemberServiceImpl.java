@@ -43,6 +43,18 @@ public class MwMemberServiceImpl implements MwMemberService{
 	}
 
 	@Override
+	public List<Object> getSearchListResult(int startCount, int endCount, String keyword, String option) {
+		// TODO Auto-generated method stub
+		return memberDao.selectSearch(startCount, endCount, keyword, option);
+	}
+
+	@Override
+	public int getSearchListCount(String keyword, String option) {
+		// TODO Auto-generated method stub
+		return memberDao.selectSearchTotal(keyword, option);
+	}
+	
+	@Override
 	public int getUpdateResult(Object obj) {
 		MwMemberVO vo = (MwMemberVO)obj;
 		return memberDao.update(vo);
@@ -82,6 +94,5 @@ public class MwMemberServiceImpl implements MwMemberService{
 	public int getFileUpdateResult(MwMemberVO vo) {
 		return memberDao.updateFile(vo);
 	}
-	
 
 }

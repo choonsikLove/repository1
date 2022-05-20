@@ -67,6 +67,30 @@ public class AdminController {
 		return mv;
 	}
 	
+	@RequestMapping(value="/admin/member_list", method=RequestMethod.POST)
+	public ModelAndView member_list(String rpage, String keyword, String option) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		
+		Map<String,String> param = pageService.getPageResult(rpage, "member", memberService, keyword, option);
+		int startCount = Integer.parseInt(param.get("start"));
+		int endCount = Integer.parseInt(param.get("end"));
+		
+		ArrayList<MwMemberVO> list = new ArrayList<MwMemberVO>();
+		List<Object> olist = memberService.getSearchListResult(startCount, endCount, keyword, option);
+		for(Object obj : olist) {
+			list.add((MwMemberVO)obj);
+		}
+		
+		mv.addObject("list",list);
+		mv.addObject("dbCount", Integer.parseInt(param.get("dbCount")));
+		mv.addObject("pageSize", Integer.parseInt(param.get("pageSize")));
+		mv.addObject("reqPage", Integer.parseInt(param.get("reqPage")));	
+		
+		mv.setViewName("/admin/member/member_list");	
+		
+		return mv;
+	}
+	
 	@RequestMapping(value="/admin/member_page", method=RequestMethod.GET)
 	public ModelAndView member_page(String memail, String rpage) {
 		ModelAndView mv = new ModelAndView();

@@ -9,4 +9,6 @@ public interface MwObjectDAO {
 	int update(Object obj);
 	int delete(String id);
 	int selectTotal();
+	int selectSearchTotal(String keyword, String option);
+	List<Object> selectSearch(int startCount, int endCount, String keyword, String option);
 }

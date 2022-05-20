@@ -52,6 +52,26 @@ public class MwMemberDAO implements MwObjectDAO{
 		return sqlSession.selectOne(namespace+".count");
 	}
 	
+	@Override
+	public int selectSearchTotal(String keyword, String option) {
+		// TODO Auto-generated method stub
+		Map<String, String> param = new HashMap<String, String>();
+		param.put("keyword", keyword);
+		param.put("option", option);
+		return sqlSession.selectOne(namespace+".searchCount", param);
+	}
+	
+	@Override
+	public List<Object> selectSearch(int startCount, int endCount, String keyword, String option) {
+		// TODO Auto-generated method stub
+		Map<String, Object> param = new HashMap<String, Object>();
+		param.put("start", startCount);
+		param.put("end", endCount);
+		param.put("keyword", keyword);
+		param.put("option", option);
+		return sqlSession.selectList(namespace+".search", param);
+	}
+	
 	public int selectIdCheck(String memail) {
 		return sqlSession.selectOne(namespace + ".idCheck", memail);
 	}

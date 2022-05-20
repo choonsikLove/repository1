@@ -865,3 +865,7 @@ div.popup_cont>div:first-of-type>p+table td p.orderStatus_change:hover{
 	border: none;
 	border-radius: 5px;
 }
+form>select{
+	width: 70px;
+	height: 30px;
+}

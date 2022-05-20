@@ -59,6 +59,52 @@
 		select count(*) from mw_member
 	</select>
 	
+		<select id="search" parameterType="map" resultType="com.web.vo.MwMemberVO">
+		select mno, mname, memail, mhp, mdate from (select mno, mname, memail, mhp, mdate
+		from (select rownum mno, mname, memail, mhp, to_char(mdate, 'yyyy-mm-dd') mdate
+				from (select mname, memail, mhp, mdate from mw_member order by mdate desc)
+				) where mno between #{start} and #{end}) true
+		where
+		<choose>
+			<when test= 'option == "M"'>
+				memail like ('%'|| #{keyword}|| '%')
+			</when>
+			<when test= 'option == "N"'>
+				mname like ('%'|| #{keyword}|| '%')
+			</when>
+			<when test= 'option == "H"'>
+				mhp like ('%'|| #{keyword}|| '%')
+			</when>
+			<otherwise>
+				memail like ('%'||#{keyword}||'%')
+				or mname like ('%'||#{keyword}||'%')
+				or mhp like ('%'||#{keyword}||'%')
+			</otherwise>		
+		</choose>
+	</select>
+	
+	<select id="searchCount" parameterType="map" resultType="int">
+		select count(*)
+		from mw_member true
+		where
+ 		<choose>
+			<when test= 'option == "M"'>
+				memail like ('%'|| #{keyword}|| '%')
+			</when>
+			<when test= 'option == "N"'>
+				mname like ('%'|| #{keyword}|| '%')
+			</when>
+			<when test= 'option == "H"'>
+				mhp like ('%'|| #{keyword}|| '%')
+			</when>
+			<otherwise>
+				memail like ('%'||#{keyword}||'%')
+				or mname like ('%'||#{keyword}||'%')
+				or mhp like ('%'||#{keyword}||'%')
+			</otherwise>	 	
+		</choose>
+	</select>
+	
 	<select id="emailCheck" parameterType="java.lang.String" resultType="java.lang.String">
 		select memail from mw_member
 		where memail = #{memail}

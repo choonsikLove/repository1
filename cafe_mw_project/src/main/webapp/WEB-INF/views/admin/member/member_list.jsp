@@ -59,8 +59,14 @@
 				</c:forEach>
 				<tr>
 					<td colspan="5">
-						<form>
-							<input type="text" placeholder="Search">
+						<form method='POST'>
+							<select name='option'>
+								<option value='A' selected>전체</option>
+								<option value='N'>이름</option>
+								<option value='M'>아이디</option>
+								<option value='H'>연락처</option>
+							</select>&nbsp; &nbsp;
+							<input type="text" placeholder="Search" name='keyword'>
 							<span class="material-symbols-outlined">search</span>
 						</form>
 					</td>
