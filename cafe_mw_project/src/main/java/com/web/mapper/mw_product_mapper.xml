@@ -10,12 +10,28 @@
 		insert into mw_product
 		<choose>
 			<when test="pmainfile != null">
-				values('p_'||sequ_mw_product_pnum.nextval,#{pname},#{pprice},#{psaleprice},#{ptagimage},#{pcategory},#{pstock},
-					#{pmainfile}, #{pmainsfile})	
+				<choose>
+					<when test="ptagimage != null">
+						values('p_'||sequ_mw_product_pnum.nextval,#{pname},#{pprice},#{psaleprice},#{ptagimage},#{pcategory},#{pstock},
+							#{pmainfile}, #{pmainsfile})	
+					</when>
+					<otherwise>
+						values('p_'||sequ_mw_product_pnum.nextval,#{pname},#{pprice},#{psaleprice},null,#{pcategory},#{pstock},
+							#{pmainfile}, #{pmainsfile})
+					</otherwise>
+				</choose>
 			</when>
 			<otherwise>
-				values('p_'||sequ_mw_product_pnum.nextval,#{pname},#{pprice},#{psaleprice},#{ptagimage},#{pcategory},#{pstock},
-					null, null)	
+				<choose>
+					<when test="ptagimage != null">
+						values('p_'||sequ_mw_product_pnum.nextval,#{pname},#{pprice},#{psaleprice},#{ptagimage},#{pcategory},#{pstock},
+							null, null)	
+					</when>
+					<otherwise>
+						values('p_'||sequ_mw_product_pnum.nextval,#{pname},#{pprice},#{psaleprice},null,#{pcategory},#{pstock},
+							null, null)	
+					</otherwise>
+				</choose>
 			</otherwise>
 		</choose>
 	</insert>
