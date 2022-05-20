@@ -60,27 +60,28 @@
 	</select>
 	
 		<select id="search" parameterType="map" resultType="com.web.vo.MwMemberVO">
-		select mno, mname, memail, mhp, mdate from (select mno, mname, memail, mhp, mdate
-		from (select rownum mno, mname, memail, mhp, to_char(mdate, 'yyyy-mm-dd') mdate
-				from (select mname, memail, mhp, mdate from mw_member order by mdate desc)
-				) where mno between #{start} and #{end}) true
+		select mno, mname, memail, mhp, mdate from (
+			select rownum mno, mname, memail, mhp, to_char(mdate, 'yyyy-mm-dd') mdate from
+				(select mname, memail, mhp, mdate from
+					(select mname, memail, mhp, mdate from mw_member
 		where
 		<choose>
 			<when test= 'option == "M"'>
-				memail like ('%'|| #{keyword}|| '%')
+				memail like ('%'||#{keyword}|| '%')
 			</when>
 			<when test= 'option == "N"'>
-				mname like ('%'|| #{keyword}|| '%')
+				mname like ('%'||#{keyword}|| '%')
 			</when>
 			<when test= 'option == "H"'>
-				mhp like ('%'|| #{keyword}|| '%')
+				mhp like('%'||#{keyword}|| '%')
 			</when>
 			<otherwise>
-				memail like ('%'||#{keyword}||'%')
-				or mname like ('%'||#{keyword}||'%')
-				or mhp like ('%'||#{keyword}||'%')
+				memail like ('%'||#{keyword}|| '%')
+				or mname like ('%'||#{keyword}|| '%')
+				or mhp like('%'||#{keyword}|| '%')
 			</otherwise>		
 		</choose>
+		 ) order by mdate desc)) where mno between #{start} and #{end}
 	</select>
 	
 	<select id="searchCount" parameterType="map" resultType="int">
