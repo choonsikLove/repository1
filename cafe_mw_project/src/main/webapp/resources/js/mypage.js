@@ -1,6 +1,6 @@
 	$(document).ready(function(){
 		/*		정보수정 클릭시		*/
-		$('.my_inform').click(function(){
+		$(document).off('click', '.my_inform').on('click', '.my_inform', function () {
 			
 			var member_email = $('#member_email').val();
 			
@@ -13,7 +13,7 @@
 					console.log(data);
 					alert("성공" + data.mname);
 					
-					if(data.msprofile != null){//힝
+					if(data.msprofile != null){
 						var new_src = "http://localhost:9000/manwol/resources/upload/"+data.msprofile;
 						$('#mypage_profile_img').attr("src", new_src);
 					}
@@ -41,7 +41,7 @@
 					$('#mypage_modal_outer').css("display","block");
 					$('#modify_inner').css("display","block");
 					
-					$('#modify_submit').click(function(){
+					$(document).off('click', '#modify_submit').on('click', '#modify_submit', function () {
 						var before_pass = $('input[name=before_pass]').val();
 					
 						if(before_pass == ""){
@@ -75,7 +75,7 @@
 										
 										$('#for_loading_mname').val(new_name);
 										
-										if($('input[name=after_pass]').val() == ""){
+										if($('input[name=after_pass]').val() == ""){//새 비밀번호 안 바꿈
 											 $.ajax({
 												type: 'POST',
 												async: true,
@@ -107,8 +107,8 @@
 													alert("실패");
 												}
 											});
-										} else {
-											if(after_pass2 == after_pass){
+										} else {// 새 비밀번호 바꿈
+											if(after_pass2 == after_pass){// 둘이 같다. 작업 진행 가능
 											
 												 $.ajax({
 													type: 'POST',
@@ -144,11 +144,11 @@
 												});
 											} else {
 												alert("새 비밀번호와 확인 비밀번호가 다름");
-											}
-										}
+											}//새 비밀번호랑 확인 비밀번호가 다름 
+										}//새 비밀번호 바꿀지 안바꿀지 분기(위에랑 다르다)
 										
-									} else {
-										alert("입력창에 비번 제대로 쓰라고 띄우기 왜 여러번 뜨는거야?");
+									} else { //입력창에 비밀번호 다르게 입력했을 경우
+										alert("입력창에 비번 제대로 쓰라고 띄우기 alert말고 다른걸로");
 									}
 								},
 								error: function(){
@@ -163,7 +163,7 @@
 					
 				},
 				error: function(data){
-					alert("실패");
+					alert("실패"); //데이터 못 불러왔을 때.
 				}
 			});
 			

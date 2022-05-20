@@ -18,19 +18,11 @@ public class MwProductDAO implements MwObjectDAO{
 	
 	private String namespace = "mapper.product";
 	
-
-	/**
-	 *       
-	 */
 	@Override
 	public Object select(String pnum){
 		return sqlSession.selectOne(namespace+".content", pnum);
 	}
 	
-	
-	/**
-	 * 
-	 */
 	@Override
 	public List<Object> select(int startCount, int endCount){
 		Map param = new HashMap<String, String>();
@@ -40,11 +32,9 @@ public class MwProductDAO implements MwObjectDAO{
 		return sqlSession.selectList(namespace+".select", param);
 	}
 	
-	/**
-	 *  insert
-	 */
 	@Override
 	public int insert(Object obj) {
+		/*
 		System.out.println("여긴 DAO : " + obj);
 		int result = 0;
 		MwProductVO vo = (MwProductVO)obj;
@@ -56,6 +46,10 @@ public class MwProductDAO implements MwObjectDAO{
 			System.out.println("여긴 mapper가 처리한 결과값 result : " + result);
 		}
 		return result;
+		*/
+		
+		MwProductVO vo = (MwProductVO)obj;
+		return sqlSession.insert(namespace + ".insert", vo);
 	}
 	
 	public void updateHits(String id) {}
@@ -67,7 +61,6 @@ public class MwProductDAO implements MwObjectDAO{
 
 	@Override
 	public int selectTotal() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 	

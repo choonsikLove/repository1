@@ -6,6 +6,7 @@ import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
 
 import com.web.vo.MwMemberVO;
+import com.web.vo.MwProductVO;
 
 public class FileServiceImpl {
 	
@@ -49,7 +50,33 @@ public class FileServiceImpl {
 				oldFile.delete();
 			}
 			
+		}
+	}
+	
+	
+	//ªÛ«∞
+	public MwProductVO fileCheck(MwProductVO vo) {
+		UUID uuid = UUID.randomUUID();
+		
+		if(vo != null) {
+			if(!vo.getPmainimage().getOriginalFilename().equals("")) {
+				vo.setPmainfile(vo.getPmainimage().getOriginalFilename());
+				vo.setPmainsfile(uuid+"_"+vo.getPmainimage().getOriginalFilename());
+			}
+		}
+		
+		return vo;
+	}
+	
+	public void fileSave(MwProductVO vo, HttpServletRequest request) throws Exception {
+		
+		if(!vo.getPmainimage().getOriginalFilename().equals("")) {
+			String path = request.getSession().getServletContext().getRealPath("/");
+			path += "resources\\upload\\";
+			System.out.println(path);
 			
+			File file = new File(path+vo.getPmainsfile());
+			vo.getPmainimage().transferTo(file);
 		}
 		
 	}

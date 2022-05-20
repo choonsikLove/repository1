@@ -88,12 +88,43 @@ $(document).on("click",".deleteSelect",function(){
 });
 
 
-$("input[name=tagImage]:checkbox").change(function() { // 체크박스들이 변경됬을때
-	if($("input[name=tagImage]:checkbox:checked").length == 2) {
-		$("input[name=tagImage]:checkbox:not(:checked)").attr("disabled", "disabled");
+$("input[name=ptagimages]:checkbox").change(function() { // 체크박스들이 변경됬을때
+	if($("input[name=ptagimages]:checkbox:checked").length == 2) {
+		$("input[name=ptagimages]:checkbox:not(:checked)").attr("disabled", "disabled");
 	} else {
-		$("input[name=tagImage]:checkbox").removeAttr("disabled");
+		$("input[name=ptagimages]:checkbox").removeAttr("disabled");
 	}
 });
+
+$(document).on("click","#product_write_cancel",function(){
+	var ask = confirm("정말 작성을 취소하시겠습니까?");
+	if(ask){
+		location.href = "http://localhost:9000/manwol/admin/product_all";
+	}
+});
+
+$(document).on("click","#product_write_submit",function(){
+	if($("#product_name").val() == ""){
+			alert("상품 이름을 입력해주세요.");
+			$("#product_name").focus();
+			return false;
+		}else if($("#product_price").val() == ""){
+			alert("패스워드를 입력해주세요");
+			$("#product_price").focus();
+			return false;
+		}else if($("#product_category option:selected").val() ==""){
+			alert("카테고리를 선택해 주세요");
+			return false;
+		}else if($("#product_stock").val() == ""){
+			alert("재고량을 입력해주세요");
+			$("#product_stock").focus();
+			return false;
+		}else{
+			product_write_form.submit();
+		}
+
+});
+
+
 
 });
