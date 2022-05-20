@@ -48,15 +48,24 @@
 					<td>연락처</td>
 					<td>가입일</td>
 				</tr>
-				<c:forEach var="vo" items="${list}">
-					<tr>
-						<td>${vo.mno }</td>
-						<td class="toMemberPage"><a href="member_page?memail=${vo.memail}">${vo.mname }</a></td>
-						<td class="toMemberPage"><a href="member_page?memail=${vo.memail}">${vo.memail }</a></td>
-						<td>${vo.mhp }</td>
-						<td>${vo.mdate }</td>
-					</tr>
-				</c:forEach>
+					<c:choose>
+						<c:when test="${empty list}">
+							<tr>
+								<td colspan="5">검색결과가 없습니다.</td>
+							</tr>
+						</c:when>
+						<c:otherwise>
+							<c:forEach var="vo" items="${list}">
+								<tr>
+									<td>${vo.mno }</td>
+									<td class="toMemberPage"><a href="member_page?memail=${vo.memail}">${vo.mname }</a></td>
+									<td class="toMemberPage"><a href="member_page?memail=${vo.memail}">${vo.memail }</a></td>
+									<td>${vo.mhp }</td>
+									<td>${vo.mdate }</td>
+								</tr>
+							</c:forEach>
+						</c:otherwise>
+					</c:choose>
 				<tr>
 					<td colspan="5">
 						<form method='POST'>
