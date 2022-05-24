@@ -13,14 +13,14 @@
 		margin: 0;
 	}
 	
-	#write_title{
+	#insert_title{
 		height: 35px;
 		border-bottom: #D6D6D6 1px solid;
 		padding: 30px;
 		font-size: 18px;
 	}
 	
-	.write_btn {
+	.insert_btn {
 		display: inline-block;
 		width: 50px;
 		border: 1px solid #D6D6D6;
@@ -59,7 +59,7 @@
 		100% {background: #2168B1;}
 	}
 	
-	#write_thumbnail{
+	#insert_thumbnail{
 		width: 18%;
 		height: 500px;
 		float: left;
@@ -70,13 +70,13 @@
 		font-weight: bold;
 	}
 	
-	#write_content{
+	#insert_content{
 		width: 75%;
 		float:right;
 		padding-top: 40px;
 	}
 	
-	#write_content:after {
+	#insert_content:after {
 		content: "";
 		display: block;
 		clear: both;
@@ -118,6 +118,7 @@
 		border: none;
 		margin-left: 30px;
 		line-height: 30px;
+		resize: none;
 	}
 	
 	img.dalDongHee{
@@ -129,20 +130,20 @@
 </style>
 </head>
 <body>
-	<form action="create_recipe" method="post" enctype="multipart/form-data">
-		<div id='write_title'>
+	<form action="recipe_insert" method="post" enctype="multipart/form-data">
+		<div id='insert_title'>
 			<span>레시피북</span>
-			<button type="submit" class='write_btn' id='submit'>작성</button>
-			<button type="button" class='write_btn' id='cancel' onclick="location.href='/manwol/recipe'">취소</button>
+			<button type="submit" class='insert_btn' id='submit'>작성</button>
+			<button type="button" class='insert_btn' id='cancel' onclick="location.href='/manwol/recipe'">취소</button>
 		</div>
 		
-		<div id='write_thumbnail'>
+		<div id='insert_thumbnail'>
 			<span>대표 이미지 설정</span><br>
 			<input type='file' name='thumbnail'>
 		</div>
 		
 		
-		<div id='write_content'>
+		<div id='insert_content'>
 			<div>
 				<img src='http://localhost:9000/manwol/resources/images/default_profile.png'><span>사용자</span>
 			</div>

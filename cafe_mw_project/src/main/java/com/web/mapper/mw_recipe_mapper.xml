@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.recipe">
+
+
+	<insert id="insert" parameterType="com.web.vo.MwRecipeVO">
+		insert into mw_recipe
+			values('r_'||sequ_Mw_recipe_rnum.nextval, #{rcategory}, #{rtitle}, #{rcontent}, 0, sysdate, #{rthumbnail}, #{rsthumbnail})		
+	</insert>
+	
+	<select id="select_rid" resultType="java.lang.String">
+		select rid from (select rid from mw_recipe order by rdate desc) where rownum =1;
+	</select>
+	
+	<insert id="insert_file" parameterType="com.web.vo.MwRecipeVO">
+		insert into MW_RECIPE_FILE
+			values(#{rid},					
+		<foreach collection="rfiles" item="rfile" separator="," index="i">
+			<if test="i &lt; 6"> 
+           		#{rfile}
+           	</if>
+        </foreach>
+		,
+        <foreach collection="rsfiles" item="rsfile"  separator="," close=")">
+        	<if test="i &lt; 6"> 
+         		#{rsfile}
+        	</if>
+        </foreach>
+	</insert>
+
+
+
+
+	
+</mapper>    
