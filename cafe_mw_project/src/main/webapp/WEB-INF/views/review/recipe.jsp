@@ -353,7 +353,7 @@
 									</td>
 									<td align="right">
 										<div>		
-											<a href='recipe_write'><button class="write_btn">글쓰기</button></a>
+											<a href='recipe_insert'><button class="write_btn">글쓰기</button></a>
 										</div>
 									</td>
 								</tr>
