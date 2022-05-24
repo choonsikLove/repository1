@@ -126,6 +126,8 @@ public class FileServiceImpl {
 			
 			File file = new File(path+vo.getRsthumbnail());
 			vo.getThumbnail().transferTo(file);
+			
+			System.out.println(path);
 		}
 		
 	}
