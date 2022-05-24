@@ -1,6 +1,7 @@
 package com.web.service;
 
 import java.io.File;
+import java.util.List;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
@@ -76,13 +77,179 @@ public class FileServiceImpl {
 		if(!vo.getPmainimage().getOriginalFilename().equals("")) {
 			String path = request.getSession().getServletContext().getRealPath("/");
 			path += "resources\\upload\\";
-			System.out.println(path);
+			System.out.println("메인 파일:" + path);
 			
 			File file = new File(path+vo.getPmainsfile());
 			vo.getPmainimage().transferTo(file);
 		}
 		
 	}
+	
+	public void fileSave(MwProductVO vo, HttpServletRequest request, String old_file) throws Exception {
+		if(!vo.getPmainimage().getOriginalFilename().equals("")) {
+			String path = request.getSession().getServletContext().getRealPath("/");
+			path += "resources\\upload\\";
+			
+			File file = new File(path + vo.getPmainsfile());
+			vo.getPmainimage().transferTo(file);
+			
+			File oldFile = new File(path + old_file);
+			if(oldFile.exists()) {
+				oldFile.delete();
+			}
+			
+		}
+	}
+	
+	//상품의 서브파일들
+	public MwProductVO multiFileCheck(MwProductVO vo) {		
+		
+		if(vo != null) {
+			System.out.println("파일 수:" + vo.getFiles().length);
+			for(int i=0; i<5; i++) { 
+				
+				UUID uuid = UUID.randomUUID();	
+				System.out.println(i);
+				
+				if(i < vo.getFiles().length) { 
+					CommonsMultipartFile file = vo.getFiles()[i];
+					
+					if(!file.getOriginalFilename().equals("")) { //파일존재 하는 경우	
+						vo.getPfiles().add(file.getOriginalFilename());
+						vo.getPsfiles().add(uuid + "_" + file.getOriginalFilename());
+						System.out.println(i + "파일 있");
+					}else {
+						vo.getPfiles().add("");
+						vo.getPsfiles().add("");
+						System.out.println(i + "파일 없");
+					}
+					
+				} else {
+					vo.getPfiles().add("");
+					vo.getPsfiles().add("");
+					System.out.println("하이");
+				}
+			}
+			
+			
+		}
+				
+				
+		return vo;
+	}
+	
+	public MwProductVO multiFileCheck2(MwProductVO vo) {		
+		
+		if(vo != null) {
+			System.out.println("파일 수:" + vo.getFiles().length);
+			for(int i=0; i<5; i++) { 
+				
+				UUID uuid = UUID.randomUUID();	
+				System.out.println(i);
+				
+				if(i < vo.getFiles().length) { 
+					CommonsMultipartFile file = vo.getFiles()[i];
+					
+					if(!file.getOriginalFilename().equals("")) { //파일존재 하는 경우	
+						vo.getPfiles().add(file.getOriginalFilename());
+						vo.getPsfiles().add(uuid + "_" + file.getOriginalFilename());
+						System.out.println(i + "파일 있");
+					}else {
+						System.out.println(i + "파일 없");
+					}
+					
+				} else {
+					vo.getPfiles().add("");
+					vo.getPsfiles().add("");
+					System.out.println("하이");
+				}
+			}
+			
+			
+		}
+				
+				
+		return vo;
+	}
+	
+	
+	public void multiFileSave(MwProductVO vo, HttpServletRequest request) throws Exception{
+		
+		if(vo != null) {
+			for(int i=0; i<vo.getFiles().length; i++) {
+				CommonsMultipartFile pfile = vo.getFiles()[i]; //files 배열에 저장된 주소번지의 파일반환
+			
+				if(!pfile.getOriginalFilename().equals("")) {
+				
+					//파일저장 위치 확인
+					String root_path = request.getSession().getServletContext().getRealPath("/");
+					root_path += "resources\\upload\\";
+					System.out.println("추가 파일:" + root_path);
+					
+					//파일저장
+					File file = new File(root_path + vo.getPsfiles().get(i));			
+					pfile.transferTo(file);
+				}
+			}
+		}	
+	}
+	
+	public void multiFileSave(MwProductVO vo, HttpServletRequest request, List<String> old_files) throws Exception{
+		
+		if(vo != null) {
+			for(int i=0; i<vo.getFiles().length; i++) {
+				CommonsMultipartFile pfile = vo.getFiles()[i]; //files 배열에 저장된 주소번지의 파일반환
+			
+				if(!pfile.getOriginalFilename().equals("")) {
+				
+					String root_path = request.getSession().getServletContext().getRealPath("/");
+					root_path += "resources\\upload\\";
+					
+					//파일저장
+					File file = new File(root_path + vo.getPsfiles().get(i));			
+					pfile.transferTo(file);
+					
+					File oldFile = new File(root_path + old_files.get(i));
+					System.out.println(old_files.get(i));
+					if(oldFile.exists()) {
+						oldFile.delete();
+					}
+				}
+			}
+		}
+	}
+	
+	public void deleteFile(MwProductVO vo, HttpServletRequest request, String old_file) throws Exception{
+		if(old_file != null) {
+			String path = request.getSession().getServletContext().getRealPath("/");
+			path += "resources\\upload\\";
+			
+			File file = new File(path + old_file);
+			if(file.exists()) {
+				file.delete();
+			}
+		}
+	}
+	
+	public void deleteMultipleFiles(MwProductVO vo, HttpServletRequest request, List<String> old_files) {
+		if(old_files != null) {
+			for(String old_file : old_files) {
+				String path = request.getSession().getServletContext().getRealPath("/");
+				path += "resources\\upload\\";
+				
+				File file = new File(path + old_file);
+				if(file.exists()) {
+					file.delete();
+				}
+				
+			}
+		}
+	}
+
+	
+	
+	
+	
 	
 	// 레시피
 	public MwRecipeVO fileCheck(MwRecipeVO vo) {

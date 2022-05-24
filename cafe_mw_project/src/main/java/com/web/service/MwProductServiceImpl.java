@@ -30,4 +30,17 @@ public class MwProductServiceImpl extends MwObjectServiceAdapter{
 		return result;
 	}
 	
+	@Override
+	public int getUpdateResult(Object obj){
+		MwProductVO vo = (MwProductVO)obj;
+		int result = productDao.update(vo);
+		
+		return result;
+	}
+	
+	@Override
+	public int getDeleteResult(String pnum){
+		return productDao.delete(pnum);
+	}
+	
 }

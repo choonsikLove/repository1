@@ -34,49 +34,72 @@ public class MwProductDAO implements MwObjectDAO{
 	
 	@Override
 	public int insert(Object obj) {
-		/*
-		System.out.println("여긴 DAO : " + obj);
 		int result = 0;
 		MwProductVO vo = (MwProductVO)obj;
 		result = sqlSession.insert(namespace+".insert", vo);
+		
 		if(result==1) {
 			String pnum = sqlSession.selectOne(namespace+".select_pnum");
 			vo.setPnum(pnum);
-			result = sqlSession.insert(namespace+".insert_file", vo);
-			System.out.println("여긴 mapper가 처리한 결과값 result : " + result);
+			
+			result = sqlSession.insert(namespace+".insert_files", vo);
 		}
-		return result;
-		*/
 		
+		return result;
+	}
+	
+	public int update(Object obj) {
+		int result = 0 ;
 		MwProductVO vo = (MwProductVO)obj;
-		return sqlSession.insert(namespace + ".insert", vo);
+		result = sqlSession.update(namespace + ".update", vo);
+		
+		if(result == 1 && vo.getFiles().length != 1) {
+			//왜째서,,,
+			Map map = new HashMap<String, String>();
+			map.put("pfile1", vo.getPfiles().get(0));
+			map.put("pfile2", vo.getPfiles().get(1));
+			map.put("pfile3", vo.getPfiles().get(2));
+			map.put("pfile4", vo.getPfiles().get(3));
+			map.put("pfile5", vo.getPfiles().get(4));
+			map.put("psfile1", vo.getPsfiles().get(0));
+			map.put("psfile2", vo.getPsfiles().get(1));
+			map.put("psfile3", vo.getPsfiles().get(2));
+			map.put("psfile4", vo.getPsfiles().get(3));
+			map.put("psfile5", vo.getPsfiles().get(4));
+			map.put("pnum", vo.getPnum());
+			
+			result = sqlSession.update(namespace + ".update_files", map);
+		}
+		
+		return result;
+	}
+	
+	public int delete(String pnum) {
+		return sqlSession.delete(namespace + ".delete", pnum);
 	}
 	
 	public void updateHits(String id) {}
-	public int update(Object obj) {return 0;}
-	public int delete(String id) {return 0;}
 	public int execTotalCount() {return 0;}
 	public String selectFile(String id) {return "";}
 
 
 	@Override
-	   public int selectTotal() {
-	      System.out.println("4. DAO/selectTotal");
-	      return sqlSession.selectOne(namespace+".count");
-	   }
-
-	   @Override
-	   public int selectSearchTotal(String keyword, String option) {
-	      // TODO Auto-generated method stub
-	      return 0;
-	   }
-
-	   @Override
-	   public List<Object> selectSearch(int startCount, int endCount, String keyword, String option) {
-	      // TODO Auto-generated method stub
-	      return null;
-	   }
-	   
+	public int selectTotal() {
+		System.out.println("4. DAO/selectTotal");
+	return sqlSession.selectOne(namespace+".count");
 	}
 
+	@Override
+	public int selectSearchTotal(String keyword, String option) {
+		return 0;
+	}
 
+	@Override
+	public List<Object> selectSearch(int startCount, int endCount, String keyword, String option) {
+		return null;
+	}
+
+	
+	
+	
+}

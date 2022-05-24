@@ -13,11 +13,11 @@
 				<choose>
 					<when test="ptagimage != null">
 						values('p_'||sequ_mw_product_pnum.nextval,#{pname},#{pprice},#{psaleprice},#{ptagimage},#{pcategory},#{pstock},
-							#{pmainfile}, #{pmainsfile})	
+							#{pmainfile}, #{pmainsfile},sysdate,#{ptext})	
 					</when>
 					<otherwise>
 						values('p_'||sequ_mw_product_pnum.nextval,#{pname},#{pprice},#{psaleprice},null,#{pcategory},#{pstock},
-							#{pmainfile}, #{pmainsfile})
+							#{pmainfile}, #{pmainsfile},sysdate,#{ptext})
 					</otherwise>
 				</choose>
 			</when>
@@ -25,31 +25,92 @@
 				<choose>
 					<when test="ptagimage != null">
 						values('p_'||sequ_mw_product_pnum.nextval,#{pname},#{pprice},#{psaleprice},#{ptagimage},#{pcategory},#{pstock},
-							null, null)	
+							null, null,sysdate,#{ptext})	
 					</when>
 					<otherwise>
 						values('p_'||sequ_mw_product_pnum.nextval,#{pname},#{pprice},#{psaleprice},null,#{pcategory},#{pstock},
-							null, null)	
+							null, null, sysdate,#{ptext})	
 					</otherwise>
 				</choose>
 			</otherwise>
 		</choose>
 	</insert>
 	
-	<select id="select" parameterType="map" resultType="com.web.vo.MwProductVO">
-      select mp.PNUM,PNAME,PPRICE,PSALEPRICE,PTAGIMAGE,PCATEGORY,PSTOCK,PMAINFILE,PMAINSFILE
-      from MW_PRODUCT mp
-   	</select> 
-	<!--    
-	   <select id="select" resultType="com.web.vo.MwProductVO">
-	      select * from mw_product
-	   </select>
-	   
-	   <select id="count" resultType="int">
-	      select count(*) from mw_product
-	   </select>
-	 -->   
+	<select id="content" parameterType="java.lang.String" resultType="com.web.vo.MwProductVO">
+		select pnum,pname,pprice,psaleprice,
+		ptagimage,pcategory,pstock,pmainsfile,
+		psfile1,psfile2,psfile3,psfile4,psfile5,ptext
+		from mw_product mw, mw_product_file mwf
+		where mw.pnum = mwf.fnum and mw.pnum = #{pnum}
+	</select>
+	
+	<update id="update" parameterType="com.web.vo.MwProductVO">
+		update mw_product 
+		<choose>
+			<when test="pmainfile != null">
+				<choose>
+					<when test="ptagimage != null">
+						set pname = #{pname}, pprice = #{pprice}, psaleprice = #{psaleprice}, ptagimage = #{ptagimage},
+							pcategory = #{pcategory}, pstock = #{pstock}, pmainfile = #{pmainfile}, pmainsfile = #{pmainsfile},
+							ptext = #{ptext}
+					</when>
+					<otherwise>
+						set pname = #{pname}, pprice = #{pprice}, psaleprice = #{psaleprice},
+							pcategory = #{pcategory}, pstock = #{pstock}, pmainfile = #{pmainfile}, pmainsfile = #{pmainsfile},
+							ptext = #{ptext}
+					</otherwise>
+				</choose>
+			</when>
+			<otherwise>
+				<choose>
+					<when test="ptagimage != null">
+						set pname = #{pname}, pprice = #{pprice}, psaleprice = #{psaleprice}, ptagimage = #{ptagimage},
+							pcategory = #{pcategory}, pstock = #{pstock}, ptext = #{ptext}
+					</when>
+					<otherwise>
+						set pname = #{pname}, pprice = #{pprice}, psaleprice = #{psaleprice},
+							pcategory = #{pcategory}, pstock = #{pstock}, ptext = #{ptext}
+					</otherwise>
+				</choose>
+			</otherwise>
 		
+		</choose>
+		where pnum = #{pnum}
+	</update>
+	
+	<select id="select_pnum" resultType="java.lang.String">
+		select pnum from (select pnum from mw_product order by pdate desc) 
+		where rownum =1
+	</select>
+	
+	<insert id="insert_files" parameterType="com.web.vo.MwProductVO">
+		insert into mw_product_file		
+				values(#{pnum},					
+			<foreach collection="pfiles" item="pfile" separator="," index="i">
+				<if test="i &lt; 5"> 
+	           		#{pfile}
+	           	</if>
+           </foreach>
+           ,
+           <foreach collection="psfiles" item="psfile"  separator="," close=")">
+	           <if test="i &lt; 5"> 
+	        	   	#{psfile}
+	           </if>
+           </foreach>
+	</insert>
+	
+	<update id="update_files" parameterType="map">
+		update mw_product_file
+		set pfile1 = #{pfile1}, pfile2 = #{pfile2}, pfile3 = #{pfile3}, pfile4 = #{pfile4}, pfile5 = #{pfile5},
+		psfile1 = #{psfile1}, psfile2 = #{psfile2}, psfile3 = #{psfile3}, psfile4 = #{psfile4}, psfile5 = #{psfile5} 
+		where fnum = #{pnum}
+	</update>
+	
+	<delete id="delete" parameterType="java.lang.String">
+		delete from mw_product
+		where pnum = #{pnum}
+	</delete>
+	
 </mapper>    
 
 

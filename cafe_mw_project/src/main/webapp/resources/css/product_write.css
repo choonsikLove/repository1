@@ -279,3 +279,11 @@ div.selectDiv>button.selectAddButton{
 	color: #000;
 	cursor: pointer;
 }
+
+img#main_image{
+	width: 97%; height: 97%;
+}
+
+img.sub_images{
+	width: 92px; height: 96px;
+}

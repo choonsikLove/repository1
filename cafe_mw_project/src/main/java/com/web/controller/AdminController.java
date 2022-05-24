@@ -1,6 +1,8 @@
 package com.web.controller;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -10,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -111,30 +114,31 @@ public class AdminController {
 	
 	//惑前!
 	   //惑前 府胶飘
-	   @RequestMapping(value="/admin/product_list", method=RequestMethod.GET)
-	   public ModelAndView product_list(String rpage) {
-	      ModelAndView mv = new ModelAndView();
+	@RequestMapping(value="/admin/product_list", method=RequestMethod.GET)
+	public ModelAndView product_list(String rpage) {
+	    ModelAndView mv = new ModelAndView();
 	         
-	      Map<String,String> param = pageService.getPageResult(rpage, "product", productService);
-	      int startCount = Integer.parseInt(param.get("start"));
-	      int endCount = Integer.parseInt(param.get("end"));
+	    Map<String,String> param = pageService.getPageResult(rpage, "product", productService);
+	    int startCount = Integer.parseInt(param.get("start"));
+	    int endCount = Integer.parseInt(param.get("end"));
 	      
 	      
-	      List<Object> olist = productService.getListResult(startCount, endCount);
-	      ArrayList<MwProductVO> list = new ArrayList<MwProductVO>();
-	      for(Object obj : olist) {
-	         list.add((MwProductVO)obj);
-	      }
+	    List<Object> olist = productService.getListResult(startCount, endCount);
+	    ArrayList<MwProductVO> list = new ArrayList<MwProductVO>();
+	    for(Object obj : olist) {
+	       list.add((MwProductVO)obj);
+	    }
+	    
 	            
-	      mv.addObject("list",list);
-	      mv.addObject("dbCount", Integer.parseInt(param.get("dbCount")));
-	      mv.addObject("pageSize", Integer.parseInt(param.get("pageSize")));
-	      mv.addObject("reqPage", Integer.parseInt(param.get("reqPage")));   
+	    mv.addObject("list",list);
+	    mv.addObject("dbCount", Integer.parseInt(param.get("dbCount")));
+	    mv.addObject("pageSize", Integer.parseInt(param.get("pageSize")));
+	    mv.addObject("reqPage", Integer.parseInt(param.get("reqPage")));   
 	      
-	      mv.setViewName("/admin/product/product_list");
-	      
-	      return mv;
-	   }
+	    mv.setViewName("/admin/product/product_list");
+	     
+	    return mv;
+	}
 	
 	
 	 
@@ -159,8 +163,38 @@ public class AdminController {
 	}	
 	 
 	@RequestMapping(value="/admin/product_detail", method=RequestMethod.GET)
-	public String product_detail() {
-		return "/admin/product/product_detail"; 
+	public ModelAndView product_detail(String pnum) {
+		ModelAndView mv = new ModelAndView();
+		MwProductVO vo = (MwProductVO)productService.getContent(pnum);
+		
+		String tagimage1 = "";
+		String tagimage2 = "";
+		
+		if(vo.getPtagimage() != null) {
+			String tagimage0 = vo.getPtagimage();
+			String tagArray[] = tagimage0.split(",");
+
+			if(tagArray.length == 2) {
+				tagimage1 = tagArray[0];
+				tagimage2 = tagArray[1];
+			} else {
+				tagimage1 = tagArray[0];
+			}
+		}
+		
+		DecimalFormat decFormat = new DecimalFormat("###,###");
+		String price_comma = decFormat.format(vo.getPprice());
+		String saleprice_comma = decFormat.format(vo.getPsaleprice());
+		
+		mv.addObject("vo", vo);
+		mv.addObject("tagimage1", tagimage1);
+		mv.addObject("tagimage2", tagimage2);
+		mv.addObject("price_comma", price_comma);
+		mv.addObject("saleprice_comma", saleprice_comma);
+		
+		mv.setViewName("/admin/product/product_detail");
+		
+		return mv; 
 	}
 	
 	@RequestMapping(value="/admin/product_group_order", method=RequestMethod.GET)
@@ -178,17 +212,96 @@ public class AdminController {
 		ModelAndView mv = new ModelAndView();
 		
 		vo = fileService.fileCheck(vo);
+		vo = fileService.multiFileCheck(vo);
+		
 		int result = productService.getInsertResult(vo);
 		
 		if(result == 1) {
 			fileService.fileSave(vo, request);
+			fileService.multiFileSave(vo, request);
 			mv.setViewName("redirect:/admin/product_list");
 		}
 		
 		return mv; 
 	}
 	 
-	 
+	
+	@RequestMapping(value="/admin/product_update", method=RequestMethod.GET)
+	public ModelAndView product_update(String pnum) {
+		ModelAndView mv = new ModelAndView();
+		MwProductVO vo = (MwProductVO)productService.getContent(pnum);
+		
+		String tagimage1 = "";
+		String tagimage2 = "";
+		
+		if(vo.getPtagimage() != null) {
+			String tagimage0 = vo.getPtagimage();
+			String tagArray[] = tagimage0.split(",");
+			
+			if(tagArray.length == 2) {
+				tagimage1 = tagArray[0];
+				tagimage2 = tagArray[1];
+			} else {
+				tagimage1 = tagArray[0];
+			}
+		}
+		
+		mv.addObject("vo", vo);
+		mv.addObject("tagimage1", tagimage1);
+		mv.addObject("tagimage2", tagimage2);
+		mv.setViewName("/admin/product/product_update");
+		
+		return mv; 
+	}
+	
+	@RequestMapping(value="/admin/product_update", method=RequestMethod.POST)
+	public ModelAndView product_update(MwProductVO vo, HttpServletRequest request) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		
+		String old_file = vo.getPmainsfile();
+		List<String> old_files = new ArrayList<String>();
+		old_files.add(vo.getPsfile1());
+		old_files.add(vo.getPsfile2());
+		old_files.add(vo.getPsfile3());
+		old_files.add(vo.getPsfile4());
+		old_files.add(vo.getPsfile5());
+		
+		vo = fileService.fileCheck(vo);
+		vo = fileService.multiFileCheck2(vo);
+		
+		int result = productService.getUpdateResult(vo);
+		
+		
+		if(result == 1) {
+			fileService.fileSave(vo, request, old_file);
+			fileService.multiFileSave(vo, request, old_files);
+			mv.setViewName("redirect:/admin/product_detail?pnum="+vo.getPnum());
+		}
+		
+		return mv;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="/admin/product_delete", method=RequestMethod.POST)
+	public String product_delete(MwProductVO vo, HttpServletRequest request) throws Exception {
+		String old_file = vo.getPmainsfile();
+		List<String> old_files = new ArrayList<String>();
+		old_files.add(vo.getPsfile1());
+		old_files.add(vo.getPsfile2());
+		old_files.add(vo.getPsfile3());
+		old_files.add(vo.getPsfile4());
+		old_files.add(vo.getPsfile5());
+		
+		int result = productService.getDeleteResult(vo.getPnum());
+		
+		if(result == 1) {
+			fileService.deleteFile(vo, request, old_file);
+			fileService.deleteMultipleFiles(vo, request, old_files);
+			System.out.println("昏力 贸府");
+		}
+		
+		return String.valueOf(result);
+	}
 
 		
 	 

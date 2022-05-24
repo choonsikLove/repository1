@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+button.productButton{
+	width: 100px; height: 30px;
+	background: rgb(11,47,127);
+	cursor: pointer;
+	color: white;
+	font-size: 9.5pt;
+	font-weight: bold;
+	border-radius: 5px;
+	border: none;
+	position: absolute;
+	right: 30px; top: 200px;
+}
+
+button.productButton:hover{
+	background: rgb(33,104,177);
+}
+
+img.sub_images{
+	width: 100px; height: 100px;
+}
+
+div.sub_images_div{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+button#product_detail_delete{
+	width: 100px; height: 30px;
+	background: #fff;
+	cursor: pointer;
+	color: black;
+	font-size: 9.5pt;
+	font-weight: bold;
+	border-radius: 5px;
+	border: 0.7px #dedede solid;
+	position: absolute;
+	right: 140px; top: 200px;
+}

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,28 +9,20 @@
 <link rel="stylesheet"
 	href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <link rel="stylesheet" href="http://localhost:9000/manwol/resources/css/product_detail.css">
-<style>
-button.productButton{
-	width: 100px; height: 30px;
-	background: rgb(11,47,127);
-	cursor: pointer;
-	color: white;
-	font-size: 9.5pt;
-	font-weight: bold;
-	border-radius: 5px;
-	border: none;
-	position: absolute;
-	right: 30px; top: 200px;
-}
-
-button.productButton:hover{
-	background: rgb(33,104,177);
-}
-</style>
+<link rel="stylesheet" href="http://localhost:9000/manwol/resources/css/for_product_button_only.css">
+<script src="http://localhost:9000/manwol/resources/js/jquery-3.6.0.js"></script>
+<script src="http://localhost:9000/manwol/resources/js/product_detail.js"></script>
 </head>
 <body>
 	<!-- header -->
 	<jsp:include page="../../header.jsp"></jsp:include>
+	<input type="hidden" value="${vo.pnum }" id="product_detail_pnum">
+	<input type="hidden" value="${vo.pmainsfile }" id="product_detail_pmainsfile">
+	<input type="hidden" value="${vo.psfile1 }" id="product_detail_psfile1">
+	<input type="hidden" value="${vo.psfile2 }" id="product_detail_psfile2">
+	<input type="hidden" value="${vo.psfile3 }" id="product_detail_psfile3">
+	<input type="hidden" value="${vo.psfile4 }" id="product_detail_psfile4">
+	<input type="hidden" value="${vo.psfile5 }" id="product_detail_psfile5">
 
 	<!-- content -->
 	<table class="content" style="table-layout: fixed;">
@@ -39,7 +32,8 @@ button.productButton:hover{
 					<tr>
 						<td>
 							<div class="var">
-								<a href="http://localhost:9000/manwol/admin/product_write"><button class="productButton">상품 수정</button></a>
+								<a href="http://localhost:9000/manwol/admin/product_update?pnum=${vo.pnum}"><button class="productButton">상품 수정</button></a>
+								<button id="product_detail_delete">상품 삭제</button>
 							</div>
 						</td>
 					</tr>
@@ -47,8 +41,8 @@ button.productButton:hover{
 					<tr>
 						<td class="img">
 							<div class="img_detail">
-								<img alt="만월회 5종 선물세트"
-									src="http://localhost:9000/manwol/resources/images/product/만월회 5종 선물세트.jpg"
+								<img alt="상품 이미지"
+									src="http://localhost:9000/manwol/resources/upload/${vo.pmainsfile }"
 									height="600px" width="600px">
 							</div>
 						</td>
@@ -57,39 +51,67 @@ button.productButton:hover{
 							<div>
 								<div class="product_detail">
 									<p>
-										만월회 5종 선물세트 <img alt="NEW"
-											src="http://localhost:9000/manwol/resources/images/product/NEW.jpg"
-											width="48px"> <img alt="주문폭주"
-											src="http://localhost:9000/manwol/resources/images/product/주문폭주.jpg"
-											width="48px">
+										${vo.pname } 
+										<c:choose>
+											<c:when test="${tagimage1 == '새상품'}">
+												<img alt="새 상품" src="http://localhost:9000/manwol/resources/images/product/NEW.jpg"
+													width="48px">
+											</c:when>
+											<c:when test="${tagimage1 == '주문폭주상품'}">
+												<img alt="주문 폭주 상품" src="http://localhost:9000/manwol/resources/images/product/주문폭주.jpg"
+													width="48px">
+											</c:when>
+											<c:when test="${tagimage1 == '세일상품'}">
+												<img alt="세일 상품" src="http://localhost:9000/manwol/resources/images/product/SALE.jpg"
+													width="48px">
+											</c:when>
+											<c:when test="${tagimage1 == '선물추천상품' }">
+												<img alt="선물 추천 상품" src="http://localhost:9000/manwol/resources/images/product/선물추천.jpg"
+													width="48px">
+											</c:when>
+										</c:choose>
+										<c:choose>
+											<c:when test="${tagimage2 == '새상품'}">
+												<img alt="새 상품" src="http://localhost:9000/manwol/resources/images/product/NEW.jpg"
+													width="48px">
+											</c:when>
+											<c:when test="${tagimage2 == '주문폭주상품'}">
+												<img alt="주문 폭주 상품" src="http://localhost:9000/manwol/resources/images/product/주문폭주.jpg"
+													width="48px">
+											</c:when>
+											<c:when test="${tagimage2 == '세일상품'}">
+												<img alt="세일 상품" src="http://localhost:9000/manwol/resources/images/product/SALE.jpg"
+													width="48px">
+											</c:when>
+											<c:when test="${tagimage2 == '선물추천상품' }">
+												<img alt="선물 추천 상품" src="http://localhost:9000/manwol/resources/images/product/선물추천.jpg"
+													width="48px">
+											</c:when>
+										</c:choose>
 									</p>
-									<p class="product_detail_price">21,000원</p>
+									<c:choose>
+										<c:when test="${vo.psaleprice == 0}">
+											<p class="product_detail_price">${price_comma }원</p>
+										</c:when>
+										<c:otherwise>
+											<p class="former_price">${price_comma }원</p>
+											<p class="product_detail_price">${saleprice_comma }원</p>
+										</c:otherwise>
+									</c:choose>
 								</div>
-
 								<div class="product_detail_text">
-									<p>소중한 지인들에게 선물하고</p>
-									<p>센스 있는 사람으로 거듭나기!</p>
-									<p>
-										5종 선물세트로 <b>더 고급스러운</b> 선물하세요.
-									</p>
+									${vo.ptext }
 								</div>
-
-								<div class="product_detail_text2">
-									<strong>📦 배송</strong>
-									<p>
-										주문 후 <b>영업일 기준 3일 이내</b> 발송됩니다.
-									</p>
-									<p>
-										종이 아이스팩 + 아이스박스 (<b>아이스팩 안에는 물만 들어있으니</b> 가위로
-									</p>
-									<br> <br> <strong>🕘 보관방법 및 유통기한</strong>
-									<p>
-										신선식품으로 제품 수령 후<b>냉장 보관(0-5℃)</b>은 필수이며, 유통기한은 <b>수령일로부터8주(단호박,</b>
-									</p>
-									<p>
-										<b>쑥4주)</b>입니다. 패키지 하단에 유통기한이 별도로 표기되어있습니다.
-									</p>
-								</div>
+								<c:if test="${vo.pcategory == 'base'}">
+									<div class="product_detail_text2">
+										<strong>📦 배송</strong>
+										<p>주문 후 <b>영업일 기준 3일 이내</b> 발송됩니다.</p>
+										<p>종이 아이스팩 + 아이스박스 (<b>아이스팩 안에는 물만 들어있으니</b> 가위로</p>
+										<br> <br> <strong>🕘 보관방법 및 유통기한</strong>
+										<p>신선식품으로 제품 수령 후<b>냉장 보관(0-5℃)</b>은 필수이며, 유통기한은 <b>수령일로부터8주(단호박,</b></p>
+										<p><b>쑥4주)</b>입니다. 패키지 하단에 유통기한이 별도로 표기되어있습니다.</p>
+									</div>
+								</c:if>
 								<br>
 								<br>
 
@@ -246,7 +268,7 @@ button.productButton:hover{
 
 		<tr>
 			<td>
-				<table style="text-align: center; border-bottom: 1px solid #BDBDBD;" class="detail">
+				<table style="text-align: center;" class="detail">
 					<tr>
 						<td>
 							<div class="category">
@@ -256,175 +278,35 @@ button.productButton:hover{
 							</div>
 						</td>
 					</tr>
-					
-					<tr>
-						<td>
-							<div>
-								<div style="border-bottom: 1px solid #BDBDBD; padding: 20px 0;">
-									<img 
-										alt="#" src="http://localhost:9000/manwol/resources/images/product/img1.jpg">
-								</div>
-								<div>
-									<img style=" padding-top:20px;" alt="#" 
-										src="http://localhost:9000/manwol/resources/images/product/img2.jpg">
-								</div>
-								<div>
-									<img alt="#"
-										src="http://localhost:9000/manwol/resources/images/product/img3.gif">
-								</div>
-								<div>
-									<img alt="#"
-										src="http://localhost:9000/manwol/resources/images/product/img4.jpg">
-								</div>
-								<div>
-									<img alt="#"
-										src="http://localhost:9000/manwol/resources/images/product/img5.jpg">
-								</div>
-								<div>
-									<img alt="#"
-										src="http://localhost:9000/manwol/resources/images/product/img6.jpg">
-								</div>
-								<div>
-									<img alt="#"
-										src="http://localhost:9000/manwol/resources/images/product/img7.gif"
-										width="640px">
-								</div>
-								<div>
-									<img alt="#"
-										src="http://localhost:9000/manwol/resources/images/product/img8.jpg">
-								</div>
-							</div>
-						</td>
-					</tr>
-
-					<tr>
-						<td>
-							<table>
-								<tr>
-									<th><a
-										href="http://localhost:9000/manwol/resources/images/product/밀크티.jpg"
-										target="_blank"> <img alt="밀크티"
-											src="http://localhost:9000/manwol/resources/images/product/img9.png">
-									</a></th>
-									<th><a
-										href="http://localhost:9000/manwol/resources/images/product/말차.jpg"
-										target="_blank"> <img alt="말차"
-											src="http://localhost:9000/manwol/resources/images/product/img10.png">
-									</a></th>
-									<th><a
-										href="http://localhost:9000/manwol/resources/images/product/자몽샤워.jpg"
-										target="_blank"> <img alt="자몽샤워"
-											src="http://localhost:9000/manwol/resources/images/product/img11.png">
-									</a></th>
-								</tr>
-								<tr>
-									<th><a
-										href="http://localhost:9000/manwol/resources/images/product/민트초코.jpg"
-										target="_blank"> <img alt="민트초코"
-											src="http://localhost:9000/manwol/resources/images/product/img12.png">
-									</a></th>
-									<th><a
-										href="http://localhost:9000/manwol/resources/images/product/악마초코.jpg"
-										target="_blank"> <img alt="악마초코"
-											src="http://localhost:9000/manwol/resources/images/product/img13.png">
-									</a></th>
-									<th><a
-										href="http://localhost:9000/manwol/resources/images/product/그린티초코.jpg"
-										target="_blank"> <img alt="그린티초코"
-											src="http://localhost:9000/manwol/resources/images/product/img14.png">
-									</a></th>
-								</tr>
-								<tr>
-									<th><a
-										href="http://localhost:9000/manwol/resources/images/product/콜드브루.jpg"
-										target="_blank"> <img alt="콜드브루"
-											src="http://localhost:9000/manwol/resources/images/product/img15.png">
-									</a></th>
-									<th><a
-										href="http://localhost:9000/manwol/resources/images/product/쑥.jpg"
-										target="_blank"> <img alt="쑥"
-											src="http://localhost:9000/manwol/resources/images/product/img16.png">
-									</a></th>
-									<th><a
-										href="http://localhost:9000/manwol/resources/images/product/단호박.jpg"
-										target="_blank"> <img alt="단호박"
-											src="http://localhost:9000/manwol/resources/images/product/img17.png">
-									</a></th>
-								</tr>
-								<tr>
-									<th colspan="3"><a
-										href="http://localhost:9000/manwol/resources/images/product/리얼딸기.jpg"
-										target="_blank"> <img alt="리얼딸기"
-											src="http://localhost:9000/manwol/resources/images/product/img18.png">
-									</a></th>
-								</tr>
-							</table>
-						</td>
-					</tr>
-
-					<tr>
-						<td>
-							<div>
-								<img alt="#"
-									src="http://localhost:9000/manwol/resources/images/product/img19.gif">
-							</div>
-							<div>
-								<img alt="#"
-									src="http://localhost:9000/manwol/resources/images/product/img20.jpg">
-							</div>
-							<div>
-								<img alt="#"
-									src="http://localhost:9000/manwol/resources/images/product/img21.jpg">
-							</div>
-							<div>
-								<img alt="#"
-									src="http://localhost:9000/manwol/resources/images/product/img22.jpg">
-							</div>
-							<div>
-								<img alt="#"
-									src="http://localhost:9000/manwol/resources/images/product/img23.gif">
-							</div>
-							<div>
-								<img alt="#"
-									src="http://localhost:9000/manwol/resources/images/product/img24.jpg">
-							</div>
-							<div>
-								<img alt="#"
-									src="http://localhost:9000/manwol/resources/images/product/img25.gif">
-							</div>
-							<div>
-								<img alt="#"
-									src="http://localhost:9000/manwol/resources/images/product/img26.jpg">
-							</div>
-							<div>
-								<img alt="#"
-									src="http://localhost:9000/manwol/resources/images/product/img27.gif">
-							</div>
-							<div>
-								<img alt="#"
-									src="http://localhost:9000/manwol/resources/images/product/img28.jpg">
-							</div>
-							<div>
-								<img alt="#"
-									src="http://localhost:9000/manwol/resources/images/product/img29.jpg">
-							</div>
-							<div>
-								<img alt="#"
-									src="http://localhost:9000/manwol/resources/images/product/img30.jpg">
-							</div>
-							<div style="margin: 0 0 25px 0;">
-								<img  alt="#"
-									src="http://localhost:9000/manwol/resources/images/product/img31.jpg">
-							</div>
-						</td>
-					</tr>
 				</table>
+			</td>
+		</tr>	
+		
+		<tr>
+			<td>
+				<div class="sub_images_div">
+					<c:if test="${vo.psfile1 != null}">
+						<img class="sub_images" src="http://localhost:9000/manwol/resources/upload/${vo.psfile1 }">
+					</c:if>
+					<c:if test="${vo.psfile2 != null}">
+						<img class="sub_images" src="http://localhost:9000/manwol/resources/upload/${vo.psfile2 }">
+					</c:if>
+					<c:if test="${vo.psfile3 != null}">
+						<img class="sub_images" src="http://localhost:9000/manwol/resources/upload/${vo.psfile3 }">
+					</c:if>
+					<c:if test="${vo.psfile4 != null}">
+						<img class="sub_images" src="http://localhost:9000/manwol/resources/upload/${vo.psfile4 }">
+					</c:if>
+					<c:if test="${vo.psfile5 != null}">
+						<img class="sub_images" src="http://localhost:9000/manwol/resources/upload/${vo.psfile5 }">
+					</c:if>
+				</div>
 			</td>
 		</tr>
 
 		<tr>
 			<td>
-				<table class="delivery" style="border-bottom: 1px solid #BDBDBD; margin-top: 18px">
+				<table class="delivery" style="border-bottom: 1px solid #BDBDBD; margin-top: 18px;">
 					<tr>
 						<th>FRESH</th>
 					</tr>

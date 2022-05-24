@@ -369,3 +369,7 @@ margin-right: 10px;
 .all1:hover{color: black;}
 .group{color: black;}		
 		
+p.former_price{
+	text-decoration: line-through;
+	font-size: 9pt;
+}

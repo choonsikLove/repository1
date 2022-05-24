@@ -87,18 +87,19 @@
 			</div>
 			<div>
 				<span>대표 이미지</span>
-				<input type="file" id="mainProductImage" name="pmainimage" style="visibility: hidden;">
+				<input type="file" id="mainProductImage" name="pmainimage" style="visibility: hidden;" onchange="loadFile3(this)">
 				<label for="mainProductImage"><div>+</div></label>
 				<div>
-					여기에 이미지 넣기 이미지 이미지 (나중에)
+					<img id="main_image">
 				</div>
 			</div>
 			<div>
 				<span>기타 이미지</span>
-				<input type="file" id="productImages" name="productImages" style="visibility: hidden;">
+				<input type="file" id="productImages" name="files" style="visibility: hidden;" multiple="multiple"
+				>
 				<label for="productImages"><div>+</div></label>
-				<div>
-					기타 이미지들(나중에) 여러개 한번에 넣는 거 주말에 찾아보기.
+				<div id="multiple_product_images">
+					여기에 파일 수 제한하는 스크립트 넣어야 하는데 너무 어려워서 일단 안 넣었습니다. 최대 5개까지만 넣어주세요.
 				</div>
 			</div>
 			<div>
@@ -145,6 +146,9 @@
 					<button type='button' class='selectAddButton'>추가</button>
 				</div>
 			 --%>
+			</div>
+			<div>
+				<textarea name="ptext"></textarea>
 			</div>
 	</div>
 	</form>
