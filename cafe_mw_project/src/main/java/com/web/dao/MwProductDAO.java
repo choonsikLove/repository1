@@ -60,21 +60,23 @@ public class MwProductDAO implements MwObjectDAO{
 
 
 	@Override
-	public int selectTotal() {
-		return 0;
+	   public int selectTotal() {
+	      System.out.println("4. DAO/selectTotal");
+	      return sqlSession.selectOne(namespace+".count");
+	   }
+
+	   @Override
+	   public int selectSearchTotal(String keyword, String option) {
+	      // TODO Auto-generated method stub
+	      return 0;
+	   }
+
+	   @Override
+	   public List<Object> selectSearch(int startCount, int endCount, String keyword, String option) {
+	      // TODO Auto-generated method stub
+	      return null;
+	   }
+	   
 	}
 
-	@Override
-	public int selectSearchTotal(String keyword, String option) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public List<Object> selectSearch(int startCount, int endCount, String keyword, String option) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-}
 

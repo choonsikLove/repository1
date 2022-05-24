@@ -110,10 +110,33 @@ public class AdminController {
 	
 	
 	//상품!
-	@RequestMapping(value="/admin/product_list", method=RequestMethod.GET)
-	public String product_list() {
-		return "/admin/product/product_list";
-	}
+	   //상품 리스트
+	   @RequestMapping(value="/admin/product_list", method=RequestMethod.GET)
+	   public ModelAndView product_list(String rpage) {
+	      ModelAndView mv = new ModelAndView();
+	         
+	      Map<String,String> param = pageService.getPageResult(rpage, "product", productService);
+	      int startCount = Integer.parseInt(param.get("start"));
+	      int endCount = Integer.parseInt(param.get("end"));
+	      
+	      
+	      List<Object> olist = productService.getListResult(startCount, endCount);
+	      ArrayList<MwProductVO> list = new ArrayList<MwProductVO>();
+	      for(Object obj : olist) {
+	         list.add((MwProductVO)obj);
+	      }
+	            
+	      mv.addObject("list",list);
+	      mv.addObject("dbCount", Integer.parseInt(param.get("dbCount")));
+	      mv.addObject("pageSize", Integer.parseInt(param.get("pageSize")));
+	      mv.addObject("reqPage", Integer.parseInt(param.get("reqPage")));   
+	      
+	      mv.setViewName("/admin/product/product_list");
+	      
+	      return mv;
+	   }
+	
+	
 	 
 	@RequestMapping(value="/admin/product_list_base", method=RequestMethod.GET)
 	public String product_list_base() { 

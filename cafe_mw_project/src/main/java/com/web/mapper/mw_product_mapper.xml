@@ -36,7 +36,20 @@
 		</choose>
 	</insert>
 	
-	
+	<select id="select" parameterType="map" resultType="com.web.vo.MwProductVO">
+      select mp.PNUM,PNAME,PPRICE,PSALEPRICE,PTAGIMAGE,PCATEGORY,PSTOCK,PMAINFILE,PMAINSFILE
+      from MW_PRODUCT mp
+   	</select> 
+	<!--    
+	   <select id="select" resultType="com.web.vo.MwProductVO">
+	      select * from mw_product
+	   </select>
+	   
+	   <select id="count" resultType="int">
+	      select count(*) from mw_product
+	   </select>
+	 -->   
+		
 </mapper>    
 
 
