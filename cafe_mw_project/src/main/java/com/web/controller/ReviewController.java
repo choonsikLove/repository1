@@ -83,5 +83,11 @@ public class ReviewController {
 	  return "/review/recipe_detail";
 	}
 
+	@RequestMapping(value="/recipe_write", method=RequestMethod.GET)
+	public String recipe_write() {
+		
+		return "/review/recipe_write";
+	}
+
 }
    
