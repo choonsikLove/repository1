@@ -78,6 +78,11 @@
 		where pnum = #{pnum}
 	</update>
 	
+	<select id="select" parameterType="map" resultType="com.web.vo.MwProductVO">
+	     select PNUM,PNAME,PPRICE,PSALEPRICE,PTAGIMAGE,PCATEGORY,PSTOCK,PMAINFILE,PMAINSFILE
+		from MW_PRODUCT order by PNUM desc
+   	</select> 
+	
 	<select id="select_pnum" resultType="java.lang.String">
 		select pnum from (select pnum from mw_product order by pdate desc) 
 		where rownum =1
