@@ -12,6 +12,11 @@ public class MwRecipeServiceImpl extends MwObjectServiceAdapter{
 	@Override
 	public int getInsertResult(Object obj) {
 		return recipeDao.insert(obj);
+	};
+	
+	@Override
+	public Object getContent(String rid) {
+		return recipeDao.select(rid);
 	}
 	
 }

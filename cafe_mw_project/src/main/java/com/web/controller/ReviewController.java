@@ -91,10 +91,18 @@ public class ReviewController {
 	  return "/review/recipe10";
 	}
 	
-	@RequestMapping(value="/recipe_detail", method=RequestMethod.GET)
-	public String recipe_detail() {
-	      
-	  return "/review/recipe_detail";
+	@RequestMapping(value="/recipe_detail", method=RequestMethod.POST)
+	public ModelAndView recipe_detail(String rid, String rno, String category) {
+		ModelAndView mv = new ModelAndView();
+		
+		MwRecipeVO vo = (MwRecipeVO)recipeService.getContent(rid);
+		
+		mv.addObject("vo", vo);
+		mv.addObject("rno", rno);
+		mv.addObject("category", category);
+		
+		mv.setViewName("/review/recipe_detail");
+	  return mv;
 	}
 
 	@RequestMapping(value="/recipe_insert", method=RequestMethod.GET)

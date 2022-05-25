@@ -37,9 +37,9 @@ public class MwRecipeDAO implements MwObjectDAO{
 	}
 
 	@Override
-	public Object select(String id) {
+	public Object select(String rid) {
 		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne(namespace+".content", rid);
 	}
 
 	@Override

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,8 +55,8 @@
 										<td>
 											<div>
 												<p style="margin-bottom: 20px; margin-top: 30px;">
-													<a href="http://localhost:9000/manwol/recipe10" style="font-size: 16px; color: #0042A9">리얼딸기&nbsp;</a> 
-													리얼딸기 4가지 응용버전(베리말차,베리밀크티,딸기 샐러드,딸기빵)
+													<a href="http://localhost:9000/manwol/recipe10" style="font-size: 16px; color: #0042A9">${vo.rcategory }&nbsp;</a> 
+													${vo.rtitle }
 												</p>	
 												<p style="margin-bottom: 1px;"><a href="http://localhost:9000/manwol/recipe"><small>레시피북</small></a></p>	
 											</div>		
@@ -79,7 +80,7 @@
 												<br>
 												<p>
 													<span class="material-symbols-outlined"
-														style="font-size: 20px;">favorite</span>2&emsp; <span
+														style="font-size: 20px;">favorite</span>${vo.rfavorite }&emsp; <span
 														class="material-symbols-outlined" style="font-size: 20px">chat_bubble</span>0
 												</p>
 											</div>
