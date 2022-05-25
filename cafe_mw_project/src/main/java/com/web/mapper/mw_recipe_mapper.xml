@@ -31,13 +31,16 @@
         </foreach>
 	</insert>
 
-	<select id='content' parameterType='java.lang.String' resultType="com.web.vo.MwRecipeVO">
-		select rid, rcategory, rtitle, rcontent, rfavorite, rdate, rfile1, rfile2, rfile3, rfile4, rfile5, rfile6, 
-				rsfile1, rsfile2, rsfile3, rsfile4, rsfile5, rsfile6
-    	from mw_recipe left join mw_recipe_file on mw_recipe.rid = mw_recipe_file.fid
-    	where rid = #{rid}
+	<select id="count" resultType="int">
+		select count(*) from mw_recipe
 	</select>
-
+	
+	<select id="list" parameterType="map" resultType="com.web.vo.MwRecipeVO">
+		select rno, rid, rcategory, rtitle, rsfile1, rfavorite, rdate
+			from (select rownum rno, rid, rcategory, rtitle, rsfile1 ,rfavorite, to_char(rdate, 'yyyy-mm-dd') rdate
+				from (select * from mw_recipe left join mw_recipe_file on mw_recipe.rid = mw_recipe_file.fid order by rdate desc)
+			) where rno between #{start} and #{end}
+	</select>	
 
 
 	

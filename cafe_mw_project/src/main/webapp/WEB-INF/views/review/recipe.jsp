@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,288 +54,41 @@
 							<div class="contents">
 								<table>
 									<tr>
-										<td>
-											<div class="contents1">
-												<a href="http://localhost:9000/manwol/recipe_detail"> 
-													<img alt="리얼딸기"
-													src="http://localhost:9000/manwol/resources/images/review/리얼딸기1.jpg"
-													height="400px" width="400px">
-												</a>
-												<p class="contents_name">
-													<a href="http://localhost:9000/manwol/recipe_detail"> <strong>리얼딸기</strong><span>리얼딸기 4가지 응용버전(베리말차, 베리밀크티, 딸기 샐러</span> <span><br>드, 딸기빵)</span></a>
-												</p>
-												<div class="wish_list">
-													<a href="#"> 
-														<span class="material-symbols-outlined" style="font-size: 18px; color: #004a98">favorite</span>
-														<span style="font-size: 15px; color: #004a98;">2</span>
-													</a>
-												</div>
-												<a href="http://localhost:9000/manwol/recipe_detail">
-													<img alt="moon"
-														src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
-														width="38px" class="moon">
-												</a>	
-											</div>
-										</td>
-
-										<td>
-											<div class="contents2">
-												<a href="http://localhost:9000/manwol/recipe_detail"> 
-													<img alt="슈렉라떼"
-														src="http://localhost:9000/manwol/resources/images/review/슈렉라떼2.jpg"
-														height="400px" width="400px">
-												</a>
-												<p class="contents_name">
-													<a href="http://localhost:9000/manwol/recipe_detail"> <strong>말차</strong> <span>슈렉라떼(말차에 밀크티 추가)</span></a>
-												</p>
-												<div class="wish_list">
-													<a href="#"> 
-														<span class="material-symbols-outlined" style="font-size: 18px; color: #004a98">favorite</span>
-														<span style="font-size: 15px; color: #004a98;">5</span>
-													</a>
-												</div>
-												<a href="http://localhost:9000/manwol/recipe_detail">
-													<img class="moon" alt="moon"
-														src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
-														width="38px" class="moon">
-												</a>	
-											</div>
-										</td>
-										<td>
-											<div class="contents2">
-												<a href="http://localhost:9000/manwol/recipe_detail">
-													<img class="re" alt="트리플초코스콘"
-													src="http://localhost:9000/manwol/resources/images/review/트리플초코스콘1.jpg"
-													height="400px" width="400px"></a>
-												<p class="contents_name">
-													<a href="http://localhost:9000/manwol/recipe_detail"> <strong>악마초코</strong> <span>트리플초코스콘</span></a>
-												</p>
-												<div class="wish_list">
-													<a href="#"> 
-														<span class="material-symbols-outlined" style="font-size: 18px; color: #004a98">favorite</span>
-														<span style="font-size: 15px; color: #004a98;">27</span>
-													</a>
-												</div>
-												<a href="http://localhost:9000/manwol/recipe_detail">
-													<img alt="moon"
-														src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
-														width="38px" class="moon">
-												</a>		
-											</div>
-										</td>
-									</tr>
-
-									<tr>
-										<td>
-											<div class="contents1">
-												<a href="http://localhost:9000/manwol/recipe_detail">
-													<img alt="밀콜추"
-													src="http://localhost:9000/manwol/resources/images/review/밀콜추1.jpg"
-													height="400px" width="400px"></a>
-												<p>
-													<a href="http://localhost:9000/manwol/recipe_detail"> <strong>밀크티</strong> <span>밀콜추(밀크티에 콜드블루 추가)</span></a>
-												</p>
-												<div class="wish_list">
-													<a href="#"> 
-														<span class="material-symbols-outlined" style="font-size: 18px; color: #004a98">favorite</span>
-														<span style="font-size: 15px; color: #004a98;">3</span>
-													</a>
-												</div>
-												<a href="http://localhost:9000/manwol/recipe_detail">
-													<img alt="moon"
-														src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
-														width="38px" class="moon">
-												</a>	
-											</div>
-										</td>
-										<td>
-											<div class="contents1">
-												<a href="http://localhost:9000/manwol/recipe_detail">
-													<img  alt="스콘"
-													src="http://localhost:9000/manwol/resources/images/review/스콘1.jpg"
-													height="400px" width="400px"></a>
-												<p>
-													<a href="http://localhost:9000/manwol/recipe_detail"> <strong>그린티초코</strong> <span>스콘</span></a>
-												</p>
-												<div class="wish_list">
-													<a href="#"> 
-														<span class="material-symbols-outlined" style="font-size: 18px; color: #004a98">favorite</span>
-														<span style="font-size: 15px; color: #004a98;">14</span>
-													</a>
-													<a>
-														<span class="material-symbols-outlined" style="font-size: 18px; cursor: pointer; color: #004a98; margin-left: 8px;">chat_bubble</span>
-														<span style="font-size: 15px; color: #004a98;">1</span>
-													</a>
-												</div>
-												<a href="http://localhost:9000/manwol/recipe_detail">
-													<img alt="moon"
-														src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
-														width="38px" class="moon">
-												</a>	
-											</div>
-										</td>
-
-										<td>
-											<div class="contents1">
-												<a href="http://localhost:9000/manwol/recipe_detail">
-													<img alt="마들렌"
-													src="http://localhost:9000/manwol/resources/images/review/마들렌1.jpg"
-													height="400px" width="400px"></a>
-												<p>
-													<a href="http://localhost:9000/manwol/recipe_detail"> <strong>쑥</strong> <span>마들렌</span></a>
-												</p>
-												<div class="wish_list">
-													<a href="#"> 
-														<span class="material-symbols-outlined" style="font-size: 18px; color: #004a98">favorite</span>
-														<span style="font-size: 15px; color: #004a98;">3</span>
-													</a>
-												</div>
-												<a href="http://localhost:9000/manwol/recipe_detail">
-													<img alt="moon"
-														src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
-														width="38px" class="moon">
-												</a>
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<div class="contents1">
-												<a href="http://localhost:9000/manwol/recipe_detail">
-													<img alt="초코결스콘"
-													src="http://localhost:9000/manwol/resources/images/review/초코결스콘2.jpg"
-													height="400px" width="400px"></a>
-												<p>
-													<a href="http://localhost:9000/manwol/recipe_detail"> <strong>악마초코</strong> <span>초코결스콘</span></a> 
-												</p>
-												<div class="wish_list">
-													<a href="#"> 
-														<span class="material-symbols-outlined"style="font-size: 18px; color: #004a98">favorite</span>
-														<span style="font-size: 15px; color: #004a98;">9</span>
-													</a>
-												</div>
-												<a href="http://localhost:9000/manwol/recipe_detail">
-													<img alt="moon"
-														src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
-														width="38px" class="moon">
-												</a>	
-											</div>
-										</td>
-
-										<td>
-											<div class="contents1">
-												<a href="http://localhost:9000/manwol/recipe_detail">
-													<img alt="구겔호프"
-													src="http://localhost:9000/manwol/resources/images/review/구겔호프1.jpg"
-													height="400px" width="400px"></a>
-												<p>
-													<a href="http://localhost:9000/manwol/recipe_detail"> <strong>밀크티</strong> <span>구겔호프</span></a>
-												</p>
-												<div class="wish_list">
-													<a href="#"> 
-														<span class="material-symbols-outlined" style="font-size: 18px; color: #004a98">favorite</span>
-														<span style="font-size: 15px; color: #004a98;">4</span>
-													</a>
-												</div>
-												<a href="http://localhost:9000/manwol/recipe_detail">
-													<img alt="moon"
-														src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
-														width="38px" class="moon">
-												</a>	
-											</div>
-										</td>
-										<td>
-											<div class="contents1">
-												<a href="http://localhost:9000/manwol/recipe_detail">
-													<img alt="크림 파스타"
-													src="http://localhost:9000/manwol/resources/images/review/크림 파스타1.jpg"
-													height="400px" width="400px"></a>
-												<p>
-													<a href="http://localhost:9000/manwol/recipe_detail"> <strong>단호박</strong> <span>크림 파스타</span></a>
-												</p>
-												<div class="wish_list">
-													<a href="#"> 
-														<span class="material-symbols-outlined" style="font-size: 18px; color: #004a98">favorite</span>
-														<span style="font-size: 15px; color: #004a98;">21</span>
-													</a>
-												</div>
-												<a href="http://localhost:9000/manwol/recipe_detail">
-													<img alt="moon"
-														src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
-														width="38px" class="moon">
-												</a>	
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<div class="contents1">
-												<a href="http://localhost:9000/manwol/recipe_detail">
-													<img alt="팥빙수"
-													src="http://localhost:9000/manwol/resources/images/review/팥빙수1.jpg"
-													height="400px" width="400px"></a>
-												<p>
-													<a href="http://localhost:9000/manwol/recipe_detail"> <strong>말차</strong> <span>팥빙수</span></a>
-												</p>
-												<div class="wish_list">
-													<a href="#"> 
-														<span class="material-symbols-outlined" style="font-size: 18px; color: #004a98">favorite</span>
-														<span style="font-size: 15px; color: #004a98;">16</span>
-													</a>
-												</div>
-												<a href="http://localhost:9000/manwol/recipe_detail">
-													<img alt="moon"
-														src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
-														width="38px" class="moon">
-												</a>	
-											</div>
-										</td>
-										<td>
-											<div class="contents1">
-												<a href="http://localhost:9000/manwol/recipe_detail">
-													<img alt="바스크 치즈케이크"
-													src="http://localhost:9000/manwol/resources/images/review/바스크 치즈케이크1.jpg"
-													height="400px" width="400px">
-												</a>
-												<p>
-													<a href="http://localhost:9000/manwol/recipe_detail"> <strong>단호박</strong> <span>바스크 치즈케이크</span></a>
-												</p>
-												<div class="wish_list">
-													<a href="#"> 
-														<span class="material-symbols-outlined" style="font-size: 18px; color: #004a98">favorite</span>
-														<span style="font-size: 15px; color: #004a98;">54</span>
-													</a>
-												</div>
-												<a href="http://localhost:9000/manwol/recipe_detail">
-													<img alt="moon"
-														src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
-														width="38px" class="moon">
-												</a>	
-											</div>
-										</td>
-										<td>
-											<div class="contents1">
-												<a href="http://localhost:9000/manwol/recipe_detail">
-													<img alt="프라푸치노"
-													src="http://localhost:9000/manwol/resources/images/review/프라푸치노1.jpg"
-													height="400px" width="400px"></a>
-												<p>
-													<a href="http://localhost:9000/manwol/recipe_detail"> <strong>민크초코</strong> <span>프라푸치노</span></a>
-												</p>
-												<div class="wish_list">
-													<a href="#"> 
-														<span class="material-symbols-outlined" style="font-size: 18px; color: #004a98">favorite</span>
-														<span style="font-size: 15px; color: #004a98;">4</span>
-													</a>
-												</div>
-												<a href="http://localhost:9000/manwol/recipe_detail">
-													<img alt="moon"
-														src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
-														width="38px" class="moon">
-												</a>	
-											</div>
-										</td>
-									</tr>
+									<c:choose>
+										<c:when test="${empty list}">
+											<td colspan="3">검색결과가 없습니다.</td>
+											</tr>
+										</c:when>
+										<c:otherwise>
+											<c:forEach var="vo" items="${list}" varStatus="status">
+												<c:if test="${status.index%3==0}">
+													</tr><tr>
+												</c:if>
+													<td>
+														<div class="contents1">
+															<a href="http://localhost:9000/manwol/recipe_detail?rid=${vo.rid }&rpage=${rpage}&rno=${rno}"> 
+																<img src="http://localhost:9000/manwol/resources/upload/${vo.rsfile1 }"
+																height="400px" width="400px">
+															</a>
+															<p class="contents_name">
+																<a href="http://localhost:9000/manwol/recipe_detail"> <strong>${vo.rcategory }</strong><span>${vo.rtitle }</span></a>
+															</p>
+															<div class="wish_list">
+																<a href="#"> 
+																	<span class="material-symbols-outlined" style="font-size: 18px; color: #004a98">favorite</span>
+																	<span style="font-size: 15px; color: #004a98;">${vo.rfavorite }</span>
+																</a>
+															</div>
+															<a href="http://localhost:9000/manwol/recipe_detail">
+																<img alt="moon"
+																	src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
+																	width="38px" class="moon">
+															</a>	
+														</div>
+													</td>
+											</c:forEach>
+										</c:otherwise>
+									</c:choose>											
 								</table>
 							</div>
 						</td>
@@ -343,8 +97,8 @@
 						<td>
 							<table class="search">
 								<tr>
-									<td style="display: flex;">
-										<div>
+									<td >
+										<div style="display: flex;">
 											<form action="" class="search_f">
 												<input  type="text" placeholder=" Search" class="search_i">
 												<button  type="submit" class="search_btn"><img alt="돋보기" src="http://localhost:9000/manwol/resources/images/review/search.png" style="width: 25px;"></button>

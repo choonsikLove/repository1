@@ -73,11 +73,16 @@
 									<tr>
 										<td>
 											<div style="margin-top: 50px;">
+											
 												<img alt="리얼딸기1"
-													src="http://localhost:9000/manwol/resources/images/review/리얼딸기1.jpg">
-												<br> <img alt="리얼딸기2"
-													src="http://localhost:9000/manwol/resources/images/review/리얼딸기2.png">
+													src="http://localhost:9000/manwol/resources/upload/${vo.rsfile1 }">
 												<br>
+												${vo.rcontent }
+												<br>
+												
+												
+												
+												
 												<p>
 													<span class="material-symbols-outlined"
 														style="font-size: 20px;">favorite</span>${vo.rfavorite }&emsp; <span

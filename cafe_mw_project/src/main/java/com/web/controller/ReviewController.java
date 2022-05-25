@@ -1,5 +1,9 @@
 package com.web.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.web.service.FileServiceImpl;
+import com.web.service.MwPageServiceImpl;
 import com.web.service.MwRecipeServiceImpl;
+import com.web.vo.MwMemberVO;
 import com.web.vo.MwRecipeVO;
 
 @Controller
@@ -21,23 +27,19 @@ public class ReviewController {
 	@Autowired
 	private MwRecipeServiceImpl recipeService;
 	
+	@Autowired
+	private MwPageServiceImpl pageService;
 	
 	@RequestMapping(value="/review", method=RequestMethod.GET)
 	public String review() {
-	      
-	  return "/review/review";
+		
+		return "/review/review";
 	}
 	
 	@RequestMapping(value="/review2", method=RequestMethod.GET)
 	public String review2() {
 	      
 	  return "/review/review2";
-	}
-	
-	@RequestMapping(value="/recipe", method=RequestMethod.GET)
-	public String recipe() {
-	      
-	  return "/review/recipe";
 	}
 
 	@RequestMapping(value="/recipe1", method=RequestMethod.GET)
@@ -91,7 +93,31 @@ public class ReviewController {
 	  return "/review/recipe10";
 	}
 	
-	@RequestMapping(value="/recipe_detail", method=RequestMethod.POST)
+	@RequestMapping(value="/recipe", method=RequestMethod.GET)
+	public ModelAndView recipe(String rpage) {
+		ModelAndView mv = new ModelAndView();
+		
+		Map<String,String> param = pageService.getPageResult(rpage, "recipe", recipeService);
+		int startCount = Integer.parseInt(param.get("start"));
+		int endCount = Integer.parseInt(param.get("end"));
+		
+		ArrayList<MwRecipeVO> list = new ArrayList();
+		List<Object> olist = recipeService.getListResult(startCount, endCount);
+		for(Object obj : olist) {
+			list.add((MwRecipeVO)obj);
+		}
+				
+		mv.addObject("list",list);
+		mv.addObject("dbCount", Integer.parseInt(param.get("dbCount")));
+		mv.addObject("pageSize", Integer.parseInt(param.get("pageSize")));
+		mv.addObject("reqPage", Integer.parseInt(param.get("reqPage")));	
+		
+		mv.setViewName("/review/recipe");	
+		
+		return mv;
+	}
+	
+	@RequestMapping(value="/recipe_detail", method=RequestMethod.GET)
 	public ModelAndView recipe_detail(String rid, String rno, String category) {
 		ModelAndView mv = new ModelAndView();
 		

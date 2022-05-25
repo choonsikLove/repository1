@@ -9,6 +9,9 @@ public class MwPageServiceImpl {
 	
 	@Autowired
 	private MwMemberServiceImpl memberService;
+
+	@Autowired
+	private MwRecipeServiceImpl recipeService;
 	
 	/**
 	 * 페이징 처리 
@@ -27,8 +30,12 @@ public class MwPageServiceImpl {
 		if(serviceName.equals("member")) {
 			memberService = (MwMemberServiceImpl)service;
 			dbCount = memberService.getListCount();
+			pageSize = 10;
+		}else if(serviceName.equals("recipe")) {
+			recipeService = (MwRecipeServiceImpl)service;
+			dbCount = recipeService.getListCount();
+			pageSize = 9;
 		}
-		
 		
 		//총 페이지 수 계산
 		if(dbCount % pageSize == 0){
@@ -37,7 +44,7 @@ public class MwPageServiceImpl {
 			pageCount = dbCount/pageSize+1;
 		}
 		
-		//요청 페이지 계산ㅁ으
+		//요청 페이지 계산
 		if(rpage != null){
 			reqPage = Integer.parseInt(rpage);
 			startCount = (reqPage-1) * pageSize+1;
@@ -53,7 +60,6 @@ public class MwPageServiceImpl {
 		param.put("dbCount", String.valueOf(dbCount));
 		param.put("pageSize", String.valueOf(pageSize));
 		param.put("reqPage", String.valueOf(reqPage));
-		
 				
 		return param;
 	}
@@ -71,9 +77,13 @@ public class MwPageServiceImpl {
 		
 		if(serviceName.equals("member")) {
 			memberService = (MwMemberServiceImpl)service;
-			dbCount = memberService.getSearchListCount(keyword, option);
+			dbCount = memberService.getListCount();
+			pageSize = 10;
+		}else if(serviceName.equals("recipe")) {
+			recipeService = (MwRecipeServiceImpl)service;
+			dbCount = recipeService.getListCount();
+			pageSize = 9;
 		}
-		
 		
 		//총 페이지 수 계산
 		if(dbCount % pageSize == 0){
