@@ -8,11 +8,11 @@
 
 	<insert id="insert" parameterType="com.web.vo.MwRecipeVO">
 		insert into mw_recipe
-			values('r_'||sequ_Mw_recipe_rnum.nextval, #{rcategory}, #{rtitle}, #{rcontent}, 0, sysdate, #{rthumbnail}, #{rsthumbnail})		
+			values('r_'||sequ_Mw_recipe_rid.nextval, #{rcategory}, #{rtitle}, #{rcontent}, 0, sysdate)		
 	</insert>
 	
 	<select id="select_rid" resultType="java.lang.String">
-		select rid from (select rid from mw_recipe order by rdate desc) where rownum =1;
+		select rid from (select rid from mw_recipe order by rdate desc) where rownum = 1
 	</select>
 	
 	<insert id="insert_file" parameterType="com.web.vo.MwRecipeVO">

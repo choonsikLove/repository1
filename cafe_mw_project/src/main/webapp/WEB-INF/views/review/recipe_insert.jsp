@@ -139,7 +139,7 @@
 		
 		<div id='insert_thumbnail'>
 			<span>대표 이미지 설정</span><br>
-			<input type='file' name='thumbnail'>
+			<input type='file' name='files'>
 		</div>
 		
 		
@@ -166,7 +166,6 @@
 			<div>
 				<textarea name='rcontent'>완성본 사진첨부 필수!
 레시피와 제작방법을 적어주세요.</textarea>
-				<input type='file' name='files'>
 				<input type='file' name='files'>
 				<input type='file' name='files'>
 				<input type='file' name='files'>

@@ -18,13 +18,16 @@ public class MwRecipeDAO implements MwObjectDAO{
 	@Override
 	public int insert(Object obj) {
 		// TODO Auto-generated method stub
-		MwRecipeVO vo = (MwRecipeVO)obj;
-		/*
 		int result = 0;
-		 * if(result==1) { String rid = sqlSession.selectOne(namespace+".select_rid");
-		 * vo.setRid(rid); result = sqlSession.insert(namespace+".insert_file", vo); }
-		 */
-		return sqlSession.insert(namespace+".insert", vo);
+		MwRecipeVO vo = (MwRecipeVO)obj;
+
+		result = sqlSession.insert(namespace+".insert", vo);
+		if(result==1) {
+			String rid = sqlSession.selectOne(namespace+".select_rid");
+			vo.setRid(rid);
+			result = sqlSession.insert(namespace+".insert_file", vo);
+		}
+		return result;
 	}
 
 	@Override

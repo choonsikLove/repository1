@@ -12,7 +12,6 @@ public class MwRecipeVO {
 	String rnum, rcategory, rtitle, rcontent, rdate, rthumbnail, rsthumbnail;
 	String rid, rfile1, rfile2, rfile3, rfile4, rfile5, rfile6, rsfile1, rsfile2, rsfile3, rsfile4, rsfile5, rsfile6;
 	
-	CommonsMultipartFile thumbnail;
 	CommonsMultipartFile[] files;
 	
 	List<String> rfiles = new ArrayList();
@@ -144,12 +143,6 @@ public class MwRecipeVO {
 	public void setRsfile6(String rsfile6) {
 		this.rsfile6 = rsfile6;
 	}
-	public CommonsMultipartFile getThumbnail() {
-		return thumbnail;
-	}
-	public void setThumbnail(CommonsMultipartFile thumbnail) {
-		this.thumbnail = thumbnail;
-	}
 	public CommonsMultipartFile[] getFiles() {
 		return files;
 	}
@@ -168,6 +161,7 @@ public class MwRecipeVO {
 	public void setRsfiles(List<String> rsfiles) {
 		this.rsfiles = rsfiles;
 	}
+	
 
 	
 	

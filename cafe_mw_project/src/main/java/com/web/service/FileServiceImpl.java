@@ -6,8 +6,10 @@ import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
+import com.web.dao.MwRecipeDAO;
 import com.web.vo.MwMemberVO;
 import com.web.vo.MwProductVO;
 import com.web.vo.MwRecipeVO;
@@ -252,17 +254,6 @@ public class FileServiceImpl {
 	
 	
 	// 레시피
-	public MwRecipeVO fileCheck(MwRecipeVO vo) {
-		UUID uuid = UUID.randomUUID();
-		
-		if(vo != null) {
-			if(!vo.getThumbnail().getOriginalFilename().equals("")) {
-				vo.setRthumbnail(vo.getThumbnail().getOriginalFilename());
-				vo.setRsthumbnail(uuid+"_"+vo.getThumbnail().getOriginalFilename());
-			}
-		}
-		return vo;
-	}
 	
 	public MwRecipeVO multiFileCheck(MwRecipeVO vo) {		
 
@@ -284,32 +275,24 @@ public class FileServiceImpl {
 		return vo;
 	}
 	
-	public void fileSave(MwRecipeVO vo, HttpServletRequest request) throws Exception {
+	public void multiFileSave(MwRecipeVO vo, HttpServletRequest request) throws Exception{
 		
-		if(!vo.getThumbnail().getOriginalFilename().equals("")) {
+		if(vo != null) {
+			for(int i=0; i<vo.getFiles().length; i++) {
+				CommonsMultipartFile rfile = vo.getFiles()[i]; //files 배열에 저장된 주소번지의 파일반환
 			
-			String path = request.getSession().getServletContext().getRealPath("/");
-			path += "resources\\upload\\";
-			
-			File file = new File(path+vo.getRsthumbnail());
-			vo.getThumbnail().transferTo(file);
-			
-			System.out.println(path);
-		}
-		
+				if(!rfile.getOriginalFilename().equals("")) {
+				
+					//파일저장 위치 확인
+					String path = request.getSession().getServletContext().getRealPath("/");
+					path += "resources\\upload\\";
+					
+					//파일저장
+					File file = new File(path + vo.getRsfiles().get(i));			
+					rfile.transferTo(file);
+				}
+			}
+		}	
 	}
 	
-	/*
-	 * public void filesSave(MwRecipeVO vo, HttpServletRequest request) throws
-	 * Exception {
-	 * 
-	 * if(!vo.getRfiles().getOriginalFilename().equals("")) { String path =
-	 * request.getSession().getServletContext().getRealPath("/"); path +=
-	 * "resources\\upload\\"; System.out.println(path);
-	 * 
-	 * File file = new File(path+vo.getThumbnail());
-	 * vo.getThumbnail().transferTo(file); }
-	 * 
-	 * }
-	 */
 }

@@ -107,24 +107,13 @@ public class ReviewController {
 	public ModelAndView recipe_insert(MwRecipeVO vo, HttpServletRequest request) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		
-		vo = fileService.fileCheck(vo);
-		vo = fileService.multiFileCheck(vo);
+		fileService.multiFileCheck(vo);
 		
 		int result = recipeService.getInsertResult(vo);
 		if(result == 1) {
-			fileService.fileSave(vo, request);
+			fileService.multiFileSave(vo, request);
 			mv.setViewName("redirect:/recipe");
 		}
-		
-		
-		/*
-		 * vo = fileService.multiFileCheck(vo); int result =
-		 * recipeService.getInsertResult(vo);
-		 */
-		/*
-		 * if(result == 1) { mv.setViewName("redirect:/recipe"); }else {
-		 * mv.setViewName("redirect:/index"); }
-		 */
 		
 		return mv;
 	}
