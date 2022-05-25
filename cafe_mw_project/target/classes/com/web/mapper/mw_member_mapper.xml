@@ -59,7 +59,7 @@
 		select count(*) from mw_member
 	</select>
 	
-		<select id="search" parameterType="map" resultType="com.web.vo.MwMemberVO">
+	<select id="search" parameterType="map" resultType="com.web.vo.MwMemberVO">
 		select mno, mname, memail, mhp, mdate from (
 			select rownum mno, mname, memail, mhp, to_char(mdate, 'yyyy-mm-dd') mdate from
 				(select mname, memail, mhp, mdate from

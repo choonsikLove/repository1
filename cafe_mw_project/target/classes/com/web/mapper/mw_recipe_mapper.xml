@@ -34,14 +34,38 @@
 	<select id="count" resultType="int">
 		select count(*) from mw_recipe
 	</select>
-	
+
+	<select id="countCategory" resultType="int">
+		select count(*)
+		from mw_recipe
+		where rcategory = #{rcategory}
+	</select>
+
 	<select id="list" parameterType="map" resultType="com.web.vo.MwRecipeVO">
 		select rno, rid, rcategory, rtitle, rsfile1, rfavorite, rdate
 			from (select rownum rno, rid, rcategory, rtitle, rsfile1 ,rfavorite, to_char(rdate, 'yyyy-mm-dd') rdate
 				from (select * from mw_recipe left join mw_recipe_file on mw_recipe.rid = mw_recipe_file.fid order by rdate desc)
 			) where rno between #{start} and #{end}
 	</select>	
+	
+	<select id="listCategory" parameterType="map" resultType="com.web.vo.MwRecipeVO">
+		select rno, rid, rcategory, rtitle, rsfile1, rfavorite, rdate
+			from (select rownum rno, rid, rcategory, rtitle, rsfile1 ,rfavorite, to_char(rdate, 'yyyy-mm-dd') rdate
+				from (select * from mw_recipe left join mw_recipe_file on mw_recipe.rid = mw_recipe_file.fid where rcategory = #{rcategory} order by rdate desc)
+			) where rno between #{start} and #{end}
+	</select>	
 
-
+	<select id="searchCount" resultType="int">
+		select count(*)
+		from mw_recipe
+		where rtitle like ('%'|| #{keyword}|| '%')
+	</select>
+	
+	<select id="search" parameterType="map" resultType="com.web.vo.MwRecipeVO">
+		select rno, rid, rcategory, rtitle, rsfile1, rfavorite, rdate
+			from (select rownum rno, rid, rcategory, rtitle, rsfile1 ,rfavorite, to_char(rdate, 'yyyy-mm-dd') rdate
+				from (select * from mw_recipe left join mw_recipe_file on mw_recipe.rid = mw_recipe_file.fid where rtitle like ('%'|| #{keyword}|| '%') or rcategory like ('%'|| #{keyword}|| '%') order by rdate desc)
+			) where rno between #{start} and #{end}
+	</select>
 	
 </mapper>    

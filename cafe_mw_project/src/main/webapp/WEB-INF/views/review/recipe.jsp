@@ -33,17 +33,105 @@
 						<td>
 							<div>
 								<ul class="category">
-									<li class="category_line"><a href="http://localhost:9000/manwol/recipe"><span>ALL</span></a></li>
-									<li><a href="http://localhost:9000/manwol/recipe1"><span>밀크티</span></a></li>
-									<li><a href="http://localhost:9000/manwol/recipe2"><span>말차</span></a></li>
-									<li><a href="http://localhost:9000/manwol/recipe3"><span>악마초코</span></a></li>
-									<li><a href="http://localhost:9000/manwol/recipe4"><span>단호박</span></a></li>
-									<li><a href="http://localhost:9000/manwol/recipe5"><span>민트초코</span></a></li>
-									<li><a href="http://localhost:9000/manwol/recipe6"><span>흑임자</span></a></li>
-									<li><a href="http://localhost:9000/manwol/recipe7"><span>쑥</span></a></li>
-									<li><a href="http://localhost:9000/manwol/recipe8"><span>그린티초코</span></a></li>
-									<li><a href="http://localhost:9000/manwol/recipe9"><span>자몽샤워</span></a></li>
-									<li><a href="http://localhost:9000/manwol/recipe10"><span>리얼딸기</span></a></li>
+									<c:choose>
+										<c:when test="${empty rc}">
+											<li class="category_line">
+										</c:when>
+										<c:otherwise>
+											<li>
+										</c:otherwise>
+									</c:choose>
+												<a href="http://localhost:9000/manwol/recipe"><span>ALL</span></a></li>
+									<c:choose>
+										<c:when test="${rc eq '밀크티'}">
+											<li class="category_line">
+										</c:when>
+										<c:otherwise>
+											<li>
+										</c:otherwise>
+									</c:choose>
+												<a href="?rcategory=밀크티"><span>밀크티</span></a></li>
+									<c:choose>
+										<c:when test="${rc eq '말차'}">
+											<li class="category_line">
+										</c:when>
+										<c:otherwise>
+											<li>
+										</c:otherwise>
+									</c:choose>
+												<a href="?rcategory=말차"><span>말차</span></a></li>
+									<c:choose>
+										<c:when test="${rc eq '악마초코'}">
+											<li class="category_line">
+										</c:when>
+										<c:otherwise>
+											<li>
+										</c:otherwise>
+									</c:choose>
+												<a href="?rcategory=악마초코"><span>악마초코</span></a></li>
+									<c:choose>
+										<c:when test="${rc eq '단호박'}">
+											<li class="category_line">
+										</c:when>
+										<c:otherwise>
+											<li>
+										</c:otherwise>
+									</c:choose>
+												<a href="?rcategory=단호박"><span>단호박</span></a></li>
+									<c:choose>
+										<c:when test="${rc eq '민트초코'}">
+											<li class="category_line">
+										</c:when>
+										<c:otherwise>
+											<li>
+										</c:otherwise>
+									</c:choose>
+												<a href="?rcategory=민트초코"><span>민트초코</span></a></li>
+									<c:choose>
+										<c:when test="${rc eq '흑임자'}">
+											<li class="category_line">
+										</c:when>
+										<c:otherwise>
+											<li>
+										</c:otherwise>
+									</c:choose>
+												<a href="?rcategory=흑임자"><span>흑임자</span></a></li>
+									<c:choose>
+										<c:when test="${rc eq '쑥'}">
+											<li class="category_line">
+										</c:when>
+										<c:otherwise>
+											<li>
+										</c:otherwise>
+									</c:choose>
+												<a href="?rcategory=쑥"><span>쑥</span></a></li>
+									<c:choose>
+										<c:when test="${rc eq '그린티초코'}">
+											<li class="category_line">
+										</c:when>
+										<c:otherwise>
+											<li>
+										</c:otherwise>
+									</c:choose>
+												<a href="?rcategory=그린티초코"><span>그린티초코</span></a></li>
+									<c:choose>
+										<c:when test="${rc eq '자몽샤워'}">
+											<li class="category_line">
+										</c:when>
+										<c:otherwise>
+											<li>
+										</c:otherwise>
+									</c:choose>
+												<a href="?rcategory=자몽샤워"><span>자몽샤워</span></a></li>
+									<c:choose>
+										<c:when test="${rc eq '리얼딸기'}">
+											<li class="category_line">
+										</c:when>
+										<c:otherwise>
+											<li>
+										</c:otherwise>
+									</c:choose>
+												<a href="?rcategory=리얼딸기"><span>리얼딸기</span></a></li>
 								</ul>
 							</div>
 						</td>
@@ -71,7 +159,7 @@
 																height="400px" width="400px">
 															</a>
 															<p class="contents_name">
-																<a href="http://localhost:9000/manwol/recipe_detail"> <strong>${vo.rcategory }</strong><span>${vo.rtitle }</span></a>
+																<a href="http://localhost:9000/manwol/recipe_detail"> <strong>${vo.rcategory }</strong>&nbsp; &nbsp; <span>${vo.rtitle }</span></a>
 															</p>
 															<div class="wish_list">
 																<a href="#"> 
@@ -99,8 +187,8 @@
 								<tr>
 									<td >
 										<div style="display: flex;">
-											<form action="" class="search_f">
-												<input  type="text" placeholder=" Search" class="search_i">
+											<form class="search_f" method="post">
+												<input  type="text" placeholder=" Search" class="search_i" name='option'>
 												<button  type="submit" class="search_btn"><img alt="돋보기" src="http://localhost:9000/manwol/resources/images/review/search.png" style="width: 25px;"></button>
 											</form>
 										</div>
@@ -117,19 +205,7 @@
 					<tr>
 						<td>
 							<table>
-								<tr>
-									<td>
-										<div style=" margin-top: 10px; text-align: center; color: #949494;">
-											<p>
-												<span style="cursor: no-drop;"><</span> 
-												<span class="page">&emsp;1&emsp;</span>
-												<span class="page">2&emsp;</span>
-												<span class="page">3&emsp;</span>
-												<span style="cursor: no-drop;">></span>
-											</p>
-										</div>
-									</td>
-								</tr>
+								<jsp:include page="recipe_page.jsp"></jsp:include>
 							</table>
 						</td>
 					</tr>

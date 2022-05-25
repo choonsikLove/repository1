@@ -42,72 +42,63 @@ public class ReviewController {
 	  return "/review/review2";
 	}
 
-	@RequestMapping(value="/recipe1", method=RequestMethod.GET)
-	public String recipe1() {
-	      
-	  return "/review/recipe1";
-	}
-	@RequestMapping(value="/recipe2", method=RequestMethod.GET)
-	public String recipe2() {
-	      
-	  return "/review/recipe2";
-	}
-	@RequestMapping(value="/recipe3", method=RequestMethod.GET)
-	public String recipe3() {
-	      
-	  return "/review/recipe3";
-	}
-	@RequestMapping(value="/recipe4", method=RequestMethod.GET)
-	public String recipe4() {
-	      
-	  return "/review/recipe4";
-	}
-	@RequestMapping(value="/recipe5", method=RequestMethod.GET)
-	public String recipe5() {
-	      
-	  return "/review/recipe5";
-	}
-	@RequestMapping(value="/recipe6", method=RequestMethod.GET)
-	public String recipe6() {
-	      
-	  return "/review/recipe6";
-	}
-	@RequestMapping(value="/recipe7", method=RequestMethod.GET)
-	public String recipe7() {
-	      
-	  return "/review/recipe7";
-	}
-	@RequestMapping(value="/recipe8", method=RequestMethod.GET)
-	public String recipe8() {
-	      
-	  return "/review/recipe8";
-	}
-	@RequestMapping(value="/recipe9", method=RequestMethod.GET)
-	public String recipe9() {
-	      
-	  return "/review/recipe9";
-	}
-	@RequestMapping(value="/recipe10", method=RequestMethod.GET)
-	public String recipe10() {
-	      
-	  return "/review/recipe10";
-	}
-	
 	@RequestMapping(value="/recipe", method=RequestMethod.GET)
-	public ModelAndView recipe(String rpage) {
+	public ModelAndView recipe(String rpage, String rcategory) {
 		ModelAndView mv = new ModelAndView();
+		Map<String,String> param;
+		List<Object> olist;
 		
-		Map<String,String> param = pageService.getPageResult(rpage, "recipe", recipeService);
+		if(rcategory == null) {
+			param = pageService.getPageResult(rpage, "recipe", recipeService);
+		}else {
+			param = pageService.getPageResult(rpage, "recipe", recipeService, rcategory);
+		}
+		
 		int startCount = Integer.parseInt(param.get("start"));
 		int endCount = Integer.parseInt(param.get("end"));
 		
+		if(rcategory == null) {
+			olist = recipeService.getListResult(startCount, endCount);
+		}else {
+			olist = recipeService.getListResult(startCount, endCount, rcategory);
+		}
+		
 		ArrayList<MwRecipeVO> list = new ArrayList();
-		List<Object> olist = recipeService.getListResult(startCount, endCount);
 		for(Object obj : olist) {
 			list.add((MwRecipeVO)obj);
 		}
 				
 		mv.addObject("list",list);
+		mv.addObject("rc",rcategory);
+		mv.addObject("dbCount", Integer.parseInt(param.get("dbCount")));
+		mv.addObject("pageSize", Integer.parseInt(param.get("pageSize")));
+		mv.addObject("reqPage", Integer.parseInt(param.get("reqPage")));	
+		
+		mv.setViewName("/review/recipe");	
+		
+		return mv;
+	}
+	
+	@RequestMapping(value="/recipe", method=RequestMethod.POST)
+	public ModelAndView recipeSerch(String rpage, String option) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		Map<String,String> param;
+		List<Object> olist;
+		
+		param = pageService.getPageResult(rpage, "recipe", recipeService, option);
+		
+		int startCount = Integer.parseInt(param.get("start"));
+		int endCount = Integer.parseInt(param.get("end"));
+		
+		olist = recipeService.getSearchListResult(startCount, endCount, option);
+		
+		ArrayList<MwRecipeVO> list = new ArrayList();
+		for(Object obj : olist) {
+			list.add((MwRecipeVO)obj);
+		}
+		
+		mv.addObject("list",list);
+		mv.addObject("rc",option);
 		mv.addObject("dbCount", Integer.parseInt(param.get("dbCount")));
 		mv.addObject("pageSize", Integer.parseInt(param.get("pageSize")));
 		mv.addObject("reqPage", Integer.parseInt(param.get("reqPage")));	
