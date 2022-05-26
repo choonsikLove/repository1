@@ -108,6 +108,12 @@ public class ReviewController {
 		
 		return mv;
 	}
+
+	@RequestMapping(value="/recipe_wish", method=RequestMethod.GET)
+	public String recipe_wish() {
+		
+		return "/review/recipe_insert";
+	}	
 	
 	@RequestMapping(value="/recipe_detail", method=RequestMethod.GET)
 	public ModelAndView recipe_detail(String rid, String rno, String category) {

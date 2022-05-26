@@ -9,6 +9,67 @@
 <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <link rel="stylesheet" href="http://localhost:9000/manwol/resources/css/recipe.css">
+<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery-3.6.0.js"></script>
+<style type="text/css">
+	.wish_list{
+		display: inline-block;
+		color: black;
+	}
+	.favorite{
+		font-size: 18px;
+		color: rgb(255, 255, 255);
+		text-shadow: -1px 0px rgb(0, 74, 152), 0px 1px rgb(0, 74, 152), 1px 0px rgb(0, 74, 152), 0px -1px rgb(0, 74, 152);
+	}
+	.favorite_count{
+		font-size: 15px;
+		color: rgb(0, 74, 152);
+	}
+</style>
+<script type="text/javascript">
+	$(()=>{
+		
+		$(".favorite").click(function(){
+			
+	 		var favorite = 1;
+			
+	 		if($("this").css("color") == "rgb(0, 74, 152)"){
+	 			favorite = -1;
+			}
+			
+			alert($("this").css("color"));
+			
+			if($("this").css("color") == "rgb(0, 74, 152)"){
+				$("this").css("color","rgb(255, 255, 255)");
+			}else{
+				$("this").css("color","rgb(0, 74, 152)");
+			}
+			
+			
+			
+			
+			
+			
+
+/* 		$.ajax({
+				url: "recipe_wish?wish="+favorite,
+				success: function(result){
+				}
+			})/ */
+			
+			
+			
+			
+			
+		}); 
+		
+		
+		
+		
+		
+		
+		
+	});
+</script>
 </head>
 <body>
 	<!-- header -->
@@ -162,11 +223,10 @@
 																<a href="http://localhost:9000/manwol/recipe_detail"> <strong>${vo.rcategory }</strong>&nbsp; &nbsp; <span>${vo.rtitle }</span></a>
 															</p>
 															<div class="wish_list">
-																<a href="#"> 
-																	<span class="material-symbols-outlined" style="font-size: 18px; color: #004a98">favorite</span>
-																	<span style="font-size: 15px; color: #004a98;">${vo.rfavorite }</span>
-																</a>
+																<a class='favorite'>&#10084;</a>
+																<a class='favorite_count'>${vo.rfavorite }</a>
 															</div>
+															<br>
 															<a href="http://localhost:9000/manwol/recipe_detail">
 																<img alt="moon"
 																	src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
