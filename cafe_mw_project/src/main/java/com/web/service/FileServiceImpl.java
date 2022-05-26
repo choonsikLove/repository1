@@ -104,10 +104,9 @@ public class FileServiceImpl {
 	}
 	
 	//상품의 서브파일들
-	public MwProductVO multiFileCheck(MwProductVO vo) {		
+public MwProductVO multiFileCheck(MwProductVO vo) {		
 		
 		if(vo != null) {
-			System.out.println("파일 수:" + vo.getFiles().length);
 			for(int i=0; i<5; i++) { 
 				
 				UUID uuid = UUID.randomUUID();	
@@ -119,17 +118,14 @@ public class FileServiceImpl {
 					if(!file.getOriginalFilename().equals("")) { //파일존재 하는 경우	
 						vo.getPfiles().add(file.getOriginalFilename());
 						vo.getPsfiles().add(uuid + "_" + file.getOriginalFilename());
-						System.out.println(i + "파일 있");
 					}else {
 						vo.getPfiles().add("");
 						vo.getPsfiles().add("");
-						System.out.println(i + "파일 없");
 					}
 					
 				} else {
 					vo.getPfiles().add("");
 					vo.getPsfiles().add("");
-					System.out.println("하이");
 				}
 			}
 			
@@ -140,39 +136,38 @@ public class FileServiceImpl {
 		return vo;
 	}
 	
-	public MwProductVO multiFileCheck2(MwProductVO vo) {		
-		
-		if(vo != null) {
-			System.out.println("파일 수:" + vo.getFiles().length);
-			for(int i=0; i<5; i++) { 
+public MwProductVO multiFileCheck2(MwProductVO vo) {		
+	
+	if(vo != null) {
+		for(int i=0; i<5; i++) { 
+			
+			UUID uuid = UUID.randomUUID();	
+			
+			if(i < vo.getFiles().length) { 
+				CommonsMultipartFile file = vo.getFiles()[i];
 				
-				UUID uuid = UUID.randomUUID();	
-				System.out.println(i);
+				if(!vo.getFiles()[0].isEmpty()) {
 				
-				if(i < vo.getFiles().length) { 
-					CommonsMultipartFile file = vo.getFiles()[i];
-					
 					if(!file.getOriginalFilename().equals("")) { //파일존재 하는 경우	
 						vo.getPfiles().add(file.getOriginalFilename());
 						vo.getPsfiles().add(uuid + "_" + file.getOriginalFilename());
-						System.out.println(i + "파일 있");
 					}else {
-						System.out.println(i + "파일 없");
+						System.out.println(i + "파일 없"); //지워도 됨.
 					}
-					
-				} else {
-					vo.getPfiles().add("");
-					vo.getPsfiles().add("");
-					System.out.println("하이");
+				
 				}
+				
+			} else {
+				vo.getPfiles().add("");
+				vo.getPsfiles().add("");
 			}
-			
-			
 		}
-				
-				
-		return vo;
+		
 	}
+			
+			
+	return vo;
+}
 	
 	
 	public void multiFileSave(MwProductVO vo, HttpServletRequest request) throws Exception{
@@ -295,4 +290,29 @@ public class FileServiceImpl {
 		}	
 	}
 	
+	public MwRecipeVO replyFileCheck(MwRecipeVO vo) {
+		UUID uuid = UUID.randomUUID();
+		
+		if(vo != null) {
+			if(!vo.getR_file().getOriginalFilename().equals("")) {
+				vo.setReply_file(vo.getR_file().getOriginalFilename());
+				vo.setReply_sfile(uuid+"_"+vo.getR_file().getOriginalFilename());
+			}
+		}
+		return vo;
+	}
+	
+	public void replyFileSave(MwRecipeVO vo, HttpServletRequest request) throws Exception {
+		
+		if(!vo.getR_file().getOriginalFilename().equals("")) {
+			
+			String path = request.getSession().getServletContext().getRealPath("/");
+			path += "resources\\upload\\";
+			
+			File file = new File(path+vo.getReply_sfile());
+			vo.getR_file().transferTo(file);
+			
+		}
+		
+	}
 }

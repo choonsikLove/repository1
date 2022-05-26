@@ -47,7 +47,7 @@
 							http://localhost:9000/manwol/resources/images/default_profile.png
 						</c:when>
 						<c:otherwise>
-							${vo.mprofile }
+							http://localhost:9000/manwol/resources/upload/${vo.msprofile }
 						</c:otherwise>
 					</c:choose>
 				">

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +9,8 @@
 <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <link rel="stylesheet" href="http://localhost:9000/manwol/resources/css/recipe.css">
+<script src="http://localhost:9000/manwol/resources/js/jquery-3.6.0.js"></script>
+<script src="http://localhost:9000/manwol/resources/js/recipe.js"></script>
 </head>
 <body>
 	<!-- header -->
@@ -22,7 +24,7 @@
 					<tr>
 						<td>
 							<div class="recipe_text">
-								<h3>보람달 뜨는 날, 금손들의 모임</h3>
+								<h3>보름달 뜨는 날, 금손들의 모임</h3>
 								<p>이렇게라도 활용이 가능하다고👀?</p>
 								<p>천재 고객님들이 만월회 원액으로 만든 레시피를 소개합니다.</p>
 							</div>
@@ -55,10 +57,65 @@
 										<td>
 											<div>
 												<p style="margin-bottom: 20px; margin-top: 30px;">
-													<a href="http://localhost:9000/manwol/recipe10" style="font-size: 16px; color: #0042A9">${vo.rcategory }&nbsp;</a> 
+												<c:choose>
+													<c:when test="${vo.rcategory == '밀크티' }">
+														<a href="http://localhost:9000/manwol/recipe1" style="font-size: 16px; color: #0042A9">
+															밀크티&nbsp;
+														</a> 
+													</c:when>
+													<c:when test="${vo.rcategory == '말차' }">
+														<a href="http://localhost:9000/manwol/recipe2" style="font-size: 16px; color: #0042A9">
+															말차&nbsp;
+														</a> 
+													</c:when>
+													<c:when test="${vo.rcategory == '악마초코' }">
+														<a href="http://localhost:9000/manwol/recipe3" style="font-size: 16px; color: #0042A9">
+															악마초코&nbsp;
+														</a> 
+													</c:when>
+													<c:when test="${vo.rcategory == '단호박' }">
+														<a href="http://localhost:9000/manwol/recipe4" style="font-size: 16px; color: #0042A9">
+															단호박&nbsp;
+														</a> 
+													</c:when>
+													<c:when test="${vo.rcategory == '민트초코' }">
+														<a href="http://localhost:9000/manwol/recipe5" style="font-size: 16px; color: #0042A9">
+															민트초코&nbsp;
+														</a> 
+													</c:when>
+													<c:when test="${vo.rcategory == '흑임자' }">
+														<a href="http://localhost:9000/manwol/recipe6" style="font-size: 16px; color: #0042A9">
+															흑임자&nbsp;
+														</a> 
+													</c:when>
+													<c:when test="${vo.rcategory == '쑥' }">
+														<a href="http://localhost:9000/manwol/recipe7" style="font-size: 16px; color: #0042A9">
+															쑥&nbsp;
+														</a> 
+													</c:when>
+													<c:when test="${vo.rcategory == '그린티초코' }">
+														<a href="http://localhost:9000/manwol/recipe8" style="font-size: 16px; color: #0042A9">
+															그린티초코&nbsp;
+														</a> 
+													</c:when>
+													<c:when test="${vo.rcategory == '자몽샤워' }">
+														<a href="http://localhost:9000/manwol/recipe9" style="font-size: 16px; color: #0042A9">
+															자몽샤워&nbsp;
+														</a> 
+													</c:when>
+													<c:otherwise>
+														<a href="http://localhost:9000/manwol/recipe10" style="font-size: 16px; color: #0042A9">
+															리얼딸기&nbsp;
+														</a> 
+													</c:otherwise>
+												</c:choose>
 													${vo.rtitle }
 												</p>	
-												<p style="margin-bottom: 1px;"><a href="http://localhost:9000/manwol/recipe"><small>레시피북</small></a></p>	
+												<p style="margin-bottom: 1px;">
+													<a href="http://localhost:9000/manwol/recipe">
+														<small>레시피북</small>
+													</a>
+												</p>	
 											</div>		
 										</td>
 									</tr>	
@@ -72,39 +129,49 @@
 								<table class="c2">
 									<tr>
 										<td>
+											<hr>
 											<div style="margin-top: 50px;">
-											
-												<img alt="리얼딸기1"
-													src="http://localhost:9000/manwol/resources/upload/${vo.rsfile1 }">
-												<br>
-												${vo.rcontent }
-												<br>
-												
-												
-												
-												
+												<div>
+													${vo.rcontent }
+												</div>
 												<p>
 													<span class="material-symbols-outlined"
-														style="font-size: 20px;">favorite</span>${vo.rfavorite }&emsp; <span
-														class="material-symbols-outlined" style="font-size: 20px">chat_bubble</span>0
+														style="font-size: 20px;">favorite</span>
+													<span>2&emsp;</span>	
+													<span class="material-symbols-outlined" style="font-size: 20px">chat_bubble</span>
+													<span id="reply_count">${reply_list.size() }</span>
 												</p>
 											</div>
 	
 											<div class="commentchang">
-												<div class="detail_input">
-													<textarea class="comment" placeholder="댓글을 남겨 주세요"></textarea>
-												</div>
-												<div>
-													<div class="image-upload" style="display: flex;">
-														<label class="filebutton"> <img
-															src="http://localhost:9000/manwol/resources/images/review/image.png" />
-															<span><input type="file" id="myfile" name="myfile"></span>
-														</label>
+												<p>댓글</p>
+												<ul class="reply_ul">
+													<c:forEach var="reply" items="${reply_list}">
+														<li class="reply_li">
+															<p>${reply.reply_content }</p>
+															<c:if test="${reply.reply_sfile != null }">
+																<img src="http://localhost:9000/manwol/resources/upload/${reply.reply_sfile }" width='100px' height='100px'>
+															</c:if>
+														</li>
+													</c:forEach>
+												</ul>
+												<form id="fform" method="post" enctype="multipart/form-data">
+													<div class="detail_input">
+														<input type="hidden" value="${vo.rid }" name="f_id">
+														<textarea class="comment" placeholder="댓글을 남겨 주세요" name="reply_content"></textarea>
 													</div>
-													<div style="float: right; margin-left: 10%;">
-														<button type="submit" class="w_btn">작성</button>
+													<div>
+														<div class="image-upload" style="display: flex;">
+															<label class="filebutton" for="myfile"> 
+																<img src="http://localhost:9000/manwol/resources/images/review/image.png" />
+															</label>
+															<input type="file" id="myfile" name="r_file" style="visibility: hidden;">
+														</div>
+														<div style="float: right; margin-left: 10%;">
+															<button type="button" class="w_btn">작성</button>
+														</div>
 													</div>
-												</div>
+												</form>
 											</div>
 										</td>
 									</tr>	

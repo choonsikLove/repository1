@@ -68,4 +68,35 @@
 			) where rno between #{start} and #{end}
 	</select>
 	
+	<select id="content" parameterType="java.lang.String" resultType="com.web.vo.MwRecipeVO">
+		select rid, rcategory, rtitle, rcontent, rfavorite
+		from mw_recipe
+		where rid = #{rid}
+	</select>
+
+	<insert id="insert_reply" parameterType="com.web.vo.MwRecipeVO">
+		insert into mw_recipe_reply
+		<choose>
+			<when test="reply_sfile != null">
+				values('reply_'||sequ_mw_recipe_reply.nextval, #{f_id}, #{reply_content}, sysdate, #{reply_file}, #{reply_sfile})
+			</when>
+			<otherwise>
+				values('reply_'||sequ_mw_recipe_reply.nextval, #{f_id}, #{reply_content}, sysdate, null, null)
+			</otherwise>
+		</choose>
+	</insert>
+	
+	<select id="select_replies" parameterType="java.lang.String" resultType="com.web.vo.MwRecipeVO">
+		select rid, reply_content, reply_sfile
+		from mw_recipe mw, mw_recipe_reply mwr
+		where mw.rid = mwr.f_id and rid = #{rid}
+		order by reply_date asc
+	</select>
+	
+	
+	<select id="select_reply_sfile" resultType="java.lang.String">
+		select reply_sfile from (select reply_sfile from mw_recipe_reply order by reply_date desc) 
+		where rownum =1
+	</select>
+	
 </mapper>    

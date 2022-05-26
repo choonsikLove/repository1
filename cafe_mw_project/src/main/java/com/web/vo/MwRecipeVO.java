@@ -17,6 +17,53 @@ public class MwRecipeVO {
 	List<String> rfiles = new ArrayList();
 	List<String> rsfiles = new ArrayList();
 	
+	String reply_id, f_id, reply_content, reply_date, reply_file, reply_sfile;
+	CommonsMultipartFile r_file;
+	
+	
+	
+	public String getReply_id() {
+		return reply_id;
+	}
+	public void setReply_id(String reply_id) {
+		this.reply_id = reply_id;
+	}
+	public String getF_id() {
+		return f_id;
+	}
+	public void setF_id(String f_id) {
+		this.f_id = f_id;
+	}
+	public String getReply_content() {
+		return reply_content;
+	}
+	public void setReply_content(String reply_content) {
+		this.reply_content = reply_content;
+	}
+	public String getReply_date() {
+		return reply_date;
+	}
+	public void setReply_date(String reply_date) {
+		this.reply_date = reply_date;
+	}
+	public String getReply_file() {
+		return reply_file;
+	}
+	public void setReply_file(String reply_file) {
+		this.reply_file = reply_file;
+	}
+	public String getReply_sfile() {
+		return reply_sfile;
+	}
+	public void setReply_sfile(String reply_sfile) {
+		this.reply_sfile = reply_sfile;
+	}
+	public CommonsMultipartFile getR_file() {
+		return r_file;
+	}
+	public void setR_file(CommonsMultipartFile r_file) {
+		this.r_file = r_file;
+	}
 	public int getRfavorite() {
 		return rfavorite;
 	}

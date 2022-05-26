@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.web.service.FileServiceImpl;
@@ -113,10 +114,12 @@ public class ReviewController {
 		ModelAndView mv = new ModelAndView();
 		
 		MwRecipeVO vo = (MwRecipeVO)recipeService.getContent(rid);
+		List<MwRecipeVO> reply_list = recipeService.getReplyContentResult(rid);
 		
 		mv.addObject("vo", vo);
 		mv.addObject("rno", rno);
 		mv.addObject("category", category);
+		mv.addObject("reply_list",reply_list);
 		
 		mv.setViewName("/review/recipe_detail");
 	  return mv;
@@ -142,6 +145,18 @@ public class ReviewController {
 		
 		return mv;
 	}
-
+	
+	@ResponseBody
+	@RequestMapping(value="/recipe_reply", method=RequestMethod.POST)
+	public String recipe_reply(MwRecipeVO vo, HttpServletRequest request) throws Exception {
+	
+		vo = fileService.replyFileCheck(vo);
+		
+		String result = recipeService.getReplyInsertResult(vo);
+		
+		fileService.replyFileSave(vo, request);
+		
+		return result;
+	}
 }
    

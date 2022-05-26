@@ -20,8 +20,10 @@ import com.web.service.FileServiceImpl;
 import com.web.service.MwMemberServiceImpl;
 import com.web.service.MwPageServiceImpl;
 import com.web.service.MwProductServiceImpl;
+import com.web.service.MwRecipeServiceImpl;
 import com.web.vo.MwMemberVO;
 import com.web.vo.MwProductVO;
+import com.web.vo.MwRecipeVO;
 
 @Controller
 public class AdminController {
@@ -38,6 +40,8 @@ public class AdminController {
 	@Autowired
 	private FileServiceImpl fileService;
 	
+	@Autowired
+	private MwRecipeServiceImpl recipeService;
 	
 	@RequestMapping(value="/admin", method=RequestMethod.GET)
 	public String admin() {
@@ -324,8 +328,30 @@ public class AdminController {
 	}
 	 
 	@RequestMapping(value="/admin/recipe_detail", method=RequestMethod.GET)
-	public String recipe_detail() { 
-		return "/admin/review/recipe_detail"; 
+	public ModelAndView recipe_detail(String rid) {
+	      ModelAndView mv = new ModelAndView();
+	      
+	      MwRecipeVO vo = (MwRecipeVO)recipeService.getContentResult(rid);
+	      List<MwRecipeVO> reply_list = recipeService.getReplyContentResult(rid);
+	      
+	      mv.addObject("vo",vo);
+	      mv.addObject("reply_list",reply_list);
+	      mv.setViewName("/review/recipe_detail");
+	      
+	      return mv;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="/admin/recipe_reply", method=RequestMethod.POST)
+	public String recipe_reply(MwRecipeVO vo, HttpServletRequest request) throws Exception {
+		
+		vo = fileService.replyFileCheck(vo);
+		
+		String result = recipeService.getReplyInsertResult(vo);
+		
+		fileService.replyFileSave(vo, request);
+		
+		return result;
 	}
 	 
 	//¡÷πÆ

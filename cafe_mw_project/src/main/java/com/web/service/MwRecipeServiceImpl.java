@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.web.dao.MwRecipeDAO;
+import com.web.vo.MwRecipeVO;
 
 public class MwRecipeServiceImpl extends MwObjectServiceAdapter{
 	
@@ -53,5 +54,12 @@ public class MwRecipeServiceImpl extends MwObjectServiceAdapter{
 		return recipeDao.selectSearch(startCount, endCount, keyword);
 	}	
 
+	public String getReplyInsertResult(MwRecipeVO vo) {
+		return recipeDao.insertReply(vo);
+	}
+	
+	public List<MwRecipeVO> getReplyContentResult(String rid) {
+		return recipeDao.selectReplies(rid);
+	}
 	
 }

@@ -105,6 +105,20 @@ public class MwRecipeDAO implements MwObjectDAO{
 		return sqlSession.selectList(namespace+".search", param);
 	}
 	
+	public String insertReply(MwRecipeVO vo) {
+		int result = sqlSession.insert(namespace+".insert_reply", vo);
+		String reply_sfile = "";
+		
+		if(result == 1 && vo.getReply_sfile() != null) {
+			reply_sfile = sqlSession.selectOne(namespace + ".select_reply_sfile");
+		}
+		
+		
+		return reply_sfile;
+	}
 	
+	public List<MwRecipeVO> selectReplies(String rid){
+		return sqlSession.selectList(namespace + ".select_replies", rid);
+	}
 
 }

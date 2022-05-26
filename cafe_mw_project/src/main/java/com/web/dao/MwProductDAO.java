@@ -53,8 +53,7 @@ public class MwProductDAO implements MwObjectDAO{
 		MwProductVO vo = (MwProductVO)obj;
 		result = sqlSession.update(namespace + ".update", vo);
 		
-		if(result == 1 && vo.getFiles().length != 1) {
-			//¿ÖÂ°¼­,,,
+		if(result == 1 && !vo.getFiles()[0].isEmpty()) {
 			Map map = new HashMap<String, String>();
 			map.put("pfile1", vo.getPfiles().get(0));
 			map.put("pfile2", vo.getPfiles().get(1));
@@ -73,6 +72,7 @@ public class MwProductDAO implements MwObjectDAO{
 		
 		return result;
 	}
+	
 	
 	public int delete(String pnum) {
 		return sqlSession.delete(namespace + ".delete", pnum);
