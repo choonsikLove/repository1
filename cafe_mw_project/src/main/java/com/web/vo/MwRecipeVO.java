@@ -20,8 +20,32 @@ public class MwRecipeVO {
 	String reply_id, f_id, reply_content, reply_date, reply_file, reply_sfile;
 	CommonsMultipartFile r_file;
 	
+	String pre_id, pre_title, next_id, next_title;
 	
-	
+	public String getPre_id() {
+		return pre_id;
+	}
+	public void setPre_id(String pre_id) {
+		this.pre_id = pre_id;
+	}
+	public String getPre_title() {
+		return pre_title;
+	}
+	public void setPre_title(String pre_title) {
+		this.pre_title = pre_title;
+	}
+	public String getNext_id() {
+		return next_id;
+	}
+	public void setNext_id(String next_id) {
+		this.next_id = next_id;
+	}
+	public String getNext_title() {
+		return next_title;
+	}
+	public void setNext_title(String next_title) {
+		this.next_title = next_title;
+	}
 	public String getReply_id() {
 		return reply_id;
 	}

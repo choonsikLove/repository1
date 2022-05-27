@@ -97,3 +97,12 @@ body,html{
 	  'opsz' 30
 		}
 
+.product_detail_price{
+	color: #0042A9;
+	font-size: 12pt;
+}
+
+.former_price{
+	text-decoration: line-through;
+	font-size: 9pt;
+}

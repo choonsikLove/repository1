@@ -104,7 +104,7 @@ public class FileServiceImpl {
 	}
 	
 	//상품의 서브파일들
-public MwProductVO multiFileCheck(MwProductVO vo) {		
+	public MwProductVO multiFileCheck(MwProductVO vo) {		
 		
 		if(vo != null) {
 			for(int i=0; i<5; i++) { 
@@ -136,39 +136,39 @@ public MwProductVO multiFileCheck(MwProductVO vo) {
 		return vo;
 	}
 	
-public MwProductVO multiFileCheck2(MwProductVO vo) {		
-	
-	if(vo != null) {
-		for(int i=0; i<5; i++) { 
-			
-			UUID uuid = UUID.randomUUID();	
-			
-			if(i < vo.getFiles().length) { 
-				CommonsMultipartFile file = vo.getFiles()[i];
-				
-				if(!vo.getFiles()[0].isEmpty()) {
-				
-					if(!file.getOriginalFilename().equals("")) { //파일존재 하는 경우	
-						vo.getPfiles().add(file.getOriginalFilename());
-						vo.getPsfiles().add(uuid + "_" + file.getOriginalFilename());
-					}else {
-						System.out.println(i + "파일 없"); //지워도 됨.
-					}
-				
-				}
-				
-			} else {
-				vo.getPfiles().add("");
-				vo.getPsfiles().add("");
-			}
-		}
+	public MwProductVO multiFileCheck2(MwProductVO vo) {		
 		
+		if(vo != null) {
+			for(int i=0; i<5; i++) { 
+				
+				UUID uuid = UUID.randomUUID();	
+				
+				if(i < vo.getFiles().length) { 
+					CommonsMultipartFile file = vo.getFiles()[i];
+					
+					if(!vo.getFiles()[0].isEmpty()) {
+					
+						if(!file.getOriginalFilename().equals("")) { //파일존재 하는 경우	
+							vo.getPfiles().add(file.getOriginalFilename());
+							vo.getPsfiles().add(uuid + "_" + file.getOriginalFilename());
+						}else {
+							System.out.println(i + "파일 없"); //지워도 됨.
+						}
+					
+					}
+					
+				} else {
+					vo.getPfiles().add("");
+					vo.getPsfiles().add("");
+				}
+			}
+			
+		}
+				
+				
+		return vo;
 	}
-			
-			
-	return vo;
-}
-	
+		
 	
 	public void multiFileSave(MwProductVO vo, HttpServletRequest request) throws Exception{
 		
@@ -314,5 +314,20 @@ public MwProductVO multiFileCheck2(MwProductVO vo) {
 			
 		}
 		
+	}
+	
+	public void deleteMultipleFiles(MwRecipeVO vo, HttpServletRequest request, List<String> old_files) {
+		if(old_files != null) {
+			for(String old_file : old_files) {
+				String path = request.getSession().getServletContext().getRealPath("/");
+				path += "resources\\upload\\";
+				
+				File file = new File(path + old_file);
+				if(file.exists()) {
+					file.delete();
+				}
+				
+			}
+		}
 	}
 }

@@ -19,7 +19,20 @@ public class MwRecipeServiceImpl extends MwObjectServiceAdapter{
 	
 	@Override
 	public Object getContent(String rid) {
-		return recipeDao.select(rid);
+		MwRecipeVO vo = (MwRecipeVO)recipeDao.select(rid);
+		MwRecipeVO vo2 = recipeDao.selectPreNextContent(rid);
+		
+		if(vo2.getPre_id() != null) {
+			vo.setPre_id(vo2.getPre_id());
+			vo.setPre_title(vo2.getPre_title());
+		}
+		
+		if(vo2.getNext_id() != null) {
+			vo.setNext_id(vo2.getNext_id());
+			vo.setNext_title(vo2.getNext_title());
+		}
+		
+		return vo;
 	}
 	
 	@Override
@@ -62,4 +75,8 @@ public class MwRecipeServiceImpl extends MwObjectServiceAdapter{
 		return recipeDao.selectReplies(rid);
 	}
 	
+	@Override
+	public int getDeleteResult(String rid) {
+		return recipeDao.delete(rid);
+	}
 }

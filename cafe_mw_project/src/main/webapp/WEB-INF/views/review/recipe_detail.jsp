@@ -35,16 +35,16 @@
 							<div>
 								<ul class="category">
 									<li class="category_line"><a href="http://localhost:9000/manwol/recipe"><span>ALL</span></a></li>
-									<li><a href="http://localhost:9000/manwol/recipe1"><span>밀크티</span></a></li>
-									<li><a href="http://localhost:9000/manwol/recipe2"><span>말차</span></a></li>
-									<li><a href="http://localhost:9000/manwol/recipe3"><span>악마초코</span></a></li>
-									<li><a href="http://localhost:9000/manwol/recipe4"><span>단호박</span></a></li>
-									<li><a href="http://localhost:9000/manwol/recipe5"><span>민트초코</span></a></li>
-									<li><a href="http://localhost:9000/manwol/recipe6"><span>흑임자</span></a></li>
-									<li><a href="http://localhost:9000/manwol/recipe7"><span>쑥</span></a></li>
-									<li><a href="http://localhost:9000/manwol/recipe8"><span>그린티초코</span></a></li>
-									<li><a href="http://localhost:9000/manwol/recipe9"><span>자몽샤워</span></a></li>
-									<li><a href="http://localhost:9000/manwol/recipe10"><span>리얼딸기</span></a></li>
+									<li><a href="http://localhost:9000/manwol/recipe?rcategory=밀크티"><span>밀크티</span></a></li>
+									<li><a href="http://localhost:9000/manwol/recipe?rcategory=말차"><span>말차</span></a></li>
+									<li><a href="http://localhost:9000/manwol/recipe?rcategory=악마초코"><span>악마초코</span></a></li>
+									<li><a href="http://localhost:9000/manwol/recipe?rcategory=단호박"><span>단호박</span></a></li>
+									<li><a href="http://localhost:9000/manwol/recipe?rcategory=민트초코"><span>민트초코</span></a></li>
+									<li><a href="http://localhost:9000/manwol/recipe?rcategory=흑임자"><span>흑임자</span></a></li>
+									<li><a href="http://localhost:9000/manwol/recipe?rcategory=쑥"><span>쑥</span></a></li>
+									<li><a href="http://localhost:9000/manwol/recipe?rcategory=그린티초코"><span>그린티초코</span></a></li>
+									<li><a href="http://localhost:9000/manwol/recipe?rcategory=자몽샤워"><span>자몽샤워</span></a></li>
+									<li><a href="http://localhost:9000/manwol/recipe?rcategory=리얼딸기"><span>리얼딸기</span></a></li>
 								</ul>
 							</div>
 						</td>
@@ -132,7 +132,23 @@
 											<hr>
 											<div style="margin-top: 50px;">
 												<div>
-													${vo.rcontent }
+													<img src="http://localhost:9000/manwol/resources/upload/${vo.rsfile1}">
+													<p>${vo.rcontent }</p>
+													<c:if test="${vo.rsfile2 != null}">
+														<img src="http://localhost:9000/manwol/resources/upload/${vo.rsfile2}">
+													</c:if>
+													<c:if test="${vo.rsfile3 != null}">
+														<img src="http://localhost:9000/manwol/resources/upload/${vo.rsfile3}">
+													</c:if>
+													<c:if test="${vo.rsfile4 != null}">
+														<img src="http://localhost:9000/manwol/resources/upload/${vo.rsfile4}">
+													</c:if>
+													<c:if test="${vo.rsfile5 != null}">
+														<img src="http://localhost:9000/manwol/resources/upload/${vo.rsfile5}">
+													</c:if>
+													<c:if test="${vo.rsfile6 != null}">
+														<img src="http://localhost:9000/manwol/resources/upload/${vo.rsfile6}">
+													</c:if>
 												</div>
 												<p>
 													<span class="material-symbols-outlined"
@@ -186,7 +202,16 @@
 									<tr>	
 										<td>
 											<div style="margin-top: 5px; margin-bottom: 5px;">
-												<a>∧&emsp;악마초코 트리플초코스콘</a>
+												<c:choose>
+													<c:when test="${vo.next_id != null }">
+														<a href="http://localhost:9000/manwol/recipe_detail?rid=${vo.next_id }">
+															∧&emsp;${vo.next_title }
+														</a>
+													</c:when>
+													<c:otherwise>
+														∧&emsp;다음 글이 없습니다.
+													</c:otherwise>
+												</c:choose>
 											</div>
 										</td>
 									</tr>										
@@ -201,7 +226,16 @@
 									<tr>	
 										<td>
 											<div style="margin-top: 5px; margin-bottom: 5px;">
-												<a>∨&emsp;슈렉라떼(말차에 밀크티 추가)</a>
+												<c:choose>
+													<c:when test="${vo.pre_id != null }">
+														<a href="http://localhost:9000/manwol/recipe_detail?rid=${vo.pre_id }">
+															∨&emsp;${vo.pre_title }
+														</a>
+													</c:when>
+													<c:otherwise>
+														∨&emsp;이전 글이 없습니다.
+													</c:otherwise>
+												</c:choose>
 											</div>
 										</td>
 									</tr>
@@ -216,14 +250,18 @@
 									<tr>
 										<td>
 											<div>		
-												<button class="list_btn">목록</button>
+												<a href="http://localhost:9000/manwol/recipe">
+													<button class="list_btn">목록</button>
+												</a>
 											</div>
 										</td>
 									</tr>	
 									<tr>		
 										<td>
-											<div>		
-												<button class="write_btn">글쓰기</button>
+											<div>	
+												<a href='recipe_insert'>	
+													<button class="write_btn">글쓰기</button>
+												</a>
 											</div>
 										</td>
 									</tr>	

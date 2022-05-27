@@ -2,18 +2,61 @@ $(document).ready(function(){
 
  	$('.deleteRecipe').click(function(){
  		var choice = confirm("삭제하시겠습니까?");
+ 		var rid = $(this).next().val();
  		
  		if(choice){
- 			$(this).siblings().remove();
- 			$(this).remove();
- 			//$(this).parent().remove();
+ 			$.ajax({
+				type:'POST',
+				async: true,
+				data: {"rid" : rid
+				},
+				url:"recipe_to_delete",
+				dataType: "text",
+				success : function(data) {
+					var info = jQuery.parseJSON(data);
+					var rsfile1 = info.rsfile1;
+					var rsfile2 = info.rsfile2;
+					var rsfile3 = info.rsfile3;
+					var rsfile4 = info.rsfile4;
+					var rsfile5 = info.rsfile5;
+					var rsfile6 = info.rsfile6;
+					
+					
+						$.ajax({
+							type:'POST',
+							async: true,
+							data: {"rid": rid,
+							"rsfile1" : rsfile1,
+							"rsfile2" : rsfile2,
+							"rsfile3" : rsfile3,
+							"rsfile4" : rsfile4,
+							"rsfile5" : rsfile5,
+							"rsfile6" : rsfile6
+							},
+							url:"recipe_delete",
+							dataType: "text",
+							success : function(result) {
+								if(result == 1){
+									alert("삭제되었습니다");
+									location.href = "http://localhost:9000/manwol/admin/recipe";
+								}
+							},
+							error: function() {
+								alert("에러");
+							}
+						});
+				},
+				error: function(data) {
+					alert("에러");
+				}
+			});
+ 			
+			
+ 		
+			
  		} 
  	});
  	
- 	
- 	$('.hideRecipe').click(function(){
- 		alert("레시피 숨김기능");
- 	});
  	
  	$('.review_mini').mouseover(function(){
  		$(this).css('background','#dedede');
@@ -27,17 +70,10 @@ $(document).ready(function(){
  		var choice = confirm("삭제하시겠습니까?");
  		
  		if(choice){
- 			$(this).parent().remove();
+ 			//아직 리뷰가 없음!
  		} 
  	});
  	
- 	$('.hideReview').click(function(){
- 		var choice = confirm("숨김 처리하시겠습니까?");
- 		
- 		if(choice){
- 			alert("숨김 처리 기능 넣기");
- 		} 
- 	});
  	
  	$('#baseBox').mouseenter(function(){
  		$('#baseTypes').css('visibility','visible');

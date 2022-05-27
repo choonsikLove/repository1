@@ -16,7 +16,6 @@ public class MwRecipeDAO implements MwObjectDAO{
 	
 	private String namespace = "mapper.recipe";
 
-	//상품 등록 : insert
 	@Override
 	public int insert(Object obj) {
 		// TODO Auto-generated method stub
@@ -74,9 +73,8 @@ public class MwRecipeDAO implements MwObjectDAO{
 	}
 
 	@Override
-	public int delete(String id) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int delete(String rid) {
+		return sqlSession.delete(namespace+".delete", rid);
 	}
 
 	@Override
@@ -120,5 +118,10 @@ public class MwRecipeDAO implements MwObjectDAO{
 	public List<MwRecipeVO> selectReplies(String rid){
 		return sqlSession.selectList(namespace + ".select_replies", rid);
 	}
-
+	
+	public MwRecipeVO selectPreNextContent(String rid){
+		MwRecipeVO vo = sqlSession.selectOne(namespace + ".select_pre_next_content", rid);
+		
+		return vo;
+	}
 }

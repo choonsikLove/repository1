@@ -215,19 +215,22 @@
 												</c:if>
 													<td>
 														<div class="contents1">
-															<a href="http://localhost:9000/manwol/recipe_detail?rid=${vo.rid }&rpage=${rpage}&rno=${rno}"> 
+															<a href="http://localhost:9000/manwol/recipe_detail?rid=${vo.rid }"> 
 																<img src="http://localhost:9000/manwol/resources/upload/${vo.rsfile1 }"
 																height="400px" width="400px">
 															</a>
 															<p class="contents_name">
-																<a href="http://localhost:9000/manwol/recipe_detail"> <strong>${vo.rcategory }</strong>&nbsp; &nbsp; <span>${vo.rtitle }</span></a>
+																<a href="http://localhost:9000/manwol/recipe_detail?rid=${vo.rid }"> 
+																	<strong>${vo.rcategory }</strong>&nbsp; &nbsp; 
+																	<span>${vo.rtitle }</span>
+																</a>
 															</p>
 															<div class="wish_list">
 																<a class='favorite'>&#10084;</a>
 																<a class='favorite_count'>${vo.rfavorite }</a>
 															</div>
 															<br>
-															<a href="http://localhost:9000/manwol/recipe_detail">
+															<a href="http://localhost:9000/manwol/recipe_detail?rid=${vo.rid }">
 																<img alt="moon"
 																	src="http://localhost:9000/manwol/resources/images/review/moon.jpg"
 																	width="38px" class="moon">

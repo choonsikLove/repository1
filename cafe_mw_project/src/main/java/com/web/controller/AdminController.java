@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.web.service.FileServiceImpl;
 import com.web.service.MwMemberServiceImpl;
 import com.web.service.MwPageServiceImpl;
@@ -323,8 +324,69 @@ public class AdminController {
 	}
 	 
 	@RequestMapping(value="/admin/recipe", method=RequestMethod.GET) 
-	public String recipe() { 
-		return "/admin/review/recipe"; 
+	public ModelAndView recipe(String rpage, String rcategory) {
+		ModelAndView mv = new ModelAndView();
+		Map<String,String> param;
+		List<Object> olist;
+		
+		if(rcategory == null) {
+			param = pageService.getPageResult(rpage, "recipe", recipeService);
+		}else {
+			param = pageService.getPageResult(rpage, "recipe", recipeService, rcategory);
+		}
+		
+		int startCount = Integer.parseInt(param.get("start"));
+		int endCount = Integer.parseInt(param.get("end"));
+		
+		if(rcategory == null) {
+			olist = recipeService.getListResult(startCount, endCount);
+		}else {
+			olist = recipeService.getListResult(startCount, endCount, rcategory);
+		}
+		
+		ArrayList<MwRecipeVO> list = new ArrayList();
+		for(Object obj : olist) {
+			list.add((MwRecipeVO)obj);
+		}
+				
+		mv.addObject("list",list);
+		mv.addObject("rc",rcategory);
+		mv.addObject("dbCount", Integer.parseInt(param.get("dbCount")));
+		mv.addObject("pageSize", Integer.parseInt(param.get("pageSize")));
+		mv.addObject("reqPage", Integer.parseInt(param.get("reqPage")));	
+		
+		mv.setViewName("/admin/review/recipe");	
+		
+		return mv;
+	}
+	
+	@RequestMapping(value="/admin/recipe", method=RequestMethod.POST)
+	public ModelAndView recipeSerch(String rpage, String option) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		Map<String,String> param;
+		List<Object> olist;
+		
+		param = pageService.getPageResult(rpage, "recipe", recipeService, option);
+		
+		int startCount = Integer.parseInt(param.get("start"));
+		int endCount = Integer.parseInt(param.get("end"));
+		
+		olist = recipeService.getSearchListResult(startCount, endCount, option);
+		
+		ArrayList<MwRecipeVO> list = new ArrayList();
+		for(Object obj : olist) {
+			list.add((MwRecipeVO)obj);
+		}
+		
+		mv.addObject("list",list);
+		mv.addObject("rc",option);
+		mv.addObject("dbCount", Integer.parseInt(param.get("dbCount")));
+		mv.addObject("pageSize", Integer.parseInt(param.get("pageSize")));
+		mv.addObject("reqPage", Integer.parseInt(param.get("reqPage")));	
+		
+		mv.setViewName("/admin/review/recipe");	
+		
+		return mv;
 	}
 	 
 	@RequestMapping(value="/admin/recipe_detail", method=RequestMethod.GET)
@@ -352,6 +414,37 @@ public class AdminController {
 		fileService.replyFileSave(vo, request);
 		
 		return result;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="/admin/recipe_to_delete", method=RequestMethod.POST, produces = "application/json; charset=utf8")
+	public String recipe_to_delete(String rid) throws Exception{
+		MwRecipeVO vo = (MwRecipeVO)recipeService.getContent(rid);
+		ObjectMapper mapper = new ObjectMapper();
+		String jsonifiedVO = mapper.writeValueAsString(vo);
+		
+		return jsonifiedVO;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="/admin/recipe_delete", method=RequestMethod.POST)
+	public String recipe_delete(MwRecipeVO vo, HttpServletRequest request) throws Exception {
+		List<String> old_files = new ArrayList<String>();
+		old_files.add(vo.getRsfile1());
+		old_files.add(vo.getRsfile2());
+		old_files.add(vo.getRsfile3());
+		old_files.add(vo.getRsfile4());
+		old_files.add(vo.getRsfile5());
+		old_files.add(vo.getRsfile6());
+		
+		int result = recipeService.getDeleteResult(vo.getRid());
+		
+		if(result == 1) {
+			fileService.deleteMultipleFiles(vo, request, old_files);
+			System.out.println("레시피북 이미지 삭제 처리");
+		}
+		
+		return String.valueOf(result);
 	}
 	 
 	//주문
