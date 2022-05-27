@@ -393,7 +393,7 @@ public class AdminController {
 	public ModelAndView recipe_detail(String rid) {
 	      ModelAndView mv = new ModelAndView();
 	      
-	      MwRecipeVO vo = (MwRecipeVO)recipeService.getContentResult(rid);
+	      MwRecipeVO vo = (MwRecipeVO)recipeService.getContent(rid);
 	      List<MwRecipeVO> reply_list = recipeService.getReplyContentResult(rid);
 	      
 	      mv.addObject("vo",vo);
