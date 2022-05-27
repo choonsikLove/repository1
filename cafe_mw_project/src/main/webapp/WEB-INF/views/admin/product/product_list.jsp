@@ -61,7 +61,7 @@
             </c:if>
                <td>
                  <div class="contents1">
-                  	<a href="http://localhost:9000/manwol/product_detail?pnum=${vo.pnum }">
+                  	<a href="http://localhost:9000/manwol/admin/product_detail?pnum=${vo.pnum }">
                     	<img height="400px" width="400px" src="http://localhost:9000/manwol/resources/upload/${vo.pmainsfile}">
                     </a> 
                     <p>
