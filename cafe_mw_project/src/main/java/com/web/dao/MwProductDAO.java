@@ -23,14 +23,38 @@ public class MwProductDAO implements MwObjectDAO{
 		return sqlSession.selectOne(namespace+".content", pnum);
 	}
 	
+	
+	@Override
+	public int selectTotal() {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne(namespace+".count");
+	}
+
+	public int selectTotal(String pcategory) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne(namespace+".countCategory", pcategory);
+	}
+	
+	
+	
 	@Override
 	public List<Object> select(int startCount, int endCount){
-		Map param = new HashMap<String, String>();
+		Map param = new HashMap<Integer, Integer>();
 		param.put("start", startCount);
 		param.put("end", endCount);
 		
-		return sqlSession.selectList(namespace+".select", param);
+		return sqlSession.selectList(namespace+".list", param);
 	}
+	
+	  
+	   public List<Object> select(int startCount, int endCount, String pcategory) {
+	      Map param = new HashMap<Integer, Object>();
+	      param.put("start", startCount);
+	      param.put("end", endCount);
+	      param.put("pcategory", pcategory);
+	      return sqlSession.selectList(namespace+".listCategory", param);
+	   }
+	
 	
 	@Override
 	public int insert(Object obj) {
@@ -82,12 +106,13 @@ public class MwProductDAO implements MwObjectDAO{
 	public int execTotalCount() {return 0;}
 	public String selectFile(String id) {return "";}
 
-
+	/*
 	@Override
 	public int selectTotal() {
 		System.out.println("4. DAO/selectTotal");
 	return sqlSession.selectOne(namespace+".count");
 	}
+	*/
 
 	@Override
 	public int selectSearchTotal(String keyword, String option) {

@@ -44,6 +44,34 @@
 		where mw.pnum = mwf.fnum and mw.pnum = #{pnum}
 	</select>
 	
+	
+	<select id="count" resultType="int">
+      select count(*) from mw_product
+    </select>
+
+   <select id="countCategory" resultType="int">
+      select count(*)
+      from mw_product
+      where pcategory = #{pcategory}
+   </select>
+   
+   
+   
+   <select id="list" parameterType="map" resultType="com.web.vo.MwProductVO">
+        select PNUM,PNAME,PPRICE,PSALEPRICE,PTAGIMAGE,PCATEGORY,PSTOCK,PMAINFILE,PMAINSFILE
+      from MW_PRODUCT order by PNUM desc
+      </select> 
+      
+ <!--      <select id="listCategory" parameterType="map" resultType="com.web.vo.MwProductVO">
+            
+        select PNUM,PNAME,PPRICE,PSALEPRICE,PTAGIMAGE,PCATEGORY,PSTOCK,PMAINFILE,PMAINSFILE
+      from  MW_PRODUCT
+      where PCATEGORY = #{category}
+      </select> 
+  -->
+	
+	
+	
 	<update id="update" parameterType="com.web.vo.MwProductVO">
 		update mw_product 
 		<choose>

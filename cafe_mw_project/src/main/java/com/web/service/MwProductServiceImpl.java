@@ -18,10 +18,40 @@ public class MwProductServiceImpl extends MwObjectServiceAdapter{
 		return productDao.select(pnum); 
 	}
 	
-	@Override 
-	public List<Object> getListResult(int startCount, int endCount){
-		return productDao.select(startCount, endCount); 
+	@Override
+	public int getListCount() {
+		// TODO Auto-generated method stub
+		return productDao.selectTotal();
 	}
+	
+	public int getListCount(String pcategory) {
+		// TODO Auto-generated method stub
+		return productDao.selectTotal(pcategory);
+	}
+	
+	/*
+	public int getSearchListCount(String keyword) {
+		// TODO Auto-generated method stub
+		return productDao.selectSearchTotal(keyword);
+	*/
+	
+	   @Override 
+	   public List<Object> getListResult(int startCount, int endCount){
+	      return productDao.select(startCount, endCount); 
+	   }
+	   
+	   public List<Object> getListResult(int startCount, int endCount, String pcategory) {
+	      return productDao.select(startCount, endCount, pcategory);
+	   }
+
+    
+    /*
+    public List<Object> getSearchListResult(int startCount, int endCount, String keyword) {
+		// TODO Auto-generated method stub
+		return productDao.selectSearch(startCount, endCount, keyword);
+	}	
+	*/
+
 	  
 	@Override 
 	public int getInsertResult(Object obj) {
