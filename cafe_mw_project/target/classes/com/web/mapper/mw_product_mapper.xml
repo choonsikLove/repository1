@@ -62,13 +62,13 @@
       from MW_PRODUCT order by PNUM desc
       </select> 
       
- <!--      <select id="listCategory" parameterType="map" resultType="com.web.vo.MwProductVO">
+	<select id="listCategory" parameterType="map" resultType="com.web.vo.MwProductVO">
             
         select PNUM,PNAME,PPRICE,PSALEPRICE,PTAGIMAGE,PCATEGORY,PSTOCK,PMAINFILE,PMAINSFILE
       from  MW_PRODUCT
-      where PCATEGORY = #{category}
+      where PCATEGORY = #{pcategory}
       </select> 
-  -->
+
 	
 	
 	

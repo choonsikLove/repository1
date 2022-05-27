@@ -24,60 +24,44 @@ public class ProductController {
     @Autowired
 	private MwPageServiceImpl pageService;
    
-	/*
-	 * @RequestMapping(value="/product_all", method=RequestMethod.GET) public String
-	 * product_all() {
-	 * 
-	 * return "/product/product_all"; }
-	 */
-   
-   
-   @RequestMapping(value="/product_all", method=RequestMethod.GET)
-	public ModelAndView product_all(String rpage) {
-	    ModelAndView mv = new ModelAndView();
-	         
-	    Map<String,String> param = pageService.getPageResult(rpage, "product", productService);
-	    int startCount = Integer.parseInt(param.get("start"));
+	 @RequestMapping(value="/product_all", method=RequestMethod.GET)
+	 public ModelAndView product_all(String rpage, String pcategory) {
+	     ModelAndView mv = new ModelAndView();
+	     Map<String,String> param;
+	     List<Object> olist;
+
+	     if(pcategory == null) {
+	       param = pageService.getPageResult(rpage, "product", productService);
+	    }else {
+	       param = pageService.getPageResult(rpage, "product", productService, pcategory);
+	    }
+
+	     int startCount = Integer.parseInt(param.get("start"));
 	    int endCount = Integer.parseInt(param.get("end"));
-	      
-	      
-	    List<Object> olist = productService.getListResult(startCount, endCount);
-	    ArrayList<MwProductVO> list = new ArrayList<MwProductVO>();
+
+	    if(pcategory == null) {
+	       olist = productService.getListResult(startCount, endCount);
+	    }else {
+	       olist = productService.getListResult(startCount, endCount, pcategory);
+	    }
+
+	    ArrayList<MwProductVO> list = new ArrayList();
 	    for(Object obj : olist) {
 	       list.add((MwProductVO)obj);
 	    }
-	    
-	            
+
 	    mv.addObject("list",list);
+	    mv.addObject("pd",pcategory);
 	    mv.addObject("dbCount", Integer.parseInt(param.get("dbCount")));
 	    mv.addObject("pageSize", Integer.parseInt(param.get("pageSize")));
 	    mv.addObject("reqPage", Integer.parseInt(param.get("reqPage")));   
-	      
-	    mv.setViewName("/product/product_all");
 
-	     
+	    mv.setViewName("/product/product_all");   
+
 	    return mv;
-	}
+	 }
 	
-   
 
-   @RequestMapping(value="/product_goods", method=RequestMethod.GET)
-   public String product_goods() {
-         
-      return "/product/product_goods";
-   }
-   
-   @RequestMapping(value="/product_gift", method=RequestMethod.GET)
-   public String product_gift() {
-         
-      return "/product/product_gift";
-   }         
-
-   @RequestMapping(value="/product_base", method=RequestMethod.GET)
-   public String product_base() {
-         
-      return "/product/product_base";
-   } 
    
    @RequestMapping(value="/product_detail", method=RequestMethod.GET)
   	public ModelAndView product_detail(String pnum) {

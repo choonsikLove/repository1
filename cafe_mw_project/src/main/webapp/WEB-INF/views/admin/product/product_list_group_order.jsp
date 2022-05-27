@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c" %>      
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,27 +26,27 @@
 	</div>
 
 
-	<div class="adminWrap">
-		<div class="welcome">
-			<div>
-				<img alt="임시" src="http://localhost:9000/manwol/resources/images/default_profile.png">
-			</div>
-			<div>
-				<p><a href="http://localhost:9000/manwol/admin"><span>관리자</span></a>님 안녕하세요.</p>
-				<p>상품 관리 페이지입니다.</p>
-			</div>
-		</div>
-	</div>
-	
-	<div>
+   <div class="adminWrap">
+      <div class="welcome">
+         <div>
+            <img alt="임시" src="http://localhost:9000/manwol/resources/images/default_profile.png">
+         </div>
+         <div>
+            <p><a href="http://localhost:9000/manwol/admin"><span>관리자</span></a>님 안녕하세요.</p>
+            <p>상품 관리 페이지입니다.</p>
+         </div>
+      </div>
+   </div>
+   
+   <div>
 		<ul class="category">
 			<li><a href="http://localhost:9000/manwol/admin/product_list"><span>ALL</span></a></li>
-			<li><a href="http://localhost:9000/manwol/admin/product_list_base"><span>만월 원액</span></a></li>
-			<li><a href="http://localhost:9000/manwol/admin/product_list_goods"><span>만월 굿즈</span></a></li>
-			<li><a href="http://localhost:9000/manwol/admin/product_list_gift"><span>선물하기</span></a></li>
-			<li class="category_line"><a href="http://localhost:9000/manwol/product_list_group_order"><span>단체주문</span></a></li>
-		</ul>
-	</div>
+			<li><a href="http://localhost:9000/manwol/admin/product_list?pcategory=base"><span>만월 원액</span></a></li>
+			<li><a href="http://localhost:9000/manwol/admin/product_list?pcategory=goods"><span>만월 굿즈</span></a></li>
+			<li><a href="http://localhost:9000/manwol/admin/product_list?pcategory=gift"><span>선물하기</span></a></li>
+			<li class="category_line"><a href="http://localhost:9000/manwol/admin/product_list_group_order"><span>단체주문</span></a></li>
+		</ul>                        
+   </div>
 	
 	<a href="http://localhost:9000/manwol/admin/product_write"><button class="productButton">+ 상품 추가</button></a>
 	<div class="contents">

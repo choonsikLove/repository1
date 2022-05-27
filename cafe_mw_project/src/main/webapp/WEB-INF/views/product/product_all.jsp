@@ -14,15 +14,48 @@
 <div>
 
    
-   <div>
-      <ul class="category">
-         <li class="category_line"><a href="http://localhost:9000/manwol/product_all"><span>ALL</span></a></li>
-         <li><a href="http://localhost:9000/manwol/product_base"><span>만월 원액</span></a></li>
-         <li><a href="http://localhost:9000/manwol/product_goods"><span>만월 굿즈</span></a></li>
-         <li><a href="http://localhost:9000/manwol/product_gift"><span>선물하기</span></a></li>
-         <li><a href="http://localhost:9000/manwol/product_group_order"><span>단체주문</span></a></li>
-      </ul>
+     <div>
+                       <ul class="category">
+                           <c:choose>
+                              <c:when test="${empty pd}">
+                                 <li class="category_line">
+                              </c:when>
+                              <c:otherwise>
+                                 <li>
+                              </c:otherwise>
+                           </c:choose>
+                                    <a href="http://localhost:9000/manwol/product_all"><span>ALL</span></a></li>
+                           <c:choose>
+                              <c:when test="${pd eq 'base'}">
+                                 <li class="category_line">
+                              </c:when>
+                              <c:otherwise>
+                                 <li>
+                              </c:otherwise>
+                           </c:choose>
+                                    <a href="?pcategory=base"><span>만월 원액</span></a></li>
+                           <c:choose>
+                              <c:when test="${pd eq 'goods'}">
+                                 <li class="category_line">
+                              </c:when>
+                              <c:otherwise>
+                                 <li>
+                              </c:otherwise>
+                           </c:choose>
+                                    <a href="?pcategory=goods"><span>만월 굿즈</span></a></li>
+                           <c:choose>
+                              <c:when test="${pd eq 'gift'}">
+                                 <li class="category_line">
+                              </c:when>
+                              <c:otherwise>
+                                 <li>
+                              </c:otherwise>
+                           </c:choose>
+                                    <a href="?pcategory=gift"><span>선물하기</span></a></li>   
+                           <li><a href="http://localhost:9000/manwol/product_group_order"><span>단체주문</span></a></li>
+                  </ul>                        
    </div>
+   
    
  
    
@@ -38,61 +71,61 @@
                <td>
                  <div class="contents1">
                     <a href="http://localhost:9000/manwol/product_detail?pnum=${vo.pnum }">
-                    	<img height="400px" width="400px" src="http://localhost:9000/manwol/resources/upload/${vo.pmainsfile}">
+                       <img height="400px" width="400px" src="http://localhost:9000/manwol/resources/upload/${vo.pmainsfile}">
                     </a> 
                     <p>
-                      	<a href="http://localhost:9000/manwol/admin/product_detail?pnum=${vo.pnum }">
-                      		<strong>${vo.pname}</strong>
-                       	</a>
+                         <a href="http://localhost:9000/manwol/admin/product_detail?pnum=${vo.pnum }">
+                            <strong>${vo.pname}</strong>
+                          </a>
                     </p>              
                     <c:choose>
-						<c:when test="${vo.psaleprice == 0}">
-							<span class="product_detail_price">${vo.pprice }원</span><br>
-						</c:when>
-						<c:otherwise>
-							<span class="former_price">${vo.pprice }원</span>
-							<span class="product_detail_price">${vo.psaleprice }원</span><br>
-						</c:otherwise>
-					</c:choose>
-					<c:choose>
-                       	<c:when test="${vo.ptagimage == '새상품'}">
-	                        <img width="48px" src="http://localhost:9000/manwol/resources/images/product/NEW.jpg">
-                       	</c:when>
-                       	<c:when test="${vo.ptagimage == '주문폭주상품'}">
-	                        <img width="48px" src="http://localhost:9000/manwol/resources/images/product/주문폭주.jpg">
-                       	</c:when>
-                       	<c:when test="${vo.ptagimage == '세일상품'}">
-	                        <img width="48px" src="http://localhost:9000/manwol/resources/images/product/SALE.jpg">
-                       	</c:when>
-                       	<c:when test="${vo.ptagimage == '선물추천상품'}">
-	                        <img width="48px" src="http://localhost:9000/manwol/resources/images/product/선물추천.jpg">
-                       	</c:when>
-                       	<c:when test="${vo.ptagimage == '새상품,주문폭주상품'}">
-                       		<img width="48px" src="http://localhost:9000/manwol/resources/images/product/NEW.jpg">
-	                        <img width="48px" src="http://localhost:9000/manwol/resources/images/product/주문폭주.jpg">
-                       	</c:when>
-                       	<c:when test="${vo.ptagimage == '새상품,세일상품'}">
-                       		<img width="48px" src="http://localhost:9000/manwol/resources/images/product/NEW.jpg">
-	                        <img width="48px" src="http://localhost:9000/manwol/resources/images/product/SALE.jpg">
-                       	</c:when>
-                       	<c:when test="${vo.ptagimage == '새상품,선물추천상품'}">
-                       		<img width="48px" src="http://localhost:9000/manwol/resources/images/product/NEW.jpg">
-	                        <img width="48px" src="http://localhost:9000/manwol/resources/images/product/선물추천.jpg">
-                       	</c:when>
-                       	<c:when test="${vo.ptagimage == '주문폭주상품,세일상품'}">
-                       		<img width="48px" src="http://localhost:9000/manwol/resources/images/product/주문폭주.jpg">
-	                        <img width="48px" src="http://localhost:9000/manwol/resources/images/product/세일상품.jpg">
-                       	</c:when>
-                       	<c:when test="${vo.ptagimage == '주문폭주상품,선물추천상품'}">
-                       		<img width="48px" src="http://localhost:9000/manwol/resources/images/product/주문폭주.jpg">
-	                        <img width="48px" src="http://localhost:9000/manwol/resources/images/product/선물추천.jpg">
-                       	</c:when>
-                       	<c:when test="${vo.ptagimage == '세일상품,선물추천상품'}">
-                       		<img width="48px" src="http://localhost:9000/manwol/resources/images/product/SALE.jpg">
-	                        <img width="48px" src="http://localhost:9000/manwol/resources/images/product/선물추천.jpg">
-                       	</c:when>
-                       	<c:otherwise> <%--지워도 될 듯 --%>
-                       	</c:otherwise>
+                  <c:when test="${vo.psaleprice == 0}">
+                     <span class="product_detail_price">${vo.pprice }원</span><br>
+                  </c:when>
+                  <c:otherwise>
+                     <span class="former_price">${vo.pprice }원</span>
+                     <span class="product_detail_price">${vo.psaleprice }원</span><br>
+                  </c:otherwise>
+               </c:choose>
+               <c:choose>
+                          <c:when test="${vo.ptagimage == '새상품'}">
+                           <img width="48px" src="http://localhost:9000/manwol/resources/images/product/NEW.jpg">
+                          </c:when>
+                          <c:when test="${vo.ptagimage == '주문폭주상품'}">
+                           <img width="48px" src="http://localhost:9000/manwol/resources/images/product/주문폭주.jpg">
+                          </c:when>
+                          <c:when test="${vo.ptagimage == '세일상품'}">
+                           <img width="48px" src="http://localhost:9000/manwol/resources/images/product/SALE.jpg">
+                          </c:when>
+                          <c:when test="${vo.ptagimage == '선물추천상품'}">
+                           <img width="48px" src="http://localhost:9000/manwol/resources/images/product/선물추천.jpg">
+                          </c:when>
+                          <c:when test="${vo.ptagimage == '새상품,주문폭주상품'}">
+                             <img width="48px" src="http://localhost:9000/manwol/resources/images/product/NEW.jpg">
+                           <img width="48px" src="http://localhost:9000/manwol/resources/images/product/주문폭주.jpg">
+                          </c:when>
+                          <c:when test="${vo.ptagimage == '새상품,세일상품'}">
+                             <img width="48px" src="http://localhost:9000/manwol/resources/images/product/NEW.jpg">
+                           <img width="48px" src="http://localhost:9000/manwol/resources/images/product/SALE.jpg">
+                          </c:when>
+                          <c:when test="${vo.ptagimage == '새상품,선물추천상품'}">
+                             <img width="48px" src="http://localhost:9000/manwol/resources/images/product/NEW.jpg">
+                           <img width="48px" src="http://localhost:9000/manwol/resources/images/product/선물추천.jpg">
+                          </c:when>
+                          <c:when test="${vo.ptagimage == '주문폭주상품,세일상품'}">
+                             <img width="48px" src="http://localhost:9000/manwol/resources/images/product/주문폭주.jpg">
+                           <img width="48px" src="http://localhost:9000/manwol/resources/images/product/SALE.jpg">
+                          </c:when>
+                          <c:when test="${vo.ptagimage == '주문폭주상품,선물추천상품'}">
+                             <img width="48px" src="http://localhost:9000/manwol/resources/images/product/주문폭주.jpg">
+                           <img width="48px" src="http://localhost:9000/manwol/resources/images/product/선물추천.jpg">
+                          </c:when>
+                          <c:when test="${vo.ptagimage == '세일상품,선물추천상품'}">
+                             <img width="48px" src="http://localhost:9000/manwol/resources/images/product/SALE.jpg">
+                           <img width="48px" src="http://localhost:9000/manwol/resources/images/product/선물추천.jpg">
+                          </c:when>
+                          <c:otherwise> <%--지워도 될 듯 --%>
+                          </c:otherwise>
                 </c:choose>
                 <p> 
                     <small class="material-symbols-outlined" style="font-size: 15px">chat_bubble</small>295

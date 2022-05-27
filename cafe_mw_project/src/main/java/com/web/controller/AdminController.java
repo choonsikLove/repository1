@@ -112,11 +112,6 @@ public class AdminController {
 	}
 
 	
-	
-	
-	
-	
-	
 	   //상품!
 		//상품 리스트
 		 @RequestMapping(value="/admin/product_list", method=RequestMethod.GET)
@@ -155,59 +150,12 @@ public class AdminController {
 
 		    return mv;
 		 }
-
-		 /*
-		 @RequestMapping(value="/admin/product_list", method=RequestMethod.POST)
-		 public ModelAndView productSerch(String rpage, String option)  throws Exception {
-		    ModelAndView mv = new ModelAndView();
-		    Map<String,String> param;
-		    List<Object> olist;
-		   
-		   param = pageService.getPageResult(rpage, "product", productService, option);
-		   
-		   int startCount = Integer.parseInt(param.get("start"));
-		   int endCount = Integer.parseInt(param.get("end"));
-		   
-		   olist = productService.getSearchListResult(startCount, endCount, option);
-		   
-		   ArrayList<MwProductVO> list = new ArrayList();
-		   for(Object obj : olist) {
-		    list.add((MwProductVO)obj);
-		   }
-		    
-		   mv.addObject("list",list);
-		   mv.addObject("pd",option);
-		   mv.addObject("dbCount", Integer.parseInt(param.get("dbCount")));
-		   mv.addObject("pageSize", Integer.parseInt(param.get("pageSize")));
-		   mv.addObject("reqPage", Integer.parseInt(param.get("reqPage")));
-		   
-		   mv.setViewName("/admin/product/product_list");
-		   
-		    return mv;
-		 }
-		*/
-	
-	/* 
-	@RequestMapping(value="/admin/product_list_base", method=RequestMethod.GET)
-	public String product_list_base() { 
-		return "/admin/product/product_list_base"; 
-	}
-	 
-	@RequestMapping(value="/admin/product_list_goods", method=RequestMethod.GET)
-	public String product_list_goods() { 
-		return "/admin/product/product_list_goods"; 
-	}
-	 
-	@RequestMapping(value="/admin/product_list_gift", method=RequestMethod.GET)
-	public String product_list_gift() { 
-		return "/admin/product/product_list_gift"; 
-	}
-	 
+		 
 	@RequestMapping(value="/admin/product_list_group_order", method=RequestMethod.GET) 
 	public String product_list_group_order() { 
 		return "/admin/product/product_list_group_order"; 
 	}	
-	 */
+	
 	@RequestMapping(value="/admin/product_detail", method=RequestMethod.GET)
 	public ModelAndView product_detail(String pnum) {
 		ModelAndView mv = new ModelAndView();
@@ -348,6 +296,10 @@ public class AdminController {
 		
 		return String.valueOf(result);
 	}
+
+		
+	 
+	 
 
 		
 	 

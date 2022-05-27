@@ -106,13 +106,6 @@ public class MwProductDAO implements MwObjectDAO{
 	public int execTotalCount() {return 0;}
 	public String selectFile(String id) {return "";}
 
-	/*
-	@Override
-	public int selectTotal() {
-		System.out.println("4. DAO/selectTotal");
-	return sqlSession.selectOne(namespace+".count");
-	}
-	*/
 
 	@Override
 	public int selectSearchTotal(String keyword, String option) {
