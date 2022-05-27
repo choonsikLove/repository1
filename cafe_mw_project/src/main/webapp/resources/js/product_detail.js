@@ -35,4 +35,31 @@ $(document).ready(function(){
 			});
 		}
 	});
+	
+	$('button#cart_button').click(function(){
+		var pnum = $('#for_cart').val();
+		
+		$.ajax({
+				type:'POST',
+				async: true,
+				data: {"c_pnum":pnum
+				},
+				url:"shop_cart_insert",
+				dataType: "text",
+				success : function(result) {
+					if(result == 1){
+						var cart = confirm("장바구니에 추가되었습니다. 장바구니로 이동하시겠습니까?");
+						
+						if(cart){
+							location.href = "http://localhost:9000/manwol/shop_cart";
+						}
+						
+					}
+				},
+				error: function(result) {
+					alert("에러");
+				}
+			});
+	});
+	
 });

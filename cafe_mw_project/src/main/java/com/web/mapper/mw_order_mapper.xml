@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.order">
+
+	<insert id="insert_cart" parameterType="com.web.vo.MwOrderVO">
+		insert into mw_cart
+		values('c_'||sequ_Mw_recipe_rid.nextval, #{c_pnum})
+	</insert>
+
+	<select id="select" resultType="com.web.vo.MwOrderVO">
+		select c_pnum, pname, pprice, psaleprice, pmainsfile
+		from mw_product mw, mw_cart mc
+		where mw.pnum = mc.c_pnum
+	</select>
+
+	
+	
+</mapper>    

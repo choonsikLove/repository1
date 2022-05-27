@@ -10,13 +10,15 @@
 	href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <link rel="stylesheet" href="http://localhost:9000/manwol/resources/css/product_detail.css">
 <link rel="stylesheet" href="http://localhost:9000/manwol/resources/css/for_product_button_only.css">
-
+<script src="http://localhost:9000/manwol/resources/js/jquery-3.6.0.js"></script>
+<script src="http://localhost:9000/manwol/resources/js/product_detail.js"></script>
 </head>
 <body>
 	<!-- header -->
 	<jsp:include page="../header.jsp"></jsp:include>
 
 	<!-- content -->
+	<input type="text" value="${vo.pnum }" id="for_cart">
 	<table class="content" style="table-layout: fixed;">
 		<tr>
 			<td>
@@ -99,7 +101,9 @@
 									<div class="product_detail_text2">
 										<strong>📦 배송</strong>
 										<p>주문 후 <b>영업일 기준 3일 이내</b> 발송됩니다.</p>
-										<p>종이 아이스팩 + 아이스박스 (<b>아이스팩 안에는 물만 들어있으니</b> 가위로</p>
+										<p>종이 아이스팩 + 아이스박스 (<b>아이스팩 안에는 물만 들어있으니</b> 가위로 모서리 부분을 잘라 싱크대 또는 
+										배수구에 버려주신 후 종이는 <b>분리수거</b>해주시면 됩니다.)</p>
+										
 										<br> <br> <strong>🕘 보관방법 및 유통기한</strong>
 										<p>신선식품으로 제품 수령 후<b>냉장 보관(0-5℃)</b>은 필수이며, 유통기한은 <b>수령일로부터8주(단호박,</b></p>
 										<p><b>쑥4주)</b>입니다. 패키지 하단에 유통기한이 별도로 표기되어있습니다.</p>
@@ -155,7 +159,7 @@
 
 								<div class="button">
 									<a href="http://localhost:9000/manwol/payment"><button class="btn1" type="button">구매하기</button></a>
-									<button class="btn2" type="button">장바구니</button>
+									<button class="btn2" type="button" id="cart_button">장바구니</button>
 									<button class="btn3" type="button">
 										<span class="material-symbols-outlined"
 											style="font-size: 15px">favorite</span> 15
