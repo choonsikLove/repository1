@@ -31,10 +31,10 @@
                   </div>
                </li>
                <li class="dropdown">
-                  <a href="#">About</a>
+                  <a href="http://localhost:9000/manwol/about_us">About</a>
                   <div class="dropdown-content">
-                     <a href="#">About us</a>
-                     <a href="#">Recruit</a>
+                     <a href="http://localhost:9000/manwol/about_us">About us</a>
+                     <a href="http://localhost:9000/manwol/recruit">Recruit</a>
                      <a href="#">조각달</a>
                   </div>
                   </li>
@@ -46,11 +46,11 @@
                   </div>
                </li>
                <li class="dropdown">
-                  <a href="#">고객센터</a>
+                  <a href="http://localhost:9000/manwol/notice_list">고객센터</a>
                   <div class="dropdown-content">
                      <a href="https://www.instagram.com/_manwol/" target="_blank">새소식</a>
-                     <a href="#">자주 묻는 질문</a>
-                     <a href="#">만월회에게 한마디📢</a>
+                     <a href="http://localhost:9000/manwol/notice_list">자주 묻는 질문</a>
+                     <a href="http://localhost:9000/manwol/suggestion">만월회에게 한마디📢</a>
                   </div>
                </li>
             </ul>
