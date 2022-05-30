@@ -36,6 +36,15 @@ public class MypageController {
 		return mv;
 	}
 
+	@RequestMapping(value="review_write", method=RequestMethod.POST)
+	public ModelAndView review_write(String vpnum, HttpServletRequest request) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		HttpSession session = request.getSession();
+		String memail = (String)session.getAttribute("memail");
+		
+		return mv;
+	}
+	
 	@RequestMapping(value="/shop_mypage/withdraw", method= RequestMethod.GET)
 	public ModelAndView withdraw(HttpServletRequest request) throws Exception{
 		ModelAndView mv = new ModelAndView();

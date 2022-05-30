@@ -69,9 +69,9 @@
 	</select>
 	
 	<select id="content" parameterType="java.lang.String" resultType="com.web.vo.MwRecipeVO">
-		select rid, rcategory, rtitle, rcontent, rfavorite
-		from mw_recipe
-		where rid = #{rid}
+		select rid, rcategory, rtitle, rcontent, rfavorite, rsfile1, rsfile2, rsfile3, rsfile4, rsfile5, rsfile6
+			from mw_recipe mw, mw_recipe_file mwf
+				where mw.rid = mwf.fid and rid=#{rid}
 	</select>
 
 	<insert id="insert_reply" parameterType="com.web.vo.MwRecipeVO">
@@ -98,5 +98,22 @@
 		select reply_sfile from (select reply_sfile from mw_recipe_reply order by reply_date desc) 
 		where rownum =1
 	</select>
+	
+	<select id="select_pre_next_content" parameterType="java.lang.String" resultType="com.web.vo.MwRecipeVO">
+		select rid, pre_id, pre_title, next_id, next_title from(
+			SELECT  rid, rtitle,
+			        LAG(rid) OVER (ORDER BY rdate asc) pre_id,
+			        LAG(rtitle) OVER (ORDER BY rdate asc) pre_title,
+			        LEAD(rid) OVER (ORDER BY rdate asc) next_id,
+			        LEAD(rtitle) OVER (ORDER BY rdate asc) next_title
+			FROM    mw_recipe
+			ORDER BY rdate desc)
+		where rid = #{rid}
+	</select>
+	
+	<delete id="delete" parameterType="java.lang.String">
+		delete from mw_recipe
+		where rid = #{rid}
+	</delete>
 	
 </mapper>    

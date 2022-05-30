@@ -7,6 +7,20 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/mypage.css"/>
+<style type="text/css">
+	.review_insert_btn{
+		border: 1px #DADADA solid;
+		display: inline-block;
+		float: right;
+		width: 80px;
+		height: 25px;
+		margin-top: 40px;
+		text-align: center;
+		padding-top: 2px;
+	}
+
+
+</style>
 </head>
 <body>
 <input type="text" value="${vo.memail}" id="member_email"><%--절대로 지우면 안됩니다! --%>
@@ -82,7 +96,11 @@
 								<span class='order_list_price'>500원 / 1개</span>
 							</div>
 							<div class='order_status'>입금대기</div>
-							<div class='order_btn'>취소</div>
+							<!-- <div class='order_btn'>취소</div> -->
+							<form action='' method="post">
+								<input type='hidden' name='vpnum' value="pnum">
+								<button class='review_insert_btn' type="submit">리뷰쓰기</button>
+							</form>
 						</div>
 					</div>
 					
