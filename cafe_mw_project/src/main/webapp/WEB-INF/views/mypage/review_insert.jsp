@@ -42,8 +42,8 @@
 </style>
 <script type="text/javascript">
 	function review_Submit() {
-	    document.reviewInsert.target = "_parent"; // 타켓을 부모창으로 설정
-	    document.reviewInsert.action = "/shop_mypage/review_insert";
+	    document.reviewInsert.target="_selft"; // 타켓을 부모창으로 설정
+	    document.reviewInsert.action = "/manwol/shop_mypage/review_insert";
 	    document.reviewInsert.submit();
 	    self.close();
 	}
@@ -73,7 +73,7 @@
 			<table id='submit_btn'>
 				<tr>
 					<td><input id='cancel' type='button' onclick="self.close()" value='취소'></td>
-					<td><input id='submit' type="submit" onclick="review_Submit()" onsubmit="return true;" value='등록'></td>
+					<td><input id='submit' type="submit" onclick="review_Submit()" onclick="self.close()" value='등록'></td>
 				</tr>
 			</table>
 		</div>	

@@ -58,9 +58,13 @@ public class MypageController {
 	}
 
 	@RequestMapping(value="/shop_mypage/review_insert", method=RequestMethod.POST)
-	public ModelAndView review_insert(MwReviewVO vo, HttpServletRequest request) throws Exception {
+	public ModelAndView review_insert(MwReviewVO rvo, HttpServletRequest request) throws Exception {
 		ModelAndView mv = new ModelAndView();
+		HttpSession session = request.getSession();
+		String memail = (String)session.getAttribute("memail");
+		MwMemberVO vo = (MwMemberVO)memberService.getContentResult(memail);
 		
+		mv.addObject("vo", vo);		
 		/*
 		 * int result = reviewService.getInsertResult(vo);
 		 * 
