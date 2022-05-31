@@ -13,7 +13,10 @@ import org.springframework.web.servlet.ModelAndView;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.web.service.FileServiceImpl;
 import com.web.service.MwMemberServiceImpl;
+import com.web.service.MwProductServiceImpl;
 import com.web.vo.MwMemberVO;
+import com.web.vo.MwProductVO;
+import com.web.vo.MwReviewVO;
 
 @Controller
 public class MypageController {
@@ -23,6 +26,9 @@ public class MypageController {
 	
 	@Autowired
 	private FileServiceImpl fileService;
+	
+	@Autowired
+	private MwProductServiceImpl productService;
 	
 	@RequestMapping(value="/shop_mypage", method= RequestMethod.GET)
 	public ModelAndView mypage(HttpServletRequest request) {
@@ -36,11 +42,33 @@ public class MypageController {
 		return mv;
 	}
 
-	@RequestMapping(value="review_write", method=RequestMethod.POST)
-	public ModelAndView review_write(String vpnum, HttpServletRequest request) throws Exception {
+	@RequestMapping(value="/shop_mypage/review_insert", method=RequestMethod.GET)
+	public ModelAndView review_insert(String vpnum, HttpServletRequest request) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		HttpSession session = request.getSession();
 		String memail = (String)session.getAttribute("memail");
+		
+		MwProductVO vo = (MwProductVO)productService.getContent(vpnum);
+		
+		mv.addObject("vo", vo);
+		mv.addObject("memail", memail);
+		mv.setViewName("/mypage/review_insert");
+		
+		return mv;
+	}
+
+	@RequestMapping(value="/shop_mypage/review_insert", method=RequestMethod.POST)
+	public ModelAndView review_insert(MwReviewVO vo, HttpServletRequest request) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		
+		/*
+		 * int result = reviewService.getInsertResult(vo);
+		 * 
+		 * if(result==1) { fileService.fileSave(vo, request);
+		 * mv.addObject("rvInsert_result", "succ"); }
+		 */
+		mv.addObject("rvInsert_result", "succ");
+		mv.setViewName("/mypage/mypage");
 		
 		return mv;
 	}

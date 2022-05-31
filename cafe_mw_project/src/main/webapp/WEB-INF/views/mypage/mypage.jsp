@@ -18,9 +18,27 @@
 		text-align: center;
 		padding-top: 2px;
 	}
-
-
 </style>
+<script type="text/javascript">
+	var rvInsert_result = "${rvInsert_result}";
+	
+	if(rvInsert_result == "succ"){
+		alert("리뷰가 작성되었습니다. 확인하시겠습니까?");
+	}	
+	
+	function review_popup(){
+		var objPopup = window.open('','reviewWindow','resizable=no, top=200, left=200, width=450, height=550, scrollbars=no');
+		document.review_insert_form.target="reviewWindow";// 타켓
+		document.review_insert_form.action="shop_mypage/review_insert";// 수행할 경로
+		if (objPopup == null) {  // 팝업이 뜨는지 확인
+			alert('차단된 팝업창을 허용해 주세요');
+		} else {
+			document.review_insert_form.submit();
+			objPopup.focus();
+		}
+	}
+	
+</script>
 </head>
 <body>
 <input type="text" value="${vo.memail}" id="member_email"><%--절대로 지우면 안됩니다! --%>
@@ -97,9 +115,9 @@
 							</div>
 							<div class='order_status'>입금대기</div>
 							<!-- <div class='order_btn'>취소</div> -->
-							<form action='' method="post">
-								<input type='hidden' name='vpnum' value="pnum">
-								<button class='review_insert_btn' type="submit">리뷰쓰기</button>
+							<form name="review_insert_form" method="get">
+								<input type='hidden' name='vpnum' value="vo.pnum">
+								<button class='review_insert_btn' type="button" onclick="review_popup()">리뷰쓰기</button>
 							</form>
 						</div>
 					</div>
