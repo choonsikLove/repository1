@@ -26,9 +26,8 @@ public class MwOrderServiceImpl implements MwOrderService{
 	}
 
 	@Override
-	public Object getContentResult(String id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Object getContentResult(String cid) {
+		return orderDao.select(cid);
 	}
 
 	@Override
@@ -50,9 +49,16 @@ public class MwOrderServiceImpl implements MwOrderService{
 	}
 
 	@Override
-	public int getDeleteResult(String id) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int getDeleteResult(String cid) {
+		return orderDao.delete(cid);
 	}
-
+	
+	public int getCartCheckResult(String c_pnum) {
+		return orderDao.selectCartCheck(c_pnum);
+	}
+	
+	public int getQntChangeResult(MwOrderVO vo) {
+		return orderDao.updateQnt(vo);
+	}
+	
 }

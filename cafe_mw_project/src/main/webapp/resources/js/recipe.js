@@ -42,7 +42,10 @@ $(document).ready(function(){
 		}
 	});
 	
-
+	var recipe_img = $('img.recipe_detail_img');
 	
+	if(recipe_img.width() > 800){
+		recipe_img.width('790px');
+	}
 	
 });

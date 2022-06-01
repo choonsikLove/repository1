@@ -252,7 +252,9 @@
 										<div style="display: flex;">
 											<form class="search_f" method="post">
 												<input  type="text" placeholder=" Search" class="search_i" name='option'>
-												<button  type="submit" class="search_btn"><img alt="돋보기" src="http://localhost:9000/manwol/resources/images/review/search.png" style="width: 25px;"></button>
+												<button  type="submit" class="search_btn">
+													<img alt="돋보기" src="http://localhost:9000/manwol/resources/images/review/search.png" style="width: 25px;">
+												</button>
 											</form>
 										</div>
 									</td>

@@ -107,7 +107,6 @@
 				<input type="text" name="pstock" id="product_stock">
 			</div>
 			<div>
-			선택 박스 만들기 코너임 이 문구는 나중에 지웁시다 (최대 15개로 설정하는 스크립트 넣기)<br>
 				<span>선택 박스 이름</span>
 				<input type="text" id="selectBoxName">
 			
@@ -148,7 +147,8 @@
 			 --%>
 			</div>
 			<div>
-				<textarea name="ptext"></textarea>
+				<span>설명</span>
+				<textarea name="ptext" maxlength="300"></textarea>
 			</div>
 	</div>
 	</form>

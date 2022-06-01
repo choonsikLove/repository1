@@ -3,9 +3,33 @@ package com.web.vo;
 public class MwOrderVO {
 	String cid, c_pnum;
 	String pname, pmainsfile;
-	int pprice, psaleprice;
+	int pprice, psaleprice, pstock, c_qnt;
+	String[] cids;
 	
 	
+	public String[] getCids() {
+		return cids;
+	}
+
+	public void setCids(String[] cids) {
+		this.cids = cids;
+	}
+
+	public int getPstock() {
+		return pstock;
+	}
+
+	public void setPstock(int pstock) {
+		this.pstock = pstock;
+	}
+
+	public int getC_qnt() {
+		return c_qnt;
+	}
+
+	public void setC_qnt(int c_qnt) {
+		this.c_qnt = c_qnt;
+	}
 
 	public String getPname() {
 		return pname;

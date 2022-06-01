@@ -50,7 +50,7 @@
                            </c:choose>
                                     <a href="http://localhost:9000/manwol/admin/product_list"><span>ALL</span></a></li>
                            <c:choose>
-                              <c:when test="${pd eq 'base'}">
+                              <c:when test="${pd eq '만월 원액'}">
                                  <li class="category_line">
                               </c:when>
                               <c:otherwise>
@@ -59,7 +59,7 @@
                            </c:choose>
                                     <a href="?pcategory=base"><span>만월 원액</span></a></li>
                            <c:choose>
-                              <c:when test="${pd eq 'goods'}">
+                              <c:when test="${pd eq '만월 굿즈'}">
                                  <li class="category_line">
                               </c:when>
                               <c:otherwise>
@@ -68,15 +68,23 @@
                            </c:choose>
                                     <a href="?pcategory=goods"><span>만월 굿즈</span></a></li>
                            <c:choose>
-                              <c:when test="${pd eq 'gift'}">
+                              <c:when test="${pd eq '선물하기'}">
                                  <li class="category_line">
                               </c:when>
                               <c:otherwise>
                                  <li>
                               </c:otherwise>
                            </c:choose>
-                                    <a href="?pcategory=gift"><span>선물하기</span></a></li>   
-                           <li><a href="http://localhost:9000/manwol/admin/product_list_group_order"><span>단체주문</span></a></li>
+                                    <a href="?pcategory=gift"><span>선물하기</span></a></li>
+                           <c:choose>
+                              <c:when test="${pd eq '단체주문'}">
+                                 <li class="category_line">
+                              </c:when>
+                              <c:otherwise>
+                                 <li>
+                              </c:otherwise>
+                           </c:choose>
+                                    <a href="?pcategory=단체주문"><span>단체주문</span></a></li>
                   </ul>                        
    </div>
    
@@ -138,7 +146,7 @@
                           </c:when>
                           <c:when test="${vo.ptagimage == '주문폭주상품,세일상품'}">
                              <img width="48px" src="http://localhost:9000/manwol/resources/images/product/주문폭주.jpg">
-                           <img width="48px" src="http://localhost:9000/manwol/resources/images/product/SALE.jpg">
+                           <img width="48px" src="http://localhost:9000/manwol/resources/images/product/세일상품.jpg">
                           </c:when>
                           <c:when test="${vo.ptagimage == '주문폭주상품,선물추천상품'}">
                              <img width="48px" src="http://localhost:9000/manwol/resources/images/product/주문폭주.jpg">

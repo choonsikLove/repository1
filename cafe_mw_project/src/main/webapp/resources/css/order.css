@@ -1,0 +1,161 @@
+@charset "UTF-8";
+
+*{margin: 0; padding: 0;}
+li{list-style-type: none;}
+a[href] {text-decoration: none;}
+
+
+div.cart_div{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	margin: 40px auto;
+	width: 78em;
+}
+
+div.cart_div>p:first-of-type {
+	font-size: 18pt;
+	margin-bottom: 15px;
+}
+
+div.cart_div>table#cart_table{
+	border-collapse: collapse;
+	border:none;
+	border-bottom: 0.7px #aaa solid;
+	table-layout: fixed;
+}
+
+div.cart_div>table#cart_table tr,
+div.cart_div>table#cart_table tr td{
+	border: none;
+}
+div.cart_div>table#cart_table tr td{
+	padding: 10px;
+	border-top:0.7px #aaa solid;
+}
+
+table#cart_table tr:not(:first-of-type) td:not(:last-of-type){
+	border-right: 0.7px #aaa solid;
+}
+
+table#cart_table tr td:first-of-type div{
+	display: flex;
+}
+
+img.cart_product{
+	margin: 0px 20px;
+	width: 75px; height: 75px;
+}
+
+table#cart_table tr:first-of-type td>input{
+	margin-right: 20px;
+}
+
+table#cart_table tr:first-of-type{
+	color: #aaa;
+}
+
+table#cart_table tr td:first-of-type div>p{
+	margin-top: 28px;
+	overflow: hidden;
+}
+
+table#cart_table tr td:not(:first-of-type){
+	width: 150px;
+	text-align: center;
+}
+
+p.prices{
+	font-size: 15pt;
+}
+
+p.former_price{
+	text-decoration: line-through;
+	font-size: 10pt;
+	color: #aaa;
+}
+
+table#cart_table+div{
+	margin: 15px 0;	
+}
+
+
+table#cart_table+div>button{
+	width: 100px; height: 30px;
+	padding: 5px;
+	cursor: pointer;
+	background: #fff;
+	border: 0.7px #aaa solid;
+	
+}
+table#cart_table+div>button:hover{
+	border: 0.7px #000 solid;
+}
+
+ul.cart_ul{
+	margin: 20px 0;
+	border-top: 1px #000 solid;
+	border-bottom: 1px #000 solid;
+}
+
+ul.cart_ul>li:first-of-type{
+	padding: 8px 0;	
+}
+
+ul.cart_ul>li:last-of-type{
+	display: flex;
+	height: 120px;
+	align-items: center;
+	justify-content: center;
+	border-top: 0.7px #aaa solid;
+	flex-direction: column;
+}
+
+ul.cart_ul>li:last-of-type>div:first-of-type{
+	font-size: 17pt;
+	font-weight: bold;
+}
+
+ul.cart_ul>li:last-of-type>div:first-of-type>span:not(:last-of-type){
+	display: inline-block;
+	margin-left: 20px;	
+}
+
+ul.cart_ul>li:last-of-type>div:last-of-type>span{
+	display:inline-block;
+	color: #777;
+	margin: 5px 47px;
+	font-size: 9pt;
+	position: relative;
+	left: 20px;
+}
+
+ul.cart_ul>li:last-of-type>div:last-of-type>span:last-of-type {
+	left: 0px;
+}
+
+span#total_price,
+span#total_price+span{
+	color:rgb(29,79,178);
+}
+
+div.cart_div+div{
+	display: flex;
+	margin-bottom: 40px;
+	align-items: center;
+	justify-content: center;
+}
+
+div.cart_div+div>button{
+	background: rgb(22,46,122);
+	color: #fff;
+	width: 180px; height: 40px;
+	border: none;
+	cursor: pointer;
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+div.cart_div+div>button:hover{
+	background: rgb(33,104,177);
+}

@@ -91,11 +91,11 @@
 									</p>
 									<c:choose>
 										<c:when test="${vo.psaleprice == 0}">
-											<p class="product_detail_price">${price_comma }원</p>
+											<p class="product_detail_price">${vo.pprice }원</p>
 										</c:when>
 										<c:otherwise>
-											<p class="former_price">${price_comma }원</p>
-											<p class="product_detail_price">${saleprice_comma }원</p>
+											<p class="former_price">${vo.pprice  }원</p>
+											<p class="product_detail_price">${vo.psaleprice  }원</p>
 										</c:otherwise>
 									</c:choose>
 								</div>

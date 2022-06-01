@@ -17,10 +17,6 @@ button.productButton:hover{
 	background: rgb(33,104,177);
 }
 
-img.sub_images{
-	width: 100px; height: 100px;
-}
-
 div.sub_images_div{
 	display: flex;
 	flex-direction: column;

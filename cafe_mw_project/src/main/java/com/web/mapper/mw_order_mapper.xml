@@ -7,13 +7,36 @@
 
 	<insert id="insert_cart" parameterType="com.web.vo.MwOrderVO">
 		insert into mw_cart
-		values('c_'||sequ_Mw_recipe_rid.nextval, #{c_pnum})
+		values('c_'||sequ_Mw_recipe_rid.nextval, #{c_pnum}, #{c_qnt})
 	</insert>
 
 	<select id="select" resultType="com.web.vo.MwOrderVO">
-		select c_pnum, pname, pprice, psaleprice, pmainsfile
+		select c_pnum, c_qnt, cid, pname, pprice, psaleprice, pmainsfile, pstock
 		from mw_product mw, mw_cart mc
 		where mw.pnum = mc.c_pnum
+	</select>
+
+	<select id="select_cart" parameterType="java.lang.String" resultType="int">
+		select count(*) from mw_cart
+		where c_pnum = #{c_pnum}
+	</select>
+	
+	<update id="update_qnt" parameterType="com.web.vo.MwOrderVO">
+		update mw_cart
+		set c_qnt = #{c_qnt}
+		where cid = #{cid}
+	</update>
+	
+	<delete id="delete" parameterType="java.lang.String">
+		delete from mw_cart
+		where cid = #{cid}
+	</delete>
+	
+	<select id="select_item" parameterType="java.lang.String" resultType="com.web.vo.MwOrderVO">
+		select c_pnum, c_qnt, cid, pname, pprice, psaleprice, pmainsfile, pstock
+ 		from mw_product mw, mw_cart mc 
+    	where mw.pnum = mc.c_pnum 
+    	and cid = #{cid}
 	</select>
 
 	

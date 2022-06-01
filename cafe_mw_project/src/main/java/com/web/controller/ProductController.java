@@ -83,15 +83,10 @@ public class ProductController {
   			}
   		}
   		
-  		DecimalFormat decFormat = new DecimalFormat("###,###");
-  		String price_comma = decFormat.format(vo.getPprice());
-  		String saleprice_comma = decFormat.format(vo.getPsaleprice());
   		
   		mv.addObject("vo", vo);
   		mv.addObject("tagimage1", tagimage1);
   		mv.addObject("tagimage2", tagimage2);
-  		mv.addObject("price_comma", price_comma);
-  		mv.addObject("saleprice_comma", saleprice_comma);
   		
   		mv.setViewName("/product/product_detail");
   		

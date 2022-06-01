@@ -879,3 +879,23 @@ form>select{
 	text-decoration: line-through;
 	font-size: 9pt;
 }
+
+div.contents1{
+	text-align: left;
+}
+
+input.search_i{
+	border:none;
+	border-bottom: 1px #000 solid;
+	margin-bottom: 20px;
+	padding: 5px;
+	width: 180px;
+}
+
+button.search_btn{
+	background: #fff;
+	border: none;
+	position: relative;
+	left: -25px;
+	top:5px;
+}

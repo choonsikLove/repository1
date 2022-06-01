@@ -36,8 +36,8 @@ public class MwOrderDAO implements MwObjectDAO{
 	}
 
 	@Override
-	public Object select(String id) {
-		return null;
+	public Object select(String cid) {
+		return sqlSession.selectOne(namespace + ".select_item", cid);
 	}
 
 	@Override
@@ -46,8 +46,8 @@ public class MwOrderDAO implements MwObjectDAO{
 	}
 
 	@Override
-	public int delete(String id) {
-		return 0;
+	public int delete(String cid) {
+		return sqlSession.delete(namespace + ".delete", cid);
 	}
 
 	@Override
@@ -65,5 +65,11 @@ public class MwOrderDAO implements MwObjectDAO{
 		return null;
 	}
 
-
+	public int selectCartCheck(String c_pnum) {
+		return sqlSession.selectOne(namespace + ".select_cart", c_pnum);
+	}
+	
+	public int updateQnt(MwOrderVO vo) {
+		return sqlSession.update(namespace+".update_qnt", vo);
+	}
 }

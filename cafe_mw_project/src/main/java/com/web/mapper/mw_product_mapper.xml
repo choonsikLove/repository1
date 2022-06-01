@@ -64,11 +64,11 @@
       
 	<select id="listCategory" parameterType="map" resultType="com.web.vo.MwProductVO">
             
-        select PNUM,PNAME,PPRICE,PSALEPRICE,PTAGIMAGE,PCATEGORY,PSTOCK,PMAINFILE,PMAINSFILE
+      select PNUM,PNAME,PPRICE,PSALEPRICE,PTAGIMAGE,PCATEGORY,PSTOCK,PMAINFILE,PMAINSFILE
       from  MW_PRODUCT
       where PCATEGORY = #{pcategory}
-      </select> 
-
+      
+    </select> 
 	
 	
 	
