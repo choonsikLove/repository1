@@ -347,7 +347,7 @@
                                              <input type="radio" name="opayment" value="무통장입금">&ensp;무통장입금
                                           </span>
                                        </p>
-                                       <input style="margin-bottom: 40px;" type="radio" name="pay" value="카카오페이">&ensp;카카오페이
+                                       <input style="margin-bottom: 40px;" type="radio" name="opayment" value="카카오페이">&ensp;카카오페이
                                        <div id="selectPay_noBank">
                                  <div class="account_number">                                      
                                              <select>

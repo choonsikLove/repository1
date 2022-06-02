@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,106 +59,44 @@
 						<td>주문상태</td>
 						<td>비고</td>
 					</tr>
-					<tr>
-						<td>202205150001</td>
-						<td>김주문</td>
-						<td>2022-05-15</td>
-						<td><a href="http://localhost:9000/manwol/admin/order_detail" target="_blank" rel="noreferrer noopener">
-							만월회 음료 원액 베이스 10종(1kg) 외 2건</a></td>
-						<td>100,000</td>
-						<td><span class="orderStatus_update">배송 완료</span></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>202205150001</td>
-						<td>김주문</td>
-						<td>2022-05-15</td>
-						<td><a href="http://localhost:9000/manwol/admin/order_detail" target="_blank" rel="noreferrer noopener">
-							만월회 음료 원액 베이스 10종(1kg) 외 2건</a></td>
-						<td>100,000</td>
-						<td><span class="orderStatus_update">배송 완료</span></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>202205150001</td>
-						<td>김주문</td>
-						<td>2022-05-15</td>
-						<td><a href="http://localhost:9000/manwol/admin/order_detail" target="_blank" rel="noreferrer noopener">
-							만월회 음료 원액 베이스 10종(1kg) 외 2건</a></td>
-						<td>100,000</td>
-						<td><span class="orderStatus_update">배송 완료</span></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>202205150001</td>
-						<td>김주문</td>
-						<td>2022-05-15</td>
-						<td><a href="http://localhost:9000/manwol/admin/order_detail" target="_blank" rel="noreferrer noopener">
-							만월회 음료 원액 베이스 10종(1kg) 외 2건</a></td>
-						<td>100,000</td>
-						<td><span class="orderStatus_update">배송 완료</span></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>202205150001</td>
-						<td>김주문</td>
-						<td>2022-05-15</td>
-						<td><a href="http://localhost:9000/manwol/admin/order_detail" target="_blank" rel="noreferrer noopener">
-							만월회 음료 원액 베이스 10종(1kg) 외 2건</a></td>
-						<td>100,000</td>
-						<td><span class="orderStatus_update">배송 완료</span></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>202205150001</td>
-						<td>김주문</td>
-						<td>2022-05-15</td>
-						<td><a href="http://localhost:9000/manwol/admin/order_detail" target="_blank" rel="noreferrer noopener">
-							만월회 음료 원액 베이스 10종(1kg) 외 2건</a></td>
-						<td>100,000</td>
-						<td><span class="orderStatus_update">배송 완료</span></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>202205150001</td>
-						<td>김주문</td>
-						<td>2022-05-15</td>
-						<td><a href="http://localhost:9000/manwol/admin/order_detail" target="_blank" rel="noreferrer noopener">
-							만월회 음료 원액 베이스 10종(1kg) 외 2건</a></td>
-						<td>100,000</td>
-						<td><span class="orderStatus_update">배송 완료</span></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>202205150001</td>
-						<td>김주문</td>
-						<td>2022-05-15</td>
-						<td><a href="http://localhost:9000/manwol/admin/order_detail" target="_blank" rel="noreferrer noopener">
-							만월회 음료 원액 베이스 10종(1kg) 외 2건</a></td>
-						<td>100,000</td>
-						<td><span class="orderStatus_update">배송 완료</span></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>202205150001</td>
-						<td>김주문</td>
-						<td>2022-05-15</td>
-						<td><a href="http://localhost:9000/manwol/admin/order_detail" target="_blank" rel="noreferrer noopener">
-							만월회 음료 원액 베이스 10종(1kg) 외 2건</a></td>
-						<td>100,000</td>
-						<td><span class="orderStatus_update">배송 완료</span></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>202205150001</td>
-						<td>김주문</td>
-						<td>2022-05-15</td>
-						<td><a href="http://localhost:9000/manwol/admin/order_detail" target="_blank" rel="noreferrer noopener">
-							만월회 음료 원액 베이스 10종(1kg) 외 2건</a></td>
-						<td>100,000</td>
-						<td><span class="orderStatus_update">배송 완료</span></td>
-						<td></td>
-					</tr>
+					<c:choose>
+						<c:when test="${empty list}">
+							<tr>
+								<td colspan='7'>주문 결과가 없습니다.</td>
+							</tr>
+						</c:when>
+						<c:otherwise>
+							<c:forEach var="vo" items="${list }">
+								<tr>
+									<td>${vo.oid }</td>
+									<td>${vo.obuyer }</td>
+									<td>${vo.odate }</td>
+									<td><a href="http://localhost:9000/manwol/admin/order_detail" target="_blank" rel="noreferrer noopener">
+											$(vo.oproducts)
+										</a>
+									</td>
+									<td>${vo.ototal }</td>
+									<td>
+										<c:choose>
+											<c:when test="${vo.ostatus == 0 }">
+												<span class="orderStatus_update">입금 대기 중</span>
+											</c:when>
+											<c:when test="${vo.ostatus == 1 }">
+												<span class="orderStatus_update">배송 준비</span>
+											</c:when>
+											<c:when test="${vo.ostatus == 2 }">
+												<span class="orderStatus_update">배송 중</span>
+											</c:when>
+											<c:when test="${vo.ostatus == 3 }">
+												<span class="orderStatus_update">배송 완료</span>
+											</c:when>
+										</c:choose>
+									</td>
+									<td>비고란</td>
+								</tr>
+							</c:forEach>
+						</c:otherwise>
+					</c:choose>
 					<tr>
 						<td colspan='7'>
 							<form>

@@ -19,6 +19,10 @@ public class MwOrderServiceImpl implements MwOrderService{
 	public List<MwCartVO> getSelectResult(){
 		return orderDao.select();
 	}
+	
+	public List<MwOrderVO> getOrderSelectResult(){
+		return orderDao.selectOrder();
+	}
 
 	@Override
 	public List<Object> getListResult(int startCount, int endCount) {
@@ -64,6 +68,10 @@ public class MwOrderServiceImpl implements MwOrderService{
 	
 	public int getOrderInsertResult(MwOrderVO vo) {//TT
 		return orderDao.insertOrder(vo);
+	}
+	
+	public int getStockUpdateResult(String cid) {
+		return orderDao.updateStock(cid);
 	}
 	
 }

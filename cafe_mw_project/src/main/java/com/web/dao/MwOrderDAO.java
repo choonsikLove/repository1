@@ -25,10 +25,12 @@ public class MwOrderDAO implements MwObjectDAO{
 	}
 
 	public List<MwCartVO> select(){
-		List<MwCartVO> list = sqlSession.selectList(namespace + ".select");
+		return sqlSession.selectList(namespace + ".select");
 		//아직은 회원 정보가 없어서 파라미터가 없어요~
-		
-		return list;
+	}
+	
+	public List<MwOrderVO> selectOrder(){
+		return sqlSession.selectList(namespace + ".select_order");
 	}
 	
 	@Override
@@ -76,5 +78,9 @@ public class MwOrderDAO implements MwObjectDAO{
 	
 	public int insertOrder(MwOrderVO vo) {
 		return sqlSession.insert(namespace + ".insert_order", vo);
+	}
+	
+	public int updateStock(String cid) {
+		return sqlSession.update(namespace+".update_stock", cid);
 	}
 }

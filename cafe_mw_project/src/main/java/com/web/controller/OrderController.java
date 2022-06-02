@@ -97,23 +97,21 @@ public class OrderController {
 	@RequestMapping(value="/order_payment", method=RequestMethod.POST)
 	public ModelAndView order_payment(MwOrderVO vo) {
 		ModelAndView mv = new ModelAndView();
-		//int result = orderService.getOrderInsertResult(vo);
+		int result = orderService.getOrderInsertResult(vo);
 	
-		int result = 1;
 		if(result == 1) {
 		
-		for(String oproduct : vo.getOproduct()) {
-			//orderService.getStockUpdateResult();
-		}
-		
-		for(String oproduct : vo.getOproduct()) {
-			//orderService.getDeleteResult(oproduct);
-		}
-			//여기에 그 뭐지... 그.. stock 감소하는 내용도 넣어야 함.
-			//cid를 넣어서~
+			for(String oproduct : vo.getOproduct()) {
+				orderService.getStockUpdateResult(oproduct);
+				System.out.println(oproduct);
+			}
 			
-			//mv.addObject("order_result", "succ");
-			//mv.setViewName("/index");
+			for(String oproduct : vo.getOproduct()) {
+				orderService.getDeleteResult(oproduct);
+			}
+			
+			mv.addObject("order_result", "succ");
+			mv.setViewName("/index");
 		}
 		
 		return mv;

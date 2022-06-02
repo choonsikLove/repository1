@@ -3,9 +3,14 @@ package com.web.vo;
 public class MwOrderVO {
 	String oid, oproducts, obuyer, ob_hp, ob_email, odate, orecipient, or_hp, or_post, or_addr1, or_addr2, oinvoice, opayment;
 	String[] oproduct;
-	int ototal,oshipment, oship_memo;
+	int ototal,oshipment, oship_memo, ostatus;
 	
-	
+	public int getOstatus() {
+		return ostatus;
+	}
+	public void setOstatus(int ostatus) {
+		this.ostatus = ostatus;
+	}
 	public String getOb_hp() {
 		return ob_hp;
 	}

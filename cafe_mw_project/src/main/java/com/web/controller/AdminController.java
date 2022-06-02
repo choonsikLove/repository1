@@ -1,8 +1,6 @@
 package com.web.controller;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -13,16 +11,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.web.service.FileServiceImpl;
 import com.web.service.MwMemberServiceImpl;
+import com.web.service.MwOrderServiceImpl;
 import com.web.service.MwPageServiceImpl;
 import com.web.service.MwProductServiceImpl;
 import com.web.service.MwRecipeServiceImpl;
 import com.web.vo.MwMemberVO;
+import com.web.vo.MwOrderVO;
 import com.web.vo.MwProductVO;
 import com.web.vo.MwRecipeVO;
 
@@ -43,6 +42,10 @@ public class AdminController {
 	
 	@Autowired
 	private MwRecipeServiceImpl recipeService;
+	
+	@Autowired
+	private MwOrderServiceImpl orderService;
+	
 	
 	@RequestMapping(value="/admin", method=RequestMethod.GET)
 	public String admin() {
@@ -443,8 +446,15 @@ public class AdminController {
 	}
 	 
 	@RequestMapping(value="/admin/order", method=RequestMethod.GET) 
-	public String order() { 
-		return "/admin/order/order"; 
+	public ModelAndView order() { 
+		ModelAndView mv = new ModelAndView();
+		
+		List<MwOrderVO> list = orderService.getOrderSelectResult();
+		
+		mv.addObject("list",list);
+		mv.setViewName("/admin/order/order");
+		
+		return mv; 
 	}
 	 
 	@RequestMapping(value="/admin/order_detail", method=RequestMethod.GET) 
