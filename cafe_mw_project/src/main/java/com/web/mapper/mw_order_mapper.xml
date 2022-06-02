@@ -61,7 +61,7 @@
 	</select>
 	
 	<select id="select_order_content" parameterType="java.lang.String" resultType="com.web.vo.MwOrderVO">
-		select oid, oproducts, obuyer, ob_hp, ob_email, odate,
+		select oid, oproducts, obuyer, ob_hp, ob_email, to_char(odate, 'yyyy-mm-dd') odate,
 			orecipient, or_hp, or_post, or_addr1, or_addr2, ototal,
 			opayment, oinvoice, oshipment, oship_memo, ostatus
 		from mw_order

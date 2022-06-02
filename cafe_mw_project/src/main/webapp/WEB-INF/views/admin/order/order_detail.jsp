@@ -40,9 +40,9 @@
 			<h3>주문 상세 내역</h3>
 			<div>
 				<span>주문일자</span>
-				<span>2022-05-16</span>
+				<span>${vo.odate }</span>
 				<span>주문번호</span>
-				<span>2022051600000</span>
+				<span>${vo.oid }</span>
 			</div>
 			<div>
 				<table border='1'>
@@ -59,7 +59,7 @@
 								</div>
 								<div class="order_items">
 									<ul>
-										<li><p>만월회 음료 원액 베이스 10종(1kg)</p></li>
+										<li><p>낱개로 된 정보를 안 가져왔어잉(힝)</p></li>
 										<li><p>종류: 민트초코</p></li>
 										<li>
 											<span>35,000원</span>
@@ -71,29 +71,7 @@
 							</div>
 						</td>
 						<td>3000원</td>
-						<td><p>배송완료</p></td>
-					</tr>
-					<tr>
-						<td>
-							<div>
-								<div>
-									<img src="http://localhost:9000/manwol/resources/images/product/만월회 음료 원액 베이스 10종(1kg).jpg">
-								</div>
-								<div class="order_items">
-									<ul>
-										<li><p>만월회 음료 원액 베이스 10종(1kg)</p></li>
-										<li><p>종류: 민트초코</p></li>
-										<li>
-											<span>35,000원</span>
-											<span>/</span>
-											<span>1개</span>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</td>
-						<td>3000원</td>
-						<td><p>배송완료</p></td>
+						<td><p>배송완료 운송장 번호.</p></td>
 					</tr>
 				</table>
 			</div>
@@ -103,15 +81,15 @@
 				<table border='1'>
 					<tr>
 						<td>주문자</td>
-						<td>김주문</td>
+						<td>${vo.obuyer }</td>
 					</tr>
 					<tr>
 						<td>연락처</td>
-						<td>010-9876-5432</td>
+						<td>${vo.ob_hp }</td>
 					</tr>
 					<tr>
 						<td>이메일</td>
-						<td>email@email.com</td>
+						<td>${vo.ob_email }</td>
 					</tr>
 				</table>
 			</div>
@@ -121,22 +99,22 @@
 				<table border='1'>
 					<tr>
 						<td>수령인</td>
-						<td>김수령</td>
+						<td>${vo.orecipient }</td>
 					</tr>
 					<tr>
 						<td>연락처</td>
-						<td>010-1234-5678</td>
+						<td>${vo.or_hp }8</td>
 					</tr>
 					<tr>
 						<td>배송지</td>
 						<td>
-							<p>(12345)주소1</p>
-							<p>주소2</p>
+							<p>(${vo.or_post })${vo.or_addr1 }</p>
+							<p>${vo.or_addr2 }</p>
 						</td>
 					</tr>
 					<tr>
 						<td>배송메모</td>
-						<td>mail@mail.com</td>
+						<td>${vo.oship_memo }</td>
 					</tr>
 				</table>
 			</div>
@@ -154,12 +132,12 @@
 								<span>-</span>
 								<div>
 									<span>할인금액</span>
-									<span>할인금액</span>
+									<span>하이고야</span>
 								</div>
 									<span>=</span>
 								<div>
 									<span>총 주문금액</span>
-									<span>총 주문금액</span>
+									<span>${vo.ototal }</span>
 								</div>
 							</div>
 						</td>
@@ -173,7 +151,7 @@
 								</div>
 								<div>
 									<span>배송비</span>
-									<span>3,000원</span>
+									<span>${vo.oshipment }원</span>
 								</div>
 							</div>
 						</td>
@@ -184,7 +162,7 @@
 							</div>
 						</td>
 						<td>
-							<span>결제수단</span>
+							<span>${vo.opayment }</span>
 						</td>
 					</tr>
 				</table>
