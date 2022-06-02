@@ -17,6 +17,7 @@
    <!-- content -->
    <div class="payment">
       <h2>결제하기</h2>
+      <form name="payment_form" action="order_payment" method="post">
       <table>
          <tr>
             <td style="display: flex;">
@@ -55,10 +56,10 @@
                                                    <a href="http://localhost:9000/manwol/product_detail?pnum=${vo.c_pnum }">
                                                    	<c:choose>
                                                    		<c:when test="${vo.psaleprice != 0 }">
-															<strong>${vo.psaleprice }</strong>
+															<strong>${vo.psaleprice * vo.c_qnt }</strong>
                                                    		</c:when>
                                                    		<c:otherwise>
-															<strong>${vo.pprice }</strong>
+															<strong>${vo.pprice * vo.c_qnt }</strong>
                                                    		</c:otherwise>
                                                    	</c:choose>
                                                    </a>
@@ -66,6 +67,7 @@
                                              </div>
                                           </div>
                                        </div>
+                                       <input type="text" name="oproduct" value = "${vo.cid }">
                                     </c:forEach>
                                     </div>
                                     <div class="payment_price1">
@@ -100,8 +102,11 @@
                                           <p>qwer1234@gmail.com</p>
                                        </div>
                                        <div class="payment_guide1_2">
-                                          <input class="payment_guide1_2_in1" type="text" placeholder="홍길동"><input class="payment_guide1_2_in2" type="text" placeholder="01012345678">
-                                          <input class="payment_guide1_2_in3" type="text" placeholder="qwer1234@gmail.com">
+                                       		<div>
+                                          <input class="payment_guide1_2_in1" type="text" placeholder="홍길동" name="obuyer">
+                                          <input class="payment_guide1_2_in2" type="text" placeholder="01012345678" name="ob_hp">
+                                       		</div>
+                                          <input class="payment_guide1_2_in3" type="text" placeholder="qwer1234@gmail.com" name="ob_email">
                                        </div>
                                        <div class="payment_btn">
                                           <button type="button" name="btn" value="수정" id="btnx">
@@ -166,20 +171,22 @@
                                        </div>
                                        <div>
                                              <div class="deliver3_2">                                                
-                                                <input type="checkbox">&ensp;주문자 정보와 동일<br>
+                                                <input type="checkbox" id="same_b_r">&ensp;주문자 정보와 동일<br>
                                                <div class="deliver3_3"> 
                                                    <div class="deliver3_3_1">
-                                                      <input type="text" placeholder="수령인"><p>2글자 이상 입력해 주세요</p> 
+                                                      <input type="text" placeholder="수령인" name="orecipient">
+                                                      <p>2글자 이상 입력해 주세요</p> 
                                                    </div>
                                                    <div class="deliver3_3_2">
-                                                      <input type="text" placeholder="연락처"><p>전화번호를 입력하세요</p>
+                                                      <input type="text" placeholder="연락처" name="or_hp">
+                                                      <p>전화번호를 입력하세요</p>
                                                 
                                                    </div>
                                                 </div>    
-                                                <input class="postcode" type="text" placeholder="우편번호">
+                                                <input class="postcode" type="text" placeholder="우편번호" name="or_post">
                                                 <button><strong>주소찾기</strong></button><br> 
-                                                <input class="address" type="text" placeholder="주소"><br>
-                                                <input class="address" type="text" placeholder="상세주소"><br>
+                                                <input class="address" type="text" placeholder="주소" name="or_addr1"><br>
+                                                <input class="address" type="text" placeholder="상세주소" name="or_addr2"><br>
                                                 <input class="address1" type="checkbox">&ensp;배송지 목록에 추가  <br>                                                                                       
                                             </div>   
                                                                                  
@@ -192,12 +199,12 @@
                                     
                                     <div class="message1">
                                        <p>배송메모</p>
-                                       <select>
-                                          <option>배송메모를 선택해 주세요.</option>
-                                          <option>배송 전에 미리 연락 바랍니다.</option>
-                                          <option>부재시 경비실에 맡겨주세요.</option>
-                                          <option>부재시 전화나 문자를 남겨주세요.</option>
-                                          <option id="option1">직접입력</option>
+                                       <select name="oship_memo">
+                                          <option value="0">배송메모를 선택해 주세요.</option>
+                                          <option value="1">배송 전에 미리 연락 바랍니다.</option>
+                                          <option value="2">부재시 경비실에 맡겨주세요.</option>
+                                          <option value="3">부재시 전화나 문자를 남겨주세요.</option>
+                                          <option id="option1">직접입력(나중에)</option>
                                        </select>
                                        <p id="option1_2">
                                          <input type="text" placeholder="배송메모를 입력해 주세요">
@@ -271,7 +278,21 @@
                                     <div>
                                        <div class="information">
                                           <p class="information1">
-                                             상품가격<span>21,000원</span>
+                                             상품가격
+                                            <c:set var="total" value="${0}"/>
+											<c:forEach var="vo" items="${list}">
+												<c:choose>
+													<c:when test="${vo.psaleprice != 0 }">
+														<c:set var="total" value="${total + vo.psaleprice * vo.c_qnt}" />
+													</c:when>
+													<c:otherwise>
+														<c:set var="total" value="${total + vo.pprice * vo.c_qnt}" />
+													</c:otherwise>
+												</c:choose>
+											</c:forEach>
+                                             <span>
+												<c:out value="${total}"/>
+                                             </span>
                                           </p>
                                           <p class="information2">
                                              배송비<span>+3,000원</span>
@@ -279,7 +300,12 @@
                                        </div>
                                        <div class="information3">
                                           <p>
-                                             총 주문금액 <span>24,000원</span>
+                                             총 주문금액
+                                             <span id="in_total">
+												<c:out value="${total + 3000}"/>
+                                             </span>
+												원<br>
+                                             <input type="text" name="ototal">
                                           </p>
                                        </div>
                                     </div>
@@ -307,18 +333,18 @@
                                     <div class="payment_method" style="margin-bottom: -30px;">
                                        <p>
                                           <span>
-                                             <input type="radio" name="pay" value="신용카드">&ensp;신용카드
+                                             <input type="radio" name="opayment" value="신용카드">&ensp;신용카드
                                           </span>
                                           <span class="payment_method1">
-                                             <input type="radio" name="pay" value="실시간계좌이체">&ensp;실시간계좌이체
+                                             <input type="radio" name="opayment" value="실시간계좌이체">&ensp;실시간계좌이체
                                           </span>
                                        </p>
                                        <p>
                                           <span>
-                                             <input type="radio" name="pay" value="가상계좌">&ensp;가상계좌
+                                             <input type="radio" name="opayment" value="가상계좌">&ensp;가상계좌
                                           </span>
                                           <span class="payment_method1">
-                                             <input type="radio" name="pay" value="무통장입금">&ensp;무통장입금
+                                             <input type="radio" name="opayment" value="무통장입금">&ensp;무통장입금
                                           </span>
                                        </p>
                                        <input style="margin-bottom: 40px;" type="radio" name="pay" value="카카오페이">&ensp;카카오페이
@@ -383,7 +409,7 @@
                            <tr>
                               <td>
                                  <div  class="agreement_btn">
-                                    <button class="agreement_btn1">결제하기</button>
+                                    <button class="agreement_btn1" type="button">결제하기</button>
                                  </div>
                               </td>
                            </tr>
@@ -394,6 +420,7 @@
             </td>
          </tr>
       </table>
+      </form>
       
       <!-- 모달창 -->
    <div class="modal">

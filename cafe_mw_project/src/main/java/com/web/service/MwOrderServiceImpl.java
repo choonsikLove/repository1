@@ -3,6 +3,7 @@ package com.web.service;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.web.dao.MwOrderDAO;
+import com.web.vo.MwCartVO;
 import com.web.vo.MwOrderVO;
 
 public class MwOrderServiceImpl implements MwOrderService{
@@ -15,7 +16,7 @@ public class MwOrderServiceImpl implements MwOrderService{
 		return orderDao.insert(obj);
 	}
 	
-	public List<MwOrderVO> getSelectResult(){
+	public List<MwCartVO> getSelectResult(){
 		return orderDao.select();
 	}
 
@@ -57,8 +58,12 @@ public class MwOrderServiceImpl implements MwOrderService{
 		return orderDao.selectCartCheck(c_pnum);
 	}
 	
-	public int getQntChangeResult(MwOrderVO vo) {
+	public int getQntChangeResult(MwCartVO vo) {
 		return orderDao.updateQnt(vo);
+	}
+	
+	public int getOrderInsertResult(MwOrderVO vo) {//TT
+		return orderDao.insertOrder(vo);
 	}
 	
 }

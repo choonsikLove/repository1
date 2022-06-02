@@ -11,6 +11,7 @@
 <script>
 	var login_result = "${login_result}";
 	var join_result = "${join_result}";
+	var order_result = "${order_result}";
 	
 	if(join_result == "succ"){
 		alert("회원 가입 되었습니다.");
@@ -34,6 +35,10 @@
 	
 	if(logout_result == "succ"){
 		alert("로그아웃 되었습니다.");
+	}
+	
+	if(order_result == "succ"){
+		alert("주문이 처리되었습니다.");
 	}
 	
 </script>

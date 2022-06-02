@@ -7,6 +7,7 @@ import java.util.Map;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.web.vo.MwCartVO;
 import com.web.vo.MwOrderVO;
 import com.web.vo.MwRecipeVO;
 
@@ -19,12 +20,12 @@ public class MwOrderDAO implements MwObjectDAO{
 
 	@Override
 	public int insert(Object obj) {
-		MwOrderVO vo = (MwOrderVO)obj;
+		MwCartVO vo = (MwCartVO)obj;
 		return sqlSession.insert(namespace + ".insert_cart", vo);
 	}
 
-	public List<MwOrderVO> select(){
-		List<MwOrderVO> list = sqlSession.selectList(namespace + ".select");
+	public List<MwCartVO> select(){
+		List<MwCartVO> list = sqlSession.selectList(namespace + ".select");
 		//아직은 회원 정보가 없어서 파라미터가 없어요~
 		
 		return list;
@@ -69,7 +70,11 @@ public class MwOrderDAO implements MwObjectDAO{
 		return sqlSession.selectOne(namespace + ".select_cart", c_pnum);
 	}
 	
-	public int updateQnt(MwOrderVO vo) {
+	public int updateQnt(MwCartVO vo) {
 		return sqlSession.update(namespace+".update_qnt", vo);
+	}
+	
+	public int insertOrder(MwOrderVO vo) {
+		return sqlSession.insert(namespace + ".insert_order", vo);
 	}
 }

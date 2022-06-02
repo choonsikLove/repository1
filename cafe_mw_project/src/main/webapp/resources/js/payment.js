@@ -118,4 +118,65 @@ $(document).ready(function(){
              checkbox.checked = selectAll.checked;
            })
          }
-      
+$(document).ready(function(){
+	$('button.agreement_btn1').click(function(){
+		
+			
+		if(!$('input[name="agree"]').is(":checked")){
+			alert("결제 진행에 동의해 주세요!");
+			return false;
+		} else if($('input[name=obuyer]').val() == ""){
+			alert("주문자 성명을 입력해 주세요!");
+			$('input[name=obuyer]').focus();
+			return false;
+		} else if($('input[name=ob_hp]').val() == ""){
+			alert("주문자의 연락처를 입력해 주세요!");
+			$('input[name=ob_hp]').focus();
+			return false;
+		} else if($('input[name=ob_email]').val() == ""){
+			alert("주문자의 이메일을 입력해 주세요!");
+			$('input[name=ob_email]').focus();
+			return false;
+		} else if($('input[name=orecipient]').val() == ""){
+			alert("수령인 성명을 입력해 주세요!");
+			$('input[name=orecipient]').focus();
+			return false;
+		} else if($('input[name=or_hp]').val() == ""){
+			alert("수령인의 연락처를 입력해 주세요!");
+			$('input[name=or_hp]').focus();
+			return false;
+		} else if($('input[name=or_post]').val() == ""){
+			alert("수령인의 우편번호를 입력해 주세요!");
+			$('input[name=or_post]').focus();
+			return false;
+		} else if($('input[name=or_addr1]').val() == ""){
+			alert("수령인의 주소를 완전히 입력해 주세요!");
+			$('input[name=or_addr1]').focus();
+			return false;
+		} else if($('input[name=or_addr2]').val() == ""){
+			alert("수령인의 주소를 완전히 입력해 주세요!");
+			$('input[name=or_addr2]').focus();
+			return false;
+		} else if(!$('input[name="opayment"]').is(":checked")){
+			alert("결제 수단을 선택해 주세요!");
+		} else{
+			payment_form.submit();
+		}
+		
+	});
+	
+	var in_total = $('span#in_total').text().trim();
+	$('input[name=ototal]').val(in_total);
+	
+	$('input#same_b_r').change(function(){
+		if($(this).is(':checked')){
+			$('input[name=orecipient]').val($('input[name=obuyer]').val());
+			$('input[name=or_hp]').val($('input[name=ob_hp').val());
+		} else{
+			$('input[name=orecipient]').val("");
+			$('input[name=or_hp]').val("");
+		};
+	});
+	
+
+}); 

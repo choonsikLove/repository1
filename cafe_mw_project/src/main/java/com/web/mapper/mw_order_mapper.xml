@@ -5,12 +5,12 @@
 
 <mapper namespace="mapper.order">
 
-	<insert id="insert_cart" parameterType="com.web.vo.MwOrderVO">
+	<insert id="insert_cart" parameterType="com.web.vo.MwCartVO">
 		insert into mw_cart
-		values('c_'||sequ_mw_cart_cid, #{c_pnum}, #{c_qnt})
+		values('c_'||sequ_mw_cart_cid.nextval, #{c_pnum}, #{c_qnt})
 	</insert>
 
-	<select id="select" resultType="com.web.vo.MwOrderVO">
+	<select id="select" resultType="com.web.vo.MwCartVO">
 		select c_pnum, c_qnt, cid, pname, pprice, psaleprice, pmainsfile, pstock
 		from mw_product mw, mw_cart mc
 		where mw.pnum = mc.c_pnum
@@ -21,7 +21,7 @@
 		where c_pnum = #{c_pnum}
 	</select>
 	
-	<update id="update_qnt" parameterType="com.web.vo.MwOrderVO">
+	<update id="update_qnt" parameterType="com.web.vo.MwCartVO">
 		update mw_cart
 		set c_qnt = #{c_qnt}
 		where cid = #{cid}
@@ -32,12 +32,20 @@
 		where cid = #{cid}
 	</delete>
 	
-	<select id="select_item" parameterType="java.lang.String" resultType="com.web.vo.MwOrderVO">
+	<select id="select_item" parameterType="java.lang.String" resultType="com.web.vo.MwCartVO">
 		select c_pnum, c_qnt, cid, pname, pprice, psaleprice, pmainsfile, pstock
  		from mw_product mw, mw_cart mc 
     	where mw.pnum = mc.c_pnum 
     	and cid = #{cid}
 	</select>
+	
+	<insert id="insert_order" parameterType="com.web.vo.MwOrderVO">
+		insert into mw_order
+		values('o'||sequ_mw_order_oid.nextval, #{oproducts}, #{#obuyer}, #{ob_hp}, #{ob_email}, sysdate, 
+		    #{orecipient}, #{or_hp}, #{or_post}, #{or_addr1}, #{or_addr2}, #{ototal},
+		    #{opayment}, null, 3000, #{oship_memo}, 0)
+	</insert>
+	<!--아직 구동하면 안돼~그 뭐지... cid를 잘라서 그거 해야 함. pstock을 줄여야 해. -->
 
 	
 	

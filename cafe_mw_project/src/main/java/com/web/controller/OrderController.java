@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import com.web.service.MwOrderServiceImpl;
+import com.web.vo.MwCartVO;
 import com.web.vo.MwOrderVO;
 
 @Controller
@@ -23,7 +24,7 @@ public class OrderController {
 	public ModelAndView shop_cart() {
 	    ModelAndView mv = new ModelAndView();
 	    
-	    List<MwOrderVO> list = orderService.getSelectResult();
+	    List<MwCartVO> list = orderService.getSelectResult();
 		
 	    mv.addObject("list",list);
 	    mv.setViewName("/order/cart");
@@ -33,7 +34,7 @@ public class OrderController {
 	
 	@ResponseBody
 	@RequestMapping(value="/shop_cart_insert", method=RequestMethod.POST)
-	public String shop_cart_insert(MwOrderVO vo) {
+	public String shop_cart_insert(MwCartVO vo) {
 		
 		int result = orderService.getInsertResult(vo);
 		
@@ -51,7 +52,7 @@ public class OrderController {
 	
 	@ResponseBody
 	@RequestMapping(value="/shop_cart_qnt_change", method=RequestMethod.POST)
-	public String shop_cart_qnt_chng(MwOrderVO vo) {
+	public String shop_cart_qnt_chng(MwCartVO vo) {
 		
 		int result = orderService.getQntChangeResult(vo);
 		
@@ -78,17 +79,42 @@ public class OrderController {
 	}
 	
 	@RequestMapping(value="/cart_to_payment", method=RequestMethod.POST)
-	public ModelAndView cart_to_payment(MwOrderVO vo) {
+	public ModelAndView cart_to_payment(MwCartVO vo) {
 		ModelAndView mv = new ModelAndView();
-		List<MwOrderVO> vo_list = new ArrayList<MwOrderVO>();
+		List<MwCartVO> vo_list = new ArrayList<MwCartVO>();
 		
 		String[] cids = vo.getCids();
 		for(String cid: cids) {
-			vo_list.add((MwOrderVO)orderService.getContentResult(cid));
+			vo_list.add((MwCartVO)orderService.getContentResult(cid));
 		}
 		
 		mv.addObject("list", vo_list);
 		mv.setViewName("/order/payment");
+		
+		return mv;
+	}
+	
+	@RequestMapping(value="/order_payment", method=RequestMethod.POST)
+	public ModelAndView order_payment(MwOrderVO vo) {
+		ModelAndView mv = new ModelAndView();
+		//int result = orderService.getOrderInsertResult(vo);
+	
+		int result = 1;
+		if(result == 1) {
+		
+		for(String oproduct : vo.getOproduct()) {
+			//orderService.getStockUpdateResult();
+		}
+		
+		for(String oproduct : vo.getOproduct()) {
+			//orderService.getDeleteResult(oproduct);
+		}
+			//여기에 그 뭐지... 그.. stock 감소하는 내용도 넣어야 함.
+			//cid를 넣어서~
+			
+			//mv.addObject("order_result", "succ");
+			//mv.setViewName("/index");
+		}
 		
 		return mv;
 	}

@@ -112,6 +112,12 @@
 								</c:if>
 								<br>
 								<br>
+								<div>
+									<button type ="button" onclick="fnCalCount('m');">-</button>
+									<input name="qnt" type="text" value="0" readonly="readonly"></input>
+								    <button type="button" onclick="fnCalCount('p');">+</button>
+								    <p>총 주문 금액: <span id="qnt_price"></span>원</p>
+								</div>
 
 								<div class="product_detail_text3">
 									<p>

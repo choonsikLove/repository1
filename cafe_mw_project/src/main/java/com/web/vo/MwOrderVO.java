@@ -1,82 +1,116 @@
 package com.web.vo;
 
 public class MwOrderVO {
-	String cid, c_pnum;
-	String pname, pmainsfile;
-	int pprice, psaleprice, pstock, c_qnt;
-	String[] cids;
+	String oid, oproducts, obuyer, ob_hp, ob_email, odate, orecipient, or_hp, or_post, or_addr1, or_addr2, oinvoice, opayment;
+	String[] oproduct;
+	int ototal,oshipment, oship_memo;
 	
 	
-	public String[] getCids() {
-		return cids;
+	public String getOb_hp() {
+		return ob_hp;
 	}
-
-	public void setCids(String[] cids) {
-		this.cids = cids;
+	public void setOb_hp(String ob_hp) {
+		this.ob_hp = ob_hp;
 	}
-
-	public int getPstock() {
-		return pstock;
+	public String getOb_email() {
+		return ob_email;
 	}
-
-	public void setPstock(int pstock) {
-		this.pstock = pstock;
+	public void setOb_email(String ob_email) {
+		this.ob_email = ob_email;
 	}
-
-	public int getC_qnt() {
-		return c_qnt;
+	public String getOid() {
+		return oid;
 	}
-
-	public void setC_qnt(int c_qnt) {
-		this.c_qnt = c_qnt;
+	public void setOid(String oid) {
+		this.oid = oid;
 	}
-
-	public String getPname() {
-		return pname;
+	public String getOproducts() {
+		if(oproduct != null) {
+			oproducts = String.join(",", oproduct);
+		}
+		
+		return oproducts;
 	}
-
-	public void setPname(String pname) {
-		this.pname = pname;
+	public void setOproducts(String oproducts) {
+		this.oproducts = oproducts;
 	}
-
-	public String getPmainsfile() {
-		return pmainsfile;
+	public String getObuyer() {
+		return obuyer;
 	}
-
-	public void setPmainsfile(String pmainsfile) {
-		this.pmainsfile = pmainsfile;
+	public void setObuyer(String obuyer) {
+		this.obuyer = obuyer;
 	}
-
-	public int getPprice() {
-		return pprice;
+	public String getOdate() {
+		return odate;
 	}
-
-	public void setPprice(int pprice) {
-		this.pprice = pprice;
+	public void setOdate(String odate) {
+		this.odate = odate;
 	}
-
-	public int getPsaleprice() {
-		return psaleprice;
+	public String getOrecipient() {
+		return orecipient;
 	}
-
-	public void setPsaleprice(int psaleprice) {
-		this.psaleprice = psaleprice;
+	public void setOrecipient(String orecipient) {
+		this.orecipient = orecipient;
 	}
-
-	public String getCid() {
-		return cid;
+	public String getOr_hp() {
+		return or_hp;
 	}
-
-	public void setCid(String cid) {
-		this.cid = cid;
+	public void setOr_hp(String or_hp) {
+		this.or_hp = or_hp;
 	}
-
-	public String getC_pnum() {
-		return c_pnum;
+	public String getOr_post() {
+		return or_post;
 	}
-
-	public void setC_pnum(String c_pnum) {
-		this.c_pnum = c_pnum;
+	public void setOr_post(String or_post) {
+		this.or_post = or_post;
+	}
+	public String getOr_addr1() {
+		return or_addr1;
+	}
+	public void setOr_addr1(String or_addr1) {
+		this.or_addr1 = or_addr1;
+	}
+	public String getOr_addr2() {
+		return or_addr2;
+	}
+	public void setOr_addr2(String or_addr2) {
+		this.or_addr2 = or_addr2;
+	}
+	public String getOinvoice() {
+		return oinvoice;
+	}
+	public void setOinvoice(String oinvoice) {
+		this.oinvoice = oinvoice;
+	}
+	public String[] getOproduct() {
+		return oproduct;
+	}
+	public void setOproduct(String[] oproduct) {
+		this.oproduct = oproduct;
+	}
+	public int getOtotal() {
+		return ototal;
+	}
+	public void setOtotal(int ototal) {
+		this.ototal = ototal;
+	}
+	public String getOpayment() {
+		return opayment;
+	}
+	public void setOpayment(String opayment) {
+		this.opayment = opayment;
+	}
+	public int getOshipment() {
+		return oshipment;
+	}
+	public void setOshipment(int oshipment) {
+		this.oshipment = oshipment;
+	}
+	public int getOship_memo() {
+		return oship_memo;
+	}
+	public void setOship_memo(int oship_memo) {
+		this.oship_memo = oship_memo;
 	}
 	
 	

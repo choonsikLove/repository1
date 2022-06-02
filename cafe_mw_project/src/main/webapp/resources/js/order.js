@@ -184,9 +184,11 @@ var sum4 = 0;
 				text += "<input type='text' value='" + cid_arr[j] + "' name='cids'>";
 			}
 			
+			$('div#cart_to_payment').empty();
 			$('div#cart_to_payment').append(text);
 			
 			cart_form.submit();
+			
 			
 		}
 	});
