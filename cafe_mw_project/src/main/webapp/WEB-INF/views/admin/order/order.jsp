@@ -72,7 +72,7 @@
 									<td>${vo.obuyer }</td>
 									<td>${vo.odate }</td>
 									<td><a href="http://localhost:9000/manwol/admin/order_detail" target="_blank" rel="noreferrer noopener">
-											$(vo.oproducts)
+											${ vo.oproducts}
 										</a>
 									</td>
 									<td>${vo.ototal }</td>
