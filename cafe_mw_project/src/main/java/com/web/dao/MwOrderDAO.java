@@ -42,6 +42,10 @@ public class MwOrderDAO implements MwObjectDAO{
 	public Object select(String cid) {
 		return sqlSession.selectOne(namespace + ".select_item", cid);
 	}
+	
+	public MwOrderVO selectOrderContent(String oid) {
+		return sqlSession.selectOne(namespace + ".select_order_content", oid);
+	}
 
 	@Override
 	public int update(Object obj) {

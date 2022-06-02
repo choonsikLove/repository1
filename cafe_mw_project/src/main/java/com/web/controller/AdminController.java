@@ -458,8 +458,15 @@ public class AdminController {
 	}
 	 
 	@RequestMapping(value="/admin/order_detail", method=RequestMethod.GET) 
-	public String order_detail() { 
-		return "/admin/order/order_detail"; 
+	public ModelAndView order_detail(String oid) {
+		ModelAndView mv = new ModelAndView();
+		
+		MwOrderVO vo = orderService.getOrderContentResult(oid);//이름이 너무 구리지 않나?
+		
+		mv.addObject("vo",vo);
+		mv.setViewName("/admin/order/order_detail");
+		
+		return mv; 
 	}
 	
 	

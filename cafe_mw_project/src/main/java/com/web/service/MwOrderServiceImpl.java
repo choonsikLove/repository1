@@ -34,6 +34,10 @@ public class MwOrderServiceImpl implements MwOrderService{
 	public Object getContentResult(String cid) {
 		return orderDao.select(cid);
 	}
+	
+	public MwOrderVO getOrderContentResult(String oid) {
+		return orderDao.selectOrderContent(oid);
+	}
 
 	@Override
 	public int getListCount() {

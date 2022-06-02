@@ -71,7 +71,7 @@
 									<td>${vo.oid }</td>
 									<td>${vo.obuyer }</td>
 									<td>${vo.odate }</td>
-									<td><a href="http://localhost:9000/manwol/admin/order_detail" target="_blank" rel="noreferrer noopener">
+									<td><a href="http://localhost:9000/manwol/admin/order_detail?oid=${vo.oid }" target="_blank" rel="noreferrer noopener">
 											${ vo.oproducts}
 										</a>
 									</td>
