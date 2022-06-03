@@ -1,10 +1,29 @@
 package com.web.vo;
 
 public class MwOrderVO {
-	String oid, oproducts, obuyer, ob_hp, ob_email, odate, orecipient, or_hp, or_post, or_addr1, or_addr2, oinvoice, opayment;
-	String[] oproduct;
+	String oid, oproducts, obuyer, ob_hp, ob_email, odate, orecipient, or_hp, or_post, or_addr1, or_addr2, oinvoice, opayment,
+		ocids;
+	String[] oproduct, ocid;
 	int ototal,oshipment, oship_memo, ostatus;
 	
+	
+	
+	
+	public String getOcids() {
+		if(ocid != null) {
+			ocids = String.join(",", ocid);
+		}
+		return ocids;
+	}
+	public void setOcids(String ocids) {
+		this.ocids = ocids;
+	}
+	public String[] getOcid() {
+		return ocid;
+	}
+	public void setOcid(String[] ocid) {
+		this.ocid = ocid;
+	}
 	public int getOstatus() {
 		return ostatus;
 	}

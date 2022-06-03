@@ -101,13 +101,13 @@ public class OrderController {
 	
 		if(result == 1) {
 		
-			for(String oproduct : vo.getOproduct()) {
-				orderService.getStockUpdateResult(oproduct);
-				System.out.println(oproduct);
+			for(String ocid : vo.getOcid()) {
+				orderService.getStockUpdateResult(ocid);
+				orderService.test(vo, ocid);
 			}
 			
-			for(String oproduct : vo.getOproduct()) {
-				orderService.getDeleteResult(oproduct);
+			for(String ocid : vo.getOcid()) {
+				orderService.getDeleteResult(ocid);
 			}
 			
 			mv.addObject("order_result", "succ");

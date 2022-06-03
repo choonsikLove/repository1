@@ -81,10 +81,29 @@ public class MwOrderDAO implements MwObjectDAO{
 	}
 	
 	public int insertOrder(MwOrderVO vo) {
-		return sqlSession.insert(namespace + ".insert_order", vo);
+		int result = sqlSession.insert(namespace + ".insert_order", vo);
+		
+		if(result == 1) {
+			String oid = sqlSession.selectOne(namespace + ".test2");
+			vo.setOid(oid);
+		}
+		
+		return result;
 	}
 	
 	public int updateStock(String cid) {
 		return sqlSession.update(namespace+".update_stock", cid);
 	}
+	
+	public int test(MwOrderVO vo, String cid) {
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("cid", cid);
+		map.put("oid", vo.getOid());
+		
+		int result = sqlSession.insert(namespace + ".buraikan", map); 
+		
+		
+		return result;
+	}
+	
 }

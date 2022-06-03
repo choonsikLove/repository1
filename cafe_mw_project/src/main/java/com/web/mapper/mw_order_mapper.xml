@@ -44,7 +44,7 @@
 		values(to_char(sysdate,'yyyymmdd')||LPAD(sequ_mw_order_oid.nextval, 4, '0'), 
 			#{oproducts}, #{obuyer}, #{ob_hp}, #{ob_email}, sysdate, 
 		    #{orecipient}, #{or_hp}, #{or_post}, #{or_addr1}, #{or_addr2}, #{ototal},
-		    #{opayment}, null, 3000, #{oship_memo}, 0)
+		    #{opayment}, null, 3000, #{oship_memo}, 0, #{ocids})
 	</insert>
 	
 	<update id="update_stock" parameterType="java.lang.String">
@@ -66,6 +66,18 @@
 			opayment, oinvoice, oshipment, oship_memo, ostatus
 		from mw_order
 		where oid = #{oid}	
+	</select>
+	
+	<insert id="buraikan" parameterType="map">
+		insert into mw_order_details(odid, od_oid, o_pnum, o_qnt)
+    select sequ_mw_order_detail_id.nextval, mo.oid, mc.c_pnum, mc.c_qnt 
+    from mw_order mo, mw_cart mc 
+    where mc.cid = #{cid} and mo.oid = #{oid}
+	</insert>
+	
+	<select id="test2" resultType="java.lang.String">
+		select oid from (select oid from mw_order order by odate desc) 
+		where rownum =1
 	</select>
 	
 </mapper>    

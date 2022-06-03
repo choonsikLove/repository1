@@ -34,7 +34,6 @@ public class FileServiceImpl {
 		if(!vo.getFile().getOriginalFilename().equals("")) {
 			String path = request.getSession().getServletContext().getRealPath("/");
 			path += "resources\\upload\\";
-			System.out.println(path);
 			
 			File file = new File(path+vo.getMsprofile());
 			vo.getFile().transferTo(file);
@@ -79,7 +78,6 @@ public class FileServiceImpl {
 		if(!vo.getPmainimage().getOriginalFilename().equals("")) {
 			String path = request.getSession().getServletContext().getRealPath("/");
 			path += "resources\\upload\\";
-			System.out.println("메인 파일:" + path);
 			
 			File file = new File(path+vo.getPmainsfile());
 			vo.getPmainimage().transferTo(file);
@@ -110,7 +108,6 @@ public class FileServiceImpl {
 			for(int i=0; i<5; i++) { 
 				
 				UUID uuid = UUID.randomUUID();	
-				System.out.println(i);
 				
 				if(i < vo.getFiles().length) { 
 					CommonsMultipartFile file = vo.getFiles()[i];
@@ -151,8 +148,6 @@ public class FileServiceImpl {
 						if(!file.getOriginalFilename().equals("")) { //파일존재 하는 경우	
 							vo.getPfiles().add(file.getOriginalFilename());
 							vo.getPsfiles().add(uuid + "_" + file.getOriginalFilename());
-						}else {
-							System.out.println(i + "파일 없"); //지워도 됨.
 						}
 					
 					}
@@ -181,7 +176,6 @@ public class FileServiceImpl {
 					//파일저장 위치 확인
 					String root_path = request.getSession().getServletContext().getRealPath("/");
 					root_path += "resources\\upload\\";
-					System.out.println("추가 파일:" + root_path);
 					
 					//파일저장
 					File file = new File(root_path + vo.getPsfiles().get(i));			
@@ -207,7 +201,6 @@ public class FileServiceImpl {
 					pfile.transferTo(file);
 					
 					File oldFile = new File(root_path + old_files.get(i));
-					System.out.println(old_files.get(i));
 					if(oldFile.exists()) {
 						oldFile.delete();
 					}
