@@ -80,4 +80,30 @@
 		where rownum =1
 	</select>
 	
+	<select id="select_pname" parameterType="java.lang.String" resultType="java.lang.String">
+		select pname from mw_product where pnum=#{pnum}
+	</select>
+	
+	<select id="select_order_details" parameterType="java.lang.String" resultType="com.web.vo.MwOrderVO">
+		select oid, o_pnum, o_qnt, pprice, psaleprice, pname, pmainsfile
+	  	  from mw_order mo, mw_order_details mo_d, mw_product mp
+		    where mo.oid = mo_d.od_oid
+	       		and mo_d.o_pnum = mp.pnum
+	        	and mo.oid = #{oid}
+	</select>
+	
+	<select id="count" resultType="int">
+		select count(*) from mw_order
+	</select>
+	
+	<select id="list" parameterType="map" resultType="com.web.vo.MwOrderVO">
+		select rno, oid, obuyer, odate, oproducts, ototal, ostatus 
+    	from(        
+        	select rownum rno, oid, obuyer, to_char(odate, 'yyyy-mm-dd') odate, oproducts, ototal, ostatus 
+			from( 
+        	    select oid, obuyer, odate, oproducts, ototal, ostatus
+            	    from mw_order 
+                	order by odate desc))
+            	where rno between #{start} and #{end}
+	</select>
 </mapper>    

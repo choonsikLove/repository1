@@ -29,13 +29,14 @@ public class MwOrderDAO implements MwObjectDAO{
 		//아직은 회원 정보가 없어서 파라미터가 없어요~
 	}
 	
-	public List<MwOrderVO> selectOrder(){
-		return sqlSession.selectList(namespace + ".select_order");
-	}
 	
 	@Override
 	public List<Object> select(int startCount, int endCount) {
-		return null;
+		Map param = new HashMap<Integer, Integer>();
+		param.put("start", startCount);
+		param.put("end", endCount);
+		
+		return sqlSession.selectList(namespace + ".list", param);
 	}
 
 	@Override
@@ -59,7 +60,7 @@ public class MwOrderDAO implements MwObjectDAO{
 
 	@Override
 	public int selectTotal() {
-		return 0;
+		return sqlSession.selectOne(namespace + ".count");
 	}
 
 	@Override
@@ -104,6 +105,14 @@ public class MwOrderDAO implements MwObjectDAO{
 		
 		
 		return result;
+	}
+	
+	public String selectPname(String pnum) {
+		return sqlSession.selectOne(namespace + ".select_pname", pnum);
+	}
+	
+	public List<MwOrderVO> selectOrderDetail(String oid){
+		return sqlSession.selectList(namespace+".select_order_details", oid);
 	}
 	
 }

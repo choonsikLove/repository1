@@ -446,12 +446,32 @@ public class AdminController {
 	}
 	 
 	@RequestMapping(value="/admin/order", method=RequestMethod.GET) 
-	public ModelAndView order() { 
+	public ModelAndView order(String rpage) { 
 		ModelAndView mv = new ModelAndView();
 		
-		List<MwOrderVO> list = orderService.getOrderSelectResult();
+		Map<String,String> param = pageService.getPageResult(rpage, "order", orderService);
 		
+		int startCount = Integer.parseInt(param.get("start"));
+		int endCount = Integer.parseInt(param.get("end"));
+		
+		List<Object> olist = orderService.getListResult(startCount, endCount);
+		ArrayList<MwOrderVO> list = new ArrayList();
+		for(Object obj : olist) {
+			list.add((MwOrderVO)obj);
+		}
+		
+		
+		for(int i = 0; i< list.size(); i++) {
+			String[] a = list.get(i).getOproducts().split(",");
+			list.get(i).setPname(orderService.getSelectPnameResult(a[0]));
+		}
+		
+				
 		mv.addObject("list",list);
+		mv.addObject("dbCount", Integer.parseInt(param.get("dbCount")));
+		mv.addObject("pageSize", Integer.parseInt(param.get("pageSize")));
+		mv.addObject("reqPage", Integer.parseInt(param.get("reqPage")));	
+		
 		mv.setViewName("/admin/order/order");
 		
 		return mv; 
@@ -462,8 +482,10 @@ public class AdminController {
 		ModelAndView mv = new ModelAndView();
 		
 		MwOrderVO vo = orderService.getOrderContentResult(oid);//이름이 너무 구리지 않나?
+		List<MwOrderVO> list = orderService.getOrderDetailResult(oid);
 		
 		mv.addObject("vo",vo);
+		mv.addObject("list", list);
 		mv.setViewName("/admin/order/order_detail");
 		
 		return mv; 

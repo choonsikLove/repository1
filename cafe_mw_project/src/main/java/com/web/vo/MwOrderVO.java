@@ -3,12 +3,53 @@ package com.web.vo;
 public class MwOrderVO {
 	String oid, oproducts, obuyer, ob_hp, ob_email, odate, orecipient, or_hp, or_post, or_addr1, or_addr2, oinvoice, opayment,
 		ocids;
+	String pname, o_pnum, pmainsfile;
 	String[] oproduct, ocid;
-	int ototal,oshipment, oship_memo, ostatus;
+	int ototal,oshipment, oship_memo, ostatus, o_qnt;
+	int pprice, psaleprice, rno;
 	
-	
-	
-	
+	public int getRno() {
+		return rno;
+	}
+	public void setRno(int rno) {
+		this.rno = rno;
+	}
+	public String getPmainsfile() {
+		return pmainsfile;
+	}
+	public void setPmainsfile(String pmainsfile) {
+		this.pmainsfile = pmainsfile;
+	}
+	public int getPprice() {
+		return pprice;
+	}
+	public void setPprice(int pprice) {
+		this.pprice = pprice;
+	}
+	public int getPsaleprice() {
+		return psaleprice;
+	}
+	public void setPsaleprice(int psaleprice) {
+		this.psaleprice = psaleprice;
+	}
+	public String getO_pnum() {
+		return o_pnum;
+	}
+	public void setO_pnum(String o_pnum) {
+		this.o_pnum = o_pnum;
+	}
+	public int getO_qnt() {
+		return o_qnt;
+	}
+	public void setO_qnt(int o_qnt) {
+		this.o_qnt = o_qnt;
+	}
+	public String getPname() {
+		return pname;
+	}
+	public void setPname(String pname) {
+		this.pname = pname;
+	}
 	public String getOcids() {
 		if(ocid != null) {
 			ocids = String.join(",", ocid);

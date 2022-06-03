@@ -19,15 +19,10 @@ public class MwOrderServiceImpl implements MwOrderService{
 	public List<MwCartVO> getSelectResult(){
 		return orderDao.select();
 	}
-	
-	public List<MwOrderVO> getOrderSelectResult(){
-		return orderDao.selectOrder();
-	}
 
 	@Override
 	public List<Object> getListResult(int startCount, int endCount) {
-		// TODO Auto-generated method stub
-		return null;
+		return orderDao.select(startCount, endCount);
 	}
 
 	@Override
@@ -41,8 +36,7 @@ public class MwOrderServiceImpl implements MwOrderService{
 
 	@Override
 	public int getListCount() {
-		// TODO Auto-generated method stub
-		return 0;
+		return orderDao.selectTotal();
 	}
 
 	@Override
@@ -82,5 +76,11 @@ public class MwOrderServiceImpl implements MwOrderService{
 		return orderDao.insertOrderDetails(vo, cid);
 	}
 	
+	public String getSelectPnameResult(String pnum) {
+		return orderDao.selectPname(pnum);
+	}
 	
+	public List<MwOrderVO> getOrderDetailResult(String oid){
+		return orderDao.selectOrderDetail(oid);
+	}
 }

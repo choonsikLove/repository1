@@ -72,7 +72,7 @@
 									<td>${vo.obuyer }</td>
 									<td>${vo.odate }</td>
 									<td><a href="http://localhost:9000/manwol/admin/order_detail?oid=${vo.oid }" target="_blank" rel="noreferrer noopener">
-											${ vo.oproducts}
+											${ vo.pname} 외 n건
 										</a>
 									</td>
 									<td>${vo.ototal }</td>
@@ -106,7 +106,9 @@
 						</td>
 					</tr>
 					<tr>
-						<td colspan='7'>&lt; 1 2 3 &gt;</td>
+						<td colspan='7'>
+							<jsp:include page="order_page.jsp"></jsp:include>
+						</td>
 					</tr>
 					
 				</table>

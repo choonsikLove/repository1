@@ -96,5 +96,6 @@ jQuery(document).on('click', '.orderStatus_update', function () {
 	jQuery(document).off('click', '.orderStatus_change').on('click', '.orderStatus_change', function () {
 		a.text($(this).text());
   	});
+  	
 });
   	

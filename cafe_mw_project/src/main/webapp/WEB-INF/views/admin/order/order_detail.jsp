@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,28 +52,40 @@
 						<td><p>배송비</p></td>
 						<td><p>진행상태</p></td>
 					</tr>
-					<tr>
-						<td>
-							<div>
+					<c:forEach var="vo" items="${list }">
+						<tr>
+							<td>
 								<div>
-									<img src="http://localhost:9000/manwol/resources/images/product/만월회 음료 원액 베이스 10종(1kg).jpg">
+									<div>
+										<img src="http://localhost:9000/manwol/resources/upload/${vo.pmainsfile }">
+										<%-- 이것두 해야한다!! --%>
+									</div>
+									<div class="order_items">
+										<ul>
+											<li>
+												<p>${vo.pname }</p>
+											</li>
+											<li><p>종류: -</p></li>
+											<li>
+												<c:choose>
+													<c:when test="${vo.psaleprice == 0 }">
+														<span>${vo.pprice}</span>
+													</c:when>
+													<c:otherwise>
+														<span>${vo.psaleprice}</span>
+													</c:otherwise>
+												</c:choose>
+												<span>/</span>
+												<span>${vo.o_qnt }개</span>
+											</li>
+										</ul>
+									</div>
 								</div>
-								<div class="order_items">
-									<ul>
-										<li><p>낱개로 된 정보를 안 가져왔어잉(힝)</p></li>
-										<li><p>종류: 민트초코</p></li>
-										<li>
-											<span>35,000원</span>
-											<span>/</span>
-											<span>1개</span>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</td>
-						<td>3000원</td>
-						<td><p>배송완료 운송장 번호.</p></td>
-					</tr>
+							</td>
+							<td>3,000원</td>
+							<td><p>배송 상태</p></td>
+						</tr>
+					</c:forEach>
 				</table>
 			</div>
 			
@@ -127,17 +140,31 @@
 							<div class="money">
 								<div>
 									<span>주문금액</span>
-									<span>주문금액</span>
+									<c:set var="total" value="${0}"/>
+											<c:forEach var="vo" items="${list}">
+												<c:set var="total" value="${total + vo.pprice * vo.o_qnt}" />
+											</c:forEach>
+                                    <span>
+										<c:out value="${total + 3000}"/>원
+                                    </span>
 								</div>
 								<span>-</span>
 								<div>
 									<span>할인금액</span>
-									<span>하이고야</span>
+									<c:set var="total" value="${0}"/>
+											<c:forEach var="vo" items="${list}">
+												<c:if test="${vo.psaleprice != 0 }">
+													<c:set var="total" value="${total + (vo.pprice - vo.psaleprice) * vo.o_qnt}" />
+												</c:if>
+											</c:forEach>
+                                    <span>
+										<c:out value="${total}"/>원
+                                    </span>
 								</div>
 									<span>=</span>
 								<div>
 									<span>총 주문금액</span>
-									<span>${vo.ototal }</span>
+									<span>${vo.ototal }원</span>
 								</div>
 							</div>
 						</td>
@@ -147,7 +174,13 @@
 							<div>
 								<div>
 									<span>상품 금액</span>
-									<span>1,234원</span>
+									<c:set var="total" value="${0}"/>
+										<c:forEach var="vo" items="${list}">
+											<c:set var="total" value="${total + vo.pprice * vo.o_qnt}" />
+										</c:forEach>
+                                    <span>
+										<c:out value="${total}"/>원
+                                    </span>
 								</div>
 								<div>
 									<span>배송비</span>
@@ -158,7 +191,15 @@
 						<td>
 							<div>
 								<span>할인 금액(있을 때만)</span>
-								<span>원</span>
+								<c:set var="total" value="${0}"/>
+									<c:forEach var="vo" items="${list}">
+										<c:if test="${vo.psaleprice != 0 }">
+											<c:set var="total" value="${total + (vo.pprice - vo.psaleprice) * vo.o_qnt}" />
+										</c:if>
+									</c:forEach>
+                                <span>
+									<c:out value="${total}"/>원
+                                </span>
 							</div>
 						</td>
 						<td>
