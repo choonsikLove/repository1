@@ -78,8 +78,8 @@ public class MwOrderServiceImpl implements MwOrderService{
 		return orderDao.updateStock(cid);
 	}
 	
-	public int test(MwOrderVO vo, String cid) {
-		return orderDao.test(vo, cid);
+	public int getInsertOrderDetailsResult(MwOrderVO vo, String cid) {
+		return orderDao.insertOrderDetails(vo, cid);
 	}
 	
 	

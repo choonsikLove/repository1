@@ -68,14 +68,14 @@
 		where oid = #{oid}	
 	</select>
 	
-	<insert id="buraikan" parameterType="map">
+	<insert id="insert_order_details" parameterType="map">
 		insert into mw_order_details(odid, od_oid, o_pnum, o_qnt)
     select sequ_mw_order_detail_id.nextval, mo.oid, mc.c_pnum, mc.c_qnt 
     from mw_order mo, mw_cart mc 
     where mc.cid = #{cid} and mo.oid = #{oid}
 	</insert>
 	
-	<select id="test2" resultType="java.lang.String">
+	<select id="select_oid" resultType="java.lang.String">
 		select oid from (select oid from mw_order order by odate desc) 
 		where rownum =1
 	</select>

@@ -103,7 +103,7 @@ public class OrderController {
 		
 			for(String ocid : vo.getOcid()) {
 				orderService.getStockUpdateResult(ocid);
-				orderService.test(vo, ocid);
+				orderService.getInsertOrderDetailsResult(vo, ocid);
 			}
 			
 			for(String ocid : vo.getOcid()) {

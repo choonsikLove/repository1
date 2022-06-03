@@ -84,7 +84,7 @@ public class MwOrderDAO implements MwObjectDAO{
 		int result = sqlSession.insert(namespace + ".insert_order", vo);
 		
 		if(result == 1) {
-			String oid = sqlSession.selectOne(namespace + ".test2");
+			String oid = sqlSession.selectOne(namespace + ".select_oid");
 			vo.setOid(oid);
 		}
 		
@@ -95,12 +95,12 @@ public class MwOrderDAO implements MwObjectDAO{
 		return sqlSession.update(namespace+".update_stock", cid);
 	}
 	
-	public int test(MwOrderVO vo, String cid) {
+	public int insertOrderDetails(MwOrderVO vo, String cid) {
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("cid", cid);
 		map.put("oid", vo.getOid());
 		
-		int result = sqlSession.insert(namespace + ".buraikan", map); 
+		int result = sqlSession.insert(namespace + ".insert_order_details", map); 
 		
 		
 		return result;
