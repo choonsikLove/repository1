@@ -1,5 +1,7 @@
 package com.web.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -13,8 +15,10 @@ import org.springframework.web.servlet.ModelAndView;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.web.service.FileServiceImpl;
 import com.web.service.MwMemberServiceImpl;
+import com.web.service.MwOrderServiceImpl;
 import com.web.service.MwProductServiceImpl;
 import com.web.vo.MwMemberVO;
+import com.web.vo.MwOrderVO;
 import com.web.vo.MwProductVO;
 import com.web.vo.MwReviewVO;
 
@@ -30,14 +34,19 @@ public class MypageController {
 	@Autowired
 	private MwProductServiceImpl productService;
 	
+	@Autowired
+	private MwOrderServiceImpl orderService;
+	
 	@RequestMapping(value="/shop_mypage", method= RequestMethod.GET)
 	public ModelAndView mypage(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView();
 		HttpSession session = request.getSession();
 		String memail = (String)session.getAttribute("memail");
 		MwMemberVO vo = (MwMemberVO)memberService.getContentResult(memail);
+		List<MwOrderVO> list = orderService.getOrderMypageResult(memail);
 		
 		mv.addObject("vo", vo);
+		mv.addObject("list", list);
 		mv.setViewName("/mypage/mypage");
 		return mv;
 	}
@@ -145,15 +154,24 @@ public class MypageController {
 		return mv;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	@RequestMapping(value="/shop_mypage/order_detail", method=RequestMethod.GET) 
+	public ModelAndView order_detail(String oid, HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView();
+		
+		MwOrderVO ovo = orderService.getOrderContentResult(oid);//이름이 너무 구리지 않나?
+		List<MwOrderVO> list = orderService.getOrderDetailResult(oid);
+		
+		HttpSession session = request.getSession();
+		String memail = (String)session.getAttribute("memail");
+		MwMemberVO mvo = (MwMemberVO)memberService.getContentResult(memail);
+		
+		mv.addObject("ovo",ovo);
+		mv.addObject("list", list);
+		mv.addObject("mvo", mvo);
+		mv.setViewName("/mypage/mp_order_detail");
+		
+		return mv; 
+	}
 	
 	
 	

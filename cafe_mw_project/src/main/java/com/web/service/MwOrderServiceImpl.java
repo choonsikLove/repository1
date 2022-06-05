@@ -16,8 +16,8 @@ public class MwOrderServiceImpl implements MwOrderService{
 		return orderDao.insert(obj);
 	}
 	
-	public List<MwCartVO> getSelectResult(){
-		return orderDao.select();
+	public List<MwCartVO> getSelectResult(String memail){
+		return orderDao.selectCart(memail);
 	}
 
 	@Override
@@ -56,8 +56,8 @@ public class MwOrderServiceImpl implements MwOrderService{
 		return orderDao.delete(cid);
 	}
 	
-	public int getCartCheckResult(String c_pnum) {
-		return orderDao.selectCartCheck(c_pnum);
+	public int getCartCheckResult(MwCartVO vo) {
+		return orderDao.selectCartCheck(vo);
 	}
 	
 	public int getQntChangeResult(MwCartVO vo) {
@@ -82,5 +82,9 @@ public class MwOrderServiceImpl implements MwOrderService{
 	
 	public List<MwOrderVO> getOrderDetailResult(String oid){
 		return orderDao.selectOrderDetail(oid);
+	}
+	
+	public List<MwOrderVO> getOrderMypageResult(String memail){
+		return orderDao.selectOrderMypage(memail);
 	}
 }

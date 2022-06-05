@@ -18,8 +18,9 @@
 	<jsp:include page="../header.jsp"></jsp:include>
 
 	<!-- content -->
-	<input type="text" value="${vo.pnum }" id="for_cart">
-	<input type="text" value="${vo.pstock }" id="stock_for_cart">
+	<input type="hidden" value="${vo.pnum }" id="for_cart">
+	<input type="hidden" value="${vo.pstock }" id="stock_for_cart">
+	<input type="hidden" value="${memail}" id="memail_for_cart">
 	<table class="content" style="table-layout: fixed;">
 		<tr>
 			<td>

@@ -1,7 +1,11 @@
 package com.web.controller;
 
+import java.net.http.HttpRequest;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,8 +14,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.web.service.MwMemberServiceImpl;
 import com.web.service.MwOrderServiceImpl;
 import com.web.vo.MwCartVO;
+import com.web.vo.MwMemberVO;
 import com.web.vo.MwOrderVO;
 
 @Controller
@@ -20,13 +27,19 @@ public class OrderController {
 	@Autowired
 	private MwOrderServiceImpl orderService;
 	
+	@Autowired
+	private MwMemberServiceImpl memberService;
+	
 	@RequestMapping(value="/shop_cart", method=RequestMethod.GET)
-	public ModelAndView shop_cart() {
+	public ModelAndView shop_cart(HttpServletRequest request) {
 	    ModelAndView mv = new ModelAndView();
 	    
-	    List<MwCartVO> list = orderService.getSelectResult();
-		
-	    mv.addObject("list",list);
+	    HttpSession session = request.getSession();
+	    String memail = (String)session.getAttribute("memail");
+	    
+	   	List<MwCartVO> list = orderService.getSelectResult(memail);
+	   	
+	   	mv.addObject("list",list);
 	    mv.setViewName("/order/cart");
 	    
 		return mv;
@@ -43,9 +56,9 @@ public class OrderController {
 	
 	@ResponseBody
 	@RequestMapping(value="/shop_cart_check", method=RequestMethod.POST)
-	public String shop_cart_insert(String c_pnum) {
+	public String shop_cart_check(MwCartVO vo) {
 		
-		int result = orderService.getCartCheckResult(c_pnum);
+		int result = orderService.getCartCheckResult(vo);
 		
 		return String.valueOf(result);
 	}
@@ -79,7 +92,7 @@ public class OrderController {
 	}
 	
 	@RequestMapping(value="/cart_to_payment", method=RequestMethod.POST)
-	public ModelAndView cart_to_payment(MwCartVO vo) {
+	public ModelAndView cart_to_payment(MwCartVO vo, HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView();
 		List<MwCartVO> vo_list = new ArrayList<MwCartVO>();
 		
@@ -88,7 +101,13 @@ public class OrderController {
 			vo_list.add((MwCartVO)orderService.getContentResult(cid));
 		}
 		
+		HttpSession session = request.getSession();
+		String memail = (String)session.getAttribute("memail");
+		
+		MwMemberVO mvo = (MwMemberVO)memberService.getContentResult(memail);
+		
 		mv.addObject("list", vo_list);
+		mv.addObject("mvo", mvo);
 		mv.setViewName("/order/payment");
 		
 		return mv;

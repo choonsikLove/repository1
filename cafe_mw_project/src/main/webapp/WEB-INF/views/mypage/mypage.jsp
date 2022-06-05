@@ -41,8 +41,8 @@
 </script>
 </head>
 <body>
-<input type="text" value="${vo.memail}" id="member_email"><%--절대로 지우면 안됩니다! --%>
-<input type="text" value="${vo.msprofile}"><%--절대로 지우면 안됩니다! --%>
+<input type="hidden" value="${vo.memail}" id="member_email">
+<input type="hidden" value="${vo.msprofile}">
 	<jsp:include page="../header.jsp"></jsp:include>
 	<div id='mypage_content'>
 		<div id='content_border'>
@@ -97,30 +97,68 @@
 				</div>
 				<div class='nav_content'>
 					<span class='order_title'>주문 조회</span>
-					
-					<div class='order_list'>
-						<span class='order_id'>
-							주문번호 &nbsp; <a href='#'>2022051638307<span> &gt;</span></a>
-						</span>
-						<span class='order_date'>
-							주문일자 2022-05-16
-						</span>
-						<br>
-						<div class='order_table'>
-							<img class='order_img' src='http://localhost:9000/manwol/resources/images/product/첫 구매고객 500원.jpg'>
-							<div class='order_product'>
-								<span class='order_list_product'>[첫 구매고객 500원] 만월회 음료 원액 베이스 10종</span><br>
-								<span class='order_list_option'>밀크티1box (40ml*2포)</span><br>
-								<span class='order_list_price'>500원 / 1개</span>
+					<c:choose>
+						<c:when test="${empty list }">
+							<div class="order_list">
+								주문 결과가 없습니다.
 							</div>
-							<div class='order_status'>입금대기</div>
-							<!-- <div class='order_btn'>취소</div> -->
-							<form name="review_insert_form" method="get">
-								<input type='hidden' name='vpnum' value="vo.pnum">
-								<button class='review_insert_btn' type="button" onclick="review_popup()">리뷰쓰기</button>
-							</form>
-						</div>
-					</div>
+						</c:when>
+						<c:otherwise>
+							<c:forEach var="ovo" items="${list }">
+								<div class='order_list'>
+									<span class='order_id'>
+										주문번호 &nbsp; 
+										<a href='http://localhost:9000/manwol/shop_mypage/order_detail?oid=${ovo.oid }' target="_blank" rel="noreferrer noopener">
+											${ovo.oid }
+											<span> &gt;</span>
+										</a>
+									</span>
+									<span class='order_date'>
+										주문일자 ${ovo.odate }
+									</span>
+									<br>
+									<div class='order_table'>
+										<img class='order_img' src='http://localhost:9000/manwol/resources/upload/${ovo.pmainsfile }'>
+										<div class='order_product'>
+											<span class='order_list_product'>${ovo.pname }</span><br>
+											<span class='order_list_option'>-</span><br>
+											<span class='order_list_price'>
+												<c:choose>
+													<c:when test="${ovo.psaleprice != 0 }">
+														${ovo.psaleprice }
+													</c:when>
+													<c:otherwise>
+														${ovo.pprice }
+													</c:otherwise>
+												</c:choose>
+											원 / ${ovo.o_qnt }개</span>
+										</div>
+										<div class='order_status'>
+											<c:choose>
+												<c:when test="${ovo.ostatus == 0 }">
+													<span class="orderStatus_update">입금 대기 중</span>
+												</c:when>
+												<c:when test="${ovo.ostatus == 1 }">
+													<span class="orderStatus_update">배송 준비</span>
+												</c:when>
+												<c:when test="${ovo.ostatus == 2 }">
+													<span class="orderStatus_update">배송 중</span>
+												</c:when>
+												<c:when test="${ovo.ostatus == 3 }">
+													<span class="orderStatus_update">배송 완료</span>
+												</c:when>
+											</c:choose>
+										</div>
+										<!-- <div class='order_btn'>취소</div> -->
+										<form name="review_insert_form" method="get">
+											<input type='hidden' name='vpnum' value="vo.pnum">
+											<button class='review_insert_btn' type="button" onclick="review_popup()">리뷰쓰기</button>
+										</form>
+									</div>
+								</div>
+							</c:forEach>
+						</c:otherwise>
+					</c:choose>
 					
 				</div>
 			</section>

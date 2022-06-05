@@ -172,9 +172,14 @@ $(document).ready(function(){
 		if($(this).is(':checked')){
 			$('input[name=orecipient]').val($('input[name=obuyer]').val());
 			$('input[name=or_hp]').val($('input[name=ob_hp').val());
+			$('input[name=or_addr1]').val($('p#ob_addr1').text());
+			$('input[name=or_addr2]').val($('p#ob_addr2').text());
+			
 		} else{
 			$('input[name=orecipient]').val("");
 			$('input[name=or_hp]').val("");
+			$('input[name=or_addr1]').val("");
+			$('input[name=or_addr2]').val("");
 		};
 	});
 	

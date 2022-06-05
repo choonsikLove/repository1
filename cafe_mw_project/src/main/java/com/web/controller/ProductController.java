@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.web.service.MwPageServiceImpl;
 import com.web.service.MwProductServiceImpl;
+import com.web.vo.MwCartVO;
 import com.web.vo.MwProductVO;
 
 @Controller
@@ -64,7 +68,7 @@ public class ProductController {
 
    
    @RequestMapping(value="/product_detail", method=RequestMethod.GET)
-  	public ModelAndView product_detail(String pnum) {
+  	public ModelAndView product_detail(String pnum, HttpServletRequest request) {
   		ModelAndView mv = new ModelAndView();
   		MwProductVO vo = (MwProductVO)productService.getContent(pnum);
   		
@@ -83,8 +87,11 @@ public class ProductController {
   			}
   		}
   		
-  		
+  		HttpSession session = request.getSession();
+ 	    String memail = (String)session.getAttribute("memail");
+ 	    
   		mv.addObject("vo", vo);
+  		mv.addObject("memail",memail);
   		mv.addObject("tagimage1", tagimage1);
   		mv.addObject("tagimage2", tagimage2);
   		

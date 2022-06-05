@@ -7,18 +7,29 @@
 
 	<insert id="insert_cart" parameterType="com.web.vo.MwCartVO">
 		insert into mw_cart
-		values('c_'||sequ_mw_cart_cid.nextval, #{c_pnum}, #{c_qnt})
+		values('c_'||sequ_mw_cart_cid.nextval, #{c_pnum}, #{c_qnt}, #{memail})
 	</insert>
 
-	<select id="select" resultType="com.web.vo.MwCartVO">
-		select c_pnum, c_qnt, cid, pname, pprice, psaleprice, pmainsfile, pstock
+	<select id="select_cart" parameterType="java.lang.String" resultType="com.web.vo.MwCartVO">
+		select c_pnum, c_qnt, cid, pname, pprice, psaleprice, pmainsfile, pstock, memail
 		from mw_product mw, mw_cart mc
 		where mw.pnum = mc.c_pnum
+				and memail = #{memail}
+		<!-- 
+		<choose>
+			<when test="memail != null">
+			</when>
+			<otherwise>
+				and memail is null
+			</otherwise>		
+		</choose>
+		 -->
 	</select>
 
-	<select id="select_cart" parameterType="java.lang.String" resultType="int">
+	<select id="select_cart_count" parameterType="com.web.vo.MwCartVO" resultType="int">
 		select count(*) from mw_cart
-		where c_pnum = #{c_pnum}
+		where c_pnum = #{c_pnum} and memail = #{memail}
+		<!-- memail null check는 아직X -->
 	</select>
 	
 	<update id="update_qnt" parameterType="com.web.vo.MwCartVO">
@@ -70,9 +81,9 @@
 	
 	<insert id="insert_order_details" parameterType="map">
 		insert into mw_order_details(odid, od_oid, o_pnum, o_qnt)
-    select sequ_mw_order_detail_id.nextval, mo.oid, mc.c_pnum, mc.c_qnt 
-    from mw_order mo, mw_cart mc 
-    where mc.cid = #{cid} and mo.oid = #{oid}
+	    select sequ_mw_order_detail_id.nextval, mo.oid, mc.c_pnum, mc.c_qnt 
+	    from mw_order mo, mw_cart mc 
+	    where mc.cid = #{cid} and mo.oid = #{oid}
 	</insert>
 	
 	<select id="select_oid" resultType="java.lang.String">
@@ -106,4 +117,13 @@
                 	order by odate desc))
             	where rno between #{start} and #{end}
 	</select>
+	
+	<select id="select_order_mypage" parameterType="java.lang.String" resultType="com.web.vo.MwOrderVO">
+		select mo.oid, to_char(mo.odate,'yyyy-mm-dd') odate, mp.pname, mo_d.o_qnt, mp.pprice, 
+			mp.psaleprice, mo.ostatus, mp.pmainsfile, mo_d.o_pnum
+				from mw_order mo, mw_member mm, mw_order_details mo_d, mw_product mp
+				where mo.ob_email = mm.memail and mo.oid = mo_d.od_oid and mo_d.o_pnum = mp.pnum
+					and memail = #{memail}
+	</select>
+	
 </mapper>    

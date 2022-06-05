@@ -3,10 +3,20 @@ package com.web.vo;
 public class MwCartVO {
 	String cid, c_pnum;
 	String pname, pmainsfile;
+	String memail;
 	int pprice, psaleprice, pstock, c_qnt;
 	String[] cids;
 	
 	
+	
+	public String getMemail() {
+		return memail;
+	}
+
+	public void setMemail(String memail) {
+		this.memail = memail;
+	}
+
 	public String[] getCids() {
 		return cids;
 	}

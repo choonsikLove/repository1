@@ -38,12 +38,14 @@ $(document).ready(function(){
 	
 	$('button#cart_button').click(function(){
 		var pnum = $('#for_cart').val();
+		var memail = $('#memail_for_cart').val();
 		
 		if(qnt != 0){
 			$.ajax({
 					type:'POST',
 					async: true,
 					data: {"c_pnum":pnum,
+						"memail":memail
 					},
 					url:"shop_cart_check",
 					dataType: "text",
@@ -53,7 +55,8 @@ $(document).ready(function(){
 								type:'POST',
 								async: true,
 								data: {"c_pnum":pnum,
-									"c_qnt":qnt
+									"c_qnt":qnt,
+									"memail":memail
 								},
 								url:"shop_cart_insert",
 								dataType: "text",
@@ -71,6 +74,7 @@ $(document).ready(function(){
 									alert("카트에 넣기 에러");
 								}
 							});
+							
 							
 						} else {
 							var check =	confirm("장바구니에 이미 들어있습니다. 장바구니로 이동하시겠습니까?");
@@ -105,8 +109,8 @@ $(document).ready(function(){
 	var qnt = 0;
 
 function fnCalCount(letter){
-	var max_qnt = parseInt($('#stock_for_cart').val());//힝
-	var pdp = parseInt($('p.product_detail_price').text());//?
+	var max_qnt = parseInt($('#stock_for_cart').val());//?
+	var pdp = parseInt($('p.product_detail_price').text());
 	
 	if(letter == 'm'){
 		

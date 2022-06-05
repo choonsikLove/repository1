@@ -24,9 +24,8 @@ public class MwOrderDAO implements MwObjectDAO{
 		return sqlSession.insert(namespace + ".insert_cart", vo);
 	}
 
-	public List<MwCartVO> select(){
-		return sqlSession.selectList(namespace + ".select");
-		//아직은 회원 정보가 없어서 파라미터가 없어요~
+	public List<MwCartVO> selectCart(String memail){
+		return sqlSession.selectList(namespace + ".select_cart", memail);
 	}
 	
 	
@@ -73,8 +72,8 @@ public class MwOrderDAO implements MwObjectDAO{
 		return null;
 	}
 
-	public int selectCartCheck(String c_pnum) {
-		return sqlSession.selectOne(namespace + ".select_cart", c_pnum);
+	public int selectCartCheck(MwCartVO vo) {
+		return sqlSession.selectOne(namespace + ".select_cart_count", vo);
 	}
 	
 	public int updateQnt(MwCartVO vo) {
@@ -113,6 +112,10 @@ public class MwOrderDAO implements MwObjectDAO{
 	
 	public List<MwOrderVO> selectOrderDetail(String oid){
 		return sqlSession.selectList(namespace+".select_order_details", oid);
+	}
+	
+	public List<MwOrderVO> selectOrderMypage(String memail){
+		return sqlSession.selectList(namespace + ".select_order_mypage", memail);
 	}
 	
 }

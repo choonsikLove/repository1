@@ -97,17 +97,35 @@
                                        <p>니 혹시나 입금 후 주문취소가 되더라도 걱정하지 않으셔도 됩니다!</p>
                                     </div>
                                     <div class="payment_guide1">
-                                       <div class="payment_guide1_1">
-                                          <p class="payment_guide1_name" style="color: black;">홍길동</p>
-                                          <p>01012345678</p>
-                                          <p>qwer1234@gmail.com</p>
-                                       </div>
+                                    	<c:choose>
+                                    		<c:when test="${not empty mvo }">
+                                    			<div class="payment_guide1_1">
+		                                          <p class="payment_guide1_name" style="color: black;">${mvo.mname }</p>
+		                                          <p>${mvo.mhp }</p>
+		                                          <p>${mvo.memail }</p>
+		                                       	</div>
+                                    		</c:when>
+                                    		<c:otherwise>
+		                                       <div class="payment_guide1_1">
+		                                          <p class="payment_guide1_name" style="color: black;">홍길동</p>
+		                                          <p>01012345678</p>
+		                                          <p>qwer1234@gmail.com</p>
+		                                       </div>
+                                    		</c:otherwise>
+                                    	</c:choose>
                                        <div class="payment_guide1_2">
-                                       		<div>
-                                          <input class="payment_guide1_2_in1" type="text" placeholder="홍길동" name="obuyer">
-                                          <input class="payment_guide1_2_in2" type="text" placeholder="01012345678" name="ob_hp">
-                                       		</div>
-                                          <input class="payment_guide1_2_in3" type="text" placeholder="qwer1234@gmail.com" name="ob_email">
+	                                       <c:choose>
+	                                       		<c:when test="${not empty mvo }">
+	                                       			<input class="payment_guide1_2_in1" type="text" value="${mvo.mname }" name="obuyer">
+	                                      	 		<input class="payment_guide1_2_in2" type="text"	value="${mvo.mhp }" name="ob_hp">
+	                                        		<input class="payment_guide1_2_in3" type="text" value="${mvo.memail }" name="ob_email">
+	                                    		</c:when>
+	                                    		<c:otherwise>
+			                                   		<input class="payment_guide1_2_in1" type="text" placeholder="성함" name="obuyer">
+			                                     	<input class="payment_guide1_2_in2" type="text" placeholder="핸드폰 번호" name="ob_hp">
+			                                        <input class="payment_guide1_2_in3" type="text" placeholder="이메일 주소" name="ob_email">
+			                                   	</c:otherwise>
+	                                       </c:choose>
                                        </div>
                                        <div class="payment_btn">
                                           <button type="button" name="btn" value="수정" id="btnx">
@@ -131,12 +149,27 @@
                                  <div>
                                     <h4>배송 정보</h4>
                                     <div class="deliver">
+                                    	<c:choose>
+                                       		<c:when test="${not empty mvo }">
+                                       			<div>
+		                                          <p style="font-weight: 500;">${mvo.mname }</p>
+		                                          <p class="deliver_ph">${mvo.mhp }</p>
+		                                          <p id="ob_addr1">${mvo.maddr1 }</p>
+		                                          <p id="ob_addr2">${mvo.maddr2 }</p>
+		                                          <p>(06129)</p>
+                                       			</div>
+                                    		</c:when>
+                                    		<c:otherwise>
+                                    			<div>
+		                                          <p style="font-weight: 500;">홍길동</p>
+		                                          <p class="deliver_ph">01012345678</p>
+		                                          <p>서울 강남구 강남대로 428</p>
+		                                          <p>만이빌딩 5층,10층</p>
+		                                          <p>(06129)</p>
+                                    			</div>
+		                                   	</c:otherwise>
+                                      	</c:choose>
                                        <div>
-                                          <p style="font-weight: 500;">홍길동</p>
-                                          <p class="deliver_ph">01012345678</p>
-                                          <p>서울 강남구 강남대로 428</p>
-                                          <p>만이빌딩 5층,10층</p>
-                                          <p>(06129)</p>
                                        </div>
                                        <div class="message">
                                           <button type="button" id="btnx1">
