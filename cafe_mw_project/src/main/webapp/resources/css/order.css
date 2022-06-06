@@ -111,11 +111,7 @@ ul.cart_ul>li:last-of-type{
 	flex-direction: column;
 }
 
-ul.cart_ul>li:last-of-type>div:first-of-type{
-	font-size: 17pt;
-	font-weight: bold;
-}
-
+/* 
 ul.cart_ul>li:last-of-type>div:first-of-type>span:not(:last-of-type){
 	display: inline-block;
 	margin-left: 20px;	
@@ -130,10 +126,7 @@ ul.cart_ul>li:last-of-type>div:last-of-type>span{
 	left: 20px;
 }
 
-ul.cart_ul>li:last-of-type>div:last-of-type>span:last-of-type {
-	left: 0px;
-}
-
+ */
 span#total_price,
 span#total_price+span{
 	color:rgb(29,79,178);
@@ -158,4 +151,66 @@ div.cart_div+div>button{
 
 div.cart_div+div>button:hover{
 	background: rgb(33,104,177);
+}
+
+ul.cart_ul>li:last-of-type table {
+	border-collapse: collapse;
+	border:none;
+}
+
+ul.cart_ul>li:last-of-type table tr{
+	border:none;
+}
+ul.cart_ul>li:last-of-type table tr:first-of-type{
+	font-size: 17pt;
+	font-weight: bold;
+}
+
+ul.cart_ul>li:last-of-type table tr:last-of-type{
+	font-size: 10pt;
+}
+
+ul.cart_ul>li:last-of-type table tr:last-of-type td:first-of-type,
+ul.cart_ul>li:last-of-type table tr:last-of-type td:nth-of-type(2){
+	padding-left: 20px;
+}
+
+ul.cart_ul>li:last-of-type table tr:last-of-type td:last-of-type,
+ul.cart_ul>li:last-of-type table tr:last-of-type td:nth-of-type(3){
+	padding-left: 10px;
+}
+
+ul.cart_ul>li:last-of-type table tr td{
+	border:none;
+}
+ul.cart_ul>li:last-of-type table tr:first-of-type td{
+	padding: 5px 10px;	
+}
+
+input.c_qnt{
+	border:none;
+	width: 20px;
+	text-align: center;
+	font-size: 12pt;
+}
+
+button.qntButton{
+	border: none;
+	cursor: pointer;
+	padding: 2px 5px;
+	background: #fff;
+	font-weight: bold;
+}
+
+button.qnt_change{
+	border: 0.7px #777 solid;
+	background: #fff;
+	padding: 3px;
+	margin-top: 5px;
+	font-size: 9pt;
+	cursor: pointer;
+}
+
+button.qnt_change:hover{
+	border: 0.7px black solid;
 }

@@ -10,7 +10,7 @@
 	
 	#mypage_content {
 		width: 92%;
-		height: 1100px;
+		height: 1200px;
 		padding: 2% 4%;
 	}
 	
@@ -483,3 +483,8 @@ img#mypage_profile_img+label>div{
 input#update_profile{
 	width: 10px; height: 10px;
 }
+
+a{
+	color:black;
+}
+

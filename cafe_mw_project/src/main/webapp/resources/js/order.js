@@ -181,7 +181,7 @@ var sum4 = 0;
 			});
 			var text = "";
 			for(let j = 0; j <cid_arr.length; j++){
-				text += "<input type='text' value='" + cid_arr[j] + "' name='cids'>";
+				text += "<input type='hidden' value='" + cid_arr[j] + "' name='cids'>";
 			}
 			
 			$('div#cart_to_payment').empty();

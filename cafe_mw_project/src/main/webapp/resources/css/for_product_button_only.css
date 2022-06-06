@@ -36,3 +36,27 @@ button#product_detail_delete{
 	position: absolute;
 	right: 140px; top: 200px;
 }
+
+input.c_qnt{
+	border: none;
+	width: 20px;
+	text-align: center;
+	font-size: 12pt;
+}
+
+button.qntButton{
+	border: none;
+	cursor: pointer;
+	padding: 2px 5px;
+	font-weight: bold;
+	background: #fff;
+	border-radius: 3px;
+}
+
+button.qntButton:hover{
+	background: #ddd;
+}
+
+button.qntButton+p{
+	margin: 5px 0px 10px;
+}

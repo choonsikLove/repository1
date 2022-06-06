@@ -2,7 +2,7 @@
 
 *{margin: 0; padding: 0;}
 li{list-style-type: none;}
-a[href] {text-decoration: none;}
+a[href] {text-decoration: none; color: #000;}
 
 hr.adminHr{
 	border: 1px #e7e7e7 solid;
@@ -17,7 +17,7 @@ hr.adminHr+div{
 	flex-direction: column;
 }
 
-div.adminWrap{ /*css 합칠 때 곤란할 것 같아서 div로 나눴음 */
+div.adminWrap{
 	background: #F2F2F2;
 	display: flex;
 	align-items: center;
@@ -35,6 +35,7 @@ div.adminWrap>div.member_table{
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
+	border:none;
 }
 
 div.adminWrap>div:first-of-type {
@@ -898,4 +899,20 @@ button.search_btn{
 	position: relative;
 	left: -25px;
 	top:5px;
+}
+
+div.member_table{
+	flex-direction: column;
+}
+
+table.member_order{
+	margin-top: 30px;
+}
+
+table.member_order tr:first-of-type{
+	background: #ddd;
+}
+
+table.member_order tr:first-of-type td:nth-of-type(2) {
+	padding-right: 40px;
 }

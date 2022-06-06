@@ -109,11 +109,11 @@
 		
 		<div class="adminBox">
 			<p>주문 내역</p>
-			<table border='1'>
+			<table border='1' class="member_order">
 				<tr>
-					<th>주문번호</th>
-					<th>주문 상태</th>
-					<th>주문일자</th>
+					<td>주문번호</td>
+					<td>주문 상태</td>
+					<td>주문일자</td>
 				</tr>
 				<tr>
 					<td>202204220286(주문번호)</td>

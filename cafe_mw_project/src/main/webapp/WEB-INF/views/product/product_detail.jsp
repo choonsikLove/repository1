@@ -114,10 +114,10 @@
 								<br>
 								<br>
 								<div>
-									<button type ="button" onclick="fnCalCount('m');">-</button>
-									<input name="qnt" type="text" value="0" readonly="readonly"></input>
-								    <button type="button" onclick="fnCalCount('p');">+</button>
-								    <p>총 주문 금액: <span id="qnt_price"></span>원</p>
+									<button type ="button" onclick="fnCalCount('m');" class="qntButton">-</button>
+									<input class="c_qnt" name="qnt" type="text" value="0" readonly="readonly"></input>
+								    <button type="button" onclick="fnCalCount('p');" class="qntButton">+</button>
+								    <p>총 주문 금액: <span id="qnt_price">0</span>원</p>
 								</div>
 
 								<div class="product_detail_text3">

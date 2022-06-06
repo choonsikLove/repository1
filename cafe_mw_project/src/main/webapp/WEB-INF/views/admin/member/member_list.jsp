@@ -79,9 +79,11 @@
 							<span class="material-symbols-outlined">search</span>
 						</form>
 					</td>
-				</tr>	
-				<jsp:include page="member_list2.jsp"></jsp:include>
+				</tr>
 			</table>
+			<div>
+				<jsp:include page="member_list2.jsp"></jsp:include>
+			</div>
 		</div>
 	</div>
 </div>

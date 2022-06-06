@@ -41,10 +41,11 @@
 							</td>
 							<td>
 								<div>
-									<button type ="button" onclick="fnCalCount('m', this, '${status.index}');">-</button>
+									<button type ="button" onclick="fnCalCount('m', this, '${status.index}');" class="qntButton">-</button>
 									<input class="c_qnt" type="text" value="${vo.c_qnt }" readonly="readonly"></input>
-								    <button type="button" onclick="fnCalCount('p', this, '${status.index}');">+</button>
+								    <button type="button" onclick="fnCalCount('p', this, '${status.index}');" class="qntButton">+</button>
 									<input type="hidden" value="${vo.pstock }">
+									<br>
 								    <button class="qnt_change">수량 변경</button>
 									<input type="hidden" class="cid" value = "${vo.cid }" >
 								</div>

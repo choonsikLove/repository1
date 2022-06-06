@@ -78,9 +78,24 @@ table{
 
 /*검색바*/
 .search{width:100%;}
-.search_f{border-bottom: 1.3px solid black; margin: 0 0 10px 535px;} 
-.search_i{border:none; margin: 10px 10px 10px 0px;}
-.search_btn{border: none; background-color: white;} 
+.search_f{margin: 0 0 10px 535px;} 
+.search_i{
+	border: none;
+	border-bottom: 1.3px black solid;
+	margin: 10px 10px 10px 0px;
+	width: 200px;
+	padding: 5px;
+	padding-right: 25px;
+	position: relative;
+	left: -180px;
+}
+.search_btn{
+	border: none; 
+	background-color: white;
+	position: relative;
+	left: -218px;
+	top:3px;
+} 
 
 /*글쓰기 버튼*/
 .write_btn{
@@ -325,3 +340,4 @@ table.c2 hr+div>div{
 a.pn{
 	color: #000;
 }
+
