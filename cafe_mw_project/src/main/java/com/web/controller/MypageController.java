@@ -1,5 +1,6 @@
 package com.web.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.web.service.FileServiceImpl;
 import com.web.service.MwMemberServiceImpl;
@@ -40,8 +42,10 @@ public class MypageController {
 	@RequestMapping(value="/shop_mypage", method= RequestMethod.GET)
 	public ModelAndView mypage(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView();
+
 		HttpSession session = request.getSession();
 		String memail = (String)session.getAttribute("memail");
+
 		MwMemberVO vo = (MwMemberVO)memberService.getContentResult(memail);
 		List<MwOrderVO> list = orderService.getOrderMypageResult(memail);
 		

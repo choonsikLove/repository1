@@ -19,25 +19,18 @@ public class LoginController {
 	@Autowired
 	private MwMemberServiceImpl memberService;
 	
+	@ResponseBody
 	@RequestMapping(value="login", method=RequestMethod.POST)
-	public ModelAndView login(MwMemberVO vo, HttpServletRequest request){
-		ModelAndView mv = new ModelAndView();
+	public String login(MwMemberVO vo, HttpServletRequest request){
 		HttpSession session = request.getSession();
 		
 		int result = memberService.getLoginResult(vo);
 		
 		if(result == 1) {
 			session.setAttribute("memail", vo.getMemail());
-			mv.addObject("vo", vo);
-			mv.addObject("login_result", "succ");
-			mv.setViewName("index");
-			
-		} else {
-			mv.addObject("login_result", "fail");
-			mv.setViewName("index");
 		}
 		
-		return mv;
+		return String.valueOf(result);
 	}
 
 	@RequestMapping(value="logout", method= RequestMethod.GET)

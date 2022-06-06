@@ -345,7 +345,6 @@ $(document).on("click", "#findPWButton", function(){
 				url: "emailCheck",
 				success : function(data){
 					if(data != ""){
-						alert(data);
 						carriedEmail = data;
 						$('#foundEmail2').html(data);
 						$('#passEmail').val("");
@@ -373,33 +372,30 @@ $(document).on("click", "#setNewPwButton", function(){
 	var newPassCheck = $('#setNewPwCheck').val();
 	
 	if(newPass != newPassCheck){
-		alert(carriedEmail);
 		alert("입력하신 새 비밀번호가 일치하지 않습니다.");
 		$('#setNewPw').val("");
 		$('#setNewPwCheck').val("");
 	} else {
-		alert(carriedEmail);
-		alert("같아용");
 		$.ajax({
-				type: 'POST',
-				async: true,
-				data: {"memail" : carriedEmail, "mpass" : newPass},
-				url: "updatePass",
-				success : function(result){
-					alert("비밀번호가 변경되었습니다.");
-					$('#setNewPw').val("");
-					$('#setNewPwCheck').val("");
-					$('#popup').css("display","none");
-					$('.popup_cont').css("display","none");
-					$('.login_popup_box').css({"height":"620px","width":"370px",
-						"top":"53%"});
-					$('#popup_cont1').css("display","block");
-					location.href = "http://localhost:9000/manwol/index";
-				},
-				error: function(){
-					alert("실패");
-				}
-			});
+			type: 'POST',
+			async: true,
+			data: {"memail" : carriedEmail, "mpass" : newPass},
+			url: "updatePass",
+			success : function(result){
+				alert("비밀번호가 변경되었습니다.");
+				$('#setNewPw').val("");
+				$('#setNewPwCheck').val("");
+				$('#popup').css("display","none");
+				$('.popup_cont').css("display","none");
+				$('.login_popup_box').css({"height":"620px","width":"370px",
+					"top":"53%"});
+				$('#popup_cont1').css("display","block");
+				location.href = "http://localhost:9000/manwol/index";
+			},
+			error: function(){
+				alert("실패");
+			}
+		});
 	}
 	
 });
@@ -413,12 +409,30 @@ $(document).on("click", "#toJoin", function(){
 
 
 $(document).on("click", "#mwLogin", function(){
+	var login_email = $('input#mwEmail').val();
+	var login_pass = $('input#mwPass').val();
+	
 	if($('#mwEmail').val() == ""){
 		alert("이메일을 입력해주세요!");
 	} else if($('#mwPass').val() == ""){
 		alert("비밀번호를 입력해주세요!");
 	} else{
-		login_form.submit();
+		$.ajax({
+			type: 'POST',
+			async: true,
+			data: {"memail" : login_email, "mpass" : login_pass},
+			url: "login",
+			success : function(result){
+				if(result == 1){
+					location.href = "http://localhost:9000/manwol/index";
+				}else{
+					alert("일치하는 아이디와 비밀번호를 찾지 못했습니다.");
+				}
+			},
+			error: function(){
+				alert("실패");
+			}
+		});
 	}
 });
 

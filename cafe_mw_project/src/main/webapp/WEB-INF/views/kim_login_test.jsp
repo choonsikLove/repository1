@@ -25,7 +25,7 @@
 					<li><input type="password" name="mpass" placeholder="비밀번호" id="mwPass"></li>
 					<li><input type="checkbox" checked="checked" id="loginCheck">
 						<label for="loginCheck">로그인상태유지</label>
-					</li> <%--나중에 이거 관련 내용도 추가해야! 세션할 때 할 수 있지 않을까? --%>
+					</li> 
 					<li><button type="button" id="mwLogin">로그인</button></li>
 				</ul>
 			</form>

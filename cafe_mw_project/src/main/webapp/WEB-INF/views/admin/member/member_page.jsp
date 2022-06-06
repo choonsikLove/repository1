@@ -115,27 +115,40 @@
 					<td>주문 상태</td>
 					<td>주문일자</td>
 				</tr>
-				<tr>
-					<td>202204220286(주문번호)</td>
-					<td>배송 완료(주문 상태)</td>
-					<td>2022-04-22(주문일자)</td>
-				</tr>
-				<tr>
-					<td>202204220286(주문번호)</td>
-					<td>배송 완료(주문 상태)</td>
-					<td>2022-04-22(주문일자)</td>
-				</tr>
-				<tr>
-					<td>202204220286(주문번호)</td>
-					<td>배송 완료(주문 상태)</td>
-					<td>2022-04-22(주문일자)</td>
-				</tr>
-				<tr>
-					<td>202204220286(주문번호)</td>
-					<td>배송 완료(주문 상태)</td>
-					<td>2022-04-22(주문일자)</td>
-				</tr>
-					<jsp:include page="member_page2.jsp"></jsp:include>
+				<c:choose>
+					<c:when test="${empty list }">
+						<tr>
+							<td colspan='3'>
+								주문 결과가 없습니다.
+							</td>
+						</tr>
+					</c:when>
+					<c:otherwise>
+						<c:forEach var="vo" items="${list }">
+							<tr>
+								<td>${vo.oid }</td>
+								<td>
+									<c:choose>
+										<c:when test="${vo.ostatus == 0 }">
+											입금 대기 중
+										</c:when>
+										<c:when test="${vo.ostatus == 1 }">
+											배송 준비
+										</c:when>
+										<c:when test="${ vo.ostatus == 2 }">
+											배송 중
+										</c:when>
+										<c:when test="${vo.ostatus == 3 }">
+											배송 완료
+										</c:when>
+									</c:choose>
+								</td>
+								<td>${vo.odate }</td>
+							</tr>
+						</c:forEach>
+					</c:otherwise>
+				</c:choose>
+				<jsp:include page="member_page2.jsp"></jsp:include>
 				<tr>
 					<td colspan="3">
 						<form>
