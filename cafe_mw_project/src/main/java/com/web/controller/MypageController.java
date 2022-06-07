@@ -15,12 +15,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.web.service.FileServiceImpl;
 import com.web.service.MwMemberServiceImpl;
 import com.web.service.MwOrderServiceImpl;
 import com.web.service.MwProductServiceImpl;
+import com.web.service.MwReviewServiceImpl;
 import com.web.vo.MwMemberVO;
 import com.web.vo.MwOrderVO;
 import com.web.vo.MwProductVO;
@@ -40,6 +40,9 @@ public class MypageController {
 	
 	@Autowired
 	private MwOrderServiceImpl orderService;
+	
+	@Autowired
+	private MwReviewServiceImpl reviewService;
 	
 	@RequestMapping(value="/shop_mypage", method= RequestMethod.GET)
 	public ModelAndView mypage(HttpServletRequest request) {
@@ -81,21 +84,18 @@ public class MypageController {
 	}
 
 	@RequestMapping(value="/shop_mypage/review_insert", method=RequestMethod.POST)
-	public ModelAndView review_insert(MwReviewVO rvo, HttpServletRequest request) throws Exception {
+	public ModelAndView review_insert(MwReviewVO vo, HttpServletRequest request) throws Exception {
 		ModelAndView mv = new ModelAndView();
-		HttpSession session = request.getSession();
-		String memail = (String)session.getAttribute("memail");
-		MwMemberVO vo = (MwMemberVO)memberService.getContentResult(memail);
+
+		vo = fileService.fileCheck(vo);
 		
-		mv.addObject("vo", vo);		
-		/*
-		 * int result = reviewService.getInsertResult(vo);
-		 * 
-		 * if(result==1) { fileService.fileSave(vo, request);
-		 * mv.addObject("rvInsert_result", "succ"); }
-		 */
-		mv.addObject("rvInsert_result", "succ");
-		mv.setViewName("/mypage/mypage");
+		int result = reviewService.getInsertResult(vo);
+		
+		if(result==1) { 
+			fileService.fileSave(vo, request);
+			mv.addObject("rvInsert_result", "succ");
+			mv.setViewName("/mypage/mypage");
+		}
 		
 		return mv;
 	}

@@ -4,7 +4,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 public class MwReviewVO {
 
-	String vid, vdate, vcontent, vpum, vmemail, vfile, vsfile;
+	String vid, vdate, vcontent, vpnum, vmemail, vfile, vsfile;
 	
 	CommonsMultipartFile file;
 
@@ -23,7 +23,7 @@ public class MwReviewVO {
 	public void setVdate(String vdate) {
 		this.vdate = vdate;
 	}
- 	
+
 	public String getVcontent() {
 		return vcontent;
 	}
@@ -32,12 +32,12 @@ public class MwReviewVO {
 		this.vcontent = vcontent;
 	}
 
-	public String getVpum() {
-		return vpum;
+	public String getVpnum() {
+		return vpnum;
 	}
 
-	public void setVpum(String vpum) {
-		this.vpum = vpum;
+	public void setVpnum(String vpnum) {
+		this.vpnum = vpnum;
 	}
 
 	public String getVmemail() {

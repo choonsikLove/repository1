@@ -7,7 +7,11 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
+	body{
+		background: #f2f2f2;
+	}
 	table{
+		background: #f2f2f2;
 		width: 400px;
 	}
 	#p_info, #submit_btn td{
@@ -28,36 +32,39 @@
 		display: inline-block;
 	}
 	#submit_btn input{
-		width: 150px;
-		height: 50px;
-		font-size: 18px;
+		width: 190px;
+		height: 40px;
+		font-size: 16px;
+		border: 1px solid black;
 	}
 	#cancel{
 		background: white;
 	}
 	#submit{
-		background: blue;
+		background: rgb(11, 47, 127);
+		color: white;		
 	}
 
 </style>
 <script type="text/javascript">
 	function review_Submit() {
-	    document.reviewInsert.target="_selft"; // 타켓을 부모창으로 설정
+		window.opener.name = "parentPage";
+	    document.reviewInsert.target="_parentPage";
 	    document.reviewInsert.action = "/manwol/shop_mypage/review_insert";
-	    document.reviewInsert.submit();
 	    self.close();
+	    document.reviewInsert.submit();
 	}
 </script>
 </head>
 <body>
 	<form name="reviewInsert" method="POST" enctype="multipart/form-data">
-		<input type="hidden" name = "vpum" value='${vo.pnum }'> 
-		<input type="hidden" name = "vmemail" value='${memail }'> 
+		<input type="hidden" name = "vpnum" value="${vo.vpnum}" > 
+		<input type="hidden" name = "vmemail" value="${vo.vemail}"> 
 		<div>
 			<table id='p_info'>
 				<tr>
 					<td id='img_td'><img src="http://localhost:9000/manwol/resources/upload/${vo.pmainsfile }" height="100px" width="100px"></td>
-					<td><div>제품명<br><br>${vo.pname }제품명입니다.</div></td>
+					<td><div><br><br>${vo.pname }</div></td>
 				</tr>
 			</table>
 			<br>
@@ -73,7 +80,7 @@
 			<table id='submit_btn'>
 				<tr>
 					<td><input id='cancel' type='button' onclick="self.close()" value='취소'></td>
-					<td><input id='submit' type="submit" onclick="review_Submit()" onclick="self.close()" value='등록'></td>
+					<td><input id='submit' type="submit" onclick="review_Submit()" value='등록'></td>
 				</tr>
 			</table>
 		</div>	

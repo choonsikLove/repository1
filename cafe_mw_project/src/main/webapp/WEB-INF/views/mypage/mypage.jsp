@@ -152,7 +152,6 @@
 															</c:when>
 														</c:choose>
 													</div>
-													<!-- <div class='order_btn'>취소</div> -->
 													<form name="review_insert_form" method="get">
 														<input type='hidden' name='vpnum' value="vo.pnum">
 														<button class='review_insert_btn' type="button" onclick="review_popup()">리뷰쓰기</button>

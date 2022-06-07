@@ -6,13 +6,12 @@ import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
-import com.web.dao.MwRecipeDAO;
 import com.web.vo.MwMemberVO;
 import com.web.vo.MwProductVO;
 import com.web.vo.MwRecipeVO;
+import com.web.vo.MwReviewVO;
 
 public class FileServiceImpl {
 	
@@ -323,4 +322,31 @@ public class FileServiceImpl {
 			}
 		}
 	}
+	
+	//¸®ºä
+	public MwReviewVO fileCheck(MwReviewVO vo) {
+		UUID uuid = UUID.randomUUID();
+		
+		if(vo != null) {
+			if(!vo.getFile().getOriginalFilename().equals("")) {
+				vo.setVfile(vo.getFile().getOriginalFilename());
+				vo.setVsfile(uuid+"_"+vo.getFile().getOriginalFilename());
+			}
+		}
+		
+		return vo;
+	}
+	
+	public void fileSave(MwReviewVO vo, HttpServletRequest request) throws Exception {
+		
+		if(!vo.getFile().getOriginalFilename().equals("")) {
+			String path = request.getSession().getServletContext().getRealPath("/");
+			path += "resources\\upload\\";
+			
+			File file = new File(path+vo.getVsfile());
+			vo.getFile().transferTo(file);
+		}
+		
+	}
+	
 }
