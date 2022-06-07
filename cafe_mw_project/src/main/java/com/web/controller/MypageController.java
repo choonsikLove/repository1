@@ -69,12 +69,12 @@ public class MypageController {
 	}
 
 	@RequestMapping(value="/shop_mypage/review_insert", method=RequestMethod.GET)
-	public ModelAndView review_insert(String vpnum, HttpServletRequest request) throws Exception {
+	public ModelAndView review_insert(String pnum, HttpServletRequest request) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		HttpSession session = request.getSession();
 		String memail = (String)session.getAttribute("memail");
 		
-		MwProductVO vo = (MwProductVO)productService.getContent(vpnum);
+		MwProductVO vo = (MwProductVO)productService.getContent(pnum);
 		
 		mv.addObject("vo", vo);
 		mv.addObject("memail", memail);

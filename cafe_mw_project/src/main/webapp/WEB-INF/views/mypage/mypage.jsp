@@ -24,8 +24,7 @@
 	
 	if(rvInsert_result == "succ"){
 		alert("리뷰가 작성되었습니다. 확인하시겠습니까?");
-	}	
-	
+	}
 	function review_popup(){
 		var objPopup = window.open('','reviewWindow','resizable=no, top=200, left=200, width=450, height=550, scrollbars=no');
 		document.review_insert_form.target="reviewWindow";// 타켓
@@ -37,7 +36,6 @@
 			objPopup.focus();
 		}
 	}
-	
 </script>
 </head>
 <body>
@@ -153,7 +151,7 @@
 														</c:choose>
 													</div>
 													<form name="review_insert_form" method="get">
-														<input type='hidden' name='vpnum' value="vo.pnum">
+														<input type='hidden' name='pnum' value="${dvo.o_pnum}">
 														<button class='review_insert_btn' type="button" onclick="review_popup()">리뷰쓰기</button>
 													</form>
 												</div>

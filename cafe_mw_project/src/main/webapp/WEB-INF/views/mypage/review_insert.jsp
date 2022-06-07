@@ -58,13 +58,13 @@
 </head>
 <body>
 	<form name="reviewInsert" method="POST" enctype="multipart/form-data">
-		<input type="hidden" name = "vpnum" value="${vo.vpnum}" > 
-		<input type="hidden" name = "vmemail" value="${vo.vemail}"> 
+		<input type="hidden" name = "vpnum" value="${vo.pnum}" > 
+		<input type="hidden" name = "vmemail" value="${memail}"> 
 		<div>
 			<table id='p_info'>
 				<tr>
 					<td id='img_td'><img src="http://localhost:9000/manwol/resources/upload/${vo.pmainsfile }" height="100px" width="100px"></td>
-					<td><div><br><br>${vo.pname }</div></td>
+					<td><div>${vo.pname }</div></td>
 				</tr>
 			</table>
 			<br>
