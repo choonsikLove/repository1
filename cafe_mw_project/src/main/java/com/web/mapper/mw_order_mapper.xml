@@ -14,22 +14,27 @@
 		select c_pnum, c_qnt, cid, pname, pprice, psaleprice, pmainsfile, pstock, memail
 		from mw_product mw, mw_cart mc
 		where mw.pnum = mc.c_pnum
-				and memail = #{memail}
-		<!-- 
 		<choose>
-			<when test="memail != null">
+			<when test="value != null">
+				and memail = #{memail}
 			</when>
 			<otherwise>
 				and memail is null
 			</otherwise>		
 		</choose>
-		 -->
 	</select>
 
 	<select id="select_cart_count" parameterType="com.web.vo.MwCartVO" resultType="int">
 		select count(*) from mw_cart
-		where c_pnum = #{c_pnum} and memail = #{memail}
-		<!-- memail null check는 아직X -->
+		where c_pnum = #{c_pnum} 
+		<choose>
+			<when test="memail != null">
+				and memail = #{memail}
+			</when>
+			<otherwise>
+				and memail is null
+			</otherwise>		
+		</choose>
 	</select>
 	
 	<update id="update_qnt" parameterType="com.web.vo.MwCartVO">
@@ -118,12 +123,13 @@
             	where rno between #{start} and #{end}
 	</select>
 	
-	<select id="select_order_mypage" parameterType="java.lang.String" resultType="com.web.vo.MwOrderVO">
-		select mo.oid, to_char(mo.odate,'yyyy-mm-dd') odate, mp.pname, mo_d.o_qnt, mp.pprice, 
-			mp.psaleprice, mo.ostatus, mp.pmainsfile, mo_d.o_pnum
-				from mw_order mo, mw_member mm, mw_order_details mo_d, mw_product mp
-				where mo.ob_email = mm.memail and mo.oid = mo_d.od_oid and mo_d.o_pnum = mp.pnum
-					and memail = #{memail}
+	<select id="select_order_list" parameterType="java.lang.String" resultType="com.web.vo.MwOrderVO">
+		select oid, to_char(odate, 'yyyy-mm-dd') odate, ostatus 
+		from(
+			select oid, odate, ostatus 
+				from mw_order mo, mw_member mm 
+					where mo.ob_email = mm.memail and memail = #{memail}
+				order by odate desc)
 	</select>
 	
 </mapper>    

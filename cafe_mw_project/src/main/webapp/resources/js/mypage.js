@@ -10,8 +10,6 @@
 				data: {"email": member_email},
 				url: "mypage_member_info",
 				success : function(data){
-					console.log(data);
-					alert("성공" + data.mname);
 					
 					if(data.msprofile != null){
 						var new_src = "http://localhost:9000/manwol/resources/upload/"+data.msprofile;
@@ -143,12 +141,12 @@
 													}
 												});
 											} else {
-												alert("새 비밀번호와 확인 비밀번호가 다름");
+												alert("새 비밀번호와 확인 비밀번호가 다릅니다.");
 											}//새 비밀번호랑 확인 비밀번호가 다름 
 										}//새 비밀번호 바꿀지 안바꿀지 분기(위에랑 다르다)
 										
 									} else { //입력창에 비밀번호 다르게 입력했을 경우
-										alert("입력창에 비번 제대로 쓰라고 띄우기 alert말고 다른걸로");
+										alert("비밀번호가 일치하지 않습니다.");
 									}
 								},
 								error: function(){

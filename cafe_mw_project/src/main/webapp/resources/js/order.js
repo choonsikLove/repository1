@@ -104,9 +104,8 @@ var sum4 = 0;
 
 
 	$("button.qnt_change").click(function(){
-		var qnt_chng = $(this).prev().prev().prev().val();
+		var qnt_chng = parseInt($(this).prev().prev().prev().prev().val());
 		var cid = $(this).next().val();
-		
 		
 		$.ajax({
 			type:'POST',

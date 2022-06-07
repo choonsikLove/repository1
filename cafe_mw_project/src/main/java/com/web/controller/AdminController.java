@@ -106,7 +106,7 @@ public class AdminController {
 	public ModelAndView member_page(String memail, String rpage) {
 		ModelAndView mv = new ModelAndView();
 		MwMemberVO vo = (MwMemberVO)memberService.getContentResult(memail);
-		List<MwOrderVO> list = orderService.getOrderMypageResult(memail);
+		List<MwOrderVO> list = orderService.getOrderListResult(memail);
 		
 		mv.addObject("vo", vo);
 		mv.addObject("list", list);
@@ -457,7 +457,7 @@ public class AdminController {
 		int endCount = Integer.parseInt(param.get("end"));
 		
 		List<Object> olist = orderService.getListResult(startCount, endCount);
-		ArrayList<MwOrderVO> list = new ArrayList();
+		ArrayList<MwOrderVO> list = new ArrayList<MwOrderVO>();
 		for(Object obj : olist) {
 			list.add((MwOrderVO)obj);
 		}

@@ -60,3 +60,9 @@ button.qntButton:hover{
 button.qntButton+p{
 	margin: 5px 0px 10px;
 }
+
+p.product_detail_price{
+	display: inline-block;
+	position:relative;
+	top: 3px;
+}

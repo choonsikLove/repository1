@@ -1,6 +1,5 @@
 package com.web.controller;
 
-import java.net.http.HttpRequest;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -104,10 +103,12 @@ public class OrderController {
 		HttpSession session = request.getSession();
 		String memail = (String)session.getAttribute("memail");
 		
-		MwMemberVO mvo = (MwMemberVO)memberService.getContentResult(memail);
+		if(memail != null) {
+			MwMemberVO mvo = (MwMemberVO)memberService.getContentResult(memail);
+			mv.addObject("mvo", mvo);
+		}
 		
 		mv.addObject("list", vo_list);
-		mv.addObject("mvo", mvo);
 		mv.setViewName("/order/payment");
 		
 		return mv;

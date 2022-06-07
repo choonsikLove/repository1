@@ -67,8 +67,8 @@
                                              </div>
                                           </div>
                                        </div>
-                                       <input type="text" name="ocid" value = "${vo.cid }">
-                                       <input type="text" name="oproduct" value = "${vo.c_pnum }">
+                                       <input type="hidden" name="ocid" value = "${vo.cid }">
+                                       <input type="hidden" name="oproduct" value = "${vo.c_pnum }">
                                     </c:forEach>
                                     </div>
                                     <div class="payment_price1">

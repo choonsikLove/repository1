@@ -114,8 +114,8 @@ public class MwOrderDAO implements MwObjectDAO{
 		return sqlSession.selectList(namespace+".select_order_details", oid);
 	}
 	
-	public List<MwOrderVO> selectOrderMypage(String memail){
-		return sqlSession.selectList(namespace + ".select_order_mypage", memail);
+	public List<MwOrderVO> selectOrderList(String memail){
+		return sqlSession.selectList(namespace + ".select_order_list", memail);
 	}
 	
 }

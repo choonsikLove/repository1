@@ -69,11 +69,10 @@
 		
 		<div>
 			<button class="cart_delete">선택 상품 삭제</button>
-			<button id="honey">꿀꽈배기</button>
 		</div>
 		
 		<ul class="cart_ul">
-			<li>총 주문 상품 <span id="cart_length">${fn:length(list) }</span>개 css는 주말에 하기 </li>
+			<li>총 주문 상품 <span id="cart_length">${fn:length(list) }</span>개</li>
 			<li>
 				<div>
 					<table border='1'>

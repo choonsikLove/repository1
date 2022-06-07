@@ -1,7 +1,9 @@
 package com.web.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -47,9 +49,17 @@ public class MypageController {
 		String memail = (String)session.getAttribute("memail");
 
 		MwMemberVO vo = (MwMemberVO)memberService.getContentResult(memail);
-		List<MwOrderVO> list = orderService.getOrderMypageResult(memail);
+		List<MwOrderVO> list = orderService.getOrderListResult(memail);
+		Map<String, ArrayList<MwOrderVO>> map = new HashMap<String, ArrayList<MwOrderVO>>();
+		
+		for(MwOrderVO ovo:list) {
+			String oid = ovo.getOid();
+			ArrayList<MwOrderVO> dlist = (ArrayList<MwOrderVO>)orderService.getOrderDetailResult(oid);
+			map.put(oid, dlist);
+		}
 		
 		mv.addObject("vo", vo);
+		mv.addObject("map",map);
 		mv.addObject("list", list);
 		mv.setViewName("/mypage/mypage");
 		return mv;

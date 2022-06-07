@@ -44,9 +44,9 @@
 			<form>
 				<div>
 					<input type='text' name='email' class='input_box' value="test@naver.com" id="mypage_profile_memail">
-					<input type='text' name='before_pass' class='input_box' placeholder='기본 비밀번호 입력'>
-					<input type='text' name='after_pass' class='input_box' placeholder='비밀번호를 변경 하는 경우 입력하세요'>
-					<input type='text' class='input_box' placeholder='비밀번호 확인' id="after_after_pass">
+					<input type='password' name='before_pass' class='input_box' placeholder='기본 비밀번호 입력'>
+					<input type='password' name='after_pass' class='input_box' placeholder='비밀번호를 변경 하는 경우 입력하세요'>
+					<input type='password' class='input_box' placeholder='비밀번호 확인' id="after_after_pass">
 				</div>
 				<div class='sub_title'>
 					이름&nbsp;<span>&#x02022;</span>

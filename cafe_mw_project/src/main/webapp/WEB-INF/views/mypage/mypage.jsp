@@ -117,46 +117,52 @@
 										주문일자 ${ovo.odate }
 									</span>
 									<br>
-									<div class='order_table'>
-										<img class='order_img' src='http://localhost:9000/manwol/resources/upload/${ovo.pmainsfile }'>
-										<div class='order_product'>
-											<span class='order_list_product'>${ovo.pname }</span><br>
-											<span class='order_list_option'>-</span><br>
-											<span class='order_list_price'>
-												<c:choose>
-													<c:when test="${ovo.psaleprice != 0 }">
-														${ovo.psaleprice }
-													</c:when>
-													<c:otherwise>
-														${ovo.pprice }
-													</c:otherwise>
-												</c:choose>
-											원 / ${ovo.o_qnt }개</span>
-										</div>
-										<div class='order_status'>
-											<c:choose>
-												<c:when test="${ovo.ostatus == 0 }">
-													<span class="orderStatus_update">입금 대기 중</span>
-												</c:when>
-												<c:when test="${ovo.ostatus == 1 }">
-													<span class="orderStatus_update">배송 준비</span>
-												</c:when>
-												<c:when test="${ovo.ostatus == 2 }">
-													<span class="orderStatus_update">배송 중</span>
-												</c:when>
-												<c:when test="${ovo.ostatus == 3 }">
-													<span class="orderStatus_update">배송 완료</span>
-												</c:when>
-											</c:choose>
-										</div>
-										<!-- <div class='order_btn'>취소</div> -->
-										<form name="review_insert_form" method="get">
-											<input type='hidden' name='vpnum' value="vo.pnum">
-											<button class='review_insert_btn' type="button" onclick="review_popup()">리뷰쓰기</button>
-										</form>
+									<c:forEach var="m" items="${map}">
+										<c:if test="${m.key == ovo.oid }">
+											<c:forEach var="dvo" items="${m.value}">
+												<div class='order_table'>
+													<img class='order_img' src='http://localhost:9000/manwol/resources/upload/${dvo.pmainsfile }'>
+													<div class='order_product'>
+														<span class='order_list_product'>${dvo.pname}</span><br>
+														<span class='order_list_option'>-</span><br>
+														<span class='order_list_price'>
+															<c:choose>
+																<c:when test="${dvo.psaleprice != 0 }">
+																	${dvo.psaleprice }
+																</c:when>
+																<c:otherwise>
+																	${dvo.pprice }
+																</c:otherwise>
+															</c:choose>
+														원 / ${dvo.o_qnt }개</span>
+													</div>
+													<div class='order_status'>
+														<c:choose>
+															<c:when test="${ovo.ostatus == 0 }">
+																<span class="orderStatus_update">입금 대기 중</span>
+															</c:when>
+															<c:when test="${ovo.ostatus == 1 }">
+																<span class="orderStatus_update">배송 준비</span>
+															</c:when>
+															<c:when test="${ovo.ostatus == 2 }">
+																<span class="orderStatus_update">배송 중</span>
+															</c:when>
+															<c:when test="${ovo.ostatus == 3 }">
+																<span class="orderStatus_update">배송 완료</span>
+															</c:when>
+														</c:choose>
+													</div>
+													<!-- <div class='order_btn'>취소</div> -->
+													<form name="review_insert_form" method="get">
+														<input type='hidden' name='vpnum' value="vo.pnum">
+														<button class='review_insert_btn' type="button" onclick="review_popup()">리뷰쓰기</button>
+													</form>
+												</div>
+											</c:forEach>
+										</c:if>
+									</c:forEach>
 									</div>
-								</div>
-							</c:forEach>
+								</c:forEach>
 						</c:otherwise>
 					</c:choose>
 					

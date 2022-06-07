@@ -219,7 +219,7 @@
 						</td>
 						<td>
 							<div>
-								<span>할인 금액(있을 때만)</span>
+								<span>할인 금액</span>
 								<c:set var="total" value="${0}"/>
 									<c:forEach var="vo" items="${list}">
 										<c:if test="${vo.psaleprice != 0 }">

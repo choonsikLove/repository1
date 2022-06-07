@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<header> <%--다른 헤더랑 이름이 겹치니까 css파일 합치지 않도록 주의! --%>
+<header> 
 	<div>
 		<div>
 			상품 수정
@@ -197,7 +197,6 @@
 				<button type="button" id="select1">추가</button>
 			</div>
 			<div id="newSelect">
-			<%--나중에 만약에 여기에 select의 이름이 있다면, 수정할 때 상자를 보여주는 c:if하면 되지않을까?힝--%>
 			<%--
 				<div class="selectDiv">
 					<p>셀렉트박스 이름</p>

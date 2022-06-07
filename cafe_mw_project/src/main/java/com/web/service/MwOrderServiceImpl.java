@@ -64,7 +64,7 @@ public class MwOrderServiceImpl implements MwOrderService{
 		return orderDao.updateQnt(vo);
 	}
 	
-	public int getOrderInsertResult(MwOrderVO vo) {//TT
+	public int getOrderInsertResult(MwOrderVO vo) {
 		return orderDao.insertOrder(vo);
 	}
 	
@@ -84,7 +84,7 @@ public class MwOrderServiceImpl implements MwOrderService{
 		return orderDao.selectOrderDetail(oid);
 	}
 	
-	public List<MwOrderVO> getOrderMypageResult(String memail){
-		return orderDao.selectOrderMypage(memail);
+	public List<MwOrderVO> getOrderListResult(String memail){
+		return orderDao.selectOrderList(memail);
 	}
 }
