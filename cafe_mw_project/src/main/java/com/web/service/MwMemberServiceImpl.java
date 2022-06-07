@@ -37,12 +37,6 @@ public class MwMemberServiceImpl implements MwMemberService{
 	}
 
 	@Override
-	public void getUpdateHits(String id) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public List<Object> getSearchListResult(int startCount, int endCount, String keyword, String option) {
 		// TODO Auto-generated method stub
 		return memberDao.selectSearch(startCount, endCount, keyword, option);
