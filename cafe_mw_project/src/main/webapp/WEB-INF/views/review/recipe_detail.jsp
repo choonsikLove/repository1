@@ -184,7 +184,14 @@
 															<input type="file" id="myfile" name="r_file" style="visibility: hidden;">
 														</div>
 														<div style="float: right; margin-left: 10%;">
-															<button type="button" class="w_btn">작성</button>
+															<c:choose>
+					               								<c:when test="${sessionScope.memail != null }">
+					               									<button type="button" class="w_btn">작성</button>
+																</c:when>
+					               								<c:otherwise>
+																	<a><button type="button" class="w_btn" id="login_write_btn2">작성</button></a>
+											               		</c:otherwise>
+											            	</c:choose>
 														</div>
 													</div>
 												</form>
@@ -259,9 +266,14 @@
 									<tr>		
 										<td>
 											<div>	
-												<a href='recipe_insert'>	
-													<button class="write_btn">글쓰기</button>
-												</a>
+												<c:choose>
+		               								<c:when test="${sessionScope.memail != null }">
+		               									<a href='recipe_insert'><button class="write_btn" style="margin-top: -50px;">글쓰기</button></a>
+													</c:when>
+		               								<c:otherwise>
+														<a><button class="write_btn" id="login_write_btn" style="margin-top: -50px;">글쓰기</button></a>
+								               		</c:otherwise>
+								            	</c:choose>
 											</div>
 										</td>
 									</tr>	

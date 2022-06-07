@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <link rel="stylesheet" href="http://localhost:9000/manwol/resources/css/recipe.css">
 <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery-3.6.0.js"></script>
+<script src="http://localhost:9000/manwol/resources/js/recipe.js"></script>
 <style type="text/css">
 	.wish_list{
 		display: inline-block;
@@ -248,8 +249,8 @@
 						<td>
 							<table class="search">
 								<tr>
-									<td >
-										<div style="display: flex;">
+									<td>
+										<div style="display: flex; margin-left: 150px;">
 											<form class="search_f" method="post">
 												<input  type="text" placeholder=" Search" class="search_i" name='option'>
 												<button  type="submit" class="search_btn">
@@ -259,8 +260,15 @@
 										</div>
 									</td>
 									<td align="right">
-										<div>		
-											<a href='recipe_insert'><button class="write_btn">글쓰기</button></a>
+										<div>	
+											<c:choose>
+	               								<c:when test="${sessionScope.memail != null }">
+	               									<a href='recipe_insert'><button class="write_btn">글쓰기</button></a>
+												</c:when>
+	               								<c:otherwise>
+													<a><button class="write_btn" id="login_write_btn">글쓰기</button></a>
+							               		</c:otherwise>
+							            	</c:choose>
 										</div>
 									</td>
 								</tr>

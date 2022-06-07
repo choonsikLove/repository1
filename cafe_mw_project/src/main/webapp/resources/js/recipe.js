@@ -49,3 +49,22 @@ $(document).ready(function(){
 	}
 	
 });
+
+
+
+
+$(document).ready(function(){
+
+/*		비회원이 글쓰기 클릭시		*/
+	$('#login_write_btn').click(function(){
+		$('#popup').css("display","block");
+	});
+});
+
+$(document).ready(function(){
+
+/*		비회원이 작성 클릭시			*/
+	$('#login_write_btn2').click(function(){
+		$('#popup').css("display","block");
+	});
+});
