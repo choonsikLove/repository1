@@ -7,7 +7,6 @@ public interface MwObjectService {
 	List<Object> getListResult(int startCount, int endCount);
 	Object getContentResult(String id);
 	int getListCount();
-	void getUpdateHits(String id);
 	int getUpdateResult(Object obj);
 	int getDeleteResult(String id);
 }

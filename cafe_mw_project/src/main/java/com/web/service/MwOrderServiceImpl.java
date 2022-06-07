@@ -40,12 +40,6 @@ public class MwOrderServiceImpl implements MwOrderService{
 	}
 
 	@Override
-	public void getUpdateHits(String id) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public int getUpdateResult(Object obj) {
 		// TODO Auto-generated method stub
 		return 0;
