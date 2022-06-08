@@ -26,51 +26,6 @@
 		color: rgb(0, 74, 152);
 	}
 </style>
-<script type="text/javascript">
-	$(()=>{
-		
-		$(".favorite").click(function(){
-			
-	 		var favorite = 1;
-			
-	 		if($("this").css("color") == "rgb(0, 74, 152)"){
-	 			favorite = -1;
-			}
-			
-			alert($("this").css("color"));
-			
-			if($("this").css("color") == "rgb(0, 74, 152)"){
-				$("this").css("color","rgb(255, 255, 255)");
-			}else{
-				$("this").css("color","rgb(0, 74, 152)");
-			}
-			
-			
-			
-			
-			
-			
-
-/* 		$.ajax({
-				url: "recipe_wish?wish="+favorite,
-				success: function(result){
-				}
-			})/ */
-			
-			
-			
-			
-			
-		}); 
-		
-		
-		
-		
-		
-		
-		
-	});
-</script>
 </head>
 <body>
 	<!-- header -->

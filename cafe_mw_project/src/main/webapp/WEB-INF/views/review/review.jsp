@@ -213,26 +213,8 @@
       <tr>
          <td>
          	<table style="width: 1270px;">
-					<tr>
-						<td style="text-align: center;">
-							<div class="page_number">
-								<p>
-									<span style="cursor: no-drop;"><</span> 
-									<span class="page">&emsp;1&emsp;</span>
-									<span class="page">2&emsp;</span> 
-									<span class="page">3&emsp;</span>
-									<span class="page">4&emsp;</span> 
-									<span class="page">5&emsp;</span>
-									<span class="page">6&emsp;</span> 
-									<span class="page">7&emsp;</span>
-									<span class="page">8&emsp;</span> 
-									<span class="page">9&emsp;</span>
-									<span style="cursor: no-drop;">></span>
-								</p>
-							</div>
-						</td>
-					</tr>
-				</table>
+				<jsp:include page="recipe_page.jsp"></jsp:include>
+			</table>
 			</td>
    		</tr>   
    </table>
