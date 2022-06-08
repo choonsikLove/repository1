@@ -58,7 +58,6 @@ public class FileServiceImpl {
 	}
 	
 	
-	//상품
 	public MwProductVO fileCheck(MwProductVO vo) {
 		UUID uuid = UUID.randomUUID();
 		
@@ -100,7 +99,6 @@ public class FileServiceImpl {
 		}
 	}
 	
-	//상품의 서브파일들
 	public MwProductVO multiFileCheck(MwProductVO vo) {		
 		
 		if(vo != null) {
@@ -240,8 +238,6 @@ public class FileServiceImpl {
 	
 	
 	
-	// 레시피
-	
 	public MwRecipeVO multiFileCheck(MwRecipeVO vo) {		
 
 		if(vo != null) {
@@ -323,7 +319,6 @@ public class FileServiceImpl {
 		}
 	}
 	
-	//리뷰
 	public MwReviewVO fileCheck(MwReviewVO vo) {
 		UUID uuid = UUID.randomUUID();
 		

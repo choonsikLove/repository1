@@ -35,14 +35,14 @@ public class MwProductServiceImpl extends MwObjectServiceAdapter{
 		return productDao.selectSearchTotal(keyword);
 	*/
 	
-	   @Override 
-	   public List<Object> getListResult(int startCount, int endCount){
-	      return productDao.select(startCount, endCount); 
-	   }
+	@Override 
+	public List<Object> getListResult(int startCount, int endCount){
+		return productDao.select(startCount, endCount); 
+	}
 	   
-	   public List<Object> getListResult(int startCount, int endCount, String pcategory) {
-	      return productDao.select(startCount, endCount, pcategory);
-	   }
+	public List<Object> getListResult(int startCount, int endCount, String pcategory) {
+		return productDao.select(startCount, endCount, pcategory);
+	}
 
     
     /*
