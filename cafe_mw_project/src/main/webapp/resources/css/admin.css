@@ -906,13 +906,19 @@ div.member_table{
 }
 
 table.member_order{
-	margin-top: 30px;
+	position: relative;
+	top: -40px;
 }
 
 table.member_order tr:first-of-type{
 	background: #ddd;
 }
 
-table.member_order tr:first-of-type td:nth-of-type(2) {
-	padding-right: 40px;
+table.member_order tr:first-of-type td:nth-of-type(2),
+table.member_order tr td:last-of-type {
+	padding-right: 10px;
+}
+
+table.member_order tr td:first-of-type {
+	padding-left: 10px;
 }
