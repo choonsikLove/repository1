@@ -15,6 +15,9 @@ public class MwPageServiceImpl {
 	
 	@Autowired
 	private MwOrderServiceImpl orderService;
+
+	@Autowired
+	private MwReviewServiceImpl reviewService;
 	
 	/**
 	 * 페이징 처리 
@@ -41,6 +44,9 @@ public class MwPageServiceImpl {
 		}else if(serviceName.equals("order")) {
 			orderService = (MwOrderServiceImpl)service;
 			dbCount = orderService.getListCount();
+			pageSize = 10;
+		}else if(serviceName.equals("review")) {
+			dbCount = reviewService.getListCount();
 			pageSize = 10;
 		}
 		
@@ -142,6 +148,10 @@ public class MwPageServiceImpl {
 				dbCount = recipeService.getSearchListCount(option);
 			}
 			
+		}else if(serviceName.equals("review")) {
+			reviewService = (MwReviewServiceImpl)service;
+			pageSize = 10;
+			dbCount = reviewService.getListCount(option);
 		}
 		
 		//총 페이지 수 계산

@@ -28,6 +28,11 @@ public class MwReviewDAO implements MwObjectDAO{
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne(namespace+".count");
 	}
+
+	public int selectTotal(String option) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne(namespace+".countCategory");
+	}
 	
 	@Override
 	public List<Object> select(int startCount, int endCount) {
@@ -36,6 +41,14 @@ public class MwReviewDAO implements MwObjectDAO{
 		param.put("start", startCount);
 		param.put("end", endCount);
 		return sqlSession.selectList(namespace+".list", param);
+	}
+
+	public List<Object> select(int startCount, int endCount, String option) {
+		// TODO Auto-generated method stub
+		Map param = new HashMap<Integer, Integer>();
+		param.put("start", startCount);
+		param.put("end", endCount);
+		return sqlSession.selectList(namespace+".listCategory", param);
 	}
 
 	@Override

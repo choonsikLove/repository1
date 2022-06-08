@@ -16,8 +16,9 @@ import org.springframework.web.servlet.ModelAndView;
 import com.web.service.FileServiceImpl;
 import com.web.service.MwPageServiceImpl;
 import com.web.service.MwRecipeServiceImpl;
-import com.web.vo.MwMemberVO;
+import com.web.service.MwReviewServiceImpl;
 import com.web.vo.MwRecipeVO;
+import com.web.vo.MwReviewVO;
 
 @Controller
 public class ReviewController {
@@ -30,19 +31,58 @@ public class ReviewController {
 	
 	@Autowired
 	private MwPageServiceImpl pageService;
+
+	@Autowired
+	private MwReviewServiceImpl reviewService;
 	
 	@RequestMapping(value="/review", method=RequestMethod.GET)
-	public String review() {
+	public ModelAndView review(String rpage, String voption) {
+		ModelAndView mv = new ModelAndView();
+		Map<String,String> param1;
+		Map<String,String> param2;
+		List<Object> olist;
+		int startCount, endCount;
 		
-		return "/review/review";
+		param1 = pageService.getPageResult(rpage, "review", reviewService);
+		param2 = pageService.getPageResult(rpage, "review", reviewService, voption);
+
+		if(voption == null) {
+			startCount = Integer.parseInt(param1.get("start"));
+			endCount = Integer.parseInt(param1.get("end"));
+		}else {
+			startCount = Integer.parseInt(param2.get("start"));
+			endCount = Integer.parseInt(param2.get("end"));
+		}
+		
+		if(voption == null) {
+			olist = reviewService.getListResult(startCount, endCount);
+		}else {
+			olist = reviewService.getListResult(startCount, endCount, voption);
+		}
+		
+		ArrayList<MwReviewVO> list = new ArrayList();
+		for(Object obj : olist) {
+			list.add((MwReviewVO)obj);
+		}
+
+		mv.addObject("list",list);
+		mv.addObject("photo", voption);
+		mv.addObject("dbCount1", Integer.parseInt(param1.get("dbCount")));
+		mv.addObject("dbCount2", Integer.parseInt(param2.get("dbCount")));
+		if(voption == null) {
+			mv.addObject("dbCount", Integer.parseInt(param1.get("dbCount")));
+			mv.addObject("pageSize", Integer.parseInt(param1.get("pageSize")));
+			mv.addObject("reqPage", Integer.parseInt(param1.get("reqPage")));	
+		}else {
+			mv.addObject("dbCount", Integer.parseInt(param2.get("dbCount")));
+			mv.addObject("pageSize", Integer.parseInt(param2.get("pageSize")));
+			mv.addObject("reqPage", Integer.parseInt(param2.get("reqPage")));	
+		}
+		mv.setViewName("/review/review");
+		
+		return mv;
 	}
 	
-	@RequestMapping(value="/review2", method=RequestMethod.GET)
-	public String review2() {
-	      
-	  return "/review/review2";
-	}
-
 	@RequestMapping(value="/recipe", method=RequestMethod.GET)
 	public ModelAndView recipe(String rpage, String rcategory) {
 		ModelAndView mv = new ModelAndView();

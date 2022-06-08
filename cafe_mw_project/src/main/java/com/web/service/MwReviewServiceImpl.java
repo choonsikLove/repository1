@@ -22,11 +22,21 @@ public class MwReviewServiceImpl extends MwObjectServiceAdapter{
 		// TODO Auto-generated method stub
 		return reviewDao.selectTotal();
 	}
+
+	public int getListCount(String option) {
+		// TODO Auto-generated method stub
+		return reviewDao.selectTotal(option);
+	}
 	
 	@Override
 	public List<Object> getListResult(int startCount, int endCount) {
 		// TODO Auto-generated method stub
 		return reviewDao.select(startCount, endCount);
-	}	
+	}
+
+	public List<Object> getListResult(int startCount, int endCount, String option) {
+		// TODO Auto-generated method stub
+		return reviewDao.select(startCount, endCount, option);
+	}
 	
 }

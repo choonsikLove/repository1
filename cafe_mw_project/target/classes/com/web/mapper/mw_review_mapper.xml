@@ -23,28 +23,27 @@
 	<select id="count" resultType="int">
 		select count(*) from mw_review
 	</select>
-
-	<select id="list" parameterType="map" resultType="com.web.vo.MwRecipeVO">
-		select rno, vid, vcontent, vpnum, vmemail, vsfile, vdate
-			from (select rownum rno, vid, vcontent, vpnum, vmemail, vsfile, to_char(vdate, 'yyyy-mm-dd') vdate
-				from (select * from mw_review order by vdate desc)
-			) where rno between #{start} and #{end}
-	</select>	
-	<!--
-	<select id="countCategory" resultType="int">
-		select count(*)
-		from mw_recipe
-		where rcategory = #{rcategory}
-	</select>
-
 	
-	<select id="listCategory" parameterType="map" resultType="com.web.vo.MwRecipeVO">
-		select rno, rid, rcategory, rtitle, rsfile1, rfavorite, rdate
-			from (select rownum rno, rid, rcategory, rtitle, rsfile1 ,rfavorite, to_char(rdate, 'yyyy-mm-dd') rdate
-				from (select * from mw_recipe left join mw_recipe_file on mw_recipe.rid = mw_recipe_file.fid where rcategory = #{rcategory} order by rdate desc)
-			) where rno between #{start} and #{end}
+	<select id="list" parameterType="map" resultType="com.web.vo.MwReviewVO">
+		select rno, vdate, vscore, vcontent, vsfile, memail, msprofile, pname from (
+		    select rownum rno, vdate, vscore, vcontent, vsfile, memail, msprofile, pname from
+		    	mw_review left join mw_member on mw_review.vmemail = mw_member.memail left join mw_product on mw_review.vpnum = mw_product.pnum order by vdate desc)
+			 where rno between #{start} and #{end}
+	</select>
+	
+	<select id="countCategory" resultType="int">
+		select count(*) from mw_review where vsfile != 'null'
+	</select>
+	
+	<select id="listCategory" parameterType="map" resultType="com.web.vo.MwReviewVO">
+		select rno, vdate, vscore, vcontent, vsfile, memail, msprofile, pname from(
+		    select rno, vdate, vscore, vcontent, vsfile, memail, msprofile, pname from (
+		        select rownum rno, vdate, vscore, vcontent, vsfile, memail, msprofile, pname from mw_review left join mw_member on mw_review.vmemail = mw_member.memail left join mw_product on mw_review.vpnum = mw_product.pnum order by vdate desc)
+	            where rno between #{start} and #{end})
+            where vsfile != 'null'
 	</select>	
-
+	
+	<!--
 	<select id="searchCount" resultType="int">
 		select count(*)
 		from mw_recipe

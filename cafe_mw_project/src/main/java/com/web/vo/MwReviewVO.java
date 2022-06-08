@@ -4,11 +4,35 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 public class MwReviewVO {
 
-	String vid, vdate, vcontent, vpnum, vmemail, vfile, vsfile;
+	String vid, vdate, vcontent, vpnum, vmemail, vfile, vsfile, pname, msprofile, memail;
 	int vscore;
 	
 	public int getVscore() {
 		return vscore;
+	}
+
+	public String getPname() {
+		return pname;
+	}
+
+	public void setPname(String pname) {
+		this.pname = pname;
+	}
+
+	public String getMsprofile() {
+		return msprofile;
+	}
+
+	public void setMsprofile(String msprofile) {
+		this.msprofile = msprofile;
+	}
+
+	public String getMemail() {
+		return memail;
+	}
+
+	public void setMemail(String memail) {
+		this.memail = memail;
 	}
 
 	public void setVscore(int vscore) {
