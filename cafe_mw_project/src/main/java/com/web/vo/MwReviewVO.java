@@ -5,7 +5,16 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 public class MwReviewVO {
 
 	String vid, vdate, vcontent, vpnum, vmemail, vfile, vsfile;
+	int vscore;
 	
+	public int getVscore() {
+		return vscore;
+	}
+
+	public void setVscore(int vscore) {
+		this.vscore = vscore;
+	}
+
 	CommonsMultipartFile file;
 
 	public String getVid() {

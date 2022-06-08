@@ -11,11 +11,11 @@
  		<choose>
 			<when test="vfile != null">
 				values('v_'||sequ_Mw_review_vid.nextval, sysdate,
-						#{vcontent}, #{vpnum}, #{vmemail}, #{vfile}, #{vsfile})
+						#{vscore}, #{vcontent}, #{vpnum}, #{vmemail}, #{vfile}, #{vsfile})
 			</when>
 			<otherwise>
-				(vid, vdate, vcontent, vpnum, vmemail)
-					values('v_'||sequ_Mw_review_vid.nextval, sysdate, #{vcontent}, #{vpnum}, #{vmemail})	
+				(vid, vdate, vscore, vcontent, vpnum, vmemail)
+					values('v_'||sequ_Mw_review_vid.nextval, sysdate, #{vscore}, #{vcontent}, #{vpnum}, #{vmemail})	
 			</otherwise>
 		</choose>
 	</insert>
