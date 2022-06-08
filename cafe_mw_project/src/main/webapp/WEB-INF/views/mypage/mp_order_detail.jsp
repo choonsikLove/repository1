@@ -13,7 +13,7 @@
 
 <jsp:include page="../header.jsp"></jsp:include>
 
-<div id='mypage_content'>
+<div id='mypage_content2'>
 		<div id='content_border'>
 			<div id='notice'>
 				<span class='boldspan'>⚠️ 네이버페이</span>로 구매한 주문은<br>
