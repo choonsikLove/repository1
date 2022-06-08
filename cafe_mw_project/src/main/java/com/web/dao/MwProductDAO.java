@@ -47,13 +47,14 @@ public class MwProductDAO implements MwObjectDAO{
 	}
 	
 	  
-	   public List<Object> select(int startCount, int endCount, String pcategory) {
-	      Map param = new HashMap<Integer, Object>();
-	      param.put("start", startCount);
-	      param.put("end", endCount);
-	      param.put("pcategory", pcategory);
-	      return sqlSession.selectList(namespace+".listCategory", param);
-	   }
+	public List<Object> select(int startCount, int endCount, String pcategory) {
+		Map param = new HashMap<Integer, Object>();
+		param.put("start", startCount);
+		param.put("end", endCount);
+		param.put("pcategory", pcategory);
+	      
+		return sqlSession.selectList(namespace+".listCategory", param);
+	}
 	
 	
 	@Override
