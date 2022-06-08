@@ -20,10 +20,6 @@ public class MwObjectServiceAdapter implements MwObjectService{
 		return 0;
 	}
 	
-	public void getUpdateHits(String id){
-		
-	}
-	
 	public int getUpdateResult(Object obj){
 		return 0;
 	}

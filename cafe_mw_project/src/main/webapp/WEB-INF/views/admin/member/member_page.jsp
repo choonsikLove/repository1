@@ -16,7 +16,6 @@
 <jsp:include page="../../header.jsp"></jsp:include>
 <hr class="adminHr">
 <div>
-	<%-- 따로 가져오는게 나을지도 몰라 --%>
 	<div>
 		<nav>
 		 	<ul>
@@ -126,7 +125,11 @@
 					<c:otherwise>
 						<c:forEach var="vo" items="${list }">
 							<tr>
-								<td>${vo.oid }</td>
+								<td>
+									<a href="http://localhost:9000/manwol/admin/order_detail?oid=${vo.oid }" target="_blank" rel="noreferrer noopener">
+										${vo.oid }
+									</a>
+								</td>
 								<td>
 									<c:choose>
 										<c:when test="${vo.ostatus == 0 }">
@@ -148,7 +151,6 @@
 						</c:forEach>
 					</c:otherwise>
 				</c:choose>
-				<jsp:include page="member_page2.jsp"></jsp:include>
 				<tr>
 					<td colspan="3">
 						<form>

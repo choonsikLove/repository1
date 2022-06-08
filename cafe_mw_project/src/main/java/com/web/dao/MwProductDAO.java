@@ -47,13 +47,14 @@ public class MwProductDAO implements MwObjectDAO{
 	}
 	
 	  
-	   public List<Object> select(int startCount, int endCount, String pcategory) {
-	      Map param = new HashMap<Integer, Object>();
-	      param.put("start", startCount);
-	      param.put("end", endCount);
-	      param.put("pcategory", pcategory);
-	      return sqlSession.selectList(namespace+".listCategory", param);
-	   }
+	public List<Object> select(int startCount, int endCount, String pcategory) {
+		Map param = new HashMap<Integer, Object>();
+		param.put("start", startCount);
+		param.put("end", endCount);
+		param.put("pcategory", pcategory);
+	      
+		return sqlSession.selectList(namespace+".listCategory", param);
+	}
 	
 	
 	@Override
@@ -97,16 +98,11 @@ public class MwProductDAO implements MwObjectDAO{
 		return result;
 	}
 	
-	
+	@Override
 	public int delete(String pnum) {
 		return sqlSession.delete(namespace + ".delete", pnum);
 	}
 	
-	public void updateHits(String id) {}
-	public int execTotalCount() {return 0;}
-	public String selectFile(String id) {return "";}
-
-
 	@Override
 	public int selectSearchTotal(String keyword, String option) {
 		return 0;
@@ -116,8 +112,5 @@ public class MwProductDAO implements MwObjectDAO{
 	public List<Object> selectSearch(int startCount, int endCount, String keyword, String option) {
 		return null;
 	}
-
-	
-	
 	
 }
