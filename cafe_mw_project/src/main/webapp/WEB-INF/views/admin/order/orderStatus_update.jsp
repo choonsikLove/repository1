@@ -26,6 +26,7 @@
 					<tr>
 						<td><p class="orderStatus_change">배송 중</p></td>
 						<td><p class="orderStatus_change">배송 완료</p></td>
+					</tr>
 				</table>
 			</div>
 			<div>
