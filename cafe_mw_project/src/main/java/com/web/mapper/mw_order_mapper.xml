@@ -113,11 +113,11 @@
 	</select>
 	
 	<select id="list" parameterType="map" resultType="com.web.vo.MwOrderVO">
-		select rno, oid, obuyer, odate, oproducts, ototal, ostatus 
+		select rno, oid, obuyer, odate, oproducts, ototal, ostatus, oinvoice
     	from(        
-        	select rownum rno, oid, obuyer, to_char(odate, 'yyyy-mm-dd') odate, oproducts, ototal, ostatus 
+        	select rownum rno, oid, obuyer, to_char(odate, 'yyyy-mm-dd') odate, oproducts, ototal, ostatus, oinvoice
 			from( 
-        	    select oid, obuyer, odate, oproducts, ototal, ostatus
+        	    select oid, obuyer, odate, oproducts, ototal, ostatus, oinvoice
             	    from mw_order 
                 	order by odate desc))
             	where rno between #{start} and #{end}
@@ -131,5 +131,17 @@
 					where mo.ob_email = mm.memail and memail = #{memail}
 				order by odate desc)
 	</select>
+	
+	<update id="update_order_status" parameterType="com.web.vo.MwOrderVO">
+		update mw_order
+		set ostatus = #{ostatus}
+		where oid = #{oid}
+	</update>
+	
+	<update id="update_invoice" parameterType="com.web.vo.MwOrderVO">
+		update mw_order
+		set oinvoice = #{oinvoice}
+		where oid = #{oid}
+	</update>
 	
 </mapper>    

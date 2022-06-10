@@ -32,8 +32,8 @@
 			<div>
 				<p>운송장번호 입력</p>
 				<div>
-					<input type="text" id="invoice">
-					<button type="button" id="addInvoice">추가</button>
+					<input type="text" id="invoice" disabled="disabled" maxlength="5">
+					<button type="button" id="addInvoice">변경</button>
 				</div>
 			</div>
 			

@@ -137,16 +137,16 @@
 													<div class='order_status'>
 														<c:choose>
 															<c:when test="${ovo.ostatus == 0 }">
-																<span class="orderStatus_update">입금 대기 중</span>
+																<span>입금 대기 중</span>
 															</c:when>
 															<c:when test="${ovo.ostatus == 1 }">
-																<span class="orderStatus_update">배송 준비</span>
+																<span>배송 준비</span>
 															</c:when>
 															<c:when test="${ovo.ostatus == 2 }">
-																<span class="orderStatus_update">배송 중</span>
+																<span>배송 중</span>
 															</c:when>
 															<c:when test="${ovo.ostatus == 3 }">
-																<span class="orderStatus_update">배송 완료</span>
+																<span>배송 완료</span>
 															</c:when>
 														</c:choose>
 													</div>

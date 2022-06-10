@@ -493,5 +493,21 @@ public class AdminController {
 		return mv; 
 	}
 	
+	@ResponseBody
+	@RequestMapping(value="/admin/order_status_update", method=RequestMethod.POST)
+	public String order_status_update(MwOrderVO vo){
+		int result = orderService.getUpdateResult(vo);
+		
+		return String.valueOf(result);
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="/admin/invoice_update", method=RequestMethod.POST)
+	public String invoice_update(MwOrderVO vo){
+		int result = orderService.getUpdateResult(vo);
+		
+		return String.valueOf(result);
+	}
+	
 	
 }

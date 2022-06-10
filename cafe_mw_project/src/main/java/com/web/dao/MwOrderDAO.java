@@ -49,7 +49,16 @@ public class MwOrderDAO implements MwObjectDAO{
 
 	@Override
 	public int update(Object obj) {
-		return 0;
+		MwOrderVO vo = (MwOrderVO)obj;
+		int result = 0;
+		
+		if(vo.getOinvoice() != null) {
+			result = sqlSession.update(namespace + ".update_invoice", vo);
+		} else {
+			result = sqlSession.update(namespace + ".update_order_status", vo);
+		}
+		
+		return result;
 	}
 
 	@Override

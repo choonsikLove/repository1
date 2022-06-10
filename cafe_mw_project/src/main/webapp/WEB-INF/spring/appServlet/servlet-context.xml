@@ -38,6 +38,18 @@
 	<beans:bean id="recipeService" class="com.web.service.MwRecipeServiceImpl"></beans:bean>	
 	<beans:bean id="orderService" class="com.web.service.MwOrderServiceImpl"></beans:bean>
 	<beans:bean id="reviewService" class="com.web.service.MwReviewServiceImpl"></beans:bean>			
+	
+	<beans:bean id="authInterceptor" class="com.web.interceptor.MwAuthInterceptor"></beans:bean>
+	<interceptors>
+		<interceptor>
+			<mapping path="/admin"/>
+			<beans:ref bean="authInterceptor"/>
+		</interceptor>
+		<interceptor>
+			<mapping path="/admin/*"/>
+			<beans:ref bean="authInterceptor"/>
+		</interceptor>
+	</interceptors>
 		
 	<context:component-scan base-package="com.web.controller" />
 	

@@ -66,7 +66,7 @@
 							</tr>
 						</c:when>
 						<c:otherwise>
-							<c:forEach var="vo" items="${list }">
+							<c:forEach var="vo" items="${list }" varStatus="status">
 								<tr>
 									<td>${vo.oid }</td>
 									<td>${vo.obuyer }</td>
@@ -79,16 +79,24 @@
 									<td>
 										<c:choose>
 											<c:when test="${vo.ostatus == 0 }">
+												<input type="hidden" value="${vo.oid }">
 												<span class="orderStatus_update">입금 대기 중</span>
+												<input type="text" readonly="readonly" value="운송장 번호 미등록" class="order_invoice">
 											</c:when>
 											<c:when test="${vo.ostatus == 1 }">
+												<input type="hidden" value="${vo.oid }">
 												<span class="orderStatus_update">배송 준비</span>
+												<input type="text" readonly="readonly" value="운송장 번호 미등록" class="order_invoice">
 											</c:when>
 											<c:when test="${vo.ostatus == 2 }">
+												<input type="hidden" value="${vo.oid }">
 												<span class="orderStatus_update">배송 중</span>
+												<input type="text" readonly="readonly" value="${vo.oinvoice }" class="order_invoice">
 											</c:when>
 											<c:when test="${vo.ostatus == 3 }">
+												<input type="hidden" value="${vo.oid }">
 												<span class="orderStatus_update">배송 완료</span>
+												<input type="text" readonly="readonly" value="${vo.oinvoice }" class="order_invoice">
 											</c:when>
 										</c:choose>
 									</td>

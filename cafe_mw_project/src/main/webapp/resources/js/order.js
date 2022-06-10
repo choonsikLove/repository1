@@ -130,7 +130,6 @@ var sum4 = 0;
 	});
 	
 	
-	//선택할 상품이 없습니다 안 넣었다!>>휴 넣었당
 	$("button.cart_delete").click(function(){
 		if(!$('input.cart_check').is(':checked')){
 			alert("삭제할 상품을 선택 해 주세요.");

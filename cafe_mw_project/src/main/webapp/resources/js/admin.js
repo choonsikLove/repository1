@@ -85,16 +85,103 @@ $(document).ready(function(){
 		
  	$('#closeX2').click(function(){
 		$('#order_popup').css("display","none");
+		$('#invoice').val("");
 	});
 	
 });
   	
 jQuery(document).on('click', '.orderStatus_update', function () {
 	var a = $(this);
+	var a_oid = $(this).prev().val();
+	var txt = "";
+	var order_invoice = $(this).next();
 	$('#order_popup').css("display","block");
 		
 	jQuery(document).off('click', '.orderStatus_change').on('click', '.orderStatus_change', function () {
-		a.text($(this).text());
+		var done = false;
+		var o_status = 0;
+		
+		if(a.text() == '입금 대기 중' && $(this).text() == '배송 준비'){
+			o_status = 1;
+			$("#invoice").attr("disabled", true);
+			done = true;
+		} else if(a.text() == '배송 준비' && $(this).text() == '배송 중'){
+			$("#invoice").attr("disabled", false);
+			
+			jQuery(document).off('click', '#addInvoice').on('click', '#addInvoice', function () {
+				var invoice = $('#invoice').val();
+				if(invoice.length != 5){//임의
+					alert("5자리의 운송장번호를 입력 해 주세요");
+				} else{
+					$.ajax({
+					    url : "invoice_update",
+					    type : "post",
+					    data : { "oid" : a_oid,
+					    	"oinvoice" : invoice },
+					    success : function(result){
+					    	if(result == 1){
+					    		alert("운송장 번호를 등록했습니다.");
+								o_status = 2;
+								
+								$.ajax({
+								    url : "order_status_update",
+								    type : "post",
+								    data : { "oid" : a_oid,
+								    	"ostatus" : o_status },
+								    success : function(result){
+								    	if(result == 1){
+								    		alert("주문 상태가 변경되었습니다.");
+											a.text(txt);
+											order_invoice.val(invoice);
+								    	}
+								    
+								    },
+									error: function(result) {
+										alert("에러");
+									}
+								});
+								
+								
+					    	} else{
+					    		alert("운송장 번호 등록에 실패했습니다. 다시 등록 해 주세요.");
+					    	}
+					    },
+						error: function(result) {
+							alert("에러");
+						}
+					});
+					
+					$("#invoice").attr("disabled", true);
+				}
+			});
+		} else if(a.text() == '배송 중' && $(this).text() == '배송 완료'){
+			o_status = 3;
+			$("#invoice").attr("disabled", true);
+			done = true;
+		}
+		
+		txt = $(this).text();
+		
+		
+		if(done){
+			$.ajax({
+			    url : "order_status_update",
+			    type : "post",
+			    data : { "oid" : a_oid,
+			    	"ostatus" : o_status },
+			    success : function(result){
+			    	if(result == 1){
+			    		alert("주문 상태가 변경되었습니다.");
+						a.text(txt);
+			    	}
+			    
+			    },
+				error: function(result) {
+					alert("에러");
+				}
+			});
+		}
+		
   	});
   	
 });

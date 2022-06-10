@@ -43,8 +43,7 @@ public class MwOrderServiceImpl implements MwOrderService{
 
 	@Override
 	public int getUpdateResult(Object obj) {
-		// TODO Auto-generated method stub
-		return 0;
+		return orderDao.update(obj);
 	}
 
 	@Override
