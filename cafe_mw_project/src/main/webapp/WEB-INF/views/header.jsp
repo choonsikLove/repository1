@@ -67,7 +67,14 @@
                            <img src="http://localhost:9000/manwol/resources/images/카트일러스트2.png" alt="쇼핑카트">
                         </a>
                      </li>
-                     <li id="mypage">MY</li>
+                     <c:choose>
+                     	<c:when test="${sessionScope.memail == 'admin' }">
+                     		<li id="to_admin">ADMIN</li>
+                     	</c:when>
+                     	<c:otherwise>
+		                     <li id="mypage">MY</li>
+                     	</c:otherwise>
+                     </c:choose>
                      <li id="logout">LOGOUT</li>
                   </ul>
                </c:when>

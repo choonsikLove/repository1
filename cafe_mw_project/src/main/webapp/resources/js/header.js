@@ -118,6 +118,10 @@ $('#mypage').click(function(){
 	$(location).attr("href", "shop_mypage");
 });
 
+$('#to_admin').click(function(){
+	$(location).attr("href","admin");
+});
+
 /*		로그아웃 클릭시		*/
 $('#logout').click(function(){
 	$(location).attr("href", "logout");
