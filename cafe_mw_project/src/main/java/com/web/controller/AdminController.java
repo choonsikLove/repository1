@@ -509,5 +509,13 @@ public class AdminController {
 		return String.valueOf(result);
 	}
 	
+	@ResponseBody
+	@RequestMapping(value="/admin/invoice_delete", method=RequestMethod.POST)
+	public String invoice_delete(String oid){
+		int result = orderService.getInvoiceDeleteResult(oid);
+		
+		return String.valueOf(result);
+	}
+	
 	
 }

@@ -105,6 +105,7 @@ jQuery(document).on('click', '.orderStatus_update', function () {
 			o_status = 1;
 			$("#invoice").attr("disabled", true);
 			done = true;
+			
 		} else if(a.text() == '배송 준비' && $(this).text() == '배송 중'){
 			$("#invoice").attr("disabled", false);
 			
@@ -154,8 +155,67 @@ jQuery(document).on('click', '.orderStatus_update', function () {
 					$("#invoice").attr("disabled", true);
 				}
 			});
+			
+		} else if(a.text() == '배송 준비' && $(this).text() == '입금 대기 중'){
+			o_status = 1;
+			$("#invoice").attr("disabled", true);
+			done = true;
+				
 		} else if(a.text() == '배송 중' && $(this).text() == '배송 완료'){
 			o_status = 3;
+			$("#invoice").attr("disabled", true);
+			done = true;
+				
+		} else if(a.text() == '배송 중' && $(this).text() == '배송 준비'){
+			var undo_check2 = prompt("배송 중 상태를 배송 준비 상태로 되돌리시겠습니까?\n상태를 변경할 경우, 등록된 운송장 번호도 함께 삭제됩니다.\n" + 
+							"상태를 변경하시려면 코드를 입력 해 주세요.");
+									
+			if(undo_check2 == 3){ 
+				//음.. 배송 준비니까 o_status를 1로 되돌리고 oinvoice를 삭제해야 함.
+				$.ajax({
+				    url : "invoice_delete",
+				    type : "post",
+				    data : { "oid" : a_oid },
+				    success : function(result){
+				    	if(result == 1){
+				    		alert("등록된 운송장 번호를 식제했습니다.");
+							o_status = 1;
+							
+							$.ajax({
+							    url : "order_status_update",
+							    type : "post",
+							    data : { "oid" : a_oid,
+							    	"ostatus" : o_status },
+							    success : function(result){
+							    	if(result == 1){
+							    		alert("주문 상태가 변경되었습니다.");
+										a.text(txt);
+										order_invoice.val("운송장 번호 미등록");
+										$('#invoice').val("");
+							    	}
+							    
+							    },
+								error: function(result) {
+									alert("에러");
+								}
+							});
+							
+							
+				    	} else{
+				    		alert("운송장 번호 삭제에 실패했습니다. 다시 시도해 주세요.");
+				    	}
+				    },
+					error: function(result) {
+						alert("에러");
+					}
+				});
+			
+			} else {
+				alert("코드가 일치하지 않습니다");
+			}
+			
+		} else if(a.text() == '배송 완료' && $(this).text() == '배송 중'){
+			o_status = 2;
 			$("#invoice").attr("disabled", true);
 			done = true;
 		}

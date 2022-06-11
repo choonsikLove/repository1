@@ -16,5 +16,5 @@ public interface MwOrderService extends MwObjectService{
 	public String getSelectPnameResult(String pnum);
 	public List<MwOrderVO> getOrderDetailResult(String oid);
 	public List<MwOrderVO> getOrderListResult(String memail);
-
+	public int getInvoiceDeleteResult(String oid);
 }

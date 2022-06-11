@@ -144,4 +144,10 @@
 		where oid = #{oid}
 	</update>
 	
+	<update id="delete_invoice" parameterType="java.lang.String">
+		update mw_order
+		set oinvoice = null
+		where oid = #{oid}
+	</update>
+	
 </mapper>    

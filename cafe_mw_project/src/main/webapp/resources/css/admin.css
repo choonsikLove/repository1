@@ -2,7 +2,7 @@
 
 *{margin: 0; padding: 0;}
 li{list-style-type: none;}
-a[href] {text-decoration: none; color: #000;}
+a[href] {text-decoration: none;}
 
 hr.adminHr{
 	border: 1px #e7e7e7 solid;
@@ -921,4 +921,14 @@ table.member_order tr td:last-of-type {
 
 table.member_order tr td:first-of-type {
 	padding-left: 10px;
+}
+
+td.toMemberPage>a{
+	color: #000;
+	cursor: pointer;
+}
+
+td.toMemberPage>a:hover{
+	color: #081D3F;	
+	font-weight: bold;
 }

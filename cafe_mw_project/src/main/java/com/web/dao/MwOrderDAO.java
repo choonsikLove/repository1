@@ -127,4 +127,8 @@ public class MwOrderDAO implements MwObjectDAO{
 		return sqlSession.selectList(namespace + ".select_order_list", memail);
 	}
 	
+	public int deleteInvoice(String oid) {
+		return sqlSession.delete(namespace+ ".delete_invoice" ,oid);
+	}
+	
 }

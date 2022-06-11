@@ -90,4 +90,9 @@ public class MwOrderServiceImpl implements MwOrderService{
 	public List<MwOrderVO> getOrderListResult(String memail){
 		return orderDao.selectOrderList(memail);
 	}
+	
+	@Override
+	public int getInvoiceDeleteResult(String oid) {
+		return orderDao.deleteInvoice(oid);
+	}
 }
