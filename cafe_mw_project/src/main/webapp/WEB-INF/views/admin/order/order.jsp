@@ -77,6 +77,7 @@
 									</td>
 									<td>${vo.ototal }</td>
 									<td>
+										<div class="ostatus_div">
 										<c:choose>
 											<c:when test="${vo.ostatus == 0 }">
 												<input type="hidden" value="${vo.oid }">
@@ -99,6 +100,7 @@
 												<input type="text" readonly="readonly" value="${vo.oinvoice }" class="order_invoice">
 											</c:when>
 										</c:choose>
+										</div>
 									</td>
 									<td>비고란</td>
 								</tr>
@@ -108,7 +110,7 @@
 					<tr>
 						<td colspan='7'>
 							<form>
-								<input type="text" placeholder="Search">
+								<input type="text" placeholder="Search" id="order_search">
 								<span class="material-symbols-outlined">search</span>
 							</form>
 						</td>

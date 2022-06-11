@@ -115,12 +115,25 @@ div.member_table table tr:nth-of-type(12) td{
 div.member_table table input[type='text'],
 div.memberInfo+div table input[type='text'],
 div.recipeDiv>div table input[type='text'],
-div.orderDiv>div table input[type='text']{
+div.orderDiv>div table input[type='text']#order_search{
 	width: 180px; height: 30px;
 	border: none;
 	border-bottom: 1px black solid;
 	background: transparent;
 	padding-right: 20px;
+}
+
+input.order_invoice{
+	border: none;
+	width: 120px; height: 30px;
+	text-align: center;
+}
+
+div.ostatus_div{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 div.member_table table span,
@@ -760,6 +773,10 @@ span.orderStatus_update{
 	cursor: pointer;
 }
 
+span.orderStatus_update:hover{
+	font-weight: bold;
+}
+
 div#order_popup,
 div#orderDetail_popup{
 	position:fixed;
@@ -932,3 +949,4 @@ td.toMemberPage>a:hover{
 	color: #081D3F;	
 	font-weight: bold;
 }
+
