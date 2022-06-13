@@ -48,7 +48,7 @@
                                                 </a>
                                                 <p>
                                                    <a href="http://localhost:9000/manwol/product_detail?pnum=${vo.c_pnum }">
-                                                      <span> <small>필수</small>&ensp;베스트5종세트 -1개
+                                                      <span> <small>필수</small>&ensp;${vo.c_qnt }개
                                                    </span>
                                                    </a>
                                                 </p>
@@ -105,7 +105,7 @@
 		                                          <p>${mvo.memail }</p>
 		                                       	</div>
                                     		</c:when>
-                                    		<c:otherwise> <%--여기 어케 해야 함. --%>
+                                    		<c:otherwise>
 		                                       <div class="payment_guide1_1">
 		                                          <p class="payment_guide1_name" style="color: black;">홍길동</p>
 		                                          <p>01012345678</p>
