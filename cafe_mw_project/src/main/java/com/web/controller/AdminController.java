@@ -476,6 +476,7 @@ public class AdminController {
 		for(int i = 0; i< list.size(); i++) {
 			String[] a = list.get(i).getOproducts().split(",");
 			list.get(i).setPname(orderService.getSelectPnameResult(a[0]));
+			list.get(i).setNumbers(a.length - 1);
 		}
 				
 		mv.addObject("list",list);

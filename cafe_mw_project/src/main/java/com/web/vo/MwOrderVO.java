@@ -5,9 +5,16 @@ public class MwOrderVO {
 		ocids;
 	String pname, o_pnum, pmainsfile;
 	String[] oproduct, ocid;
-	int ototal,oshipment, oship_memo, ostatus, o_qnt;
+	int ototal,oshipment, oship_memo, ostatus, o_qnt, numbers;
 	int pprice, psaleprice, rno;
 	
+	
+	public int getNumbers() {
+		return numbers;
+	}
+	public void setNumbers(int numbers) {
+		this.numbers = numbers;
+	}
 	public int getRno() {
 		return rno;
 	}

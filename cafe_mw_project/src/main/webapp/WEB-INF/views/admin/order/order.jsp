@@ -114,7 +114,10 @@
 									<td>${vo.obuyer }</td>
 									<td>${vo.odate }</td>
 									<td><a href="http://localhost:9000/manwol/admin/order_detail?oid=${vo.oid }" target="_blank" rel="noreferrer noopener">
-											${ vo.pname} 외 n건
+											${ vo.pname}
+										<c:if test="${vo.numbers != 0 }">
+											외 ${vo.numbers }건
+										</c:if> 
 										</a>
 									</td>
 									<td>${vo.ototal }</td>
