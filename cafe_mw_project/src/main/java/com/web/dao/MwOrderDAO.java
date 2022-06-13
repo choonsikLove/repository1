@@ -37,6 +37,18 @@ public class MwOrderDAO implements MwObjectDAO{
 		
 		return sqlSession.selectList(namespace + ".list", param);
 	}
+	
+	public List<Object> select(int startCount, int endCount, String ostatus) {
+		// TODO Auto-generated method stub
+		Map param = new HashMap<Integer, Integer>();
+		
+		param.put("start", startCount);
+		param.put("end", endCount);
+		param.put("ostatus", ostatus);
+		
+		return sqlSession.selectList(namespace+".listCategory", param);
+	}
+	
 
 	@Override
 	public Object select(String cid) {
@@ -69,6 +81,10 @@ public class MwOrderDAO implements MwObjectDAO{
 	@Override
 	public int selectTotal() {
 		return sqlSession.selectOne(namespace + ".count");
+	}
+	
+	public int selectTotal(String ostatus) {
+		return sqlSession.selectOne(namespace + ".countCategory", ostatus);
 	}
 
 	@Override

@@ -152,6 +152,10 @@ public class MwPageServiceImpl {
 			reviewService = (MwReviewServiceImpl)service;
 			pageSize = 10;
 			dbCount = reviewService.getListCount(option);
+		}else if(serviceName.equals("order")) {
+			orderService = (MwOrderServiceImpl)service;
+			pageSize = 10;
+			dbCount = orderService.getListCount(option);
 		}
 		
 		//총 페이지 수 계산

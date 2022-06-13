@@ -448,28 +448,38 @@ public class AdminController {
 	}
 	 
 	@RequestMapping(value="/admin/order", method=RequestMethod.GET) 
-	public ModelAndView order(String rpage) { 
+	public ModelAndView order(String rpage, String ostatus) { 
 		ModelAndView mv = new ModelAndView();
+		Map<String,String> param;
+		List<Object> olist;		
 		
-		Map<String,String> param = pageService.getPageResult(rpage, "order", orderService);
+		if(ostatus == null) {
+			param = pageService.getPageResult(rpage, "order", orderService);
+		} else {
+			param = pageService.getPageResult(rpage, "order", orderService, ostatus);
+		}
 		
 		int startCount = Integer.parseInt(param.get("start"));
 		int endCount = Integer.parseInt(param.get("end"));
 		
-		List<Object> olist = orderService.getListResult(startCount, endCount);
+		if(ostatus == null) {
+			olist = orderService.getListResult(startCount, endCount);
+		} else {
+			olist = orderService.getListResult(startCount, endCount, ostatus);
+		}
+		
 		ArrayList<MwOrderVO> list = new ArrayList<MwOrderVO>();
 		for(Object obj : olist) {
 			list.add((MwOrderVO)obj);
 		}
 		
-		
 		for(int i = 0; i< list.size(); i++) {
 			String[] a = list.get(i).getOproducts().split(",");
 			list.get(i).setPname(orderService.getSelectPnameResult(a[0]));
 		}
-		
 				
 		mv.addObject("list",list);
+		mv.addObject("os", ostatus);
 		mv.addObject("dbCount", Integer.parseInt(param.get("dbCount")));
 		mv.addObject("pageSize", Integer.parseInt(param.get("pageSize")));
 		mv.addObject("reqPage", Integer.parseInt(param.get("reqPage")));	

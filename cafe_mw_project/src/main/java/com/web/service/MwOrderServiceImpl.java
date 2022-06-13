@@ -25,6 +25,11 @@ public class MwOrderServiceImpl implements MwOrderService{
 	public List<Object> getListResult(int startCount, int endCount) {
 		return orderDao.select(startCount, endCount);
 	}
+	
+	@Override
+	public List<Object> getListResult(int startCount, int endCount, String option) {
+		return orderDao.select(startCount, endCount, option);
+	}
 
 	@Override
 	public Object getContentResult(String cid) {
@@ -35,10 +40,15 @@ public class MwOrderServiceImpl implements MwOrderService{
 	public MwOrderVO getOrderContentResult(String oid) {
 		return orderDao.selectOrderContent(oid);
 	}
-
+	
 	@Override
 	public int getListCount() {
 		return orderDao.selectTotal();
+	}
+	
+	@Override
+	public int getListCount(String option) {
+		return orderDao.selectTotal(option);
 	}
 
 	@Override
@@ -95,4 +105,5 @@ public class MwOrderServiceImpl implements MwOrderService{
 	public int getInvoiceDeleteResult(String oid) {
 		return orderDao.deleteInvoice(oid);
 	}
+	
 }

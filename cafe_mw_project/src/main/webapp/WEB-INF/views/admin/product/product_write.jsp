@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<header> <%--다른 헤더랑 이름이 겹치니까 css파일 합치지 않도록 주의! --%>
+<header> 
 	<div>
 		<div>
 			상품 추가
@@ -99,7 +99,6 @@
 				>
 				<label for="productImages"><div>+</div></label>
 				<div id="multiple_product_images">
-					여기에 파일 수 제한하는 스크립트 넣어야 하는데 너무 어려워서 일단 안 넣었습니다. 최대 5개까지만 넣어주세요.
 				</div>
 			</div>
 			<div>

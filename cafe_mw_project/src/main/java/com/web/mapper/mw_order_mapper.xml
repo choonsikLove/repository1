@@ -112,6 +112,12 @@
 		select count(*) from mw_order
 	</select>
 	
+	<select id="countCategory" resultType="int">
+    	select count(*)
+    	from mw_order
+    	where ostatus = #{ostatus}
+	</select>
+	
 	<select id="list" parameterType="map" resultType="com.web.vo.MwOrderVO">
 		select rno, oid, obuyer, odate, oproducts, ototal, ostatus, oinvoice
     	from(        
@@ -121,6 +127,18 @@
             	    from mw_order 
                 	order by odate desc))
             	where rno between #{start} and #{end}
+	</select>
+	
+	<select id="listCategory" parameterType="map" resultType="com.web.vo.MwOrderVO">
+		select rno, oid, obuyer, odate, oproducts, ototal, ostatus, oinvoice
+    	from(        
+        	select rownum rno, oid, obuyer, to_char(odate, 'yyyy-mm-dd') odate, oproducts, ototal, ostatus, oinvoice
+			from( 
+        	    select oid, obuyer, odate, oproducts, ototal, ostatus, oinvoice
+            	    from mw_order 
+                	order by odate desc))
+            	where rno between #{start} and #{end} 
+            		and ostatus = #{ostatus}
 	</select>
 	
 	<select id="select_order_list" parameterType="java.lang.String" resultType="com.web.vo.MwOrderVO">

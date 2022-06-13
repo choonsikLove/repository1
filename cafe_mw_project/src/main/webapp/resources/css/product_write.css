@@ -304,6 +304,8 @@ textarea{
 	margin-left: 37px;
 	border: 0.7px #dedede solid;
 	border-radius: 5px;
-	width: 60em;
+	width: 59.1em;
 	height: 90px;
+	outline: none;
+	padding: 5px;
 }

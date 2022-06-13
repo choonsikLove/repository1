@@ -159,10 +159,9 @@
 			</div>
 			<div>
 				<span>기타 이미지</span>
-				<input type="file" id="productImages" name="files" style="visibility: visible;" multiple="multiple">
+				<input type="file" id="productImages" name="files" style="visibility: hidden;" multiple="multiple">
 				<label for="productImages"><div>+</div></label>
 				<div>
-				
 				<%--
 					<c:if test="${vo.psfile1 != null}">
 						<img class="sub_images" src="http://localhost:9000/manwol/resources/upload/${vo.psfile1 }">
@@ -179,7 +178,6 @@
 					<c:if test="${vo.psfile5 != null}">
 						<img class="sub_images" src="http://localhost:9000/manwol/resources/upload/${vo.psfile5 }">
 					</c:if>
-					여기두 아직 사진 미리보기 기능은 안 넣었어요 죄송합니당
 				 --%>
 				</div>
 			</div>
@@ -188,7 +186,6 @@
 				<input type="text" name="pstock" id="product_stock" value="${vo.pstock }">
 			</div>
 			<div>
-			선택 박스 만들기 코너임 이 문구는 나중에 지웁시다 (최대 15개로 설정하는 스크립트 넣기)<br>
 				<span>선택 박스 이름</span>
 				<input type="text" id="selectBoxName">
 			

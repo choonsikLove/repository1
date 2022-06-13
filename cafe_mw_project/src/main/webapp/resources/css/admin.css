@@ -530,9 +530,17 @@ div.orderDiv>ul#orderStatus li{
 	margin-right: 10px;
 	cursor: pointer;
 }
+div.orderDiv>ul#orderStatus li a{
+	color: #888;
+}
 
-div.orderDiv>ul#orderStatus li:nth-of-type(odd):hover{
+div.orderDiv>ul#orderStatus li a:hover{
 	color: #000;
+}
+
+div.orderDiv>ul#orderStatus li.os_line>a{
+	color: #000;
+	font-weight: bold;
 }
 
 div.orderDiv>div{

@@ -134,6 +134,7 @@ jQuery(document).on('click', '.orderStatus_update', function () {
 								    		alert("주문 상태가 변경되었습니다.");
 											a.text(txt);
 											order_invoice.val(invoice);
+											location.reload();
 								    	}
 								    
 								    },
@@ -192,6 +193,7 @@ jQuery(document).on('click', '.orderStatus_update', function () {
 										a.text(txt);
 										order_invoice.val("운송장 번호 미등록");
 										$('#invoice').val("");
+										location.reload();
 							    	}
 							    
 							    },
@@ -233,6 +235,7 @@ jQuery(document).on('click', '.orderStatus_update', function () {
 			    	if(result == 1){
 			    		alert("주문 상태가 변경되었습니다.");
 						a.text(txt);
+						location.reload();
 			    	}
 			    
 			    },

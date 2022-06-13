@@ -40,13 +40,55 @@
 		
 		<div class="orderDiv">
 			<ul id="orderStatus">
-				<li>입금 대기 중</li>
+				<c:choose>
+					<c:when test="${empty os}">
+						<li class="os_line">
+					</c:when>
+					<c:otherwise>
+						<li>
+					</c:otherwise>
+				</c:choose>
+					<a href="http://localhost:9000/manwol/admin/order">전체</a></li>
 				<li>|</li>
-				<li>배송 준비</li>
+				<c:choose>
+					<c:when test="${os eq '0'}">
+						<li class="os_line">
+					</c:when>
+					<c:otherwise>
+						<li>
+					</c:otherwise>
+				</c:choose>
+					<a href="?ostatus=0">입금 대기 중</a></li>
 				<li>|</li>
-				<li>배송 중</li>
+				<c:choose>
+					<c:when test="${os == '1'}">
+						<li class="os_line">
+					</c:when>
+					<c:otherwise>
+						<li>
+					</c:otherwise>
+				</c:choose>
+					<a href="?ostatus=1">배송 준비</a></li>
 				<li>|</li>
-				<li>배송 완료</li>
+				<c:choose>
+					<c:when test="${os == '2'}">
+						<li class="os_line">
+					</c:when>
+					<c:otherwise>
+						<li>
+					</c:otherwise>
+				</c:choose>
+					<a href="?ostatus=2">배송 준비</a></li>
+				<li>|</li>
+				<c:choose>
+					<c:when test="${os == '3'}">
+						<li class="os_line">
+					</c:when>
+					<c:otherwise>
+						<li>
+					</c:otherwise>
+				</c:choose>
+					<a href="?ostatus=3">배송 완료</a></li>
 			</ul>
 			<div>
 				<table border='1'>

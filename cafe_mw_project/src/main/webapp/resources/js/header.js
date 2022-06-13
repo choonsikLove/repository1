@@ -142,6 +142,9 @@ $('#closeX').click(function(){
 	$('.login_popup_box').css({"height":"620px","width":"370px",
 		"top":"53%"});
 	$('#popup_cont1').css("display","block");
+	$('#mwEmail').val("");
+	$('#mwPass').val("");
+	$('#loginCheck').prop("checked",true);
 });
 
 
