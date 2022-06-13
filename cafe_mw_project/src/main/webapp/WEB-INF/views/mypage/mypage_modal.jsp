@@ -19,7 +19,7 @@
 				<img id='mypage_profile_img' alt='프로필 이미지' name='profile_img_upload'
 					src='http://localhost:9000/manwol/resources/images/default_profile.png'>
 				<label for="update_profile">
-					<div>사진</div>
+					<div><img src="http://localhost:9000/manwol/resources/images/camera.png" alt="프사 추가"></div>
 				</label>
 				<form name="update_profile_form" action="update_profile_img" method="post" enctype="multipart/form-data">
 					<input type="file" name="file" id="update_profile" onchange="loadFile(this)" style="visibility: hidden;">

@@ -315,8 +315,10 @@ div#join_inner_3 h4{
 }
 
 img#profile_img+label>div{
-	background: pink;
+	background: #aaa;
 	position: absolute;
-	top: 130px; left: 220px;
+	top: 125px; left: 214px;
 	cursor: pointer;
+	border-radius: 50%;
+	padding: 3px;
 }

@@ -250,7 +250,7 @@
 				<img id='profile_img' alt='프로필 이미지' name='profile_img_upload'
 					src='http://localhost:9000/manwol/resources/images/default_profile.png'>
 				<label for="join_profile">
-					<div>사진</div>
+					<div><img src="http://localhost:9000/manwol/resources/images/camera.png" alt="프사 추가"></div>
 				</label>
 			</div>
 			<div id='recCodeBox'>&#x025FC;추천인코드 입력하면 1,000원 즉시 적립!</div>

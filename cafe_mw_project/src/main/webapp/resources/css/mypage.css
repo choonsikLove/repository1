@@ -471,13 +471,18 @@
 		display: block;
 		clear: both;
 	}	
+img#mypage_profile_img+label>div>img{
+	width: 20px; height: 20px;
+	margin-top: 5px;
+}
 
 img#mypage_profile_img+label>div{
-	background: pink;
-	color: red;
+	background: #aaa;
 	position: absolute;
-	width: 30px; height: 20px;
-	top: 145px; left: 200px;
+	top: 140px; left: 210px;
+	cursor: pointer;
+	padding: 1px 3px;
+	border-radius: 50%;
 }
 
 input#update_profile{
