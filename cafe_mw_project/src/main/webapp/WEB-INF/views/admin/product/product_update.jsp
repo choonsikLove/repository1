@@ -29,13 +29,13 @@
 
 <div><%--헤더 아래 전체 --%>
 	<form name="product_update_form" action="product_update" method="post" enctype="multipart/form-data">
-	<input type="text" name="pnum" value="${vo.pnum }">
-	<input type="text" name="pmainsfile" value="${vo.pmainsfile }">
-	<input type="text" name="psfile1" value="${vo.psfile1 }">
-	<input type="text" name="psfile2" value="${vo.psfile2 }">
-	<input type="text" name="psfile3" value="${vo.psfile3 }">
-	<input type="text" name="psfile4" value="${vo.psfile4 }">
-	<input type="text" name="psfile5" value="${vo.psfile5 }">
+	<input type="hidden" name="pnum" value="${vo.pnum }">
+	<input type="hidden" name="pmainsfile" value="${vo.pmainsfile }">
+	<input type="hidden" name="psfile1" value="${vo.psfile1 }">
+	<input type="hidden" name="psfile2" value="${vo.psfile2 }">
+	<input type="hidden" name="psfile3" value="${vo.psfile3 }">
+	<input type="hidden" name="psfile4" value="${vo.psfile4 }">
+	<input type="hidden" name="psfile5" value="${vo.psfile5 }">
 	<div><%--중앙 --%>
 			<div>
 				<img alt="프로필 사진"
@@ -224,7 +224,10 @@
 				</div>
 			 --%>
 			</div>
-			<div><textarea name="ptext">${vo.ptext }</textarea></div>
+			<div>
+				<span>설명</span>
+				<textarea name="ptext" maxlength="300">${vo.ptext }</textarea>
+			</div>
 	</div>
 	</form>
 </div>

@@ -156,7 +156,22 @@
 					</tr>
 					<tr>
 						<td>배송메모</td>
-						<td>${ovo.oship_memo }</td>
+						<td>
+							<c:choose>
+								<c:when test="${ovo.oship_memo == '0' }">
+									배송 메모가 없습니다.
+								</c:when>
+								<c:when test="${ovo.oship_memo == '1' }">
+									배송 전에 미리 연락 바랍니다.
+								</c:when>
+								<c:when test="${ovo.oship_memo == '2' }">
+									부재시 경비실에 맡겨주세요.
+								</c:when>		
+								<c:when test="${ovo.oship_memo == '3' }">
+									부재시 전화나 문자를 남겨주세요.
+								</c:when>		
+							</c:choose>
+						</td>
 					</tr>
 				</table>
 			</div>

@@ -209,12 +209,9 @@
                                                <div class="deliver3_3"> 
                                                    <div class="deliver3_3_1">
                                                       <input type="text" placeholder="수령인" name="orecipient">
-                                                      <p>2글자 이상 입력해 주세요</p> 
                                                    </div>
                                                    <div class="deliver3_3_2">
                                                       <input type="text" placeholder="연락처" name="or_hp">
-                                                      <p>전화번호를 입력하세요</p>
-                                                
                                                    </div>
                                                 </div>    
                                                 <input class="postcode" type="text" placeholder="우편번호" name="or_post">
@@ -238,7 +235,7 @@
                                           <option value="1">배송 전에 미리 연락 바랍니다.</option>
                                           <option value="2">부재시 경비실에 맡겨주세요.</option>
                                           <option value="3">부재시 전화나 문자를 남겨주세요.</option>
-                                          <option id="option1">직접입력(나중에)</option>
+                                          <option id="option1">직접입력</option>
                                        </select>
                                        <p id="option1_2">
                                          <input type="text" placeholder="배송메모를 입력해 주세요">

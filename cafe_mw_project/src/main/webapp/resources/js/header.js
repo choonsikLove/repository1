@@ -259,7 +259,6 @@ $(document).on("click", "#findIDButton", function(){
 				url: "emailCheck",
 				success : function(data){
 					if(data != ""){
-						alert(data);
 						carriedEmail = data;
 						$('#foundEmail').html(data);
 						$('#idEmail').val("");
@@ -293,7 +292,6 @@ $(document).on("click", "#findIDButton", function(){
 				success : function(data){
 					if(data != ""){
 						carriedEmail = data;
-						alert(data);
 						$('#foundEmail').html(data);
 						$('#idName').val("");
 						$('#idHp').val("");
