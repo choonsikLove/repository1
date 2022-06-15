@@ -202,7 +202,7 @@ $('#memail').blur(function(){
 	var memail = $('#memail').val();
 	
 	if(memail == ""){
-		alert("아이디를 입력해 주세요 주세요");
+	//?
 	} else {
 		$.ajax({
 			type:'POST',
