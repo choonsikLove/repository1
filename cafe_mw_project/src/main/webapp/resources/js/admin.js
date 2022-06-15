@@ -158,7 +158,7 @@ jQuery(document).on('click', '.orderStatus_update', function () {
 			});
 			
 		} else if(a.text() == '배송 준비' && $(this).text() == '입금 대기 중'){
-			o_status = 1;
+			o_status = 0;
 			$("#invoice").attr("disabled", true);
 			done = true;
 				

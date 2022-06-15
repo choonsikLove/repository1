@@ -20,7 +20,7 @@ $(document).ready(function(){
 		        cache: false,
 		        timeout: 600000,
 		        success: function (data) {
-		            
+		        //한국어 읽을 수 있게 바꿔야 함.
 					var text = "<li class='reply_li'><p>" + comment.val() + "</p>";
 					if(data != ""){
 						text += "<img src='http://localhost:9000/manwol/resources/upload/"+data+"' width='100px' height='100px'>";
