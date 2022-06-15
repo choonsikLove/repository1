@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>카페 만월회 벤치마킹 프로젝트</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <script src="http://localhost:9000/manwol/resources/js/jquery-3.6.0.js"></script>
 <script src="http://localhost:9000/manwol/resources/js/notice.js"></script>

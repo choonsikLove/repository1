@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>(관리자 접속 중)카페 만월회 벤치마킹 프로젝트</title>
 <link rel="stylesheet" href="http://localhost:9000/manwol/resources/css/admin.css">
 <script src="http://localhost:9000/manwol/resources/js/jquery-3.6.0.js"></script>
 <script src="http://localhost:9000/manwol/resources/js/admin.js"></script>

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>카페 만월회 벤치마킹 프로젝트</title>
 <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/mypage.js"></script>
 </head>
 <body>

@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="http://localhost:9000/manwol/resources/css/kim_login_test.css">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100" rel="stylesheet" />
 <script src="http://localhost:9000/manwol/resources/js/jquery-3.6.0.js"></script>
-<title>Insert title here</title>
+<title>카페 만월회 벤치마킹 프로젝트</title>
 </head>
 <body>
 
