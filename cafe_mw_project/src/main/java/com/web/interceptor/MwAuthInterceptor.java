@@ -15,7 +15,7 @@ public class MwAuthInterceptor extends HandlerInterceptorAdapter{
 		HttpSession session = request.getSession();
 		String memail = (String)session.getAttribute("memail");
 		
-		if(memail == null) {
+		if(memail == null || !memail.equals("admin")) {
 			response.sendRedirect("http://localhost:9000/manwol/index");
 			return false;
 		}

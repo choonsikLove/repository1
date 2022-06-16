@@ -69,7 +69,7 @@
                      </li>
                      <c:choose>
                      	<c:when test="${sessionScope.memail == 'admin' }">
-                     		<li id="to_admin">ADMIN</li>
+                     		<li><a href="http://localhost:9000/manwol/admin">ADMIN</a></li>
                      	</c:when>
                      	<c:otherwise>
 		                     <li id="mypage">MY</li>
