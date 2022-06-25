@@ -497,4 +497,15 @@ a{
 		width: 92%;
 		background: #f2f2f2;
 		padding: 2% 4%;
-	}
+}
+
+.review_insert_btn{
+	border: 1px #DADADA solid;
+	display: inline-block;
+	float: right;
+	width: 80px;
+	height: 25px;
+	margin-top: 40px;
+	text-align: center;
+	padding-top: 2px;
+}

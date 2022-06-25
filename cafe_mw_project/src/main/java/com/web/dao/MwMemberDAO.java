@@ -24,7 +24,6 @@ public class MwMemberDAO implements MwObjectDAO{
 
 	@Override
 	public List<Object> select(int startCount, int endCount) {
-		// TODO Auto-generated method stub
 		Map param = new HashMap<Integer, Integer>();
 		param.put("start", startCount);
 		param.put("end", endCount);
@@ -54,7 +53,6 @@ public class MwMemberDAO implements MwObjectDAO{
 	
 	@Override
 	public int selectSearchTotal(String keyword, String option) {
-		// TODO Auto-generated method stub
 		Map<String, String> param = new HashMap<String, String>();
 		param.put("keyword", keyword);
 		param.put("option", option);
@@ -63,7 +61,6 @@ public class MwMemberDAO implements MwObjectDAO{
 	
 	@Override
 	public List<Object> selectSearch(int startCount, int endCount, String keyword, String option) {
-		// TODO Auto-generated method stub
 		Map<String, Object> param = new HashMap<String, Object>();
 		param.put("start", startCount);
 		param.put("end", endCount);

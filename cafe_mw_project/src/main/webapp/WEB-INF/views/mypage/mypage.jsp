@@ -7,36 +7,8 @@
 <meta charset="UTF-8">
 <title>카페 만월회 벤치마킹 프로젝트</title>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/mypage.css"/>
-<style type="text/css">
-	.review_insert_btn{
-		border: 1px #DADADA solid;
-		display: inline-block;
-		float: right;
-		width: 80px;
-		height: 25px;
-		margin-top: 40px;
-		text-align: center;
-		padding-top: 2px;
-	}
-</style>
-<script type="text/javascript">
-	var rvInsert_result = "${rvInsert_result}";
-	
-	if(rvInsert_result == "succ"){
-		alert("리뷰가 작성되었습니다. 확인하시겠습니까?");
-	}
-	function review_popup(){
-		var objPopup = window.open('','reviewWindow','resizable=no, top=200, left=200, width=450, height=550, scrollbars=no');
-		document.review_insert_form.target="reviewWindow";// 타켓
-		document.review_insert_form.action="shop_mypage/review_insert";// 수행할 경로
-		if (objPopup == null) {  // 팝업이 뜨는지 확인
-			alert('차단된 팝업창을 허용해 주세요');
-		} else {
-			document.review_insert_form.submit();
-			objPopup.focus();
-		}
-	}
-</script>
+<script src="http://localhost:9000/manwol/resources/js/jquery-3.6.0.js"></script>
+<script src="http://localhost:9000/manwol/resources/js/mypage.js"></script>
 </head>
 <body>
 <input type="hidden" value="${vo.memail}" id="member_email">

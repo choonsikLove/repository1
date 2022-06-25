@@ -1,5 +1,4 @@
 $(document).ready(function(){
-		/*		review 전체		*/
 		$('.open_modal').click(function(){
 			$('.modal2').fadeIn();
 			$('.modal').fadeIn();

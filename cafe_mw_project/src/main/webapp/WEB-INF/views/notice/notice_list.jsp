@@ -9,24 +9,9 @@
 <script src="http://localhost:9000/manwol/resources/js/jquery-3.6.0.js"></script>
 <script src="http://localhost:9000/manwol/resources/js/notice.js"></script>
 <link rel="stylesheet" href="http://localhost:9000/manwol/resources/css/recipe.css">
-
- <style>
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 700,
-  'GRAD' 200,
-  'opsz' 48
-}
-
-</style>
-
 </head>
 <body>
-   <!-- header -->
    <jsp:include page="../header.jsp"></jsp:include>
-
-   <!-- content -->
 
 	<table>
 		<tr>
@@ -47,7 +32,7 @@
 						<td>
 							<div style="display: flex; justify-content: center; padding-bottom: 70px; font-size: 15px;">
 								<div style="margin-right: 140px;">
-									<p><span class="material-symbols-outlined" style="border: 1px solid #0042A9; background:  #0A2155; color: white; border-radius:2px; font-size: 30px; margin:10px 0 30px 0;">call</span></p>
+									<p><span class="material-symbols-outlined2" style="border: 1px solid #0042A9; background:  #0A2155; color: white; border-radius:2px; font-size: 30px; margin:10px 0 30px 0;">call</span></p>
 									<p style="margin-bottom: 7px; font-weight:bold; color: #0042A9";>전화 상담</p>
 									<p>070-7714-7002</p>
 								</div>
@@ -57,7 +42,7 @@
 									<p>@만월회</p>
 								</div>
 								<div>
-									<p><span class="material-symbols-outlined" style="color: #0A2155; font-size: 45px; margin-bottom:30px;">drafts</span></p>	
+									<p><span class="material-symbols-outlined2" style="color: #0A2155; font-size: 45px; margin-bottom:30px;">drafts</span></p>	
 									<p style="margin-bottom: 7px; font-weight:bold; color: #0042A9";>이메일 상담</p>
 									<p>goeun@manwol.com</p>
 								</div>
@@ -88,8 +73,8 @@
 							 		<div style="padding-top: 7px; display: flex;">
 							 			<p>적립금/쿠폰</p>
 							 			<p style="margin: 0 520px 0 50px;">할인쿠폰을 받았어요. 어떻게 사용해야 하나요?</p>
-							 			<p><span class="material-symbols-outlined" id="toggle_down1">keyboard_arrow_down</span></p>
-							 			<p><span class="material-symbols-outlined" id="toggle_up1">keyboard_arrow_up</span></p>
+							 			<p><span class="material-symbols-outlined2" id="toggle_down1">keyboard_arrow_down</span></p>
+							 			<p><span class="material-symbols-outlined2" id="toggle_up1">keyboard_arrow_up</span></p>
 							 		</div>
 							 	</div>
 							 	<div id="text1" style="text-align: left; padding: 30px 0; border-top: 1px solid #D8D8D8;">
@@ -111,8 +96,8 @@
 							 		<p><span style="margin-right: 23px;">22</span></p>
 								 	<p>적립금/쿠폰</p>
 								 	<p style="margin: 0 523px 0 50px;">할인쿠폰을 받았어요. 어떻게 사용해야 하나요?</p>
-								 	<p><span class="material-symbols-outlined" id="toggle_down2">keyboard_arrow_down</span></p>
-								 	<p><span class="material-symbols-outlined" id="toggle_up2">keyboard_arrow_up</span></p>
+								 	<p><span class="material-symbols-outlined2" id="toggle_down2">keyboard_arrow_down</span></p>
+								 	<p><span class="material-symbols-outlined2" id="toggle_up2">keyboard_arrow_up</span></p>
 							 	</div>
 							 	<div id="text2" style="text-align: left; padding: 30px 0; border-top: 1px solid #D8D8D8;">
 							 		<p><img src="http://localhost:9000/manwol/resources/images/notice/자주묻는질문1.gif"></p>
@@ -133,8 +118,8 @@
 							 		<p><span style="margin-right: 23px;">21</span></p>
 							 		<p>적립금/쿠폰</p>
 							 		<p style="margin: 0 523px 0 50px;">할인쿠폰을 받았어요. 어떻게 사용해야 하나요?</p>
-							 		<p><span class="material-symbols-outlined" id="toggle_down3">keyboard_arrow_down</span></p>
-							 		<p><span class="material-symbols-outlined" id="toggle_up3">keyboard_arrow_up</span></p>
+							 		<p><span class="material-symbols-outlined2" id="toggle_down3">keyboard_arrow_down</span></p>
+							 		<p><span class="material-symbols-outlined2" id="toggle_up3">keyboard_arrow_up</span></p>
 							 	</div>
 							 	<div id="text3" style="text-align: left; padding: 30px 0; border-top: 1px solid #D8D8D8;">
 							 		<p><img src="http://localhost:9000/manwol/resources/images/notice/자주묻는질문1.gif"></p>
@@ -155,8 +140,8 @@
 							 		<p><span style="margin-right: 23px;">20</span></p>
 							 		<p>적립금/쿠폰</p>
 							 		<p style="margin: 0 523px 0 50px;">할인쿠폰을 받았어요. 어떻게 사용해야 하나요?</p>
-							 		<p><span class="material-symbols-outlined" id="toggle_down4">keyboard_arrow_down</span></p>
-							 		<p><span class="material-symbols-outlined" id="toggle_up4">keyboard_arrow_up</span></p>
+							 		<p><span class="material-symbols-outlined2" id="toggle_down4">keyboard_arrow_down</span></p>
+							 		<p><span class="material-symbols-outlined2" id="toggle_up4">keyboard_arrow_up</span></p>
 							 	</div>
 							 	<div id="text4" style="text-align: left; padding: 30px 0; border-top: 1px solid #D8D8D8;">
 							 		<p><img src="http://localhost:9000/manwol/resources/images/notice/자주묻는질문1.gif"></p>
@@ -177,8 +162,8 @@
 							 		<p><span style="margin-right: 23px;">19</span></p>
 							 		<p>적립금/쿠폰</p>
 							 		<p style="margin: 0 523px 0 50px;">할인쿠폰을 받았어요. 어떻게 사용해야 하나요?</p>
-							 		<p><span class="material-symbols-outlined" id="toggle_down5">keyboard_arrow_down</span></p>
-							 		<p><span class="material-symbols-outlined" id="toggle_up5">keyboard_arrow_up</span></p>
+							 		<p><span class="material-symbols-outlined2" id="toggle_down5">keyboard_arrow_down</span></p>
+							 		<p><span class="material-symbols-outlined2" id="toggle_up5">keyboard_arrow_up</span></p>
 							 	</div>
 							 	<div id="text5" style="text-align: left; padding: 30px 0; border-top: 1px solid #D8D8D8;">
 							 		<p><img src="http://localhost:9000/manwol/resources/images/notice/자주묻는질문1.gif"></p>
@@ -199,8 +184,8 @@
 							 		<p><span style="margin-right: 23px;">18</span></p>
 							 		<p>적립금/쿠폰</p>
 							 		<p style="margin: 0 523px 0 50px;">할인쿠폰을 받았어요. 어떻게 사용해야 하나요?</p>
-							 		<p><span class="material-symbols-outlined" id="toggle_down6">keyboard_arrow_down</span></p>
-							 		<p><span class="material-symbols-outlined" id="toggle_up6">keyboard_arrow_up</span></p>
+							 		<p><span class="material-symbols-outlined2" id="toggle_down6">keyboard_arrow_down</span></p>
+							 		<p><span class="material-symbols-outlined2" id="toggle_up6">keyboard_arrow_up</span></p>
 							 	</div>
 							 	<div id="text6" style="text-align: left; padding: 30px 0; border-top: 1px solid #D8D8D8;">
 							 		<p><img src="http://localhost:9000/manwol/resources/images/notice/자주묻는질문1.gif"></p>
@@ -221,8 +206,8 @@
 							 		<p><span style="margin-right: 23px;">17</span></p>
 							 		<p>적립금/쿠폰</p>
 							 		<p style="margin: 0 523px 0 50px;">할인쿠폰을 받았어요. 어떻게 사용해야 하나요?</p>
-							 		<p><span class="material-symbols-outlined" id="toggle_down7">keyboard_arrow_down</span></p>
-							 		<p><span class="material-symbols-outlined" id="toggle_up7">keyboard_arrow_up</span></p>
+							 		<p><span class="material-symbols-outlined2" id="toggle_down7">keyboard_arrow_down</span></p>
+							 		<p><span class="material-symbols-outlined2" id="toggle_up7">keyboard_arrow_up</span></p>
 							 	</div>
 							 	<div id="text7" style="text-align: left; padding: 30px 0; border-top: 1px solid #D8D8D8;">
 							 		<p><img src="http://localhost:9000/manwol/resources/images/notice/자주묻는질문1.gif"></p>
@@ -243,8 +228,8 @@
 							 		<p><span style="margin-right: 23px;">16</span></p>
 							 		<p>적립금/쿠폰</p>
 							 		<p style="margin: 0 523px 0 50px;">할인쿠폰을 받았어요. 어떻게 사용해야 하나요?</p>
-							 		<p><span class="material-symbols-outlined" id="toggle_down8">keyboard_arrow_down</span></p>
-							 		<p><span class="material-symbols-outlined" id="toggle_up8">keyboard_arrow_up</span></p>
+							 		<p><span class="material-symbols-outlined2" id="toggle_down8">keyboard_arrow_down</span></p>
+							 		<p><span class="material-symbols-outlined2" id="toggle_up8">keyboard_arrow_up</span></p>
 							 	</div>
 							 	<div id="text8" style="text-align: left; padding: 30px 0; border-top: 1px solid #D8D8D8;">
 							 		<p><img src="http://localhost:9000/manwol/resources/images/notice/자주묻는질문1.gif"></p>
@@ -265,8 +250,8 @@
 							 		<p><span style="margin-right: 23px;">15</span></p>
 							 		<p>적립금/쿠폰</p>
 							 		<p style="margin: 0 523px 0 50px;">할인쿠폰을 받았어요. 어떻게 사용해야 하나요?</p>
-							 		<p><span class="material-symbols-outlined" id="toggle_down9">keyboard_arrow_down</span></p>
-							 		<p><span class="material-symbols-outlined" id="toggle_up9">keyboard_arrow_up</span></p>
+							 		<p><span class="material-symbols-outlined2" id="toggle_down9">keyboard_arrow_down</span></p>
+							 		<p><span class="material-symbols-outlined2" id="toggle_up9">keyboard_arrow_up</span></p>
 							 	</div>
 							 	<div id="text9" style="text-align: left; padding: 30px 0; border-top: 1px solid #D8D8D8;">
 							 		<p><img src="http://localhost:9000/manwol/resources/images/notice/자주묻는질문1.gif"></p>
@@ -287,8 +272,8 @@
 							 		<p><span style="margin-right: 23px;">14</span></p>
 							 		<p>적립금/쿠폰</p>
 							 		<p style="margin: 0 523px 0 50px;">할인쿠폰을 받았어요. 어떻게 사용해야 하나요?</p>
-							 		<p><span class="material-symbols-outlined" id="toggle_down10">keyboard_arrow_down</span></p>
-							 		<p><span class="material-symbols-outlined" id="toggle_up10">keyboard_arrow_up</span></p>
+							 		<p><span class="material-symbols-outlined2" id="toggle_down10">keyboard_arrow_down</span></p>
+							 		<p><span class="material-symbols-outlined2" id="toggle_up10">keyboard_arrow_up</span></p>
 							 	</div>
 							 	<div id="text10" style="text-align: left; padding: 30px 0; border-top: 1px solid #D8D8D8;">
 							 		<p><img src="http://localhost:9000/manwol/resources/images/notice/자주묻는질문1.gif"></p>
@@ -336,7 +321,7 @@
 					<tr>
 						<td style="display: flex; justify-content: center;">
 							<div style="width: 500px; padding-bottom: 100px;">
-								<p><span class="material-symbols-outlined" style="font-size: 45px; color:  #0A2155">settings_suggest</span></p>
+								<p><span class="material-symbols-outlined2" style="font-size: 45px; color:  #0A2155">settings_suggest</span></p>
 								<br><br>
 								<p><strong style="font-size: 20px;">Business Contact</strong></p>
 								<br>
@@ -351,8 +336,6 @@
 		</tr>
 	</table>
 
-
-	<!--  footer -->
    <jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

@@ -114,7 +114,6 @@ public class MypageController {
 		}else {
 			mv.addObject("withdraw_result", "fail");
 			mv.setViewName("index");
-			//에러페이지 호출
 		}
 		
 		return mv;
@@ -126,8 +125,6 @@ public class MypageController {
 		MwMemberVO vo = (MwMemberVO)memberService.getContentResult(email);
 		ObjectMapper mapper = new ObjectMapper();
 		String jsonifiedVO = mapper.writeValueAsString(vo);
-		
-		//vo 객체를 json으로 만들기.
 		
 		return jsonifiedVO;
 	}
@@ -172,7 +169,7 @@ public class MypageController {
 	public ModelAndView order_detail(String oid, HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView();
 		
-		MwOrderVO ovo = orderService.getOrderContentResult(oid);//이름이 너무 구리지 않나?
+		MwOrderVO ovo = orderService.getOrderContentResult(oid);
 		List<MwOrderVO> list = orderService.getOrderDetailResult(oid);
 		
 		HttpSession session = request.getSession();

@@ -11,10 +11,8 @@
 <link rel="stylesheet" href="http://localhost:9000/manwol/resources/css/payment.css">
 </head>
 <body>
-   <!-- header -->
 	<jsp:include page="../header.jsp"></jsp:include>
 
-   <!-- content -->
    <div class="payment">
       <h2>결제하기</h2>
       <form name="payment_form" action="order_payment" method="post">
@@ -79,7 +77,7 @@
                                  </div>
                               </td>
                            </tr>
-                        </table> <!-- 1번째 1번째  table -->
+                        </table> 
                      </td>
                   </tr>
 
@@ -137,7 +135,7 @@
                                  </div>
                               </td>
                            </tr>
-                        </table> <!-- 1번째 2번째  table -->
+                        </table> 
                      </td>
                   </tr>
 
@@ -245,7 +243,7 @@
                                  </div>
                               </td>
                            </tr>
-                        </table> <!-- 1번째 3번째  table -->
+                        </table>
                      </td>
                   </tr>
                   <tr>
@@ -292,13 +290,12 @@
                                  </div>
                               </td>
                            </tr>
-                        </table> <!-- 1번째 3번째  table -->
+                        </table> 
                      </td>
                   </tr>
-               </table> <!-- 1번째 전체 table -->
+               </table>
 
                <table class="payment_content2">
-                  <!-- 2번째 전체 table -->
                   <tr>
                      <td>
                         <table class="payment_content2_1">
@@ -349,7 +346,7 @@
                                  </div>
                               </td>
                            </tr>
-                        </table> <!-- 2번째 1번째  table -->
+                        </table> 
                      </td>
                   </tr>
                   <tr>
@@ -419,7 +416,7 @@
                                  </div>
                               </td>
                            </tr>
-                        </table> <!-- 2번째 2번째  table -->
+                        </table> 
 
                      </td>
                   </tr>
@@ -444,16 +441,15 @@
                                  </div>
                               </td>
                            </tr>
-                        </table> <!-- 2번째 3번째  table -->
+                        </table> 
                      </td>
                   </tr>
-               </table><!-- 2번째 전체 table -->
+               </table>
             </td>
          </tr>
       </table>
       </form>
       
-      <!-- 모달창 -->
    <div class="modal">
       <div class="modal_inner">
          <div class="desc">
@@ -469,14 +465,10 @@
          </div>
      </div> 
   </div>      
-         
-      
-      
       
    </div>
 
 
-   <!--  footer -->
    <jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

@@ -20,31 +20,26 @@ public class MwMemberServiceImpl implements MwMemberService{
 
 	@Override
 	public List<Object> getListResult(int startCount, int endCount) {
-		// TODO Auto-generated method stub
 		return memberDao.select(startCount, endCount);
 	}
 
 	@Override
 	public Object getContentResult(String id) {
-		// TODO Auto-generated method stub
 		return memberDao.select(id);
 	}
 
 	@Override
 	public int getListCount() {
-		// TODO Auto-generated method stub
 		return memberDao.selectTotal();
 	}
 
 	@Override
 	public List<Object> getSearchListResult(int startCount, int endCount, String keyword, String option) {
-		// TODO Auto-generated method stub
 		return memberDao.selectSearch(startCount, endCount, keyword, option);
 	}
 
 	@Override
 	public int getSearchListCount(String keyword, String option) {
-		// TODO Auto-generated method stub
 		return memberDao.selectSearchTotal(keyword, option);
 	}
 	

@@ -10,29 +10,9 @@
 <script src="http://localhost:9000/manwol/resources/js/jquery-3.6.0.js"></script>
 <script src="http://localhost:9000/manwol/resources/js/review.js"></script>
 <link rel="stylesheet" href="http://localhost:9000/manwol/resources/css/about.css">
-<style>
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 200,
-  'GRAD' 200,
-  'opsz' 48
-}
-
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 700,
-  'GRAD' 200,
-  'opsz' 48
-}
-</style>
 </head>
 <body>
-   <!-- header -->
    <jsp:include page="../header.jsp"></jsp:include>
-
-   <!-- content -->
 
 	<table style="width: 100%;">
 		<tr>

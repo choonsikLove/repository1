@@ -52,7 +52,6 @@ public class AdminController {
 		return "/admin/admin";
 	}
 	
-	//회원!
 	@RequestMapping(value="/admin/member_list", method=RequestMethod.GET)
 	public ModelAndView member_list(String rpage) {
 		ModelAndView mv = new ModelAndView();
@@ -116,45 +115,42 @@ public class AdminController {
 		return mv;
 	}
 
+	@RequestMapping(value="/admin/product_list", method=RequestMethod.GET)
+	public ModelAndView product_list(String rpage, String pcategory) {
+	    ModelAndView mv = new ModelAndView();
+	    Map<String,String> param;
+	    List<Object> olist;
 	
-	   //상품!
-		//상품 리스트
-		 @RequestMapping(value="/admin/product_list", method=RequestMethod.GET)
-		 public ModelAndView product_list(String rpage, String pcategory) {
-		     ModelAndView mv = new ModelAndView();
-		     Map<String,String> param;
-		     List<Object> olist;
-
-		     if(pcategory == null) {
-		       param = pageService.getPageResult(rpage, "product", productService);
-		    }else {
-		       param = pageService.getPageResult(rpage, "product", productService, pcategory);
-		    }
-
-		     int startCount = Integer.parseInt(param.get("start"));
-		    int endCount = Integer.parseInt(param.get("end"));
-
-		    if(pcategory == null) {
-		       olist = productService.getListResult(startCount, endCount);
-		    }else {
-		       olist = productService.getListResult(startCount, endCount, pcategory);
-		    }
-
-		    ArrayList<MwProductVO> list = new ArrayList();
-		    for(Object obj : olist) {
-		       list.add((MwProductVO)obj);
-		    }
-
-		    mv.addObject("list",list);
-		    mv.addObject("pd",pcategory);
-		    mv.addObject("dbCount", Integer.parseInt(param.get("dbCount")));
-		    mv.addObject("pageSize", Integer.parseInt(param.get("pageSize")));
-		    mv.addObject("reqPage", Integer.parseInt(param.get("reqPage")));   
-
-		    mv.setViewName("/admin/product/product_list");   
-
-		    return mv;
-		 }
+	    if(pcategory == null) {
+	      param = pageService.getPageResult(rpage, "product", productService);
+		}else {
+		   param = pageService.getPageResult(rpage, "product", productService, pcategory);
+		}
+		
+		int startCount = Integer.parseInt(param.get("start"));
+		int endCount = Integer.parseInt(param.get("end"));
+		
+		if(pcategory == null) {
+		   olist = productService.getListResult(startCount, endCount);
+		}else {
+		   olist = productService.getListResult(startCount, endCount, pcategory);
+		}
+		
+		ArrayList<MwProductVO> list = new ArrayList();
+		for(Object obj : olist) {
+		   list.add((MwProductVO)obj);
+		}
+		
+		mv.addObject("list",list);
+		mv.addObject("pd",pcategory);
+		mv.addObject("dbCount", Integer.parseInt(param.get("dbCount")));
+		mv.addObject("pageSize", Integer.parseInt(param.get("pageSize")));
+		mv.addObject("reqPage", Integer.parseInt(param.get("reqPage")));   
+		
+		mv.setViewName("/admin/product/product_list");   
+	
+		return mv;
+	}
 		 
 	@RequestMapping(value="/admin/product_list_group_order", method=RequestMethod.GET) 
 	public String product_list_group_order() { 
@@ -297,14 +293,6 @@ public class AdminController {
 		return String.valueOf(result);
 	}
 
-		
-	 
-	 
-
-		
-	 
-	 
-	 //리뷰
 	 
 	@RequestMapping(value="/admin/review_main", method=RequestMethod.GET) 
 	public String review_main() { 
@@ -434,7 +422,6 @@ public class AdminController {
 		
 		if(result == 1) {
 			fileService.deleteMultipleFiles(vo, request, old_files);
-			System.out.println("레시피북 이미지 삭제 처리");
 		}
 		
 		return String.valueOf(result);

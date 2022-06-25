@@ -12,7 +12,6 @@ li {
 body {
 }
 
-/* 공통 */
 div#join_outer {
 	background: rgba(0, 0, 0, 0.4);
 	top: 0;
@@ -59,7 +58,6 @@ div.modal_exit_ex {
 	display: none;
 }
 
-/* 화면1 */
 #join_inner_1 {
 	background: white;
 	position: relative;
@@ -227,7 +225,6 @@ div#join_inner_2 label{
 	clear: both;
 }
 
-/* 화면3 */
 #join_inner_3 {
 	background: #fff;
 	position: relative;

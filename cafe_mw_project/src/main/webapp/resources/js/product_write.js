@@ -1,6 +1,3 @@
-/**
- *  일단 셀렉트 박스 만들기 기능부터
- */
 
 $('document').ready(function(){
 	
@@ -15,7 +12,7 @@ $('document').ready(function(){
 		var selectBoxName = $('input#selectBoxName');
 	
 		if(selectBoxName.val() == ""){
-			alert("체크박스 이름을 만들어줘!");
+			alert("체크박스 이름을 만들어주세요!");
 			selectBoxName.focus();
 		} else{
 		
@@ -47,7 +44,7 @@ $('document').ready(function(){
 				$('input#selectBoxCheck').prop( "checked", false ); 
 				string = "";	
 			} else {
-				alert("더이상 만들 수 없어");
+				alert("더이상 만들 수 없습니다");
 				selectBoxName.val("");
 			}
 			
@@ -88,7 +85,7 @@ $(document).on("click",".deleteSelect",function(){
 });
 
 
-$("input[name=ptagimages]:checkbox").change(function() { // 체크박스들이 변경됬을때
+$("input[name=ptagimages]:checkbox").change(function() {
 	if($("input[name=ptagimages]:checkbox:checked").length == 2) {
 		$("input[name=ptagimages]:checkbox:not(:checked)").attr("disabled", "disabled");
 	} else {

@@ -10,10 +10,8 @@
 <link rel="stylesheet" href="http://localhost:9000/manwol/resources/css/product_detail.css">
 </head>
 <body>
-	<!-- header -->
 	<jsp:include page="../header.jsp"></jsp:include>
 
-	<!-- content -->
 	<table class="content" style="table-layout: fixed;">
 		<tr>
 			<td>
@@ -340,8 +338,6 @@
 	</table>
 
 
-
-	<!--  footer -->
 	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

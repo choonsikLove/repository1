@@ -13,10 +13,8 @@
 <link rel="stylesheet" href="http://localhost:9000/manwol/resources/css/review.css">
 </head>
 <body>
-   <!-- header -->
    <jsp:include page="../header.jsp"></jsp:include>
 
-   <!-- content -->
    
    <table>
       <tr>

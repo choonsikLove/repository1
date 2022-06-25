@@ -18,25 +18,21 @@ public class MwReviewDAO implements MwObjectDAO{
 
 	@Override
 	public int insert(Object obj) {
-		// TODO Auto-generated method stub
 		MwReviewVO vo = (MwReviewVO)obj;
 		return sqlSession.insert(namespace+".insert", vo);
 	}
 
 	@Override
 	public int selectTotal() {
-		// TODO Auto-generated method stub
 		return sqlSession.selectOne(namespace+".count");
 	}
 
 	public int selectTotal(String option) {
-		// TODO Auto-generated method stub
 		return sqlSession.selectOne(namespace+".countCategory");
 	}
 	
 	@Override
 	public List<Object> select(int startCount, int endCount) {
-		// TODO Auto-generated method stub
 		Map param = new HashMap<Integer, Integer>();
 		param.put("start", startCount);
 		param.put("end", endCount);
@@ -44,7 +40,6 @@ public class MwReviewDAO implements MwObjectDAO{
 	}
 
 	public List<Object> select(int startCount, int endCount, String option) {
-		// TODO Auto-generated method stub
 		Map param = new HashMap<Integer, Integer>();
 		param.put("start", startCount);
 		param.put("end", endCount);
@@ -53,7 +48,6 @@ public class MwReviewDAO implements MwObjectDAO{
 
 	@Override
 	public Object select(String id) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -65,19 +59,16 @@ public class MwReviewDAO implements MwObjectDAO{
 
 	@Override
 	public int delete(String id) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public int selectSearchTotal(String keyword, String option) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public List<Object> selectSearch(int startCount, int endCount, String keyword, String option) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

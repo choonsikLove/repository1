@@ -3,7 +3,6 @@ package com.web.vo;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 public class MwReviewVO {
-
 	String vid, vdate, vcontent, vpnum, vmemail, vfile, vsfile, pname, msprofile, memail;
 	int vscore;
 	

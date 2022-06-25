@@ -26,12 +26,10 @@ public class MwProductDAO implements MwObjectDAO{
 	
 	@Override
 	public int selectTotal() {
-		// TODO Auto-generated method stub
 		return sqlSession.selectOne(namespace+".count");
 	}
 
 	public int selectTotal(String pcategory) {
-		// TODO Auto-generated method stub
 		return sqlSession.selectOne(namespace+".countCategory", pcategory);
 	}
 	

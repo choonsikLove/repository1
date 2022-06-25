@@ -13,10 +13,8 @@
 <script src="http://localhost:9000/manwol/resources/js/recipe.js"></script>
 </head>
 <body>
-	<!-- header -->
 	<jsp:include page="../header.jsp"></jsp:include>
 	
-	<!-- content -->
 	<table class="content" style="table-layout: fixed;">
 		<tr>
 			<td>

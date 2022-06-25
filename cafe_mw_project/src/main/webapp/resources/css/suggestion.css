@@ -1,4 +1,3 @@
-/* 공통 부분*/
 * {
 	padding: 0;
 	margin: 0;
@@ -46,7 +45,6 @@ label span input {
 }
 
 
-/*모달창1*/
 .modal{
 	background: rgba(0, 0, 0, 0.4);
 	top: 0;
@@ -69,7 +67,6 @@ label span input {
 }
 
 
-/*닫기 버튼*/
 .close_modal{
 	position: relative;
 	bottom:7px;
@@ -84,20 +81,17 @@ label span input {
 	color: #000;
 } 
 
-/*옵션,리뷰내용*/
 .option{margin: 20px 0 25px 0;}
 #option1{padding-bottom: 10px; color: #BDBDBD;}
 #option1 small{font-size: 12px;}
 #option2{font-size: 15px;}
 #option2 p{padding-bottom: 6px;}
 
-/*상품*/
 .product{border: 1.3px solid #BDBDBD;; display: flex;}
 #product1{border: 1px solid #BDBDBD;; width: 45px; height: 45px;}
 #product2{padding:14px 0 0 13px; font-size: 15px; color: #000;}
 #product2 a span{color: black;}
 
-/*댓글창,버튼*/
 .comment{margin: 20px 0;}
 .comment2{border: 0.03px solid #BDBDBD; height: 140px;}
 #comment2_te{height:80px; width: 523px; border: none; padding:15px 0 0 10px;}
@@ -120,7 +114,6 @@ label span input {
 
 
 
-/*모달창2*/
 .modal2{	
 	background: rgba(0, 0, 0, 0.4);
 	top: 0;
@@ -142,10 +135,8 @@ label span input {
 	border-radius: 5px;
 	display: flex;
 }
-/*리뷰사진*/
 .photo{flex: 2; background: rgba(0, 0, 0, 0.08); width: 400px;margin-left: 60px;}
 
-/*사용자사진,별점,아이디*/
 .desc_1{
 	flex: 1; 
 	padding: 20px 2px 20px 10px; 
@@ -154,7 +145,6 @@ label span input {
 	margin: 0 20px;
 }
 
-/*닫기 버튼*/
 .close_modal2{
 	position: relative;
 	bottom:10px;
@@ -169,7 +159,6 @@ label span input {
 	color: #000;
 } 
 
-/*옵션,리뷰내용*/
 .desc_content1{margin: 20px 0 80px 0;}
 .desc_content1 div {padding-bottom: 10px;}
 .desc_content1 div small {font-size: 12px; color: #BDBDBD;}
@@ -179,7 +168,6 @@ label span input {
 .desc_content1_2_1{border: 1px solid #BDBDBD; width: 45px; height: 45px;}
 .desc_content1_3{padding: 14px 0 0 13px; font-size: 15px; color: #000;}
 
-/*댓글창,버튼*/
 .comment1{margin: 20px 0;}
 .comment3{border: 0.03px solid #BDBDBD; height: 130px;}
 #comment2_1_t{height: 75px; width: 335px; border: none; padding: 15px 0 0 10px;}

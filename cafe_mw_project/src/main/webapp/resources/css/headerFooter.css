@@ -21,14 +21,12 @@ ul.menu li{
 header ul#menu1 li{
 	padding-right: 20px;
 	font-size: 12pt;
-/* 	background: pink; */
 	font-weight:bold;
 }
 
 header ul:not(#menu1) li{
 	padding-right: 10px;
 	font-size: 10pt;
-/* 	background: cyan; */
 }
 
 header li:not(.mainpage){
@@ -47,7 +45,6 @@ header>div{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-/* 	background: yellow; */
 }
 
 

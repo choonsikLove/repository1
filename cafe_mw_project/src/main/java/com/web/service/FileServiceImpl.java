@@ -109,7 +109,7 @@ public class FileServiceImpl {
 				if(i < vo.getFiles().length) { 
 					CommonsMultipartFile file = vo.getFiles()[i];
 					
-					if(!file.getOriginalFilename().equals("")) { //파일존재 하는 경우	
+					if(!file.getOriginalFilename().equals("")) {
 						vo.getPfiles().add(file.getOriginalFilename());
 						vo.getPsfiles().add(uuid + "_" + file.getOriginalFilename());
 					}else {
@@ -142,7 +142,7 @@ public class FileServiceImpl {
 					
 					if(!vo.getFiles()[0].isEmpty()) {
 					
-						if(!file.getOriginalFilename().equals("")) { //파일존재 하는 경우	
+						if(!file.getOriginalFilename().equals("")) { 
 							vo.getPfiles().add(file.getOriginalFilename());
 							vo.getPsfiles().add(uuid + "_" + file.getOriginalFilename());
 						}
@@ -166,15 +166,13 @@ public class FileServiceImpl {
 		
 		if(vo != null) {
 			for(int i=0; i<vo.getFiles().length; i++) {
-				CommonsMultipartFile pfile = vo.getFiles()[i]; //files 배열에 저장된 주소번지의 파일반환
+				CommonsMultipartFile pfile = vo.getFiles()[i]; 
 			
 				if(!pfile.getOriginalFilename().equals("")) {
 				
-					//파일저장 위치 확인
 					String root_path = request.getSession().getServletContext().getRealPath("/");
 					root_path += "resources\\upload\\";
 					
-					//파일저장
 					File file = new File(root_path + vo.getPsfiles().get(i));			
 					pfile.transferTo(file);
 				}
@@ -186,14 +184,13 @@ public class FileServiceImpl {
 		
 		if(vo != null) {
 			for(int i=0; i<vo.getFiles().length; i++) {
-				CommonsMultipartFile pfile = vo.getFiles()[i]; //files 배열에 저장된 주소번지의 파일반환
-			
+				CommonsMultipartFile pfile = vo.getFiles()[i]; 
+				
 				if(!pfile.getOriginalFilename().equals("")) {
 				
 					String root_path = request.getSession().getServletContext().getRealPath("/");
 					root_path += "resources\\upload\\";
 					
-					//파일저장
 					File file = new File(root_path + vo.getPsfiles().get(i));			
 					pfile.transferTo(file);
 					
@@ -262,15 +259,13 @@ public class FileServiceImpl {
 		
 		if(vo != null) {
 			for(int i=0; i<vo.getFiles().length; i++) {
-				CommonsMultipartFile rfile = vo.getFiles()[i]; //files 배열에 저장된 주소번지의 파일반환
+				CommonsMultipartFile rfile = vo.getFiles()[i]; 
 			
 				if(!rfile.getOriginalFilename().equals("")) {
 				
-					//파일저장 위치 확인
 					String path = request.getSession().getServletContext().getRealPath("/");
 					path += "resources\\upload\\";
 					
-					//파일저장
 					File file = new File(path + vo.getRsfiles().get(i));			
 					rfile.transferTo(file);
 				}

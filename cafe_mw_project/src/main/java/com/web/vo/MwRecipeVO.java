@@ -6,20 +6,14 @@ import java.util.List;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 public class MwRecipeVO {
-
 	int rfavorite;
-	
 	String rnum, rcategory, rtitle, rcontent, rdate, rthumbnail, rsthumbnail;
 	String rid, rfile1, rfile2, rfile3, rfile4, rfile5, rfile6, rsfile1, rsfile2, rsfile3, rsfile4, rsfile5, rsfile6;
-	
 	CommonsMultipartFile[] files;
-	
 	List<String> rfiles = new ArrayList();
 	List<String> rsfiles = new ArrayList();
-	
 	String reply_id, f_id, reply_content, reply_date, reply_file, reply_sfile;
 	CommonsMultipartFile r_file;
-	
 	String pre_id, pre_title, next_id, next_title;
 	
 	public String getPre_id() {

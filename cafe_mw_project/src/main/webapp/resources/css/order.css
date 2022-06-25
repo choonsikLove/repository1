@@ -111,22 +111,6 @@ ul.cart_ul>li:last-of-type{
 	flex-direction: column;
 }
 
-/* 
-ul.cart_ul>li:last-of-type>div:first-of-type>span:not(:last-of-type){
-	display: inline-block;
-	margin-left: 20px;	
-}
-
-ul.cart_ul>li:last-of-type>div:last-of-type>span{
-	display:inline-block;
-	color: #777;
-	margin: 5px 47px;
-	font-size: 9pt;
-	position: relative;
-	left: 20px;
-}
-
- */
 span#total_price,
 span#total_price+span{
 	color:rgb(29,79,178);

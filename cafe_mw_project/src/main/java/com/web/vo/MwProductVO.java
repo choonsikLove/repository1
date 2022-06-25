@@ -15,9 +15,9 @@ public class MwProductVO {
    String pmainfile, pmainsfile;
    
    String pfile1,pfile2,pfile3,pfile4,pfile5,psfile1,psfile2,psfile3,psfile4,psfile5;
-   CommonsMultipartFile[] files;   //폼에서 넘어오는 멀티파일 저장배열
-   List<String> pfiles = new ArrayList();   //DB에 저장되는 pfile 목록
-   List<String> psfiles = new ArrayList();   //DB에 저장되는 psfile 목록
+   CommonsMultipartFile[] files; 
+   List<String> pfiles = new ArrayList();  
+   List<String> psfiles = new ArrayList();  
    
    
    

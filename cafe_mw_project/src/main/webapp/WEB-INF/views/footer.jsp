@@ -9,8 +9,7 @@
 <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
 </head>
 <body>
-<%-- 링크 있는 친구들 링크 안 걸었다. --%>
-	<a href="#top"> <%--뭔가 다름. --%>
+	<a href="#top">
 		<img class="topArrow" src="http://localhost:9000/manwol/resources/images/4dba043fa706b.png" alt="화살표">
 	</a>
 	<img class="dalDongHee" src="http://localhost:9000/manwol/resources/images/cs-_.png" alt="상담해주는 달동희(대표 캐릭터)">

@@ -7,7 +7,6 @@ var sale_prices = document.getElementsByClassName('sale_prices');
 var sale_prices_arr = new Array();
 var sum2 = 0;
 
-//초기 셋팅!
 for(let i = 0; i < pr.length; i++){
 	var price = parseInt(pr[i].value);
 	var quantity = parseInt(qnt[i].value);
@@ -153,7 +152,7 @@ var sum4 = 0;
 				    		alert("장바구니에서 선택 상품을 삭제했습니다.");
 				    		location.href = "http://localhost:9000/manwol/shop_cart";
 				    	} else{
-				    		alert("못했습니다");
+				    		alert("장바구니에서 선택 상품을 삭제하는데 실패했습니다.");
 				    	}
 				    
 				    },
@@ -214,7 +213,7 @@ function fnCalCount(letter, obj, num){
 		
 		if(a< 1){
 			a = 1;
-			alert("1개 이하로는 선택 못 함");
+			alert("1개 이하로는 선택 할 수 없습니다.");
 		}
 		obj.nextElementSibling.value = a;
 			
@@ -224,7 +223,7 @@ function fnCalCount(letter, obj, num){
 	
 		if(a > obj.nextElementSibling.value){
 			a = obj.nextElementSibling.value;
-			alert(obj.nextElementSibling.value + "개 이상으로는 선택 못 함");
+			alert(obj.nextElementSibling.value + "개 이상으로는 선택할 수 없습니다.");
 		}
 		
 		obj.previousElementSibling.value = a;

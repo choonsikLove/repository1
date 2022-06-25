@@ -10,7 +10,6 @@
 <body>
 	<div id='join_outer'>
 
-		<!-- 회원가입 최초 화면 -->
 		<div id='join_inner_1'>
 			<div class='modal_exit'>&#215;</div>
 			<div class='modal_exit_ex'>닫기</div>
@@ -22,7 +21,6 @@
 			<div id='kakao_start'>카카오로 시작하기</div>
 		</div>
 
-		<!-- 약관동의 화면 -->
 		<div id='join_inner_2'>
 			<div class='modal_exit'>&#215;</div>
 			<div class='modal_exit_ex'>닫기</div>
@@ -241,7 +239,6 @@
 			<button class='join_inner_2_btn' id='join_agree'>가입하기</button>
 		</div>
 
-		<!-- 회원가입 입력폼 -->
 		<div id='join_inner_3'>
 			<div class='modal_exit'>&#215;</div>
 			<div class='modal_exit_ex'>닫기</div>

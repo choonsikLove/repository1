@@ -94,7 +94,6 @@ $(document).ready(function(){
 		
 	});
 	
-	/*  */
 	var sub_images = $('img.sub_images');
 	
 	if(sub_images.width() > 900){
@@ -118,7 +117,7 @@ function fnCalCount(letter){
 		
 		if(qnt < 0){
 			qnt = 0;
-			alert("0개 이하로는 선택 못 함");
+			alert("1개 이하로는 선택할 수 없습니다.");
 		}
 		
 			
@@ -127,7 +126,7 @@ function fnCalCount(letter){
 		
 		if(qnt > max_qnt){
 			qnt = max_qnt;
-			alert(max_qnt + "개 이상으로는 선택 못 함");
+			alert(max_qnt + "개 이상으로는 선택할 수 없습니다.");
 		}
 	}
 	

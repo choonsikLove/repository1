@@ -12,7 +12,7 @@ public class MwObjectServiceAdapter implements MwObjectService{
 		return null;
 	}
 	
-	public Object getContent(String id){//아래 거랑 뭐가 다른 거임?
+	public Object getContent(String id){
 		return null;
 	}
 	

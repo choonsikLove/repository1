@@ -66,14 +66,6 @@ $(document).ready(function(){
  		$(this).css('background','transparent');
  	});
  	
- 	$('.deleteReview').click(function(){
- 		var choice = confirm("삭제하시겠습니까?");
- 		
- 		if(choice){
- 			//아직 리뷰가 없음!
- 		} 
- 	});
- 	
  	
  	$('#baseBox').mouseenter(function(){
  		$('#baseTypes').css('visibility','visible');
@@ -172,7 +164,6 @@ jQuery(document).on('click', '.orderStatus_update', function () {
 							"상태를 변경하시려면 코드를 입력 해 주세요.");
 									
 			if(undo_check2 == 3){ 
-				//음.. 배송 준비니까 o_status를 1로 되돌리고 oinvoice를 삭제해야 함.
 				$.ajax({
 				    url : "invoice_delete",
 				    type : "post",

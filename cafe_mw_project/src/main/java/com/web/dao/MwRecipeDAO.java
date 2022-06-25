@@ -18,7 +18,6 @@ public class MwRecipeDAO implements MwObjectDAO{
 
 	@Override
 	public int insert(Object obj) {
-		// TODO Auto-generated method stub
 		int result = 0;
 		MwRecipeVO vo = (MwRecipeVO)obj;
 
@@ -33,18 +32,15 @@ public class MwRecipeDAO implements MwObjectDAO{
 	
 	@Override
 	public int selectTotal() {
-		// TODO Auto-generated method stub
 		return sqlSession.selectOne(namespace+".count");
 	}
 
 	public int selectTotal(String rcategory) {
-		// TODO Auto-generated method stub
 		return sqlSession.selectOne(namespace+".countCategory", rcategory);
 	}
 	
 	@Override
 	public List<Object> select(int startCount, int endCount) {
-		// TODO Auto-generated method stub
 		Map param = new HashMap<Integer, Integer>();
 		param.put("start", startCount);
 		param.put("end", endCount);
@@ -52,7 +48,6 @@ public class MwRecipeDAO implements MwObjectDAO{
 	}
 
 	public List<Object> select(int startCount, int endCount, String rcategory) {
-		// TODO Auto-generated method stub
 		Map param = new HashMap<Integer, Integer>();
 		param.put("start", startCount);
 		param.put("end", endCount);
@@ -62,13 +57,11 @@ public class MwRecipeDAO implements MwObjectDAO{
 
 	@Override
 	public Object select(String rid) {
-		// TODO Auto-generated method stub
 		return sqlSession.selectOne(namespace+".content", rid);
 	}
 
 	@Override
 	public int update(Object obj) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
@@ -79,23 +72,19 @@ public class MwRecipeDAO implements MwObjectDAO{
 
 	@Override
 	public int selectSearchTotal(String keyword, String option) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	public int selectSearchTotal(String keyword) {
-		// TODO Auto-generated method stub
 		return sqlSession.selectOne(namespace+".searchCount", keyword);
 	}
 
 	@Override
 	public List<Object> selectSearch(int startCount, int endCount, String keyword, String option) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	public List<Object> selectSearch(int startCount, int endCount, String keyword) {
-		// TODO Auto-generated method stub
 		Map<String, Object> param = new HashMap<String, Object>();
 		param.put("start", startCount);
 		param.put("end", endCount);

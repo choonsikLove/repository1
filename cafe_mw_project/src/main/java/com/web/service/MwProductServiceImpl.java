@@ -20,20 +20,13 @@ public class MwProductServiceImpl extends MwObjectServiceAdapter{
 	
 	@Override
 	public int getListCount() {
-		// TODO Auto-generated method stub
 		return productDao.selectTotal();
 	}
 	
 	public int getListCount(String pcategory) {
-		// TODO Auto-generated method stub
 		return productDao.selectTotal(pcategory);
 	}
 	
-	/*
-	public int getSearchListCount(String keyword) {
-		// TODO Auto-generated method stub
-		return productDao.selectSearchTotal(keyword);
-	*/
 	
 	@Override 
 	public List<Object> getListResult(int startCount, int endCount){
@@ -45,13 +38,6 @@ public class MwProductServiceImpl extends MwObjectServiceAdapter{
 	}
 
     
-    /*
-    public List<Object> getSearchListResult(int startCount, int endCount, String keyword) {
-		// TODO Auto-generated method stub
-		return productDao.selectSearch(startCount, endCount, keyword);
-	}	
-	*/
-
 	  
 	@Override 
 	public int getInsertResult(Object obj) {

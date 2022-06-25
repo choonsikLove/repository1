@@ -1,11 +1,9 @@
 $(document).ready(function(){
-	/*		JOIN 클릭시		*/
 	$('#join').click(function(){
 		$('#join_outer').css("display","block");
 		$('#join_inner_1').css("display","block");
 	});
 	
-	/*		다른 메일로 가입하기 클릭시		*/
 	$('#mail_join').click(function(){
 		$('#join_outer').css("display","block");
 		$('#join_inner_1').css("display","none");
@@ -16,7 +14,6 @@ $(document).ready(function(){
 	var msg_sms = 0;
 	var msg_email = 0;
 	
-	/*		약관동의-가입하기 클릭시		*/
 	$('#join_agree').click(function(){
 		if($('#agree1').is(':checked')){
 		
@@ -43,7 +40,6 @@ $(document).ready(function(){
 	});
 	
 	
-	/*		외부클릭 끄기		*/
 	$('#join_inner_1').off().mouseout(function(){
 		$('#join_outer').off().click(function(){
 		});
@@ -60,7 +56,6 @@ $(document).ready(function(){
 	});
 	
 	
-	/*		끄기2		*/
 	$('.modal_exit').click(function(){
 		$('#join_outer').css("display","none");
 		$('#join_inner_1').css("display","none");
@@ -68,7 +63,6 @@ $(document).ready(function(){
 		$('#join_inner_3').css("display","none");
 	});
 	
-	/*		끄기3		*/
 	$('#join_cancel').click(function(){
 		$('#join_outer').css("display","none");
 		$('#join_inner_1').css("display","none");
@@ -76,12 +70,10 @@ $(document).ready(function(){
 		$('#join_inner_3').css("display","none");
 	});
 	
-	/*		X에 마우스 올라갈 때		*/
 	$('.modal_exit').mouseenter(function(){
 		$('.modal_exit_ex').css("display","block");
 	});
 
-	/*		X에서 마우스 벗어날 때		*/
 	$('.modal_exit').mouseleave(function(){
 		$('.modal_exit_ex').css("display","none");
 	});
@@ -108,12 +100,10 @@ function loadFile(input) {
 
 $(document).ready(function(){
 
-/*		로그인 클릭시		*/
 $('#login').click(function(){
 	$('#popup').css("display","block");
 });
 
-/*		마이페이지 클릭시		*/
 $('#mypage').click(function(){
 	$(location).attr("href", "shop_mypage");
 });
@@ -122,7 +112,6 @@ $('#to_admin').click(function(){
 	$(location).attr("href","admin");
 });
 
-/*		로그아웃 클릭시		*/
 $('#logout').click(function(){
 	$(location).attr("href", "logout");
 });
@@ -134,7 +123,6 @@ $('.backToLogin').click(function(){
 	$('#popup_cont1').css("display","block");
 });
 
-/*		끄기1		*/
 $('#closeX').click(function(){
 	$('#popup').css("display","none");
 	
@@ -148,8 +136,6 @@ $('#closeX').click(function(){
 });
 
 
-/* 다음페이지로 넘어가는 기능*/
-/* 비회원 주문 배송 */
 $('#visitorOrder').click(function(){
 	
 	$('.popup_cont').css("display","none");
@@ -159,7 +145,6 @@ $('#visitorOrder').click(function(){
 	
 });
 
-/* 아이디 비밀번호 찾기 */
 $('#findIDPW').click(function(){
 	$('.popup_cont').css("display","none");
 	$('.login_popup_box').css({"height":"510px",'top':'45%'});
@@ -201,9 +186,7 @@ $('#join_submit').click(function(){
 $('#memail').blur(function(){
 	var memail = $('#memail').val();
 	
-	if(memail == ""){
-	//?
-	} else {
+	if(memail != ""){
 		$.ajax({
 			type:'POST',
 			async: true,
@@ -226,7 +209,7 @@ $('#memail').blur(function(){
 });
 
 
-}) //document.ready
+}) 
 
 $(document).on("click", "#findID", function(){
     $('.popup_cont').css("display","none");
@@ -310,7 +293,7 @@ $(document).on("click", "#findIDButton", function(){
 			});
 		}
 	} else {
-		alert("여긴 안 씁니다");
+		alert("없는 기능입니다.");
 	}
 
 });

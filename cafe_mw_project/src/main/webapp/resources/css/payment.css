@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-/* 공통 */
 *{margin: 0 ; padding: 0;}
    li{list-style-type:none}
    
@@ -13,9 +12,6 @@ table{
    margin-left: auto;
 }
 
-
-
-/* 주문 상품 정보 */
 .payment{
    background-color: #F2F2F2;
 }
@@ -78,7 +74,6 @@ table{
 
 
 
-/* 주문자 정보 */
 .payment_content1_2{
    width:600px;
    margin: 20px 0; 
@@ -140,7 +135,6 @@ table{
 
 
 
-/* 배송 정보 */
 .payment_content1_3{
    width: 100%; 
    background-color: white;
@@ -292,7 +286,6 @@ table{
 }
 
 
-/* 쿠폰/만월포인트 */
 .payment_content1_4{
    width: 100%; 
    margin: 20px 0; 
@@ -334,7 +327,6 @@ table{
 
 
 
-/* 주문 요약 */
 .payment_content2{
    flex: 1; 
    height: 100%;
@@ -385,7 +377,6 @@ table{
 }   
 
 
-/* 결제 수단 */
 .payment_content2_2{
    background: white; 
    width: 100%; 
@@ -465,7 +456,6 @@ table{
 
 
 
-/* 전체동의 */
 .payment_content2_3{
    background: white; 
    width: 100%; 
@@ -499,7 +489,6 @@ table{
 }
 
 
-/*모달창*/
 .modal{
    background: rgba(0, 0, 0, 0.4);
    top: 0;
@@ -537,7 +526,6 @@ table{
 	color: #0042A9;
 }
 
-/*닫기 버튼*/
 #close_modal{
    position: relative;
    top: -270px;

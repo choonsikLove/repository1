@@ -37,33 +37,27 @@ public class MwRecipeServiceImpl extends MwObjectServiceAdapter{
 	
 	@Override
 	public int getListCount() {
-		// TODO Auto-generated method stub
 		return recipeDao.selectTotal();
 	}
 	
 	public int getListCount(String rcategory) {
-		// TODO Auto-generated method stub
 		return recipeDao.selectTotal(rcategory);
 	}
 	
 	public int getSearchListCount(String keyword) {
-		// TODO Auto-generated method stub
 		return recipeDao.selectSearchTotal(keyword);
 	}
 	
 	@Override
 	public List<Object> getListResult(int startCount, int endCount) {
-		// TODO Auto-generated method stub
 		return recipeDao.select(startCount, endCount);
 	}
 	
 	public List<Object> getListResult(int startCount, int endCount, String rcategory) {
-		// TODO Auto-generated method stub
 		return recipeDao.select(startCount, endCount, rcategory);
 	}
 	
 	public List<Object> getSearchListResult(int startCount, int endCount, String keyword) {
-		// TODO Auto-generated method stub
 		return recipeDao.selectSearch(startCount, endCount, keyword);
 	}	
 

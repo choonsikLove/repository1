@@ -39,7 +39,6 @@ public class MwOrderDAO implements MwObjectDAO{
 	}
 	
 	public List<Object> select(int startCount, int endCount, String ostatus) {
-		// TODO Auto-generated method stub
 		Map param = new HashMap<Integer, Integer>();
 		
 		param.put("start", startCount);

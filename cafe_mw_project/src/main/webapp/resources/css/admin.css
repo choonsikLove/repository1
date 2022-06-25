@@ -45,7 +45,6 @@ div.adminWrap>div:first-of-type {
 div.adminWrap>div.welcome>div>img,
 div.adminWrap>div:nth-of-type(2)>div>img{
 	border-radius: 50%;
-	/* border:1px black solid; */
 	width: 90px; height: 90px;
 	margin: 0 30px 0 40px;
 }
@@ -70,7 +69,7 @@ div.adminWrap>div.adminBox>ul>li{
 	background: rgb(10,33,85);
 	margin-bottom: 10px;
 	padding: 15px;
-	width: 61.2em;/*임시*/
+	width: 61.2em;
 }
 
 div.adminWrap>div.adminBox>ul>li:hover{
@@ -242,7 +241,6 @@ div.memberInfo+div table tr:nth-of-type(6) td{
 }
 
 
-/* 상품 관리 */
 	.category {
       display: flex;
 	  justify-content: center;
@@ -256,7 +254,6 @@ div.memberInfo+div table tr:nth-of-type(6) td{
       font-size: 14px;    
       }
 	
-/* 	<%--카테고리 클릭시 밑줄 들어가게 --%> */
 	.category a{ 
 		color: Black; 
 		text-decoration:underline;
@@ -302,7 +299,6 @@ div.memberInfo+div table tr:nth-of-type(6) td{
 	}
 
 
-/* 	<%--이미지 눌렀을때 불투명하게 --%> */
 	.re {
 		opacity: 1;
  		filter:alpha(opacity=100);
@@ -797,7 +793,7 @@ div#orderDetail_popup{
 div.order_popup_box{
 	position: relative;
 	top: 53%;left:51%; 
-	height: 340px; width: 450px; /*height %로 하면 안됨!*/
+	height: 340px; width: 450px; 
 	transform:translate(-50%, -50%);
 	z-index:2000;
 	background: white;
@@ -811,7 +807,7 @@ div.order_popup_box{
 div.orderDetail_popup_box{
 	position: relative;
 	top: 53%;left:51%; 
-	height: 500px; width: 800px; /*height %로 하면 안됨!*/
+	height: 500px; width: 800px; 
 	transform:translate(-50%, -50%);
 	z-index:2000;
 	background: white;

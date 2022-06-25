@@ -10,10 +10,8 @@
 <link rel="stylesheet" href="http://localhost:9000/manwol/resources/css/suggestion.css">
 </head>
 <body>
-   <!-- header -->
    <jsp:include page="../header.jsp"></jsp:include>
 
-   <!-- content -->
    <form action="">
 		<table style="width: 70%; font-size: 15px;">
 			<tr>
@@ -75,7 +73,6 @@
 		</table>
 	</form>
 
-	<!-- 모달창 -->
 	<div class="modal">
 		<div class="modal_inner">
 			<div class="desc">
@@ -141,7 +138,6 @@
 		</div>
 	</div>
 
-	<!--  footer -->
    <jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

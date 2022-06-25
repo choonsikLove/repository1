@@ -10,10 +10,7 @@
 <link rel="stylesheet" href="http://localhost:9000/manwol/resources/css/about.css">
 </head>
 <body>
-   <!-- header -->
    <jsp:include page="../header.jsp"></jsp:include>
-
-   <!-- content -->
 
 	<table style="width: 100%;">
 		<tr>
@@ -217,7 +214,6 @@
 		</tr>
 	</table>
 
-	<!--  footer -->
    <jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

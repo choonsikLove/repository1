@@ -21,7 +21,6 @@ body,html{
       font-size: 14px;    
       }
 	
-/* 	<%--카테고리 클릭시 밑줄 들어가게 --%> */
 	.category a{ 
 		color: Black; 
 		text-decoration:underline;
@@ -67,7 +66,6 @@ body,html{
 	}
 
 
-/* 	<%--이미지 눌렀을때 불투명하게 --%> */
 	.re {
 		opacity: 1;
  		filter:alpha(opacity=100);

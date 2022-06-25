@@ -1,5 +1,4 @@
 	$(document).ready(function(){
-		/*		정보수정 클릭시		*/
 		$(document).off('click', '.my_inform').on('click', '.my_inform', function () {
 			
 			var member_email = $('#member_email').val();
@@ -73,7 +72,7 @@
 										
 										$('#for_loading_mname').val(new_name);
 										
-										if($('input[name=after_pass]').val() == ""){//새 비밀번호 안 바꿈
+										if($('input[name=after_pass]').val() == ""){
 											 $.ajax({
 												type: 'POST',
 												async: true,
@@ -105,8 +104,8 @@
 													alert("실패");
 												}
 											});
-										} else {// 새 비밀번호 바꿈
-											if(after_pass2 == after_pass){// 둘이 같다. 작업 진행 가능
+										} else {
+											if(after_pass2 == after_pass){
 											
 												 $.ajax({
 													type: 'POST',
@@ -142,10 +141,10 @@
 												});
 											} else {
 												alert("새 비밀번호와 확인 비밀번호가 다릅니다.");
-											}//새 비밀번호랑 확인 비밀번호가 다름 
-										}//새 비밀번호 바꿀지 안바꿀지 분기(위에랑 다르다)
+											}
+										}
 										
-									} else { //입력창에 비밀번호 다르게 입력했을 경우
+									} else {
 										alert("비밀번호가 일치하지 않습니다.");
 									}
 								},
@@ -161,37 +160,32 @@
 					
 				},
 				error: function(data){
-					alert("실패"); //데이터 못 불러왔을 때.
+					alert("실패"); 
 				}
 			});
 			
 		});
 		
-		/*		회원탈퇴 클릭시		*/
 		$('.withdrow_btn').click(function(){
 			$('#mypage_modal_outer').css("display","block");
 			$('#withdraw_inner').css("display","block");
 		});
 		
-		/*		끄기2		*/
 		$('.modal_exit').click(function(){
 			$('#mypage_modal_outer').css("display","none");
 			$('#modify_inner').css("display","none");
 			$('#withdraw_inner').css("display","none");
 		});
 		
-		/*		끄기3		*/
 		$('#withdraw_cancel').click(function(){
 			$('#mypage_modal_outer').css("display","none");
 			$('#withdraw_inner').css("display","none");
 		});
 		
-		/*		X에 마우스 올라갈 때		*/
 		$('.modal_exit').mouseenter(function(){
 			$('.modal_exit_ex').css("display","block");
 		});
 
-		/*		X에서 마우스 벗어날 때		*/
 		$('.modal_exit').mouseleave(function(){
 			$('.modal_exit_ex').css("display","none");
 		});
@@ -202,4 +196,21 @@ function loadFile(input) {
 		var mypage_profile_img = $('#mypage_profile_img');
 		var url = URL.createObjectURL(file);
 		mypage_profile_img.attr("src", url);
+}
+
+var rvInsert_result = "${rvInsert_result}";
+
+if(rvInsert_result == "succ"){
+	alert("리뷰가 작성되었습니다. 확인하시겠습니까?");
+}
+function review_popup(){
+	var objPopup = window.open('','reviewWindow','resizable=no, top=200, left=200, width=450, height=550, scrollbars=no');
+	document.review_insert_form.target="reviewWindow";
+	document.review_insert_form.action="shop_mypage/review_insert";
+	if (objPopup == null) {  
+		alert('차단된 팝업창을 허용해 주세요');
+	} else {
+		document.review_insert_form.submit();
+		objPopup.focus();
+	}
 }

@@ -10,7 +10,6 @@
 <body>
 	<div id='mypage_modal_outer'>
 
-		<!-- 회원정보 수정폼 -->
 		<div id='modify_inner'>
 			<div class='modal_exit'>&#215;</div>
 			<div class='modal_exit_ex'>닫기</div>
@@ -80,7 +79,6 @@
 			<div id='kakao_start'>카카오 연결</div>
 		</div>
 
-		<!-- 회원탈퇴 화면 -->
 		<div id='withdraw_inner'>
 			<h2 class='withdraw_title'>회원탈퇴</h2>
 			<div>

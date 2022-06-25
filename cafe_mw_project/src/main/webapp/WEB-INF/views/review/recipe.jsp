@@ -11,27 +11,10 @@
 <link rel="stylesheet" href="http://localhost:9000/manwol/resources/css/recipe.css">
 <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery-3.6.0.js"></script>
 <script src="http://localhost:9000/manwol/resources/js/recipe.js"></script>
-<style type="text/css">
-	.wish_list{
-		display: inline-block;
-		color: black;
-	}
-	.favorite{
-		font-size: 18px;
-		color: rgb(255, 255, 255);
-		text-shadow: -1px 0px rgb(0, 74, 152), 0px 1px rgb(0, 74, 152), 1px 0px rgb(0, 74, 152), 0px -1px rgb(0, 74, 152);
-	}
-	.favorite_count{
-		font-size: 15px;
-		color: rgb(0, 74, 152);
-	}
-</style>
 </head>
 <body>
-	<!-- header -->
 	<jsp:include page="../header.jsp"></jsp:include>
 	
-	<!-- content -->
 	<table class="content" style="table-layout: fixed;">
 		<tr>
 			<td>

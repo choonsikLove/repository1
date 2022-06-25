@@ -1,8 +1,7 @@
 package com.web.vo;
 
 public class MwOrderVO {
-	String oid, oproducts, obuyer, ob_hp, ob_email, odate, orecipient, or_hp, or_post, or_addr1, or_addr2, oinvoice, opayment,
-		ocids;
+	String oid, oproducts, obuyer, ob_hp, ob_email, odate, orecipient, or_hp, or_post, or_addr1, or_addr2, oinvoice, opayment, ocids;
 	String pname, o_pnum, pmainsfile;
 	String[] oproduct, ocid;
 	int ototal,oshipment, oship_memo, ostatus, o_qnt, numbers;

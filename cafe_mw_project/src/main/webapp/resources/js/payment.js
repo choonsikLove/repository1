@@ -1,4 +1,3 @@
-  /* 수정 버튼 */
    $(document).ready(function(){
       
       $("#btnx").click(function(){
@@ -8,7 +7,6 @@
         });
       });
    
-   /* 변경 버튼 */
    $(document).ready(function(){
 	   $('.deliver2').hide();
        $('.deliver3').hide();
@@ -48,7 +46,6 @@
 
   
   
-  /* 모달창 */   
 $(document).ready(function(){
  		$('.coupon_modal').click(function(){
  			$('.modal').fadeIn();
@@ -59,14 +56,12 @@ $(document).ready(function(){
  	});	
   
    
-   /*코드확인 버튼 alert창 */
    function codecheck() {
        alert("올바른 쿠폰이 아닙니다");
    }
 
    
    
-      /* 무통장 입금*/
       $(document).ready(function(){
          $('#selectPay_noBank').hide();
          
@@ -79,7 +74,6 @@ $(document).ready(function(){
          })
       })
       
-      /* 현금영수증 신청*/
       $(document).ready(function(){
          $('#selectPay_noBank1').hide();
          

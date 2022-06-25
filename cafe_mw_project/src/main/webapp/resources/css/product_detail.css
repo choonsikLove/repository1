@@ -12,7 +12,6 @@ table {
 	margin-left: auto;
 }
 
-/* 이미지,가격,설명 */ 
 .product{ 
 	width:1270px;
 	display:flex;
@@ -20,18 +19,15 @@ table {
     align-items: center;
 }    
     
-/* 카테고리 */ 
 .var{margin:60px 0 20px 0; font-size: 12px; cursor:pointer;}   
 .home{color: gray;}
 .home:hover{color: black;}
 .all{color: black;}
-/* 상품 이미지 */
 .img{
    display: flex;
     justify-content: center;
    }
 .img_detail{padding-right: 100px;}
-/* 상품 상세*/
 .product_detail{
 	padding: 0 0 20px 0; 
 	border-bottom: 1px solid lightgray;
@@ -114,7 +110,6 @@ h4{font-size: 14px; margin-bottom: 5px;}
 .btn3:hover{
 	border-color: #000;
 }
-/* 상단 포토구매평 */
 .photopyong{
 	display: flex; 
 	justify-content: center; 
@@ -152,7 +147,6 @@ margin-right: 10px;
 	margin-top: -25px; 
 	padding-left:190px; 
 }
-/*3개의 카테고리 이미지들..*/
 .detail{width: 1270px; padding-left: 2px;}
 .category{
 	  cursor: pointer;	
@@ -170,7 +164,6 @@ margin-right: 10px;
 .category_a:hover{color: black;}
 .category_b:hover{color: black;}
 .category_c:hover{color: black;}
-/*FRESH/DELIVERY/A/S*/
 .delivery{border-top: border: 1px solid #BDBDBD; margin: 30px 30px 50px 30px;}    
 .delivery{
    text-align: left;  width: 1270px;
@@ -179,7 +172,6 @@ margin-right: 10px;
 .delivery th{color: rgb(23, 50, 114); font-size: 20px;} 
  .delivery td{font-size: 14px;
 }    
-/*상품정보 제공고시*/
 .table{
 	width:1270px;
    border-spacing:0; 
@@ -195,7 +187,6 @@ margin-right: 10px;
 	font-style: normal;
 	font-weight: normal;
 }
-/*구매평*/
 .container{ 
 	width:1270px;  
 	display: flex;
@@ -204,12 +195,10 @@ margin-right: 10px;
     padding: 30px 0 0 5px;
     margin-left: 5px;
 }
-/*별점*/
 .star{text-align: center; margin: 50px 40px 30px 0;}
 .star_img{color: red; margin-bottom:10px; font-size: 18px; cursor: context-menu;}
 .star strong{font-size: 35px;}
 .star_t{font-size: 13px; margin: 10px 0;}
-/*그래프*/    
 .graph{font-size: 14px; padding:50px 50px 50px 25px;} 
 .graph p{margin: 0 10px;}
 .containergraph_5 {display: flex; padding-bottom: 10px;}
@@ -242,7 +231,6 @@ margin-right: 10px;
    display: block; width: 0%; height: 10px; line-height: 10px; 
    text-align: right; background: red; border-radius:40px; 
 }
-/*포토 구매평 모아보기*/   
 .review{margin: 25px 0px 25px 50px;}
 .review_t{text-align: center;margin-bottom: 5px;}
 .review img{margin: 0 3px; cursor:pointer;}
@@ -260,7 +248,6 @@ margin-right: 10px;
 	cursor:pointer;
 	border: none;
 }
-/*구매평*/
 .Purchasing_review{text-align: left; width:1270px; margin-left:15px; border-spacing:0;}
 .Purchasing_review td{ border-bottom: 1px solid #BDBDBD;}
 .Purchasing_review strong{font-size: 18px; font-weight: bold;}
@@ -302,8 +289,6 @@ margin-right: 10px;
 
 
 
-/* product_group_order */
-/* 상품 이미지 */
 .pd{margin-bottom: 170px;}
 
 .button_order{
@@ -323,7 +308,6 @@ margin-right: 10px;
 	border-color: #000;
 }
 
-/*카카오톡 주문창*/
 .order{padding: 20px 500px 20px 10px;  font-size: 14px; border: 1px solid #BDBDBD;}	
 }
 .kakao{cursor:pointer;}
@@ -331,7 +315,6 @@ margin-right: 10px;
 	cursor:pointer;	
 } 
 
-/*구매평*/
 .Purchasing_review_1{text-align: left; width:1270px;border-spacing:0;  padding: 45px 0 100px 0;}
 .Purchasing_review_1 strong{font-size: 18px; font-weight: bold;}
 .Purchasing_review_1 span{
@@ -363,8 +346,6 @@ margin-right: 10px;
 		
 		
 		
-/* product_group_order2 */		
-/* 카테고리 */ 
 .all1{color: gray;}
 .all1:hover{color: black;}
 .group{color: black;}		
