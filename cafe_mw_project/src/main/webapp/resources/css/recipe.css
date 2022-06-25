@@ -73,14 +73,6 @@ table{
   'opsz' 30;
 }
 
-.material-symbols-outlined2 {
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 700,
-  'GRAD' 200,
-  'opsz' 48
-}
-
 .moon{cursor: pointer;}
 
 .search{width:100%;}

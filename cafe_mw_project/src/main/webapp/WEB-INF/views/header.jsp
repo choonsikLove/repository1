@@ -41,7 +41,7 @@
                   <a href="http://localhost:9000/manwol/recipe">Review</a>
                   <div class="dropdown-content">
                      <a href="http://localhost:9000/manwol/recipe">레시피북</a>
-                     <a href="http://localhost:9000/manwol/review">Review</a>
+                     <a href="#">Review</a>
                   </div>
                </li>
                <li class="dropdown">
