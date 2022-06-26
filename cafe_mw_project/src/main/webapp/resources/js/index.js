@@ -74,28 +74,3 @@
 		});	
   	});
   	
-var join_result = "${join_result}";
-var order_result = "${order_result}";
-var withdraw_result = "${withdraw_result}";
-var logout_result = "${logout_result}";
-
-if(join_result == "succ"){
-	alert("회원 가입 되었습니다.");
-} else if (join_result == "fail"){
-	alert("회원 가입에 실패했습니다. 다시 시도해주세요.");
-}
-
-if(withdraw_result == "succ"){
-	alert("성공적으로 회원탈퇴되었습니다.");
-} else if (withdraw_result == "fail"){
-	alert("회원탈퇴에 실패했습니다.");
-}
-
-
-if(logout_result == "succ"){
-	alert("로그아웃 되었습니다.");
-}
-
-if(order_result == "succ"){
-	alert("주문이 처리되었습니다.");
-}
