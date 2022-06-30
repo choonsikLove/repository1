@@ -106,11 +106,14 @@ $(document).on("click","#product_write_submit",function(){
 		$("#product_name").focus();
 		return false;
 	}else if($("#product_price").val() == ""){
-		alert("패스워드를 입력해주세요");
+		alert("상품 금액을 입력해주세요");
 		$("#product_price").focus();
 		return false;
 	}else if($("#product_category option:selected").val() ==""){
 		alert("카테고리를 선택해 주세요");
+		return false;
+	}else if($("#mainProductImage").val() == ""){
+		alert("이미지를 등록해 주세요!");
 		return false;
 	}else if($("#product_stock").val() == ""){
 		alert("재고량을 입력해주세요");
@@ -132,11 +135,14 @@ $(document).on("click","#product_update_submit",function(){
 		$("#product_name").focus();
 		return false;
 	}else if($("#product_price").val() == ""){
-		alert("패스워드를 입력해주세요");
+		alert("상품 금액을 입력해주세요");
 		$("#product_price").focus();
 		return false;
 	}else if($("#product_category option:selected").val() ==""){
 		alert("카테고리를 선택해 주세요");
+		return false;
+	}else if($("#mainProductImage").val() == ""){
+		alert("이미지를 등록해 주세요!");
 		return false;
 	}else if($("#product_stock").val() == ""){
 		alert("재고량을 입력해주세요");

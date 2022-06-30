@@ -359,31 +359,35 @@ $(document).on("click", "#setNewPwButton", function(){
 	var newPass = $('#setNewPw').val();
 	var newPassCheck = $('#setNewPwCheck').val();
 	
-	if(newPass != newPassCheck){
-		alert("입력하신 새 비밀번호가 일치하지 않습니다.");
-		$('#setNewPw').val("");
-		$('#setNewPwCheck').val("");
-	} else {
-		$.ajax({
-			type: 'POST',
-			async: true,
-			data: {"memail" : carriedEmail, "mpass" : newPass},
-			url: "updatePass",
-			success : function(result){
-				alert("비밀번호가 변경되었습니다.");
-				$('#setNewPw').val("");
-				$('#setNewPwCheck').val("");
-				$('#popup').css("display","none");
-				$('.popup_cont').css("display","none");
-				$('.login_popup_box').css({"height":"620px","width":"370px",
-					"top":"53%"});
-				$('#popup_cont1').css("display","block");
-				location.href = "http://localhost:9000/manwol/index";
-			},
-			error: function(){
-				alert("실패");
-			}
-		});
+	if(newPass != "" && newPassCheck != ""){
+		if(newPass != newPassCheck){
+			alert("입력하신 새 비밀번호가 일치하지 않습니다.");
+			$('#setNewPw').val("");
+			$('#setNewPwCheck').val("");
+		} else {
+			$.ajax({
+				type: 'POST',
+				async: true,
+				data: {"memail" : carriedEmail, "mpass" : newPass},
+				url: "updatePass",
+				success : function(result){
+					alert("비밀번호가 변경되었습니다.");
+					$('#setNewPw').val("");
+					$('#setNewPwCheck').val("");
+					$('#popup').css("display","none");
+					$('.popup_cont').css("display","none");
+					$('.login_popup_box').css({"height":"620px","width":"370px",
+						"top":"53%"});
+					$('#popup_cont1').css("display","block");
+					location.href = "http://localhost:9000/manwol/index";
+				},
+				error: function(){
+					alert("실패");
+				}
+			});
+		}
+	}else {
+		alert("변경할 비밀번호를 입력해 주세요!");
 	}
 	
 });
