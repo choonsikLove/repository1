@@ -68,7 +68,7 @@ $(document).on("click", ".selectDiv", function(){
 			if(selectBoxOption.val() == ""){
 				return;
 			} else {
-				selectBox.append($('<option>', {value:j, text:selectBoxOption.val() + j}));
+				selectBox.append($('<option>', {value:j, text:selectBoxOption.val()}));
 				selectBoxOption.val("");
 				j++;
 			}
